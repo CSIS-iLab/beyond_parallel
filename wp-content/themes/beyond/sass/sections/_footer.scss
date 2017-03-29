@@ -1,0 +1,96 @@
+footer#colophon {
+    margin-top: 5rem;
+    background: url('assets/images/beyond_parallel_footer.jpg');
+    background-size: cover;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    padding: 2em 0em;
+    color: #A6ADB4;
+    .align-right {
+        text-align: right;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.7em;
+    }
+    .social {
+        display: block;
+        float: right;
+    }
+    .social div {
+        display: inline-block;
+    }
+    .facebook-icon {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/images/facebook-icon.svg");
+        background-position: left bottom;
+        background-size: 66px 32px;
+        background-repeat: no-repeat;
+    }
+    .facebook-icon:hover {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/images/facebook-icon.svg");
+        background-position: right bottom;
+        background-size: 66px 32px;
+        background-repeat: no-repeat;
+    }
+    .twitter-icon {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/images/twitter-icon.svg");
+        background-position: left bottom;
+        background-size: 66px 32px;
+        background-repeat: no-repeat;
+    }
+    .twitter-icon:hover {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/images/twitter-icon.svg");
+        background-position: right bottom;
+        background-size: 66px 32px;
+        background-repeat: no-repeat;
+    }
+    .email-icon {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/images/email-icon.svg");
+        background-position: left bottom;
+        background-size: 66px 32px;
+        background-repeat: no-repeat;
+    }
+    .email-icon:hover {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/images/email-icon.svg");
+        background-position: right bottom;
+        background-size: 66px 32px;
+        background-repeat: no-repeat;
+    }
+    .copywrite {
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: #{$breakpoint_mobile}) {
+    footer#colophon {
+        .csis-footer-logo {
+            max-width: 350px;
+        }
+        .social {
+            float: left;
+            text-align: left;
+            .facebook-icon,
+            .twitter-icon,
+            .email-icon {
+                margin-right: 10px;
+            }
+        }
+        .copywrite {
+            text-align: left;
+        }
+    }
+}

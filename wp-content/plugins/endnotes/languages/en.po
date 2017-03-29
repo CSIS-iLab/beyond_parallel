@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Endnotes\n"
+"POT-Creation-Date: 2015-06-15 13:00-0600\n"
+"PO-Revision-Date: 2015-06-15 13:00-0600\n"
+"Last-Translator: Heavy Heavy <hello@heavyheavy.com>\n"
+"Language-Team: Heavy Heavy <hello@heavyheavy.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: endnotes.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: endnotes.php:100
+msgid "Settings"
+msgstr ""
+
+#: includes/endnotes-options.php:24
+msgid "Endnotes Settings"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: includes/endnotes-options.php:25
+msgid "Endnotes"
+msgstr ""
+
+#: includes/endnotes-options.php:69
+msgid "Save Settings"
+msgstr ""
+
+#: includes/endnotes-options.php:107
+msgid "Display Settings"
+msgstr ""
+
+#: includes/endnotes-options.php:115
+msgid "Header Text"
+msgstr ""
+
+#: includes/endnotes-options.php:124
+msgid "Template Selection"
+msgstr ""
+
+#: includes/endnotes-options.php:133
+msgid "Endnotes Functionality"
+msgstr ""
+
+#: includes/endnotes-options.php:160
+msgid "Configure how Endnotes will function and be displayed."
+msgstr ""
+
+#: includes/endnotes-options.php:192
+msgid "If left blank, no header text will be displayed. No HTML allowed."
+msgstr ""
+
+#: includes/endnotes-options.php:224
+msgid "Only display footnotes on single post or page"
+msgstr ""
+
+#: includes/endnotes-options.php:256
+msgid "Collapse endnotes until clicked"
+msgstr ""
+
+#: includes/endnotes-output.php:57
+#, php-format
+msgid "Show %d Footnote"
+msgid_plural "Show %d Footnotes"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://heavyheavy.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A simple solution for adding footnotes to your WordPress posts or pages."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Heavy Heavy"
+msgstr ""

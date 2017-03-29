@@ -1,0 +1,61 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    box-sizing: inherit;
+}
+
+body {
+    background: $color__background-body;
+    /* Fallback for when there is no custom background color defined. */
+}
+
+.container {
+    max-width: 1100px;
+}
+
+embed,
+iframe,
+object {
+    padding: 20px 0px;
+}
+
+@import "content-sidebar";
+// @import "sidebar-content";
+
+/*--------------------------------------------------------------
+## Single Column / No Active Sidebar
+--------------------------------------------------------------*/
+
+.no-sidebar .site-main {
+    margin: 0;
+}
+
+.no-sidebar .content-area {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
+
+@import "posts";
+
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+
+@import "pages";
+
+/*--------------------------------------------------------------
+## Archive
+--------------------------------------------------------------*/
+
+@import "archive";

@@ -1,0 +1,295 @@
+a {
+    color: $color__link;
+    &:visited {
+        color: $color__link;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color__link-hover;
+        text-decoration: none;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    &:hover,
+    &:active {
+        outline: 0;
+    }
+}
+
+.entry-header a,
+.entry-cats a,
+.the-content a,
+a.related-link {
+    display: inline;
+    letter-spacing: 0px;
+    color: $color__blue !important;
+}
+
+.entry-header a:hover,
+.entry-cats a:hover,
+.the-content a:hover,
+a.related-link:hover {
+    height: 100%;
+    position: relative;
+    background-image: -webkit-linear-gradient(top, $color__yellow 0, $color__yellow 100%);
+    background-image: linear-gradient(to bottom, $color__yellow 0, $color__yellow 100%);
+    background-position: 0 94%;
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    border-bottom: 0;
+    text-decoration: none;
+}
+
+.home .rev_slider a:hover,
+.last-home a:hover {
+    background-image: none;
+    background-image: none;
+}
+
+a.related-link {
+    font-weight: 500;
+}
+
+span.arrow:after {
+    content: " \f105";
+    font-family: FontAwesome;
+}
+
+.catAll,
+.followButton {
+    letter-spacing: .5px;
+    display: inline-block;
+    background-color: $color__yellow;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-family: $font__headings;
+    color: $color__blue;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+.catAll:hover,
+.followButton:hover {
+    display: inline-block;
+    background-color: $color__darkYellow;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-family: $font__headings;
+    color: $color__blue;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+.catAll {
+    margin-top: 1rem;
+}
+
+.catMore {
+    margin-top: 10px;
+    letter-spacing: .5px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $font__headings;
+    color: $color__darkYellow !important;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+.catMore:hover {
+    margin-top: 10px;
+    letter-spacing: .5px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $font__headings;
+    color: $color__darkYellow !important;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+div.pagination {
+    display: block;
+    .page-numbers {
+        display: inline-block;
+        background-color: $color__lightgray;
+        width: 40px;
+        padding: 5px;
+        text-align: center;
+    }
+    .page-numbers:hover {
+        background-color: $color__blue;
+        color: white;
+    }
+    .current {
+        background-color: transparent;
+        color: $color__darkYellow;
+        text-align: center;
+        font-weight: bold;
+    }
+    .current:hover {
+        background-color: transparent;
+        color: $color__darkYellow;
+        text-align: center;
+        font-weight: bold;
+    }
+    .next,
+    .prev,
+    .nav-previous,
+    .nav-next {
+        width: 150px;
+    }
+}
+
+.nav-links {
+    margin-top: 2rem;
+    text-align: center;
+    .nav-previous,
+    .nav-next {
+        display: inline-block;
+        width: 175px;
+        background-color: $color__lightgray;
+        padding: 5px 15px;
+        text-align: center;
+    }
+    .nav-previous:hover a,
+    .nav-next:hover a {
+        background-color: transparent;
+        color: $color__darkYellow;
+        font-weight: bold;
+    }
+    .nav-previous:hover,
+    .nav-next:hover {
+        background-color: transparent;
+    }
+}
+
+
+/*
+*
+* Share Buttons
+* 
+ */
+
+.share-print-wrapper {
+    height: 25px;
+    display: block;
+    position: relative;
+    margin-bottom: 50px;
+
+}
+
+    .databse-post .share-print-wrapper {
+           margin-bottom: 25px;
+    }
+
+
+.social-print-wrapper {
+    display: block;
+    height: 40px;
+    position: relative;
+    margin: 30px 0px !important;
+}
+
+.share-on,
+.printer {
+    height: 25px;
+    display: inline-block;
+    float: left;
+    display: inline-block;
+    padding: 2px 0px 0px 25px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center left;
+    color: #989797;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.printer {
+    background-image: url('assets/images/printicon.svg');
+    margin-left: 30px;
+}
+
+.share-on {
+    background-image: url('assets/images/shareicon.svg');
+}
+
+.sharemedia:before {
+    content: '';
+    float: left;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-right: 7px solid gray;
+    border-bottom: 5px solid transparent;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.sharemedia {
+    display: none;
+    float: left;
+    height: 25px;
+}
+
+.ssmicon {
+    display: inline-block;
+    float: left;
+    background-color: gray;
+    padding: 5px;
+}
+
+.ssmicon:hover {
+    opacity: .7;
+}
+
+.sharemedia:before {
+    border-right: 7px solid gray;
+}
+
+.ssmfacebook,
+.ssmtwitter,
+.ssmgoogle,
+.ssmpinterest,
+.ssmlinkedin,
+.ssmemail {
+    display: block;
+    height: 18px;
+    width: 18px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ssmfacebook {
+    background-image: url('assets/images/facebookshare.svg');
+}
+
+.ssmtwitter {
+    background-image: url('assets/images/twittershare.svg');
+}
+
+.ssmgoogle {
+    background-image: url('assets/images/googleplusshare.svg');
+}
+
+.ssmpinterest {
+    background-image: url('assets/images/pinterestshare.svg');
+}
+
+.ssmlinkedin {
+    background-image: url('assets/images/linkedinshare.svg');
+}
+
+.ssmemail {
+    background-image: url('assets/images/emailshare.svg');
+}
