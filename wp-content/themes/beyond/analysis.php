@@ -7,7 +7,7 @@
 get_header(); ?>
 
 
-<?php echo "hello" ?>
+<?php echo "hey there" ?>
 
 <div id="primary" class="content-area container">
 	<main id="main" class="site-main analysis-landing" role="main">
