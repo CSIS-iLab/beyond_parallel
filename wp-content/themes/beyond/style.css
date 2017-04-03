@@ -1478,7 +1478,7 @@ a.related-link {
 .entry-header a:hover,
 .entry-cats a:hover,
 .the-content a:hover,
-a.related-link:hover {
+a.related-link:hover, h2 a, h3 a {
   height: 100%;
   position: relative;
   background-image: -webkit-linear-gradient(top, #FFC726 0, #FFC726 100%);
@@ -1488,12 +1488,29 @@ a.related-link:hover {
   background-size: 2px 2px;
   border-bottom: 0;
   text-decoration: none;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 
 .home .rev_slider a:hover,
-.last-home a:hover {
+.last-home a:hover, h2 a:hover, h3 a:hover {
+  background-size: 0px !important;
+  color: #EFB715 !important;
+}
+
+.entry-header .post-cats a {
   background-image: none;
   background-image: none;
+}
+
+.entry-header {
+  margin-top: 50px;
+}
+
+.the-content .post-cats {
+  margin-top: 50px;
 }
 
 a.related-link {
@@ -1632,6 +1649,10 @@ div.pagination .nav-next {
   margin-bottom: 50px;
 }
 
+.entry-footer .share-print-wrapper {
+  margin-bottom: 10px;
+}
+
 .databse-post .share-print-wrapper {
   margin-bottom: 25px;
 }
@@ -1651,7 +1672,7 @@ div.pagination .nav-next {
   display: inline-block;
   padding: 2px 0px 0px 25px;
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-size: 18px 18px;
   background-position: center left;
   color: #989797;
   text-transform: uppercase;
@@ -1878,7 +1899,7 @@ h3.relatedHeading {
 }
 
 .post-cats {
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
@@ -1917,7 +1938,8 @@ h3.relatedHeading {
 
 .articleFooter {
   background-color: #F2F2F2;
-  padding-top: 3px;
+  margin-top: 3px;
+  padding: 30px;
 }
 
 .hentry {
@@ -3176,10 +3198,47 @@ h2.entry-title {
   margin: 0px 0px 15px;
 }
 
+.entry-header h2.entry-title {
+  margin: 0px 0px 0px;
+}
+
 .excerpt-date, .excerpt-date a {
   color: #989797;
 }
 
+/*--------------------------------------------------------------
+## Print
+--------------------------------------------------------------*/
+@media print {
+  header.site-header,
+  #toggle,
+  footer.site-footer,
+  .share-print-wrapper {
+    display: none;
+  }
+
+  .postTop img.wp-post-image, .postTop {
+    display: none;
+    overflow: hidden;
+    width: 0;
+    height: 0px;
+  }
+
+  a[href^="http://"]:after {
+    display: none;
+  }
+
+  p a[href^="http://"]:after {
+    display: inline;
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    font-weight: normal;
+  }
+
+  .post-meta {
+    margin-bottom: 30px;
+  }
+}
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
@@ -3350,7 +3409,7 @@ th {
 }
 .mosaic .box1 div a {
   z-index: 4;
-  background: url("/wp-content/uploads/2016/12/forum-on-freedom-in-north-korea_BP.jpg");
+  background: url("/wp-content/uploads/2017/02/PGS-2-Launch-Plume.png");
   background-size: cover;
   width: 100%;
   display: block;
@@ -3373,7 +3432,7 @@ th {
 }
 .mosaic .box2 div a {
   z-index: 4;
-  background: url("/wp-content/uploads/2017/02/NKs-Boat-Image.jpg");
+  background: url("/wp-content/uploads/2017/03/amb_hill-1.jpg");
   background-size: cover;
   width: 100%;
   display: block;
@@ -3393,7 +3452,7 @@ th {
 }
 .mosaic .box3 div a {
   z-index: 4;
-  background: url("/wp-content/uploads/2017/02/sonja_biserko_living_history-.jpeg");
+  background: url("/wp-content/uploads/2017/02/NKs-Boat-Image.jpg");
   background-size: cover;
   width: 100%;
   display: block;
@@ -3459,7 +3518,7 @@ th {
 }
 .mosaic .box6 div a {
   z-index: 4;
-  background: url("/wp-content/uploads/2016/10/BP_database.png");
+  background: url("/wp-content/uploads/2017/03/visits_cover_image-1.jpg");
   background-size: cover;
   width: calc(100% - 40px);
   display: block;
