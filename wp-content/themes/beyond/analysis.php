@@ -133,19 +133,21 @@ get_header(); ?>
 
 			<section id="<?php echo $category->name; ?>" class="<?php echo $category->name; ?> listing cat-listing">
 				<h2><?php echo $category->name; ?>:</h2> 
+				<ul class="analysis-posts">
 				<?php while ( $query->have_posts() ) {
 					$query->the_post();
 					$do_not_duplicate[] = $post->ID;
 					?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'category-listing' ); ?>>
+					<li><article id="post-<?php the_ID(); ?>" <?php post_class( 'category-listing' ); ?>>
 						<a class="related-link" rel="external" href="<? the_permalink()?>">
 							<?php the_title(); ?></a><span class="related-date"> &#8212;<?php beyond_posted_on(); ?></span>
 
 
-						</article>
+					</article></li>
 
 						<?php } // end while ?>
+						</ul>
 						<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>"><span class="arrow">More <?php echo $category->name; ?> Articles</span></a> </p>
 
 					</section>

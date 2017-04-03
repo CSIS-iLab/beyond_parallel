@@ -546,15 +546,16 @@ input[type="search"] {
         }
 
              .sub-menu-col1 {
+            border-right: 1px solid #CECECE;
             width: calc(40% - 50px);
         }
 
 
         .sub-menu-col2 {
-            border-left: 1px solid #CECECE;
+        
             padding-left: 25px;
             margin-right: 25px;
-                        width: calc(60% - 70px);
+            width: calc(60% - 70px);
         }
         .sub-menu-col1 ul,
         .sub-menu-col2 ul {

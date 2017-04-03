@@ -25,7 +25,7 @@ h6 {
 }
 
 h1 {
-    font-size: 2.6em;
+    font-size: 2.6rem;
     color: $color__blue;
 
 }
@@ -33,7 +33,7 @@ h1 {
 
 @media screen and (max-width: #{$breakpoint_mobile}) {
  h1 {
-    font-size: 2em;
+    font-size: 2rem;
     color: $color__blue;
 }
 }
@@ -44,6 +44,10 @@ h2 {
 
 h3 {
     font-size: 1.5em;
+}
+
+h3 > img {
+    margin-top: 0px !important;
 }
 
 h4 {
