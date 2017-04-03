@@ -3379,6 +3379,20 @@ object {
   display: block;
 }
 
+.imageryBlock {
+  display: block;
+}
+.imageryBlock .allery-item {
+  display: block;
+  overflow: hidden;
+}
+.imageryBlock figcaption {
+  display: none;
+}
+.imageryBlock img {
+  height: 100%;
+}
+
 /*--------------------------------------------------------------
 # Homepage
 --------------------------------------------------------------*/
