@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Beyond Parallel
 Theme URI: http://components.underscores.me/
@@ -676,6 +677,24 @@ dt {
 
 dd {
   margin: 0 1.5em 1.5em;
+}
+
+ul.analysis-posts {
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+  /* or whatever color you prefer */
+}
+ul.analysis-posts li {
+  margin: 0px;
+  padding: 0px;
+}
+ul.analysis-posts li::before {
+  content: "• ";
+  color: #FFC726;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 /*--------------------------------------------------------------
