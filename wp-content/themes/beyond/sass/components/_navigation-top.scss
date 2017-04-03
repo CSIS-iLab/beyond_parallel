@@ -541,21 +541,16 @@ input[type="search"] {
         .sub-menu-col2 {
             float: left;
             display: block;
-
             margin: 25px 0px 25px 25px;
         }
-
-             .sub-menu-col1 {
+        .sub-menu-col1 {
             border-right: 1px solid #CECECE;
-            width: calc(40% - 50px);
+            width: calc(50% - 50px);
         }
-
-
         .sub-menu-col2 {
-        
             padding-left: 25px;
             margin-right: 25px;
-            width: calc(60% - 70px);
+            width: calc(50% - 70px);
         }
         .sub-menu-col1 ul,
         .sub-menu-col2 ul {
@@ -564,7 +559,6 @@ input[type="search"] {
             span {
                 max-width: 370px;
             }
-
         }
         .submenu {
             position: relative;

@@ -1236,12 +1236,12 @@ input[type="search"] {
 }
 .main-navigation .sub-menu .sub-menu-col1 {
   border-right: 1px solid #CECECE;
-  width: calc(40% - 50px);
+  width: calc(50% - 50px);
 }
 .main-navigation .sub-menu .sub-menu-col2 {
   padding-left: 25px;
   margin-right: 25px;
-  width: calc(60% - 70px);
+  width: calc(50% - 70px);
 }
 .main-navigation .sub-menu .sub-menu-col1 ul,
 .main-navigation .sub-menu .sub-menu-col2 ul {
