@@ -29,13 +29,15 @@
 
 .search-title span {
 
-
 			color: $color__blue;
-	
 }
 
 h2.entry-title {
 	margin: 0px 0px 15px;
+}
+
+.entry-header h2.entry-title {
+	margin: 0px 0px 0px;
 }
 
 .excerpt-date, .excerpt-date a {

@@ -30,7 +30,7 @@ a.related-link {
 .entry-header a:hover,
 .entry-cats a:hover,
 .the-content a:hover,
-a.related-link:hover {
+a.related-link:hover, h2 a, h3 a {
     height: 100%;
     position: relative;
     background-image: -webkit-linear-gradient(top, $color__yellow 0, $color__yellow 100%);
@@ -40,12 +40,31 @@ a.related-link:hover {
     background-size: 2px 2px;
     border-bottom: 0;
     text-decoration: none;
+    -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 
 .home .rev_slider a:hover,
-.last-home a:hover {
+.last-home a:hover, h2 a:hover, h3 a:hover {
+    background-size: 0px !important;
+    color: $color__darkYellow !important;
+}
+
+
+.entry-header .post-cats a {
+        background-image: none;
     background-image: none;
-    background-image: none;
+
+}
+
+.entry-header {
+    margin-top: 50px;
+}
+
+.the-content .post-cats {
+    margin-top: 50px;
 }
 
 a.related-link {
@@ -179,12 +198,18 @@ div.pagination {
 * 
  */
 
+
+
 .share-print-wrapper {
     height: 25px;
     display: block;
     position: relative;
     margin-bottom: 50px;
 
+}
+
+.entry-footer .share-print-wrapper{
+    margin-bottom: 10px;
 }
 
     .databse-post .share-print-wrapper {
@@ -207,7 +232,7 @@ div.pagination {
     display: inline-block;
     padding: 2px 0px 0px 25px;
     background-repeat: no-repeat;
-    background-size: 20px 20px;
+    background-size: 18px 18px;
     background-position: center left;
     color: #989797;
     text-transform: uppercase;
