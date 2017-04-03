@@ -1,0 +1,27 @@
+@media print {
+    header.site-header,
+    #toggle,
+    footer.site-footer,
+    .share-print-wrapper {
+        display: none;
+    }
+    .postTop img.wp-post-image, .postTop {
+        display: none;
+        overflow: hidden;
+        width: 0;
+        height: 0px;
+    }
+    a[href^="http://"]:after {
+        display: none;
+    }
+    p a[href^="http://"]:after {
+        display: inline;
+        content: " (" attr(href) ")";
+        font-size: 90%;
+        font-weight: normal;
+    }
+
+    .post-meta {
+    	margin-bottom: 30px;
+    }
+}

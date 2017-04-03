@@ -11,10 +11,10 @@
 
 <article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
 	<header class="entry-header">
-	<div class="post-cats">
-	<?php echo get_the_category_list(", "); ?>
-	</div>
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<div class="post-cats">
+			<?php echo get_the_category_list(", "); ?>
+		</div>
 	</header>
 	<div class="entry-summary">
 	
