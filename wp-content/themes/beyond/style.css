@@ -1213,9 +1213,9 @@ input[type="search"] {
 }
 .main-navigation .sub-menu .sub-menu-col1 {
   width: calc(40% - 50px);
+  border-right: 1px solid #CECECE;
 }
 .main-navigation .sub-menu .sub-menu-col2 {
-  border-left: 1px solid #CECECE;
   padding-left: 25px;
   margin-right: 25px;
   width: calc(60% - 70px);
