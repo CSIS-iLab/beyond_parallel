@@ -1206,6 +1206,9 @@ input[type="search"] {
 }
 
 /* Main Navigation */
+.main-navigation .browse-cat {
+  display: none;
+}
 .main-navigation #main-menu-container {
   display: inline-block;
   padding: 5px;
@@ -1359,7 +1362,7 @@ input[type="search"] {
   background-image: url("assets/images/email-icon-header.svg");
 }
 
-.all-posts a {
+.all-posts a, .browse-cat a {
   text-transform: capitalize !important;
   font-style: italic !important;
 }

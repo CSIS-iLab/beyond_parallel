@@ -398,6 +398,8 @@ input[type="search"] {
     ul.col-sm-4 {
         margin-bottom: 0px;
     }
+
+
     .sub-menu {
         background-color: transparent;
         border-top: gray;
@@ -511,6 +513,9 @@ input[type="search"] {
 /* Main Navigation */
 
 .main-navigation {
+    .browse-cat {
+        display: none;
+    }
     #main-menu-container {
         display: inline-block;
         padding: 5px;
@@ -667,11 +672,13 @@ input[type="search"] {
     }
 }
 
-.all-posts a{
+.all-posts a, .browse-cat a {
     text-transform: capitalize !important;
     font-style: italic !important;
 
 }
+
+
 
 
 
