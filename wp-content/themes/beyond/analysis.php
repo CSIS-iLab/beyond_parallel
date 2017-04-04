@@ -79,7 +79,7 @@ get_header(); ?>
 				<?php echo $catRight; ?>
 			</ul>
 			<div class="clearfix"></div>
-			<a href="/all-posts" class="catAll" alt="See all articles"><span class="arrow">SEE ALL ARTICLES</span></a>
+			<a href="/all-posts" class="catMore" alt="See all articles"><span class="arrow">SEE ALL ARTICLES</span></a>
 
 		</div>
 
