@@ -30,7 +30,9 @@ a.related-link {
 .entry-header a:hover,
 .entry-cats a:hover,
 .the-content a:hover,
-a.related-link:hover, h2 a, h3 a {
+a.related-link:hover,
+h2 a,
+h3 a {
     height: 100%;
     position: relative;
     background-image: -webkit-linear-gradient(top, $color__yellow 0, $color__yellow 100%);
@@ -41,22 +43,22 @@ a.related-link:hover, h2 a, h3 a {
     border-bottom: 0;
     text-decoration: none;
     -webkit-transition: width 1s ease-in-out;
-  -moz-transition: width 1s ease-in-out;
-  -o-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
 }
 
 .home .rev_slider a:hover,
-.last-home a:hover, h2 a:hover, h3 a:hover {
+.last-home a:hover,
+h2 a:hover,
+h3 a:hover {
     background-size: 0px !important;
     color: $color__darkYellow !important;
 }
 
-
 .entry-header .post-cats a {
-        background-image: none;
     background-image: none;
-
+    background-image: none;
 }
 
 .entry-header {
@@ -110,6 +112,10 @@ span.arrow:after {
     width: 250px;
     margin: 2rem auto 1rem;
     text-align: center;
+}
+
+.cat-list .catAll {
+    margin: auto;
 }
 
 .catMore {
@@ -203,24 +209,20 @@ div.pagination {
 * 
  */
 
-
-
 .share-print-wrapper {
     height: 25px;
     display: block;
     position: relative;
     margin-bottom: 50px;
-
 }
 
-.entry-footer .share-print-wrapper{
+.entry-footer .share-print-wrapper {
     margin-bottom: 10px;
 }
 
-    .databse-post .share-print-wrapper {
-           margin-bottom: 25px;
-    }
-
+.databse-post .share-print-wrapper {
+    margin-bottom: 25px;
+}
 
 .social-print-wrapper {
     display: block;

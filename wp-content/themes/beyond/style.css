@@ -1515,7 +1515,9 @@ a.related-link {
 .entry-header a:hover,
 .entry-cats a:hover,
 .the-content a:hover,
-a.related-link:hover, h2 a, h3 a {
+a.related-link:hover,
+h2 a,
+h3 a {
   height: 100%;
   position: relative;
   background-image: -webkit-linear-gradient(top, #FFC726 0, #FFC726 100%);
@@ -1532,7 +1534,9 @@ a.related-link:hover, h2 a, h3 a {
 }
 
 .home .rev_slider a:hover,
-.last-home a:hover, h2 a:hover, h3 a:hover {
+.last-home a:hover,
+h2 a:hover,
+h3 a:hover {
   background-size: 0px !important;
   color: #EFB715 !important;
 }
@@ -1593,6 +1597,10 @@ span.arrow:after {
   width: 250px;
   margin: 2rem auto 1rem;
   text-align: center;
+}
+
+.cat-list .catAll {
+  margin: auto;
 }
 
 .catMore {
