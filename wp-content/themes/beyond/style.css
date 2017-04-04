@@ -1211,10 +1211,10 @@ input[type="search"] {
 }
 .main-navigation a:hover {
   color: #FFC726 !important;
-  -webkit-transition: .4s ease-in-out;
-  -moz-transition: .4s ease-in-out;
-  -o-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: color .4s ease-in-out;
+  -moz-transition: color .4s ease-in-out;
+  -o-transition: color .4s ease-in-out;
+  transition: color .4s ease-in-out;
 }
 .main-navigation #main-menu-container {
   display: inline-block;

@@ -515,10 +515,10 @@ input[type="search"] {
     }
     a:hover {
         color: $color__yellow !important;
-        -webkit-transition: .4s ease-in-out;
-        -moz-transition: .4s ease-in-out;
-        -o-transition: .4s ease-in-out;
-        transition: .4s ease-in-out;
+        -webkit-transition: color .4s ease-in-out;
+        -moz-transition: color .4s ease-in-out;
+        -o-transition: color .4s ease-in-out;
+        transition: color .4s ease-in-out;
     }
     #main-menu-container {
         display: inline-block;
