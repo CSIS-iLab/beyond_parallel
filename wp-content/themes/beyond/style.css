@@ -803,7 +803,7 @@ table {
 .sub-menu-col1.sub2.menu-item > a:first-of-type,
 .sub-menu-col2.sub2.menu-item > a:first-of-type {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .sub-menu-col1.sub2.menu-item > a:hover,
