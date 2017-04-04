@@ -28,32 +28,6 @@ get_header(); ?>
 			<p class="pageMenuHeader">Select a category below to jump to related content</p>
 			<?php 
 
-			// $custom_args = array(
-			//      'orderby'          => 'name',
-			//      'order'            => 'ASC',   
-			//      'depth'            => 1,
-			//      'show_count' 		=> 	true,
-			//      'title_li'         => '',
-			//      'echo'             => '0',
-			//      'hide_empty'       => '1',
-			//      'exclude_tree'    => '',
-			// );
-
-			//  $catArray = explode("</li>",wp_list_categories($custom_args));
-
-			//  $catCount = count($catArray) - 1;
-			//  $catColumns = round($catCount / 2);
-			
-			//  for ($i=0;$i<$catCount;$i++) {
-			// 	 if ($i<$catColumns){
-			// 		 $catLeft = $catLeft.''.$catArray[$i].'</li>';
-			// 		          }
-			// 	 elseif ($i>=$catColumns){
-			// 	 	$catRight = $catRight.''.$catArray[$i].'</li>';
-			// 	 }  
-			//  };
-
-
 			$categories = get_categories( array(
 				'orderby' 		=> 'name',
 				'parent'  		=> 0,
@@ -93,9 +67,6 @@ get_header(); ?>
 			?>
 
 
-
-
-
 			<ul class="col-sm-4">
 				<?php echo $catLeft; ?>
 			</ul>
@@ -103,7 +74,7 @@ get_header(); ?>
 				<?php echo $catRight; ?>
 			</ul>
 			<div class="clearfix"></div>
-			<a href="/all-posts" class="catAll" alt="See all articles"><span class="arrow">SEE ALL ARTICLES</span></a>
+			<a href="/all-posts" class="catTop" alt="See all articles"><span class="arrow">SEE ALL ARTICLES</span></a>
 
 		</div>
 
@@ -145,13 +116,13 @@ get_header(); ?>
 
 						<?php } // end while ?>
 						</ul>
-						<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>"><span class="arrow">More <?php echo $category->name; ?> Articles</span></a> </p>
+						<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>"><span class="arrow">All <?php echo $category->name; ?> Articles</span></a> </p>
 
 					</section>
 
 			<?php } // end if
 
-// Use reset to restore original query.
+		// Use reset to restore original query.
 			wp_reset_postdata();
 
 		}

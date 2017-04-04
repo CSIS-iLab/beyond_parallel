@@ -79,13 +79,14 @@ span.arrow:after {
 }
 
 .catAll,
+.catTop,
 .followButton {
     letter-spacing: .5px;
     display: inline-block;
     background-color: $color__yellow;
     padding: 5px 15px;
     text-transform: uppercase;
-    font-family: $font__headings;
+    font-family: $font__headings !important;
     color: $color__blue;
     -webkit-transition: .4s ease-in-out;
     -moz-transition: .4s ease-in-out;
@@ -94,6 +95,7 @@ span.arrow:after {
 }
 
 .catAll:hover,
+.catTop:hover,
 .followButton:hover {
     display: inline-block;
     background-color: $color__darkYellow;
@@ -119,14 +121,12 @@ span.arrow:after {
 }
 
 .catMore {
+    font-size: 1rem;
     margin-top: 10px;
-    letter-spacing: .5px;
     display: inline-block;
     padding: 5px 15px;
-    text-transform: uppercase;
-    font-family: $font__headings;
     background-color: $color__lightgray;
-    color: $color__darkBlue !important;
+    color: $color__darkBlue;
     -webkit-transition: .4s ease-in-out;
     -moz-transition: .4s ease-in-out;
     -o-transition: .4s ease-in-out;
@@ -134,12 +134,9 @@ span.arrow:after {
 }
 
 .catMore:hover {
-    margin-top: 10px;
-    letter-spacing: .5px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-family: $font__headings;
-    background-color: $color__yellow;
+    background-color: transparent;
+    color: $color__darkYellow;
+    font-weight: 500;
     -webkit-transition: .4s ease-in-out;
     -moz-transition: .4s ease-in-out;
     -o-transition: .4s ease-in-out;

@@ -1564,13 +1564,14 @@ span.arrow:after {
 }
 
 .catAll,
+.catTop,
 .followButton {
   letter-spacing: .5px;
   display: inline-block;
   background-color: #FFC726;
   padding: 5px 15px;
   text-transform: uppercase;
-  font-family: "alternate-gothic-no-3-d", sans-serif;
+  font-family: "alternate-gothic-no-3-d", sans-serif !important;
   color: #10355F;
   -webkit-transition: .4s ease-in-out;
   -moz-transition: .4s ease-in-out;
@@ -1579,6 +1580,7 @@ span.arrow:after {
 }
 
 .catAll:hover,
+.catTop:hover,
 .followButton:hover {
   display: inline-block;
   background-color: #EFB715;
@@ -1604,14 +1606,12 @@ span.arrow:after {
 }
 
 .catMore {
+  font-size: 1rem;
   margin-top: 10px;
-  letter-spacing: .5px;
   display: inline-block;
   padding: 5px 15px;
-  text-transform: uppercase;
-  font-family: "alternate-gothic-no-3-d", sans-serif;
   background-color: #F2F2F2;
-  color: #0F2A48 !important;
+  color: #0F2A48;
   -webkit-transition: .4s ease-in-out;
   -moz-transition: .4s ease-in-out;
   -o-transition: .4s ease-in-out;
@@ -1619,12 +1619,9 @@ span.arrow:after {
 }
 
 .catMore:hover {
-  margin-top: 10px;
-  letter-spacing: .5px;
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: "alternate-gothic-no-3-d", sans-serif;
-  background-color: #FFC726;
+  background-color: transparent;
+  color: #EFB715;
+  font-weight: 500;
   -webkit-transition: .4s ease-in-out;
   -moz-transition: .4s ease-in-out;
   -o-transition: .4s ease-in-out;
