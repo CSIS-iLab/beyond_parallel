@@ -113,9 +113,11 @@ span.arrow:after {
     margin-top: 10px;
     letter-spacing: .5px;
     display: inline-block;
+    padding: 5px 15px;
     text-transform: uppercase;
     font-family: $font__headings;
-    color: $color__darkYellow !important;
+    background-color: $color__lightgray;
+    color: $color__darkBlue !important;
     -webkit-transition: .4s ease-in-out;
     -moz-transition: .4s ease-in-out;
     -o-transition: .4s ease-in-out;
@@ -128,7 +130,7 @@ span.arrow:after {
     display: inline-block;
     text-transform: uppercase;
     font-family: $font__headings;
-    color: $color__darkYellow !important;
+    background-color: $color__yellow;
     -webkit-transition: .4s ease-in-out;
     -moz-transition: .4s ease-in-out;
     -o-transition: .4s ease-in-out;

@@ -684,17 +684,22 @@ ul.analysis-posts {
   list-style: none;
   margin: 0;
   padding: 0px;
-  margin-left: -1em;
 }
 ul.analysis-posts li {
   margin: 0px;
   padding: 0px;
+  line-height: 1.2rem;
+  padding-bottom: 10px;
 }
 ul.analysis-posts li::before {
   content: "• ";
   color: #FFC726;
   display: inline-block;
-  width: 1em;
+  width: .8em;
+}
+
+.analysis-landing .cat-listing article {
+  display: inline;
 }
 
 /*--------------------------------------------------------------
@@ -1350,6 +1355,10 @@ input[type="search"] {
   background-image: url("assets/images/email-icon-header.svg");
 }
 
+.analysis-landing .cat-listing article {
+  display: inline;
+}
+
 /* Search bar */
 .search-icon {
   display: inline-block;
@@ -1562,9 +1571,11 @@ span.arrow:after {
   margin-top: 10px;
   letter-spacing: .5px;
   display: inline-block;
+  padding: 5px 15px;
   text-transform: uppercase;
   font-family: "alternate-gothic-no-3-d", sans-serif;
-  color: #EFB715 !important;
+  background-color: #F2F2F2;
+  color: #0F2A48 !important;
   -webkit-transition: .4s ease-in-out;
   -moz-transition: .4s ease-in-out;
   -o-transition: .4s ease-in-out;
@@ -1577,7 +1588,7 @@ span.arrow:after {
   display: inline-block;
   text-transform: uppercase;
   font-family: "alternate-gothic-no-3-d", sans-serif;
-  color: #EFB715 !important;
+  background-color: #FFC726;
   -webkit-transition: .4s ease-in-out;
   -moz-transition: .4s ease-in-out;
   -o-transition: .4s ease-in-out;

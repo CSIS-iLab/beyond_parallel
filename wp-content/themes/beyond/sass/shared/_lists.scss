@@ -29,15 +29,19 @@ ul.analysis-posts {
     li {
         margin: 0px;
         padding: 0px;
+        line-height: 1.2rem;
+        padding-bottom: 10px;
     }
     li::before {
         content: "• ";
         color: $color__yellow;
         display: inline-block;
-        width: 1em
+        width: .8em;
     }
-    margin-left: -1em;
+    
 }
 
-
+.analysis-landing .cat-listing article {
+    display: inline;
+}
 
