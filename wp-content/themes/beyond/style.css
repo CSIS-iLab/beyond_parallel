@@ -1228,8 +1228,8 @@ input[type="search"] {
   -o-transition: color .4s ease-in-out;
   transition: color .4s ease-in-out;
 }
-.main-navigation .browse-cat a {
-  margin-top: 10px;
+.main-navigation .browse-cat {
+  margin-top: 10px !important;
 }
 .main-navigation #main-menu-container {
   display: inline-block;
