@@ -687,14 +687,13 @@ input[type="search"] {
 .browse-cat a {
     text-transform: capitalize !important;
     font-style: italic !important;
-    font-weight: 100;
-    background-image: none;
+    font-weight: 100 !important;
 }
 
 .all-posts a:hover,
 .browse-cat a:hover {
-    background-image: none;
-    color: $color__yellow;
+    background-image: none !important;
+    color: $color__yellow !important;
 }
 
 
