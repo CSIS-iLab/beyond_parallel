@@ -381,7 +381,7 @@ input[type="search"] {
     -webkit-text-size-adjust: none;
     .all-posts a,
     .browse-cat a {
-        color: #E5D696 !important;
+        font-weight: 100;
     }
     .mobile-navigation {
         height: 100%;
@@ -690,6 +690,14 @@ input[type="search"] {
 .browse-cat a {
     text-transform: capitalize !important;
     font-style: italic !important;
+    font-weight: 100;
+    background-image: none;
+}
+
+.all-posts a:hover,
+.browse-cat a:hover {
+    background-image: none;
+    color: $color__yellow;
 }
 
 

@@ -1085,7 +1085,7 @@ input[type="search"] {
 }
 #popout .all-posts a,
 #popout .browse-cat a {
-  color: #E5D696 !important;
+  font-weight: 100;
 }
 #popout .mobile-navigation {
   height: 100%;
@@ -1388,6 +1388,14 @@ input[type="search"] {
 .browse-cat a {
   text-transform: capitalize !important;
   font-style: italic !important;
+  font-weight: 100;
+  background-image: none;
+}
+
+.all-posts a:hover,
+.browse-cat a:hover {
+  background-image: none;
+  color: #FFC726;
 }
 
 /* Search bar */
