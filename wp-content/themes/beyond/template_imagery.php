@@ -33,15 +33,11 @@ get_header(); ?>
 					
 					<div class="living-first">
 						<h3>FEATURED</h3>
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+						<?php the_title( sprintf( '<h2 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 
 						<?php
-						$head = wpautop( get_the_content() );
-						$head = substr( $head, 0, strpos( $head, '</h2>' ) + 4 );
-						$head = strip_tags($head, '<a><strong><em>');
-						echo '<p class="living-subhead">' . $head . '</p>';
-
+						
 						$first_para = '';
 						ob_start();
 						ob_end_clean();
@@ -61,47 +57,36 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
 					<header class="entry-header living-header">
 
-						<?php 
-						$title = get_the_title();
-						$title_array = explode('with', $title);
-						$first_word = $title_array[1];
-						$total_length_limit = 100;
-						?>
-
-						<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
 						
-						<?php
-						echo mb_substr( $first_word, 0, $total_length_limit ) . '';
-						?>
 
-						</a></h3>
+					
+						
+						<?php the_title( sprintf( '<h3 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+
 
 					</header>
 					<div class="entry-summary">
 
-						<?php
-						$head = wpautop( get_the_content() );
-						$head = substr( $head, 0, strpos( $head, '</h2>' ) + 4 );
-						$head = strip_tags($head, '<a><strong><em>');
-						echo '<p class="living-subhead">' . $head . '</p>';
+	
+	<div class="entry-thumb">
 
-						$first_para = '';
-						ob_start();
-						ob_end_clean();
-						$post_content = $post->post_content;
-						$post_content = apply_filters('the_content', $post_content);
-						$output = preg_match_all('%(<p[^>]*>.*?</p>)%i', $post_content, $matches);
-						$first_para = $matches [1] [0];
-						echo $first_para;
-						?>
+	<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
 
-						
+		
+	</div>
+			
+	<?php
+if ( has_excerpt( get_the_id() ) ){
+	echo get_the_excerpt();
+}
+?>
+	</div>
+		
 
 					</div>
 					<div class="clearfix"></div>
 				</article>
 			<?php endif; ?>
-
 
 		<?php
 		endwhile;

@@ -7,7 +7,6 @@
 get_header(); ?>
 
 
-<?php echo "hey there" ?>
 
 <div id="primary" class="content-area container">
 	<main id="main" class="site-main analysis-landing" role="main">
@@ -29,32 +28,6 @@ get_header(); ?>
 			
 			<p class="pageMenuHeader">Select a category below to jump to related content</p>
 			<?php 
-
-			// $custom_args = array(
-			//      'orderby'          => 'name',
-			//      'order'            => 'ASC',   
-			//      'depth'            => 1,
-			//      'show_count' 		=> 	true,
-			//      'title_li'         => '',
-			//      'echo'             => '0',
-			//      'hide_empty'       => '1',
-			//      'exclude_tree'    => '',
-			// );
-
-			//  $catArray = explode("</li>",wp_list_categories($custom_args));
-
-			//  $catCount = count($catArray) - 1;
-			//  $catColumns = round($catCount / 2);
-			
-			//  for ($i=0;$i<$catCount;$i++) {
-			// 	 if ($i<$catColumns){
-			// 		 $catLeft = $catLeft.''.$catArray[$i].'</li>';
-			// 		          }
-			// 	 elseif ($i>=$catColumns){
-			// 	 	$catRight = $catRight.''.$catArray[$i].'</li>';
-			// 	 }  
-			//  };
-
 
 			$categories = get_categories( array(
 				'orderby' 		=> 'name',

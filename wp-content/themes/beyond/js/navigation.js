@@ -107,6 +107,8 @@
 
 
         $(document).ready(function() {
+            $(".mobile-navigation .sub1 a").attr("href", "#");
+            
             var cyellow = "#eee";
             var cwhite = "#FFC726"
             $('#nav-icon4').click(function() {

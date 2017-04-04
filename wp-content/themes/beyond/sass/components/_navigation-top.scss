@@ -546,11 +546,10 @@ input[type="search"] {
         .sub-menu-col1 {
             border-right: 1px solid #CECECE;
             padding-right: 25px;
-            margin-right: 25px;
             width: calc(50% - 50px);
         }
         .sub-menu-col2 {
-            padding-left: 25px;
+
             margin-right: 25px;
             width: calc(50% - 70px);
         }
@@ -559,7 +558,7 @@ input[type="search"] {
             display: block;
             position: relative;
             span {
-                max-width: 370px;
+                max-width: 300px;
             }
         }
         .submenu {
@@ -663,7 +662,6 @@ input[type="search"] {
         }
     }
 }
-
 
 /* Search bar */
 

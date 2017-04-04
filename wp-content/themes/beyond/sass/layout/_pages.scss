@@ -99,6 +99,8 @@ hr.databasehr {
     }
     h3 {
         margin: 0px 0px 10px;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
         color: $color__medgray;
     }
 }
@@ -126,6 +128,17 @@ hr.databasehr {
     img {
         width: 100%;
     }
+}
+
+
+/* 
+*
+* Imagery Landing Pager
+* 
+*/
+
+.imagery-title {
+    padding-bottom: 10px;
 }
 
 

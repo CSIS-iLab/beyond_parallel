@@ -389,8 +389,9 @@ h6 {
 }
 
 h1 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   color: #10355F;
+  margin-top: 3rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -1236,11 +1237,9 @@ input[type="search"] {
 .main-navigation .sub-menu .sub-menu-col1 {
   border-right: 1px solid #CECECE;
   padding-right: 25px;
-  margin-right: 25px;
   width: calc(50% - 50px);
 }
 .main-navigation .sub-menu .sub-menu-col2 {
-  padding-left: 25px;
   margin-right: 25px;
   width: calc(50% - 70px);
 }
@@ -1251,7 +1250,7 @@ input[type="search"] {
 }
 .main-navigation .sub-menu .sub-menu-col1 ul span,
 .main-navigation .sub-menu .sub-menu-col2 ul span {
-  max-width: 370px;
+  max-width: 300px;
 }
 .main-navigation .sub-menu .submenu {
   position: relative;
@@ -2775,6 +2774,8 @@ hr.databasehr {
 }
 .living-first h3 {
   margin: 0px 0px 10px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   color: #ACABAB;
 }
 
@@ -2801,6 +2802,15 @@ hr.databasehr {
 }
 .living-header-img img {
   width: 100%;
+}
+
+/* 
+*
+* Imagery Landing Pager
+* 
+*/
+.imagery-title {
+  padding-bottom: 10px;
 }
 
 /* 
@@ -3172,7 +3182,7 @@ hr.databasehr {
 }
 
 .entry-thumb img {
-  padding: 0px 20px 20px 0px;
+  padding: 10px 20px 20px 0px;
 }
 
 .entry-cats {
