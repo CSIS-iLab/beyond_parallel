@@ -402,6 +402,7 @@ h1 {
 }
 h2 {
   font-size: 1.8em;
+  margin-top: 50px;
 }
 
 h3 {
@@ -1998,7 +1999,6 @@ blockquote::before {
 }
 
 .demographics {
-  opacity: .9;
   font-size: 24px;
   padding-bottom: 37.5px;
   margin-bottom: 50px;
