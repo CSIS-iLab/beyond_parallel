@@ -96,3 +96,8 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
+
+# ignore sass cache
+/wp-content/themes/amti/.sass-cache
+*.scssc
+.htaccess
