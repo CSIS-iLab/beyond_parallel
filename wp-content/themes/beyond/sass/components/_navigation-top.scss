@@ -527,6 +527,9 @@ input[type="search"] {
         -o-transition: color .4s ease-in-out;
         transition: color .4s ease-in-out;
     }
+    .browse-cat a {
+        margin-top: 10px;
+    }
     #main-menu-container {
         display: inline-block;
         padding: 5px;
