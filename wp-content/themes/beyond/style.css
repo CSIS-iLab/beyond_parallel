@@ -800,6 +800,12 @@ table {
   padding-bottom: 5px;
 }
 
+.sub-menu-col1.sub2.menu-item > a:first-of-type,
+.sub-menu-col2.sub2.menu-item > a:first-of-type {
+  display: block;
+  margin-bottom: 10px;
+}
+
 .sub-menu-col1.sub2.menu-item > a:hover,
 .sub-menu-col2.sub2.menu-item > a:hover {
   cursor: default;
@@ -1277,7 +1283,7 @@ input[type="search"] {
 }
 .main-navigation .sub-menu .sub-menu-col1 ul span,
 .main-navigation .sub-menu .sub-menu-col2 ul span {
-  max-width: 300px;
+  max-width: 320px;
 }
 .main-navigation .sub-menu .submenu {
   position: relative;

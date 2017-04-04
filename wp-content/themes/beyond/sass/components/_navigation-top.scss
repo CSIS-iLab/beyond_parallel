@@ -91,6 +91,12 @@
     padding-bottom: 5px;
 }
 
+.sub-menu-col1.sub2.menu-item>a:first-of-type,
+.sub-menu-col2.sub2.menu-item>a:first-of-type {
+    display: block;
+    margin-bottom: 10px;
+}
+
 .sub-menu-col1.sub2.menu-item>a:hover,
 .sub-menu-col2.sub2.menu-item>a:hover {
     cursor: default;
@@ -574,7 +580,7 @@ input[type="search"] {
             display: block;
             position: relative;
             span {
-                max-width: 300px;
+                max-width: 320px;
             }
         }
         .submenu {
