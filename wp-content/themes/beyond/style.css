@@ -691,12 +691,16 @@ ul.analysis-posts li {
   padding: 0px;
   line-height: 1.2rem;
   padding-bottom: 10px;
+  margin-left: 20px;
+  position: relative;
 }
 ul.analysis-posts li::before {
   content: "• ";
   color: #FFC726;
   display: inline-block;
   width: .8em;
+  position: absolute;
+  left: -20px;
 }
 
 .analysis-landing .cat-listing article {
