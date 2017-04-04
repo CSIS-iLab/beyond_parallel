@@ -394,6 +394,10 @@ input[type="search"] {
     ul a:hover {
         color: $color__yellow;
     }
+
+    ul.col-sm-4 {
+        margin-bottom: 0px;
+    }
     .sub-menu {
         background-color: transparent;
         border-top: gray;
@@ -663,10 +667,13 @@ input[type="search"] {
     }
 }
 
+.all-posts a{
+    text-transform: capitalize !important;
+    font-style: italic !important;
 
-.analysis-landing .cat-listing article {
-    display: inline;
 }
+
+
 
 /* Search bar */
 

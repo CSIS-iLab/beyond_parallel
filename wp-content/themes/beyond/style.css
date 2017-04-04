@@ -1094,6 +1094,9 @@ input[type="search"] {
 #popout ul a:hover {
   color: #FFC726;
 }
+#popout ul.col-sm-4 {
+  margin-bottom: 0px;
+}
 #popout .sub-menu {
   background-color: transparent;
   border-top: gray;
@@ -1356,8 +1359,9 @@ input[type="search"] {
   background-image: url("assets/images/email-icon-header.svg");
 }
 
-.analysis-landing .cat-listing article {
-  display: inline;
+.all-posts a {
+  text-transform: capitalize !important;
+  font-style: italic !important;
 }
 
 /* Search bar */
