@@ -6,33 +6,67 @@
 get_header(); ?>
 
 
-	<div id="primary" class="content-area container">
-		<main id="main" class="site-main" role="main">
+   <section id="primary" class="content-area container">
+	<main id="main" class="site-main" role="main">
 
-<?php
+		<?php
+
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+		$custom_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page' => '10', 'paged' => $paged));  ?>
+
+  		<?php if ( $custom_query->have_posts() ) : ?>
 	
-			the_title( '<h1 class="entry-title">', '</h1>' ); 
-			
-?>
 
+			<header class="page-header">
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+				<h1 class="archive-header">
+					<?php
 
-				
-				get_template_part( 'components/post/content-search', get_post_format() );
+					$text=get_the_archive_title();
+					$text=explode(' ',$text);
+					$text[0]='<span class="">'.$text[0].'</span>';
+					$text=implode(' ',$text);
+					echo $text;
+
+					?>
+				</h1>
+
+				<?php
+				global $custom_query;
+				$total_results = $custom_query->found_posts;
+				echo $total_results . " total posts";
+				?>
+
+			</header>
+
+			<?php
+			/* Start the Loop */
+			while ( $custom_query->have_posts() ) : $custom_query->the_post(); 
+
+					get_template_part( 'components/post/content', 'search' );
 
 			endwhile;
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'components/post/content', 'none' );
-
 		endif; ?>
 
+
+		<div class="pagination">
+			<?php
+			global $custom_query;
+
+			$big = 999999999; // need an unlikely integer
+
+			echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $custom_query->max_num_pages
+				) );
+				?>
+		</div> <!--/pagination-->
+
 		</main>
-	</div>
-<?php
-get_sidebar();
-get_footer();
+	</section>
+
+<?php get_footer(); ?>

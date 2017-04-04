@@ -235,3 +235,5 @@ function articleFooter( $atts, $content = null ) {
 }
  
 add_shortcode('footer', 'articleFooter');
+
+

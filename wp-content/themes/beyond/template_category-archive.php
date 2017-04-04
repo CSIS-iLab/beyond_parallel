@@ -11,7 +11,7 @@ get_header(); ?>
 		<?php 
 // Check if there are any posts to display
 		if ( have_posts() ) : ?>
-
+		
 		<header class="page-header">
 			<h1 class="archive-header"><?php single_cat_title('<span>Category: </span>'); ?></h1>
 
