@@ -1274,6 +1274,7 @@ input[type="search"] {
   font-family: "alternate-gothic-no-3-d", sans-serif;
   color: #989797 !important;
   font-size: 1.5em;
+  margin-bottom: 5px;
 }
 .main-navigation .sub2 ul {
   box-shadow: none !important;
