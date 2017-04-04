@@ -1087,6 +1087,7 @@ input[type="search"] {
 #popout .all-posts a,
 #popout .browse-cat a {
   font-weight: 100;
+  color: #D3D3D3;
 }
 #popout .mobile-navigation {
   height: 100%;
@@ -2750,7 +2751,7 @@ Entry Footer
 }
 
 .pagination {
-  margin-bottom: 50px;
+  margin: 50px 0;
 }
 
 .pageMenuHeader {

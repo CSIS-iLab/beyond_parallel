@@ -21,15 +21,10 @@ get_header(); ?>
 			<header class="page-header">
 
 				<h1 class="archive-header">
-					<?php
+		
 
-					$text=get_the_archive_title();
-					$text=explode(' ',$text);
-					$text[0]='<span class="">'.$text[0].'</span>';
-					$text=implode(' ',$text);
-					echo $text;
+					<?php the_title(); ?>
 
-					?>
 				</h1>
 
 				<?php
