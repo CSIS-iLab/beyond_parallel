@@ -394,12 +394,9 @@ input[type="search"] {
     ul a:hover {
         color: $color__yellow;
     }
-
     ul.col-sm-4 {
         margin-bottom: 0px;
     }
-
-
     .sub-menu {
         background-color: transparent;
         border-top: gray;
@@ -516,6 +513,13 @@ input[type="search"] {
     .browse-cat {
         display: none;
     }
+    a:hover {
+        color: $color__yellow !important;
+        -webkit-transition: .4s ease-in-out;
+        -moz-transition: .4s ease-in-out;
+        -o-transition: .4s ease-in-out;
+        transition: .4s ease-in-out;
+    }
     #main-menu-container {
         display: inline-block;
         padding: 5px;
@@ -558,7 +562,6 @@ input[type="search"] {
             width: calc(50% - 50px);
         }
         .sub-menu-col2 {
-
             margin-right: 25px;
             width: calc(50% - 70px);
         }
@@ -673,14 +676,11 @@ input[type="search"] {
     }
 }
 
-.all-posts a, .browse-cat a {
+.all-posts a,
+.browse-cat a {
     text-transform: capitalize !important;
     font-style: italic !important;
-
 }
-
-
-
 
 
 /* Search bar */

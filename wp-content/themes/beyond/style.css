@@ -1209,6 +1209,13 @@ input[type="search"] {
 .main-navigation .browse-cat {
   display: none;
 }
+.main-navigation a:hover {
+  color: #FFC726 !important;
+  -webkit-transition: .4s ease-in-out;
+  -moz-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
 .main-navigation #main-menu-container {
   display: inline-block;
   padding: 5px;
@@ -1363,7 +1370,8 @@ input[type="search"] {
   background-image: url("assets/images/email-icon-header.svg");
 }
 
-.all-posts a, .browse-cat a {
+.all-posts a,
+.browse-cat a {
   text-transform: capitalize !important;
   font-style: italic !important;
 }
