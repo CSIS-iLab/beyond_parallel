@@ -94,7 +94,6 @@
 .sub-menu-col1.sub2.menu-item>a:first-of-type,
 .sub-menu-col2.sub2.menu-item>a:first-of-type {
     display: block;
-    margin-bottom: 15px;
 }
 
 .sub-menu-col1.sub2.menu-item>a:hover,
@@ -382,7 +381,7 @@ input[type="search"] {
     .all-posts a,
     .browse-cat a {
         font-weight: 100;
-        color: #D3D3D3;
+        color: #A3A3A3 !important;
     }
     .mobile-navigation {
         height: 100%;
@@ -422,11 +421,13 @@ input[type="search"] {
     .sub-menu-col1.sub2.menu-item>a,
     .sub-menu-col2.sub2.menu-item>a {
         text-transform: uppercase;
-        border-bottom: 1px solid #555;
+        border-bottom: 1px solid gray;
         padding-bottom: 8px;
         padding-top: 0px;
         pointer-events: none;
         color: $color__yellow !important;
+        font-weight: 500;
+        letter-spacing: 1px;
     }
     .sub-menu-col1.sub2.menu-item>a:hover,
     .sub-menu-col2.sub2.menu-item>a:hover {
