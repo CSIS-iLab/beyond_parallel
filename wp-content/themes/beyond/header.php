@@ -60,6 +60,7 @@
 			<div class="overlay"></div>
 			<div id="popout">
 				<nav role="navigation" class="site-navigation mobile-navigation">
+			
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 
 					<div class="secondary-nav">
