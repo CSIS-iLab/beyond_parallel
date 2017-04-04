@@ -15,7 +15,7 @@ get_header(); ?>
 			
 ?>
 
-<?php query_posts('cat=5'); ?>
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
 				
@@ -30,7 +30,7 @@ get_header(); ?>
 			get_template_part( 'components/post/content', 'none' );
 
 		endif; ?>
-<?php wp_reset_query(); // reset the query ?>
+
 		</main>
 	</div>
 <?php
