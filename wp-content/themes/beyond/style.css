@@ -1577,6 +1577,7 @@ span.arrow:after {
   -moz-transition: .4s ease-in-out;
   -o-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+  margin-top: 1rem;
 }
 
 .catAll:hover,
