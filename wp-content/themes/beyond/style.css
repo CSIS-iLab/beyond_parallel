@@ -1073,6 +1073,10 @@ input[type="search"] {
   margin: 0;
   -webkit-text-size-adjust: none;
 }
+#popout .all-posts a,
+#popout .browse-cat a {
+  color: #E5D696 !important;
+}
 #popout .mobile-navigation {
   height: 100%;
 }

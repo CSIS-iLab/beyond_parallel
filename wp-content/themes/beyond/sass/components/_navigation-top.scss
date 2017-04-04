@@ -373,6 +373,10 @@ input[type="search"] {
     transition: .25s ease-in-out;
     margin: 0;
     -webkit-text-size-adjust: none;
+    .all-posts a,
+    .browse-cat a {
+        color: #E5D696 !important;
+    }
     .mobile-navigation {
         height: 100%;
     }
