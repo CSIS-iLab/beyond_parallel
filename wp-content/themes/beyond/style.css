@@ -1585,7 +1585,10 @@ span.arrow:after {
 }
 
 .catAll {
-  margin-top: 1rem;
+  display: block;
+  width: 250px;
+  margin: 2rem auto 1rem;
+  text-align: center;
 }
 
 .catMore {
