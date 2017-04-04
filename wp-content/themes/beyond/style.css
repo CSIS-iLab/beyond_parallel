@@ -1087,6 +1087,9 @@ input[type="search"] {
   margin: 0;
   -webkit-text-size-adjust: none;
 }
+#popout .all-posts {
+  margin-bottom: 20px;
+}
 #popout .all-posts a,
 #popout .browse-cat a {
   font-weight: 100;
@@ -1094,6 +1097,9 @@ input[type="search"] {
 }
 #popout .mobile-navigation {
   height: 100%;
+}
+#popout .menu-item-description {
+  color: #A3A3A3 !important;
 }
 #popout #menu-menu-1.menu {
   padding: 25px 25px 0px;

@@ -378,8 +378,8 @@ input[type="search"] {
     transition: .25s ease-in-out;
     margin: 0;
     -webkit-text-size-adjust: none;
-    .top-title{
-
+    .all-posts {
+        margin-bottom: 20px;
     }
     .all-posts a,
     .browse-cat a {
@@ -388,6 +388,9 @@ input[type="search"] {
     }
     .mobile-navigation {
         height: 100%;
+    }
+    .menu-item-description {
+        color: #A3A3A3 !important;
     }
     #menu-menu-1.menu {
         padding: 25px 25px 0px;
