@@ -70,7 +70,6 @@ get_header(); ?>
 					esc_html( $category->name )
 				);
 
-				
 
 
 				array_push($catList, $catNum);

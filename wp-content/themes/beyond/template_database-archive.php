@@ -38,7 +38,7 @@ get_header(); ?>
 
 				?>
 
-				</a><
+				</a>
 		<?php
 		endwhile;
 		wp_reset_query();

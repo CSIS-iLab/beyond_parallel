@@ -143,7 +143,7 @@
         });
 
 
-        $(".social-share-wrapper").on("hover", function() {
+        $(".social-share-wrapper").on("click", function() {
                 $(".sharemedia").toggle("slide");
             });
 

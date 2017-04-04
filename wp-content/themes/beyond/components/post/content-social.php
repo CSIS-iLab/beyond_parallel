@@ -61,7 +61,7 @@
      <!--Show LinkedIn-->
 			
 			<div class='ssmicon'>
-				<a data-site='linkedin' href='http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php  $url  ?>' target='_blank' rel='nofollow' alt='Share on LinkedIn'>
+				<a data-site='linkedin' href='http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php  echo $url  ?>' target='_blank' rel='nofollow' alt='Share on LinkedIn'>
 					<div class='ssmlinkedin'>		
 					</div>
 				</a>
