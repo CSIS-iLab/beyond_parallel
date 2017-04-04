@@ -85,7 +85,7 @@
 								<div class="clearfix"></div>
 								<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter"><div class="twitter-icon"></div><div class="social-info">@BeyondCSISKorea</div></a>
 								<div class="clearfix"></div>
-								<a href="mailto:beyondparallel@csis.com?Subject=" alt="Email Beyond Parallel"><div class="email-icon"></div><div class="social-info">info@beyondparallel.com</div></a>
+								<a href="mailto:KoreaChair@csis.org?Subject=" alt="Email Beyond Parallel"><div class="email-icon"></div><div class="social-info">KoreaChair@csis.org</div></a>
 							</div>
 						</div>
 					</div>
@@ -136,7 +136,7 @@
 				<div class="social">
 					<a href="https://www.facebook.com/csiskoreachair/" alt="CSIS Korea Chair Facebook"><div class="facebook-icon"></div></a>
 					<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter"><div class="twitter-icon"></div></a>
-					<a href="mailto:beyondparallel@csis.com?Subject=" alt="Email Beyond Parallel"><div class="email-icon"></div></a>
+					<a href="mailto:KoreaChair@csis.org?Subject=" alt="Email Beyond Parallel"><div class="email-icon"></div></a>
 				</div>
 			</div>
 		</div>
