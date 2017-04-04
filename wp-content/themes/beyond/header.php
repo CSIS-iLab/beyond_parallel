@@ -100,7 +100,7 @@
 						<center>
 
 							<div class="header-info">
-								<a href="http://beyondparallel:8888/"><img src="<?php echo get_bloginfo('template_url') ?>/assets/images/beyond-parallel-logo.svg" class="header-logo"></a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_bloginfo('template_url') ?>/assets/images/beyond-parallel-logo.svg" class="header-logo"></a>
 
 								<p class="mission">Bringing <span style="color:#ffc624;">TRANSPARENCY</span> and <span style="color:#ffc624;">UNDERSTANDING</span> to Korean Unification</p>
 							</div>
