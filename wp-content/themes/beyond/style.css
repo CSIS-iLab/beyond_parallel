@@ -1,17 +1,17 @@
 /*
-Error: Invalid CSS after "...r you prefer *\/": expected selector or at-rule, was "}"
-        on line 41 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/shared/_lists.scss
+Error: Invalid CSS after "    }": expected selector or at-rule, was "}"
+        on line 40 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/shared/_lists.scss
         from line 93 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/style.scss
 
+35:         color: $color__yellow;
 36:         display: inline-block;
 37:         width: 1em}
 38:         margin-left: -1em;
 39:     }
-40:     /* or whatever color you prefer *\/
-41: }
+40: }
 
 Backtrace:
-/Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/shared/_lists.scss:41
+/Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/shared/_lists.scss:40
 /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/style.scss:93
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
@@ -63,4 +63,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...r you prefer */\": expected selector or at-rule, was \"}\"\A         on line 41 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/shared/_lists.scss\A         from line 93 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/style.scss\A \A 36:         display: inline-block;\A 37:         width: 1em}\A 38:         margin-left: -1em;\A 39:     }\A 40:     /* or whatever color you prefer */\A 41: }"; }
+  content: "Error: Invalid CSS after \"    }\": expected selector or at-rule, was \"}\"\A         on line 40 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/shared/_lists.scss\A         from line 93 of /Users/tharris/Documents/Projects/BeyondParallel/beyond_parallel/wp-content/themes/beyond/sass/style.scss\A \A 35:         color: $color__yellow;\A 36:         display: inline-block;\A 37:         width: 1em}\A 38:         margin-left: -1em;\A 39:     }\A 40: }"; }
