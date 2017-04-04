@@ -389,15 +389,19 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #10355F;
   margin-top: 3rem;
   margin-bottom: 5px;
 }
 
+.post-title h1 {
+  font-size: 3rem;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 2.4rem;
+    font-size: 3rem;
     color: #10355F;
   }
 }
