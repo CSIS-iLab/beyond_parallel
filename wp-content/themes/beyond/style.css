@@ -1983,14 +1983,10 @@ blockquote::before {
 
 .demographics p {
   font-size: 24px !important;
-  color: white !important;
   font-weight: 100 !important;
 }
 
 .demographics {
-  background-color: #0f2a48;
-  color: white;
-  padding: 20px;
   opacity: .9;
   font-size: 24px;
   padding-bottom: 37.5px;
@@ -2699,10 +2695,6 @@ Entry Footer
   margin-bottom: 50px;
 }
 
-.signalsBlue a {
-  color: #FFC726 !important;
-}
-
 .pageMenuHeader {
   margin-bottom: .9em;
   font-size: 1em;
@@ -2718,10 +2710,6 @@ Entry Footer
   display: block;
   border-left: 8px solid #F2F2F2;
   padding-left: 1em;
-}
-
-h1.signalsTitle {
-  color: #FFC726;
 }
 
 .analysis-landing footer.entry-footer {
