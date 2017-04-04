@@ -1220,9 +1220,6 @@ input[type="search"] {
 }
 
 /* Main Navigation */
-.main-navigation .browse-cat {
-  display: none;
-}
 .main-navigation a:hover {
   color: #FFC726 !important;
   -webkit-transition: color .4s ease-in-out;

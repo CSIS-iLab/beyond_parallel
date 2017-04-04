@@ -520,9 +520,6 @@ input[type="search"] {
 /* Main Navigation */
 
 .main-navigation {
-    .browse-cat {
-        display: none;
-    }
     a:hover {
         color: $color__yellow !important;
         -webkit-transition: color .4s ease-in-out;
