@@ -57,34 +57,25 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
 					<header class="entry-header living-header">
 
-						
-
-					
-						
 						<?php the_title( sprintf( '<h3 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-
 
 					</header>
 					<div class="entry-summary">
-
 	
-	<div class="entry-thumb">
+						<div class="entry-thumb">
 
-	<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
+							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
 
-		
-	</div>
-			
-	<?php
-if ( has_excerpt( get_the_id() ) ){
-	echo get_the_excerpt();
-}
-?>
-	</div>
-		
-
-					</div>
-					<div class="clearfix"></div>
+						</div>
+				
+								<?php
+							if ( has_excerpt( get_the_id() ) ){
+								echo get_the_excerpt();
+							}
+							?>
+						</div>
+	
+				<div class="clearfix"></div>
 				</article>
 			<?php endif; ?>
 
