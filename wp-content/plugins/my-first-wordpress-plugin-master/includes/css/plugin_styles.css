@@ -1,0 +1,141 @@
+/*Clearfix for floating elements*/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after{
+	clear: both;
+}
+
+/*left and right containers*/
+.left_container,
+.right_container{
+	float: left;
+	min-height: 80px;
+	width: 35%;
+	background: #eee;
+	padding: 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	padding-bottom: 50px;
+	border: solid 1px transparent;
+	margin: 15px 30px;
+}
+/*simple description field before page items*/
+.description{
+	width: 320px;
+}
+/*page item itself*/
+.page_item{
+	padding: 12px;
+	background: #ccc;
+	height: 45px;
+	margin-bottom: 10px;
+	width: 320px;
+	display: block;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	border: solid 1px transparent;
+	position: relative;
+	z-index: 1;
+}
+
+
+
+/*title for the pages*/
+.page_item .page_title{
+	position: relative;
+	width: calc(100% - 85px);
+	height: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*removing an item from related pages*/
+.page_item .remove_item{
+	display: none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	line-height: 40px;
+	padding: 0px 10px;
+	box-sizing: border-box;
+	background: #aaa;
+	width: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+.page_item .remove_item.active{
+	display: block;
+}
+
+/*page item while dragging*/
+.page_item.ui-draggable-dragging,
+.page_item.ui-sortable-helper {
+	border: solid 1px #aaa;
+	background: #eee;
+}
+
+/*dragging item over droppable zone*/
+.right_container.hover-over-draggable{
+	border: solid 1px #aaa;
+}
+
+/*placeholder text for sorting items*/
+.my-placeholder{
+	height: 40px;
+	border: dashed 1px #aaa;
+	margin-bottom: 10px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 320px;
+}
+/*placeholder for when hovering over droppable*/
+.droppable-helper{
+	width: 320px;
+	height: 40px;
+	border: dashed 1px #aaa;
+	margin-bottom: 10px;
+	display: none;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.droppable-helper.active{
+	display: block;
+}
+
+
+
+
+.right_container .droppable-helper + div {
+	background: #ddd;
+margin-bottom: 40px;
+}
+
+.scrollable {
+background-color:white;
+width: 100%;
+height: 500px !important;
+overflow: scroll;
+padding: 20px;
+border: 5px solid white;
+margin: 0 20px 20px 0;
+position: relative;
+display: block;
+}
+
+.left_container .form-table:first-of-type th {
+	display: none;
+
+}
+
+
+#position_array, #featured_post {
+	visibility: hidden;
+}

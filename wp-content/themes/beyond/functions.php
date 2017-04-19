@@ -163,6 +163,11 @@ function beyond_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'beyond_scripts' );
 
+add_action( 'after_setup_theme', 'beyond_images' );
+function beyond_images() {
+    add_image_size( 'homepage-thumb', 400, 400, true ); // (cropped)
+}
+
 /**
  * Custom template tags for this theme.
  */
@@ -186,7 +191,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Pull Masonry
 function beyond_masonry() {
-	if (!is_admin()) {
+	//if (!is_admin()) {
 		wp_register_script('jquery_masonry', get_template_directory_uri(). '/js/jquery.masonry.min.js', array('jquery'), '2.0.110526' );
 		wp_enqueue_script('jquery_masonry');
 		add_action('wp_footer', 'beyond_add_masonry');
@@ -194,15 +199,17 @@ function beyond_masonry() {
 		function beyond_add_masonry() { ?>
 			<script>
 				jQuery(document).ready(function($){
-					$('#masonry-index').masonry({
+					if ($('#masonry-index').length){
+						$('#masonry-index').masonry({
 						itemSelector: '.index-post-container',
 						isAnimated: true
 					});
+					}
 			  	});
 			</script>
 		<?php 
 		}
-	}
+	//}
 }
 
 add_action('init', 'beyond_masonry');

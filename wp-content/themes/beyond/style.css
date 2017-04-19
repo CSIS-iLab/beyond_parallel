@@ -3478,210 +3478,66 @@ th {
   font-weight: bold;
 }
 
-.mosaicMobile {
-  display: none;
-  visibility: hidden;
+.articles-homepage {
+  background-color: #F2F2F2;
+  padding: 2rem 0px;
 }
-
-.mosaic {
-  visibility: visible !important;
-  display: inline;
+.articles-homepage img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
-.mosaic p {
-  display: none;
-}
-.mosaic .box1 div {
-  border: 4px solid #0f2a48;
-  width: calc(100% - 20px);
-  height: 600px;
-  display: block;
-  padding: 0px;
-}
-.mosaic .box1 div a {
-  z-index: 4;
-  background: url("/wp-content/uploads/2017/02/PGS-2-Launch-Plume.png");
-  background-size: cover;
+.articles-homepage .article-preview-image {
   width: 100%;
-  display: block;
-  height: 600px;
-  margin: 20px 0 0 20px;
+  height: 350px;
+  margin: 1rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-.mosaic .box1 div:hover {
-  background-color: #0f2a48;
+.articles-homepage .article-preview-image img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
-.mosaic .box2 {
-  margin-top: 50px;
+.articles-homepage h2 {
+  margin-top: 0px !important;
 }
-.mosaic .box2 div {
-  border: 4px solid #0f2a48;
-  width: calc(100% - 20px);
-  height: 415px;
-  display: block;
-  padding: 0px;
-  margin: 0px;
+.articles-homepage h2 a {
+  background-image: none;
 }
-.mosaic .box2 div a {
-  z-index: 4;
-  background: url("/wp-content/uploads/2017/03/amb_hill-1.jpg");
-  background-size: cover;
+.articles-homepage .article-card-preview-image {
   width: 100%;
-  display: block;
-  height: 415px;
-  margin: 20px 0 0 20px;
+  height: auto;
+  margin: 0 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-.mosaic .box2 div:hover {
-  background-color: #0f2a48;
-}
-.mosaic .box3 div {
-  border: 4px solid #0f2a48;
-  width: calc(100% - 20px);
-  height: 260px;
-  display: block;
-  padding: 0px;
-  margin: 20px 0 50px 16px;
-}
-.mosaic .box3 div a {
-  z-index: 4;
-  background: url("/wp-content/uploads/2017/02/NKs-Boat-Image.jpg");
-  background-size: cover;
-  width: 100%;
-  display: block;
-  height: 300px;
-  margin: -20px 0 0 -20px;
-}
-.mosaic .box3 div:hover {
-  background-color: #0f2a48;
-}
-.mosaic .box4 div {
-  border: 4px solid #0f2a48;
-  width: calc(100% - 20px);
-  height: 734px;
-  display: block;
-  padding: 0px;
-  margin-left: 20px;
-}
-.mosaic .box4 div a {
-  z-index: 4;
-  background: url("/wp-content/uploads/2016/06/Matrix_June_27_cover.jpg");
-  background-size: cover;
-  width: 100%;
-  display: block;
-  height: 734px;
-  margin: 20px 0 0 -20px;
-}
-.mosaic .box4 div:hover {
-  background-color: #0f2a48;
-}
-.mosaic .box5 {
-  margin-top: 50px;
-}
-.mosaic .box5 div {
-  border: 4px solid #0f2a48;
-  width: 100%;
-  height: 380px;
-  display: block;
-  margin: 0px;
-}
-.mosaic .box5 div a {
-  z-index: 4;
-  background: url("/wp-content/uploads/2016/08/US-ROK-Exercises-Do-Not-Provoke-DPRK_2.jpg");
-  background-size: cover;
-  width: calc(100% - 40px);
-  display: block;
-  height: 380px;
-  margin: 20px auto;
-}
-.mosaic .box5 div:hover {
-  background-color: #0f2a48;
-}
-.mosaic .box6 {
-  margin-top: 50px;
-  margin-bottom: 75px;
-}
-.mosaic .box6 div {
-  border: 4px solid #0f2a48;
-  width: 100%;
-  height: 380px;
-  display: block;
-  padding: 0px;
-  margin: 0px;
-}
-.mosaic .box6 div a {
-  z-index: 4;
-  background: url("/wp-content/uploads/2017/03/visits_cover_image-1.jpg");
-  background-size: cover;
-  width: calc(100% - 40px);
-  display: block;
-  height: 380px;
-  margin: 20px auto;
-}
-.mosaic .box6 div:hover {
-  background-color: #0f2a48;
-}
-.mosaic a {
-  padding: 20px;
-}
-
-.feature {
-  float: left;
-  width: 66.6%;
-}
-
-.hoverposts {
-  max-width: 1170px;
-  display: block;
+.articles-homepage .card-top,
+.articles-homepage .card-bottom {
+  background-color: white;
+  width: 93%;
   margin: 0 auto;
-  position: relative;
+}
+.articles-homepage .card-top {
+  height: 18px;
+}
+.articles-homepage .card-bottom {
+  padding: 20px;
+  border-bottom: 2px solid #FFC726;
+  margin-bottom: 40px;
+}
+.articles-homepage .card-bottom h2 {
+  font-size: 2rem;
 }
 
-.titleHP {
-  color: #ffc726 !important;
-  background-color: #0f2a48;
-  text-transform: uppercase;
-  line-height: 37.24px;
-  font-size: 26px;
-  letter-spacing: 0.1em;
-  font-family: 'museo-sans', sans-serif;
-  display: inline;
-  font-weight: 300;
-  padding-bottom: 6px;
-}
-
-@media only screen and (max-width: 1170px) {
-  .mosaic {
-    visibility: hidden !important;
-    display: none;
-  }
-
-  .mosaicMobile {
-    visibility: visible !important;
-    display: block;
-    margin-top: 45px;
-  }
-  .mosaicMobile ul {
-    margin-left: 0 !important;
-    display: block;
-  }
-  .mosaicMobile a {
-    display: block;
-    margin-top: 20px;
-  }
-  .mosaicMobile .mosaicMobile li {
-    display: inline-block;
-    display: block;
-    width: 49%;
-    padding-top: 0px !important;
-  }
-}
-/*--------------------------------------------------------------
-# Updates section
---------------------------------------------------------------*/
-.lastSection {
-  background: url("/wp-content/uploads/2016/04/beyond_parallel_footer.jpg");
-  background-size: cover;
-  width: 100%;
-  z-index: 3;
-  position: relative;
+h2.gray {
+  color: #ACABAB;
 }
 
 /*--------------------------------------------------------------
