@@ -101,10 +101,10 @@ function get_thisPost($post)
         <?php if (has_post_thumbnail()) : ?>
         	<?php 
         	$thumb_id = get_post_thumbnail_id();
-$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'homepage-thumb', true);
-$thumb_url = $thumb_url_array[0];
-	$random = rand ( 1 , 3 );
-        ?>
+		$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'homepage-thumb', true);
+		$thumb_url = $thumb_url_array[0];
+			$random = rand ( 1 , 3 );
+		        ?>
             <a href="<?php the_permalink(); ?>" alt="<?php the_title();?>"><figure class="article-card-preview-image figure_<?php echo $random ?>" style="background-image: url( <?php echo $thumb_url ?> )">
                 
                
@@ -117,10 +117,10 @@ $thumb_url = $thumb_url_array[0];
         
         <div class="card-bottom">
         <div class="post-cats">
-<?php $cat = new WPSEO_Primary_Term('category', get_the_ID());
-$cat = $cat->get_primary_term();
-$catName = get_cat_name($cat);
-$catLink = get_category_link($cat);
+		<?php $cat = new WPSEO_Primary_Term('category', get_the_ID());
+		$cat = $cat->get_primary_term();
+		$catName = get_cat_name($cat);
+		$catLink = get_category_link($cat);
 
 echo "<a href=" . $catLink . ">" . $catName . "</a>" ?>
         </div>
@@ -128,20 +128,12 @@ echo "<a href=" . $catLink . ">" . $catName . "</a>" ?>
             <p>
         <?php echo excerpt(25); ?>
             </p>
-        
-
 	 </div><!-- /card-bottom -->
 	</div><!-- /ms-item featuredCard -->
 	
 	 <?
-	endwhile; endif; wp_reset_query(); ?>
-
-	
-	<?php
-
+	endwhile; endif; wp_reset_query(); 
 }
-
-
 
 
 
