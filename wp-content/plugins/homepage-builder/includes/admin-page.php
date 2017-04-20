@@ -2,12 +2,12 @@
 
 
 
-function mfwp_add_options_link() {
-	add_options_page('My First WordPress Plugin Options', 'My First Plugin', 'manage_options', 'mfwp-options', 'mfwp_settings_page');
+function hb_add_options_link() {
+	add_options_page('Homepage Builder Options', 'Homepage Builder', 'manage_options', 'hb-options', 'hb_settings_page');
 }
-add_action('admin_menu', 'mfwp_add_options_link');
+add_action('admin_menu', 'hb_add_options_link');
 
-function mfwp_settings_page()
+function hb_settings_page()
 {
     ?>
 	    <div class="wrap">
@@ -143,8 +143,15 @@ $post_output .= '<input id="'. $id .'" name="'. $id .'" class="'. $id .'" name="
 }	
 
 
-function mfwp_register_settings() {
+function hb_register_settings() {
 	// creates our settings in the options table
-	register_setting('mfwp_settings_group', 'mfwp_settings');
+	register_setting('hb_settings_group', 'hb_settings');
+
 }
-add_action('admin_init', 'mfwp_register_settings');
+add_action('admin_init', 'hb_register_settings');
+
+
+function my_excerpt_length($length) {
+return 10;
+}
+add_filter('excerpt_length', 'my_excerpt_length');

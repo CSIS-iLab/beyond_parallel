@@ -3482,17 +3482,13 @@ th {
   background-color: #F2F2F2;
   padding: 2rem 0px;
 }
-.articles-homepage img {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
 .articles-homepage .article-preview-image {
   width: 100%;
   height: 350px;
-  margin: 1rem 0;
+  margin: .5rem 0 1.5rem;
   position: relative;
   display: flex;
+  background-position: center;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -3504,19 +3500,43 @@ th {
 }
 .articles-homepage h2 {
   margin-top: 0px !important;
+  text-transform: uppercase;
 }
 .articles-homepage h2 a {
   background-image: none;
+  font-size: 2.9rem;
+}
+.articles-homepage h2.top {
+  margin-top: 2rem;
 }
 .articles-homepage .article-card-preview-image {
+  margin: 0px;
+  padding: 0px;
   width: 100%;
-  height: auto;
-  margin: 0 0;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.articles-homepage .figure_1 {
+  height: 18rem;
+}
+.articles-homepage .figure_2 {
+  height: 19rem;
+}
+.articles-homepage .figure_3 {
+  height: 21rem;
+}
+@media screen and (max-width: 768px) {
+  .articles-homepage .figure_1,
+  .articles-homepage .figure_2,
+  .articles-homepage .figure_3 {
+    height: 12rem;
+  }
 }
 .articles-homepage .card-top,
 .articles-homepage .card-bottom {
@@ -3532,36 +3552,60 @@ th {
   border-bottom: 2px solid #FFC726;
   margin-bottom: 40px;
 }
-.articles-homepage .card-bottom h2 {
+.articles-homepage .home-postTitle {
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  font-family: "alternate-gothic-no-3-d", sans-serif;
+}
+.articles-homepage .home-postTitle a {
   font-size: 2rem;
+}
+.articles-homepage p {
+  font-size: 1.1rem;
+}
+.articles-homepage .read-more a {
+  font-family: "alternate-gothic-no-3-d", sans-serif;
+  color: #FFC726;
+}
+.articles-homepage .featured-content {
+  display: block;
+  margin-bottom: 3rem;
+}
+.articles-homepage .post-cats {
+  margin-top: -7px;
+  margin-bottom: 5px;
+}
+.articles-homepage .recentPosts-title {
+  width: 100%;
+  padding: .9rem 0 .8rem;
+  background-color: #FFC726;
+  font-family: "alternate-gothic-no-3-d", sans-serif;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.articles-homepage .recentPosts-title .home-postTitle {
+  margin-bottom: 0px;
+}
+.articles-homepage .hr-recent {
+  align: center;
+  border-bottom: 2px solid #FFC726;
+  width: 70%;
+  margin: 1.5rem;
+}
+.articles-homepage .hr-recent:last-of-type {
+  border-bottom: none;
+  margin-top: 0rem;
+}
+.articles-homepage .entry-date {
+  font-size: 1.1rem;
 }
 
 h2.gray {
+  text-transform: uppercase;
   color: #ACABAB;
-}
-
-/*--------------------------------------------------------------
-# Masonry
---------------------------------------------------------------*/
-#masonry-index {
-  width: 105%;
-}
-
-#masonry-index .textwidget {
-  padding: 0;
-}
-
-#masonry-index .index-post-container {
-  width: 298px;
-  border: 1px #e3e3e3 solid;
-  float: left;
-  margin: 0 20px 20px 0;
-}
-
-#masonry-index .index-title,
-#masonry-index .index-name-date,
-#masonry-index .index-content {
-  margin: 20px;
+  font-size: 2rem;
 }
 
 /*--------------------------------------------------------------

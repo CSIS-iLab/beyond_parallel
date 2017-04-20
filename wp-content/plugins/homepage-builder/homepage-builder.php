@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: My First plugin
-Plugin URI: http://pippinsplugins.com/how-to-begin-writing-your-first-wordpress-plugin
-Description: This is my first WordPress Plugin
-Author: Pippin Williamson
-Author URI: http://pippinsplugins.com
+Plugin Name: Homepage Builder
+Plugin URI: 
+Description: Choose and reorder posts on the homepage
+Author: Tucker Harris
+Author URI: 
 Version: 1.0
 */
 
@@ -13,11 +13,11 @@ Version: 1.0
 * global variables
 ******************************/
 
-$mfwp_prefix = 'mfwp_';
-$mfwp_plugin_name = 'My First WordPress Plugin';
+$hb_prefix = 'hb_';
+$hb_plugin_name = 'Homepage Builder';
 
 // retrieve our plugin settings from the options table
-$mfwp_options = get_option('mfwp_settings');
+$hb_options = get_option('hb_settings');
 
 /******************************
 * includes

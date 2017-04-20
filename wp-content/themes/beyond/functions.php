@@ -141,6 +141,8 @@ function beyond_scripts() {
 
 	wp_enqueue_script( 'beyond-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'beyond-homepage', get_template_directory_uri() . '/js/homepage.js', array( 'jquery' ), '20171', true );
+
 	// add fitvid
 	wp_enqueue_script( 'beyond-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20151215', true );
 
@@ -244,3 +246,96 @@ function articleFooter( $atts, $content = null ) {
 add_shortcode('footer', 'articleFooter');
 
 
+
+
+function excerpt($limit, $url) {
+
+ $excerpt = explode(' ', get_the_excerpt(), $limit);
+
+ if (count($excerpt)>=$limit) {
+
+ array_pop($excerpt);
+
+ $excerpt = implode(" ",$excerpt).'...';
+
+ } else {
+
+ $excerpt = implode(" ",$excerpt).'...';
+
+ }
+
+ $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+$post = get_post();
+    $excerpt .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
+ return $excerpt;
+
+}
+
+function content($limit, $url) {
+
+ $content = explode(' ', get_the_content(), $limit);
+
+ if (count($content)>=$limit) {
+
+ array_pop($content);
+
+ $content = implode(" ",$content).'...';
+
+ } else {
+
+ $content = implode(" ",$content).'...';
+
+ }
+
+ $content = preg_replace('/[.+]/','', $content);
+
+ $content = apply_filters('the_content', $content);
+
+ $content = str_replace(']]>', ']]&gt;', $content);
+    $content .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
+
+ return $content;
+
+}
+
+
+//Multiple authors
+function beyond_posted_on() {
+    if ( function_exists( 'coauthors_posts_links' ) ) :
+        printf( __( '%2$s<span class="meta-sep">, by</span> %3$s', 'beyond' ),
+            'meta-prep meta-prep-author',
+            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+                get_permalink(),
+                esc_attr( get_the_time() ),
+                get_the_date()
+            ),
+            coauthors_posts_links( null, null, null, null, false )
+        );
+    else:
+        printf( __( '%2$s <span class="meta-sep">by</span> %3$s', 'beyond' ),
+            'meta-prep meta-prep-author',
+            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+                get_permalink(),
+                esc_attr( get_the_time() ),
+                get_the_date()
+            ),
+            sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+                get_author_posts_url( get_the_author_meta( 'ID' ) ),
+                esc_attr( sprintf( __( 'View all posts by %s', 'beyond' ), get_the_author() ) ),
+                get_the_author()
+            )
+        );
+    endif;
+}
+add_action('wp_enqueue_scripts','beyond_posted_on');  
+
+
+//search only posts
+function SearchFilter($query) {
+if ($query->is_search) {
+$query->set('post_type', 'post');
+}
+return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');

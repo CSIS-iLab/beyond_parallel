@@ -25,6 +25,7 @@
 		
 	</div>
 			<span class="excerpt-date"><?php beyond_posted_on(); ?>&#8212; </span>
+			
 	<?php
 if ( has_excerpt( get_the_id() ) ){
 	echo get_the_excerpt();

@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div class="articles-homepage">
 <div class="container">
+<h2 class="gray top">Featured Articles</h2>
 <?php
 
 the_content();
@@ -17,9 +18,9 @@ the_content();
         <div class="container">
         <div class="row">
             <div class="col-sm-4">
-            <h2 class="gray">Twitter</h2>
+            <h2 class="gray">Latest Tweets</h2>
 
-
+            <a class="twitter-timeline" data-theme="light" data-link-color="#98B0BC" data-height="350" data-chrome="noheader nofooter noborders transparent"  data-tweet-limit="1" href="https://twitter.com/beyondcsiskorea">Tweets by Beyond Parallel</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div><!--/col-sm-4-->
             <div class="col-sm-8">
                  <h2 class="gray">About Beyond Parallel</h2>
@@ -32,18 +33,5 @@ the_content();
         </div><!--/row-->
         </div><!--/container-->
     </div><!--/intro homepage-->
-        <script type="text/javascript">
-        
- jQuery(window).load(function() {
-    //console.log("hello");
-      var container = document.querySelector('#ms-container');
-      var msnry = new Masonry( container, {
-        itemSelector: '.ms-item',
-        columnWidth: '.ms-item',                
-      });  
-      
-});
 
-      
-    </script>
 <?php get_footer(); ?>

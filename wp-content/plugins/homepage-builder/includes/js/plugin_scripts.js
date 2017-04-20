@@ -81,6 +81,7 @@
 
 
         // use the :checked selector to find any that are checked
+        if ($('input#position_array').val() != undefined){
 
         var postID = $(this).attr('id');
         var start_positions = $('input#position_array').val();
@@ -96,7 +97,7 @@
             //console.log(val);
             $('.right_container').append("<div class='page_item " + val + " ' data-page-id=" + val + "  id='" + val + "-sortable'><div class='page_title'>" + title + "</div><div class='remove_item active'> Remove </div><input type='hidden' name='related_pages[]' value=" + val + " data-place=''/>")
         });
-
+        };
 
         $(':checkbox').on('click', function() {
             // use the :checked selector to find any that are checked
@@ -217,6 +218,12 @@
             placeholder: 'my-placeholder',
             stop: sortEventHandler
         });
+
+     
+
+
+
+
     });
 
 
