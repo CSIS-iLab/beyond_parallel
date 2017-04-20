@@ -84,7 +84,6 @@
             font-size: 1.9rem;
             text-transform: uppercase;
             font-family: $font__headings;
-
         }
         .home-postTitle a {
             font-size: 2rem;
@@ -118,10 +117,10 @@
         .hr-recent {
             align: center;
             border-bottom: 2px solid $color__yellow;
-            width: 70%; 
+            width: 70%;
             margin: 1.5rem;
         }
-         .hr-recent:last-of-type {
+        .hr-recent:last-of-type {
             border-bottom: none;
             margin-top: 0rem;
         }
@@ -130,8 +129,9 @@
         }
         .catAll {
             width: 300px;
-            padding: 2rem;
+            padding: 1rem;
             font-size: 1.5rem;
+            margin-bottom: 3rem;
         }
     }
     
@@ -140,6 +140,12 @@
         color: $color__medgray;
         font-size: 2rem;
     }
-
-
- 
+    
+    .intro-homepage {
+        .col-sm-4 {
+            margin-right: 2rem;
+        }
+        @media screen and (max-width: #{$breakpoint_mobile}) {
+            margin-right: 0;
+        }
+    }

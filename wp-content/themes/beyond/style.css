@@ -3603,14 +3603,24 @@ th {
 }
 .articles-homepage .catAll {
   width: 300px;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 h2.gray {
   text-transform: uppercase;
   color: #ACABAB;
   font-size: 2rem;
+}
+
+.intro-homepage .col-sm-4 {
+  margin-right: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .intro-homepage {
+    margin-right: 0;
+  }
 }
 
 /*--------------------------------------------------------------
