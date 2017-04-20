@@ -248,7 +248,7 @@ add_shortcode('footer', 'articleFooter');
 
 
 
-function excerpt($limit, $url) {
+function excerpt($limit) {
 
  $excerpt = explode(' ', get_the_excerpt(), $limit);
 
@@ -264,7 +264,7 @@ function excerpt($limit, $url) {
 
  }
 
- $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+ $excerpt = preg_replace('`[[^]]*]`','', $excerpt);
 $post = get_post();
     $excerpt .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
  return $excerpt;
@@ -297,37 +297,6 @@ function content($limit, $url) {
  return $content;
 
 }
-
-
-//Multiple authors
-function beyond_posted_on() {
-    if ( function_exists( 'coauthors_posts_links' ) ) :
-        printf( __( '%2$s<span class="meta-sep">, by</span> %3$s', 'beyond' ),
-            'meta-prep meta-prep-author',
-            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-                get_permalink(),
-                esc_attr( get_the_time() ),
-                get_the_date()
-            ),
-            coauthors_posts_links( null, null, null, null, false )
-        );
-    else:
-        printf( __( '%2$s <span class="meta-sep">by</span> %3$s', 'beyond' ),
-            'meta-prep meta-prep-author',
-            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-                get_permalink(),
-                esc_attr( get_the_time() ),
-                get_the_date()
-            ),
-            sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-                get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                esc_attr( sprintf( __( 'View all posts by %s', 'beyond' ), get_the_author() ) ),
-                get_the_author()
-            )
-        );
-    endif;
-}
-add_action('wp_enqueue_scripts','beyond_posted_on');  
 
 
 //search only posts

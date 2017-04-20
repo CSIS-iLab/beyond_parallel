@@ -12,29 +12,34 @@ if ( ! function_exists( 'beyond_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function beyond_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
+	 if ( function_exists( 'coauthors_posts_links' ) ) :
+        printf( __( '%2$s<span class="meta-sep">, by</span> %3$s', 'beyond' ),
+            'meta-prep meta-prep-author',
+            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+                get_permalink(),
+                esc_attr( get_the_time() ),
+                get_the_date()
+            ),
+            coauthors_posts_links( null, null, null, null, false )
+        );
+    else:
+        printf( __( '%2$s <span class="meta-sep">by</span> %3$s', 'beyond' ),
+            'meta-prep meta-prep-author',
+            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+                get_permalink(),
+                esc_attr( get_the_time() ),
+                get_the_date()
+            ),
+            sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+                get_author_posts_url( get_the_author_meta( 'ID' ) ),
+                esc_attr( sprintf( __( 'View all posts by %s', 'beyond' ), get_the_author() ) ),
+                get_the_author()
+            )
+        );
+    endif;
 
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'beyond' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
 
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'beyond' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span>, <span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
 endif;

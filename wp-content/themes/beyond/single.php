@@ -42,7 +42,7 @@ get_header(); ?>
 
 
 						<div class="post-meta">
-							By <?php the_author(); ?> | <?php the_time('F j, Y'); // Display the time it was published ?></div>
+							<?php beyond_posted_on(); ?></div>
 						</div>
 						<?php get_template_part( 'components/post/content', 'social' );  ?>
 						<?php 
