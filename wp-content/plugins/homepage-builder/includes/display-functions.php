@@ -5,7 +5,7 @@
 
 
 
-function mfwp_add_content($content) {
+function hb_add_content($content) {
 	if(is_front_page()) {
 
 		global $hb_options;
@@ -90,7 +90,7 @@ function get_thisPost($post){
 	// The Query
 	$current_post = new WP_Query($args);
  
-	if ($current_post->have_posts()): while($current_post->have_posts()): $current_post->the_post(); 
+	if ($current_post->have_posts()){ 
 	?>
 
 		<div class="ms-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -109,27 +109,28 @@ function get_thisPost($post){
 		            </figure>
 	            </a>
 	        
-	    <div class="card-bottom">
-	    	<div class="post-cats">
-				<?php $cat = new WPSEO_Primary_Term('category', get_the_ID());
-				$cat = $cat->get_primary_term();
-				$catName = get_cat_name($cat);
-				$catLink = get_category_link($cat);
-				echo "<a href=" . $catLink . ">" . $catName . "</a>" 
-				?>
-	        </div>
-	        <div class="home-postTitle" class="post-title">
-	        	<a href="<?php the_permalink(); ?>" class="post-title-link"><?php the_title(); ?>
-	        	</a>
-	        </div>
+		    <div class="card-bottom">
+		    	<div class="post-cats">
+					<?php $cat = new WPSEO_Primary_Term('category', get_the_ID());
+					$cat = $cat->get_primary_term();
+					$catName = get_cat_name($cat);
+					$catLink = get_category_link($cat);
+					echo "<a href=" . $catLink . ">" . $catName . "</a>" 
+					?>
+		        </div>
+		        <div class="home-postTitle" class="post-title">
+		        	<a href="<?php the_permalink(); ?>" class="post-title-link"><?php the_title(); ?>
+		        	</a>
+		        </div>
 	        
 	        <p>
 	        <?php echo excerpt(25); ?>
 	        </p>
-		</div><!-- /card-bottom -->
-	</div><!-- /ms-item featuredCard -->
-	
-	<?php endwhile; endif; wp_reset_query();  
+			</div><!-- /card-bottom -->
+		</div><!-- /ms-item featuredCard -->
+		<?php
+	}; 
+	wp_reset_query();  
 }
 
 

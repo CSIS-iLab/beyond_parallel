@@ -65,7 +65,7 @@
 
         function filter(element) {
             var value = $(element).val();
-           
+
             $("label").each(function() {
                 if ($(this).text().indexOf(value) > -1) {
                     $(this).parent().parent().show();
@@ -81,22 +81,22 @@
 
 
         // use the :checked selector to find any that are checked
-        if ($('input#position_array').val() != undefined){
+        if ($('input#position_array').val() != undefined) {
 
-        var postID = $(this).attr('id');
-        var start_positions = $('input#position_array').val();
-        var featured_post = $('input#featured_post').val();
+            var postID = $(this).attr('id');
+            var start_positions = $('input#position_array').val();
+            var featured_post = $('input#featured_post').val();
 
-        var new_array = start_positions.split(',');
-        new_array.splice(0, 0, featured_post);
+            var new_array = start_positions.split(',');
+            new_array.splice(0, 0, featured_post);
 
-        //console.log(new_array);
-        $.each(new_array, function(index, val) {
-            $("input[data-id='" + val + "']").attr('data-sort-position', index);
-            var title = $("input[data-id='" + val + "']").attr('data-name');
-            //console.log(val);
-            $('.right_container').append("<div class='page_item " + val + " ' data-page-id=" + val + "  id='" + val + "-sortable'><div class='page_title'>" + title + "</div><div class='remove_item active'> Remove </div><input type='hidden' name='related_pages[]' value=" + val + " data-place=''/>")
-        });
+            //console.log(new_array);
+            $.each(new_array, function(index, val) {
+                $("input[data-id='" + val + "']").attr('data-sort-position', index);
+                var title = $("input[data-id='" + val + "']").attr('data-name');
+                //console.log(val);
+                $('.right_container').append("<div class='page_item " + val + " ' data-page-id=" + val + "  id='" + val + "-sortable'><div class='page_title'>" + title + "</div><div class='remove_item active'> Remove </div><input type='hidden' name='related_pages[]' value=" + val + " data-place=''/>")
+            });
         };
 
         $(':checkbox').on('click', function() {
@@ -219,18 +219,6 @@
             stop: sortEventHandler
         });
 
-     
-
-
-
-
     });
-
-
-
-
-
-
-
 
 })(jQuery);
