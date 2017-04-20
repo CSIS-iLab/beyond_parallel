@@ -77,8 +77,7 @@ function get_featured($featuredPost)
 
 
 
-function get_thisPost($post)
- {
+function get_thisPost($post){
 		$args = array(
 			'p' => $post
 		);
@@ -137,8 +136,7 @@ echo "<a href=" . $catLink . ">" . $catName . "</a>" ?>
 
 
 
-function get_recentPosts()
- {
+function get_recentPosts(){
 		$args = array(
 			'numberposts' => '4',
 			'orderby' => 'post_date',
@@ -150,9 +148,6 @@ function get_recentPosts()
 
 		// The Query
 		$recent_posts = wp_get_recent_posts( $args );
-			
-			
-
 			?>
 	<div class="ms-item featuredCard col-lg-4 col-md-4 col-sm-6 col-xs-12">
 	<div class="card-top"></div>
@@ -173,9 +168,5 @@ function get_recentPosts()
 	</div><!-- /ms-item featuredCard -->
 
 	<?php
-
-
 	wp_reset_query();
-	
-
 }
