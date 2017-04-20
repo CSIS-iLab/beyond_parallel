@@ -3571,7 +3571,7 @@ th {
 }
 .articles-homepage .featured-content {
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 .articles-homepage .post-cats {
   margin-top: -7px;
@@ -3600,6 +3600,11 @@ th {
 }
 .articles-homepage .entry-date {
   font-size: 1.1rem;
+}
+.articles-homepage .catAll {
+  width: 300px;
+  padding: 2rem;
+  font-size: 1.5rem;
 }
 
 h2.gray {
