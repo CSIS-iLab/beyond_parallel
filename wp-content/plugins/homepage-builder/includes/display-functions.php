@@ -64,9 +64,7 @@ function get_featured($featuredPost) {
         </div>
         
         <div class="featured-content col-sm-6">
-			<?php
-				$content = get_the_content();
-				echo wp_trim_words( $content , '50'); ?>
+			<?php echo wp_trim_words( get_the_content(), 50, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' ) ?>
 		</div>
 		
 		<div class="clearfix"></div>
@@ -121,8 +119,7 @@ function get_thisPost($value){
 		        	</a>
 		        </div>
 	        	<p>
-			<?php $content = get_the_content();
-			echo wp_trim_words( $content , '25'); ?>
+			<?php echo wp_trim_words( get_the_content(), 20, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' ) ?>
 			</p>
 	        	
 		
@@ -162,8 +159,8 @@ function get_recentPosts(){
 				<time class="entry-date" datetime="<?php echo get_the_date( 'c' ); ?>" pubdate>
 				<?php echo get_the_date('F j, Y'); ?>
 				</time><br>
-				<?php
-				echo '<a href="' . get_permalink($recent["ID"]) . '" class="home-postTitle" alt="' .   $recent["post_title"].'">' . $recent["post_title"].'</a> ';?>
+			
+				<?php echo '<a href="' . get_permalink($recent["ID"]) . '" class="home-postTitle" alt="' .   $recent["post_title"].'">' . $recent["post_title"].'</a> ';?>
 				<hr class="hr-recent">
 			<?php
 			}

@@ -3506,7 +3506,7 @@ th {
   font-size: 2.9rem;
 }
 .articles-homepage h2.top {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 .articles-homepage .article-card-preview-image {
   margin: 0px;
@@ -3578,6 +3578,10 @@ th {
   margin-top: -7px;
   margin-bottom: 5px;
 }
+.articles-homepage .post-cats a:hover {
+  background-image: none;
+  color: #FFC726;
+}
 .articles-homepage .recentPosts-title {
   width: 100%;
   padding: .9rem 0 .8rem;
@@ -3613,6 +3617,7 @@ h2.gray {
   text-transform: uppercase;
   color: #ACABAB;
   font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 .intro-homepage .col-sm-4 {

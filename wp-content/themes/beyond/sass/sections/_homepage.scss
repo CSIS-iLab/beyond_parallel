@@ -33,7 +33,7 @@
             }
         }
         h2.top {
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
         .article-card-preview-image {
             margin: 0px;
@@ -107,7 +107,13 @@
         .post-cats {
             margin-top: -7px;
             margin-bottom: 5px;
+
+            a:hover {
+                background-image: none;
+                color: $color__yellow;
+            }
         }
+
         .recentPosts-title {
             width: 100%;
             padding: .9rem 0 .8rem;
@@ -144,6 +150,7 @@
         text-transform: uppercase;
         color: $color__medgray;
         font-size: 2rem;
+        letter-spacing: 1px;
     }
     
     .intro-homepage {

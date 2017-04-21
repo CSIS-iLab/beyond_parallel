@@ -265,13 +265,12 @@ function excerpt($limit) {
  }
 
  $excerpt = preg_replace('`[[^]]*]`','', $excerpt);
-$post = get_post();
-    $excerpt .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
+$excerpt .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
  return $excerpt;
 
 }
 
-function content($limit, $url) {
+function content($limit) {
 
  $content = explode(' ', get_the_content(), $limit);
 
@@ -279,11 +278,11 @@ function content($limit, $url) {
 
  array_pop($content);
 
- $content = implode(" ",$content).'... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
+ $content = implode(" ",$content).'...';
 
  } else {
 
- $content = implode(" ",$content).'... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
+ $content = implode(" ",$content).'...';
 
  }
 
@@ -292,11 +291,10 @@ function content($limit, $url) {
  $content = apply_filters('the_content', $content);
 
  $content = str_replace(']]>', ']]&gt;', $content);
-    $content .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
-
  return $content;
 
 }
+
 
 
 //search only posts
