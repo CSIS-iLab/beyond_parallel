@@ -279,7 +279,7 @@ function content($limit, $url) {
 
  array_pop($content);
 
- $content = implode(" ",$content).'...';
+ $content = implode(" ",$content).'... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
 
  } else {
 
