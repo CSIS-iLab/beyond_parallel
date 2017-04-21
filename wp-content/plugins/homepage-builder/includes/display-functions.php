@@ -1,9 +1,5 @@
 <?php
 
-/*our display functions for outputting information*/
-
-
-
 
 function hb_add_content($content) {
 	if(is_front_page()) {
@@ -23,8 +19,8 @@ function hb_add_content($content) {
 
 		foreach($pieces as $key => $value) {
 			
-    		$post = $value;
-    		$content .= get_thisPost($post);
+    		//$post = $value;
+    		$content .= get_thisPost($value);
 		}
 		// WP_Query argument
 		$content .= '</div>';
@@ -34,7 +30,7 @@ function hb_add_content($content) {
 	return $content;
 	
 }
-add_filter('the_content', 'mfwp_add_content');
+add_filter('the_content', 'hb_add_content');
 
 
 
@@ -48,16 +44,16 @@ function get_featured($featuredPost) {
  
 	if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); 
 	
-		 if (has_post_thumbnail()) : 
+		 if (has_post_thumbnail()) { 
         	$thumb_id = get_post_thumbnail_id();
-			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
 			$thumb_url = $thumb_url_array[0]; ?>
 			 <a href="<?php the_permalink(); ?>" alt="<?php the_title();?>">
 			 	<figure class="article-preview-image" style="background-image: url( <?php echo $thumb_url ?> )" >
             	</figure>
             </a>
         
-        <?php endif; ?>
+        <?php }; ?>
 
         <div class="col-sm-6">
         	<h2>
@@ -82,55 +78,60 @@ function get_featured($featuredPost) {
 
 
 
-function get_thisPost($post){
-	$args = array(
-		'p' => $post
+function get_thisPost($value){
+	$arg = array(
+		'p' => $value
 	);
 
 	// The Query
-	$current_post = new WP_Query($args);
+	$current_post = new WP_Query($arg);
  
-	if ($current_post->have_posts()){ 
+	if ($current_post->have_posts()): while($current_post->have_posts()): $current_post->the_post(); 
 	?>
 
 		<div class="ms-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-			<div class="card-top"></div>
+		
+	        	<div class="card-top"></div>
 	        	<?php 
-	        	if (has_post_thumbnail()) : 
+	        	if (has_post_thumbnail()){ 
 	        	$thumb_id = get_post_thumbnail_id();
 				$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'homepage-thumb', true);
 				$thumb_url = $thumb_url_array[0];
 				$random = rand ( 1 , 3 );
-			    endif;
-			    ?>
+			};
+			 ?>
 
 	            <a href="<?php the_permalink(); ?>" alt="<?php the_title();?>">
 		            <figure class="article-card-preview-image figure_<?php echo $random ?>" style="background-image: url( <?php echo $thumb_url ?> )">
 		            </figure>
 	            </a>
-	        
 		    <div class="card-bottom">
-		    	<div class="post-cats">
+		 
+		   	<div class="post-cats">
 					<?php $cat = new WPSEO_Primary_Term('category', get_the_ID());
 					$cat = $cat->get_primary_term();
 					$catName = get_cat_name($cat);
 					$catLink = get_category_link($cat);
-					echo "<a href=" . $catLink . ">" . $catName . "</a>" 
+					echo "<a href='" . $catLink . "'>" . $catName . "</a>";
 					?>
+				<a href="<?php esc_html($catLink) ?>"><?php esc_html($catName) ?></a>
 		        </div>
 		        <div class="home-postTitle" class="post-title">
-		        	<a href="<?php the_permalink(); ?>" class="post-title-link"><?php the_title(); ?>
+		        	<a href="<?php the_permalink() ?>" class="post-title-link"><?php the_title() ?>
 		        	</a>
 		        </div>
-	        
-	        <p>
-	        <?php echo excerpt(25); ?>
-	        </p>
-			</div><!-- /card-bottom -->
+	        	<p>
+			<?php $content = get_the_content();
+			echo wp_trim_words( $content , '25'); ?>
+			</p>
+	        	
+		
+		</div><!-- /card-bottom -->
 		</div><!-- /ms-item featuredCard -->
 		<?php
-	}; 
-	wp_reset_query();  
+	
+	 endwhile; endif; 
+wp_reset_query(); 
 }
 
 

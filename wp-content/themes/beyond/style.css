@@ -3499,7 +3499,7 @@ th {
   background-size: cover;
 }
 .articles-homepage h2 {
-  margin-top: 0px !important;
+  margin-top: 0px;
 }
 .articles-homepage h2 a {
   background-image: none;

@@ -110,7 +110,7 @@
                     var postName = $(this).attr('data-name');
 
                     if ($(".right_container ." + postID).length == 0) {
-                        $('.right_container').append("<div class='page_item " + postID + " ' data-page-id=" + postID + "  id='" + postID + "-sortable'><div class='page_title'>" + postName + "</div><div class='remove_item active'> Remove </div>'<input type='hidden' name='related_pages[]' value=" + postID + " data-place=''/>")
+                        $('.right_container').append("<div class='page_item " + postID + " ' data-page-id=" + postID + "  id='" + postID + "-sortable'><div class='page_title'>" + postName + "</div><div class='remove_item active'> Remove </div><input type='hidden' name='related_pages[]' value=" + postID + " data-place=''/>")
                     }
 
 
