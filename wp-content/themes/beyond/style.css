@@ -3500,7 +3500,6 @@ th {
 }
 .articles-homepage h2 {
   margin-top: 0px !important;
-  text-transform: uppercase;
 }
 .articles-homepage h2 a {
   background-image: none;
@@ -3556,7 +3555,6 @@ th {
   line-height: 2rem;
   margin-bottom: 2rem;
   font-size: 1.9rem;
-  text-transform: uppercase;
   font-family: "alternate-gothic-no-3-d", sans-serif;
 }
 .articles-homepage .home-postTitle a {
