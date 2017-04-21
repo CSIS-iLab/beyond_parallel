@@ -57,7 +57,7 @@ function get_featured($featuredPost) {
 
         <div class="col-sm-6">
         	<h2>
-        		<a href="<?php the_permalink(); ?>"><?php the_title();?>
+        		<a href="<?php the_permalink(); ?>" alt="<?php the_title();?>"><?php the_title();?>
         		</a>
         	</h2>
         	<?php beyond_posted_on(); ?>
@@ -96,26 +96,40 @@ function get_thisPost($value){
 				$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'homepage-thumb', true);
 				$thumb_url = $thumb_url_array[0];
 				$random = rand ( 1 , 3 );
-			};
-			 ?>
+			
+			 	?>
 
 	            <a href="<?php the_permalink(); ?>" alt="<?php the_title();?>">
 		            <figure class="article-card-preview-image figure_<?php echo $random ?>" style="background-image: url( <?php echo $thumb_url ?> )">
 		            </figure>
 	            </a>
+
+	            <?php } else { 
+	            	$random = rand ( 1 , 3 );?>
+				<a href="<?php the_permalink(); ?>" alt="<?php the_title();?>">
+		            <figure class="article-card-preview-image figure_<?php echo $random ?>" style="background-image: url( <?php echo plugin_dir_url( __FILE__ ) . 'images/beyond-default-banner.jpg'; ?> );">
+		            </figure>
+	            </a>
+
+
+
+	            <?php }; ?>
 		    <div class="card-bottom">
 		 
 		   	<div class="post-cats">
 					<?php $cat = new WPSEO_Primary_Term('category', get_the_ID());
+					
 					$cat = $cat->get_primary_term();
 					$catName = get_cat_name($cat);
 					$catLink = get_category_link($cat);
+			
+					
 					echo "<a href='" . $catLink . "'>" . $catName . "</a>";
 					?>
-				<a href="<?php esc_html($catLink) ?>"><?php esc_html($catName) ?></a>
+				<a href="<?php esc_html($catLink) ?>" alt="<?php $catName ?>"><?php esc_html($catName) ?></a>
 		        </div>
 		        <div class="home-postTitle" class="post-title">
-		        	<a href="<?php the_permalink() ?>" class="post-title-link"><?php the_title() ?>
+		        	<a href="<?php the_permalink() ?>" alt="<?php the_title();?>" class="post-title-link"><?php the_title() ?>
 		        	</a>
 		        </div>
 	        	<p>

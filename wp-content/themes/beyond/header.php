@@ -14,15 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>
-		<?php bloginfo('name'); // show the blog name, from settings ?> | 
-		<?php is_front_page() ? bloginfo('description') : wp_title(''); // if we're on the home page, show the description, from the site's settings - otherwise, show the title of the post or page ?>
-	</title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -59,7 +51,7 @@
 			</label>
 			<div class="overlay"></div>
 			<div id="popout">
-				<nav role="navigation" class="site-navigation mobile-navigation">
+				<nav class="site-navigation mobile-navigation">
 			
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 
@@ -154,11 +146,5 @@
 </div><!--/container -->
 
 </header><!-- #masthead .site-header -->
-<?php if (is_front_page()) : // Only if this page is NOT being used as a home page, display the title ?>
-	<div id="content" class="site-content">
-		<?php elseif ( is_page('Predata' ) ): ?>
-			<div id="content" class="site-content signalsBlue">
-	<?php else : ?>
-		<div id="content" class="site-content">
-		<?php endif; ?>
+
 

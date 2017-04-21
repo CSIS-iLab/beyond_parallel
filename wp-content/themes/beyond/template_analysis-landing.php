@@ -92,7 +92,7 @@ get_header(); ?>
 				'cat' => $category->term_id,
 				'post_type' => 'post',
 				'posts_per_page' => '5',
-				
+				'exclude' => 'analysis'
 			);
 
 			$query = new WP_Query( $args );
@@ -108,7 +108,7 @@ get_header(); ?>
 					?>
 
 					<li><article id="post-<?php the_ID(); ?>" <?php post_class( 'category-listing' ); ?>>
-						<a class="related-link" rel="external" href="<? the_permalink()?>">
+						<a class="related-link" alt="<?php the_title(); ?>" rel="external" href="<? the_permalink()?>">
 							<?php the_title(); ?></a><span class="related-date"> &#8212;<?php beyond_posted_on(); ?></span>
 
 
@@ -116,7 +116,7 @@ get_header(); ?>
 
 						<?php } // end while ?>
 						</ul>
-						<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>"><span class="arrow">All <?php echo $category->name; ?> Articles</span></a> </p>
+						<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>" alt="<?php echo $category->name; ?>"><span class="arrow">All <?php echo $category->name; ?> Articles</span></a> </p>
 
 					</section>
 
