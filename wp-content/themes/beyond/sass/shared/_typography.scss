@@ -135,12 +135,28 @@ q {
 blockquote {
     font-size: 18px;
     padding-left: 23px;
-    border-left: #ffc726 2px solid;
-    display: inline-block;
+    border-top: #ffc726 2px solid;
+    border-bottom: #ffc726 2px solid;
+    border-left: 0px;
+    display: block;
     font-family: 'museo', sans-serif;
     line-height: 32px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin: 40px auto 50px;
+    max-width: 700px;
+
+}
+
+blockquote::before {
+    content: url(/wp-content/uploads/2016/10/Screen-Shot-2016-10-26-at-1.56.04-PM.png) !important;
+    margin: 0 auto;
+    display: block;
+    float: left;
+    padding-right: 10px;
+
+}
+
+blockquote p {
+    margin-left: 50px;
 }
 
 .caption {

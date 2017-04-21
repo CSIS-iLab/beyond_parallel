@@ -40,7 +40,7 @@
         font-size: 1rem;
         .postTag {
             display: inline-block;
-            background-color: $color__yellow;
+            background-color: $color__lightgray;
             padding: 0px .7rem;
             margin-right: 1rem;
             opacity: 1;
@@ -52,7 +52,7 @@
     }
     a:hover {
         .postTag {
-            background-color: white;
+            background-color: $color__yellow;
             -webkit-transition: background-color .25s ease-in-out;
             -moz-transition: background-color .25s ease-in-out;
             -o-transition: background-color .25s ease-in-out;
@@ -150,11 +150,7 @@ h3.relatedHeading {
     font-weight: 600px !important;
 }
 
-blockquote::before {
-    content: url(/wp-content/uploads/2016/10/Screen-Shot-2016-10-26-at-1.56.04-PM.png) !important;
-    float: left;
-    margin-right: 10;
-}
+
 
 .demographics p {
     font-size: 24px !important;
@@ -229,90 +225,6 @@ sup {
 }
 
 
-/*
-
-#post-38 .postTop {
-    display: none !important;
-}
-
-#post-497 .attachment-post-thumbnail {
-    display: none !important;
-}
-
-#post-497 .meta-group,
-#post-523 .meta-group,
-#post-38 .meta-group {
-    display: none !important;
-}
-
-#post-281 .meta-group,
-#post-324 .meta-group,
-#post-472 .meta-group {
-    display: none !important;
-}
-
-#post-490 .meta-group {
-    display: none !important;
-}
-
-#post-283 .meta-group {
-    display: none !important;
-}
-
-#post-179 .meta-group {
-    display: none !important;
-}
-
-#post-180 .postTop,
-#post-180 .meta-group {
-    display: none !important;
-}
-
-#post-221 .meta-group {
-    display: none !important;
-}
-
-#post-174 .meta-group {
-    display: none !important;
-}
-
-.meta-group {
-    font-family: 'museo', sans-serif;
-    font-size: 19px !important;
-    text-align: center;
-    margin-top: 26px;
-}
-
-#post-74 .meta-group,
-#post-38 .meta-group,
-{
-    display: none !important;
-}
-
-article .post-meta a {
-    color: #888888;
-    text-decoration: none;
-}
-
-article .post-meta a:hover {
-    color: rgba(136, 136, 136, 0.5);
-}
-
-article .the-content p {
-    color: #191919;
-    text-align: left;
-}
-
-article .the-content img {
-    height: auto;
-    width: auto;
-}
-
-/* --------------------------------
-
-xnugget info
-
--------------------------------- */
 
 .cd-nugget-info {
     text-align: center;

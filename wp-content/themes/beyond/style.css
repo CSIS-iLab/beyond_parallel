@@ -501,12 +501,26 @@ q:after {
 blockquote {
   font-size: 18px;
   padding-left: 23px;
-  border-left: #ffc726 2px solid;
-  display: inline-block;
+  border-top: #ffc726 2px solid;
+  border-bottom: #ffc726 2px solid;
+  border-left: 0px;
+  display: block;
   font-family: 'museo', sans-serif;
   line-height: 32px;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 40px auto 50px;
+  max-width: 700px;
+}
+
+blockquote::before {
+  content: url(/wp-content/uploads/2016/10/Screen-Shot-2016-10-26-at-1.56.04-PM.png) !important;
+  margin: 0 auto;
+  display: block;
+  float: left;
+  padding-right: 10px;
+}
+
+blockquote p {
+  margin-left: 50px;
 }
 
 .caption {
@@ -1268,7 +1282,7 @@ input[type="search"] {
   position: relative;
   background-image: -webkit-linear-gradient(top, #FFC726 0, #FFC726 100%);
   background-image: linear-gradient(to bottom, #FFC726 0, #FFC726 100%);
-  background-position: 0 94%;
+  background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 2px 2px;
   border-bottom: 0;
@@ -1521,6 +1535,10 @@ a:visited {
 a:hover, a:focus, a:active {
   color: #10355F;
   text-decoration: none;
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 a:focus {
   outline: thin dotted;
@@ -1553,10 +1571,24 @@ h3 a {
   background-size: 2px 2px;
   border-bottom: 0;
   text-decoration: none;
-  -webkit-transition: width 1s ease-in-out;
-  -moz-transition: width 1s ease-in-out;
-  -o-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
+  -webkit-transition: color .2s ease-in-out;
+  -moz-transition: color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+.entry-header h2 a,
+h3 a,
+h3 a {
+  height: 100%;
+  position: relative;
+  background-image: -webkit-linear-gradient(top, #FFC726 0, #FFC726 100%);
+  background-image: linear-gradient(to bottom, #FFC726 0, #FFC726 100%);
+  background-position: 0 83%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  border-bottom: 0;
+  text-decoration: none;
 }
 
 .home .rev_slider a:hover,
@@ -1565,6 +1597,10 @@ h2 a:hover,
 h3 a:hover {
   background-size: 0px !important;
   color: #EFB715 !important;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .entry-header .post-cats a {
@@ -1663,21 +1699,22 @@ div.pagination .page-numbers {
   background-color: #F2F2F2;
   width: 40px;
   padding: 5px;
+  margin-top: 5px;
   text-align: center;
 }
 div.pagination .page-numbers:hover {
-  background-color: #10355F;
-  color: white;
+  background-color: #FFC726;
+  color: #10355F;
 }
 div.pagination .current {
   background-color: transparent;
-  color: #EFB715;
+  color: #10355F;
   text-align: center;
   font-weight: bold;
 }
 div.pagination .current:hover {
   background-color: transparent;
-  color: #EFB715;
+  color: #10355F;
   text-align: center;
   font-weight: bold;
 }
@@ -1940,7 +1977,7 @@ object {
 }
 .relatedtags a .postTag {
   display: inline-block;
-  background-color: #FFC726;
+  background-color: #F2F2F2;
   padding: 0px .7rem;
   margin-right: 1rem;
   opacity: 1;
@@ -1950,7 +1987,7 @@ object {
   transition: background-color .25s ease-in-out;
 }
 .relatedtags a:hover .postTag {
-  background-color: white;
+  background-color: #FFC726;
   -webkit-transition: background-color .25s ease-in-out;
   -moz-transition: background-color .25s ease-in-out;
   -o-transition: background-color .25s ease-in-out;
@@ -2046,12 +2083,6 @@ h3.relatedHeading {
   font-weight: 600px !important;
 }
 
-blockquote::before {
-  content: url(/wp-content/uploads/2016/10/Screen-Shot-2016-10-26-at-1.56.04-PM.png) !important;
-  float: left;
-  margin-right: 10;
-}
-
 .demographics p {
   font-size: 24px !important;
   font-weight: 100 !important;
@@ -2124,90 +2155,6 @@ sup {
   top: 400px !important;
 }
 
-/*
-
-#post-38 .postTop {
-    display: none !important;
-}
-
-#post-497 .attachment-post-thumbnail {
-    display: none !important;
-}
-
-#post-497 .meta-group,
-#post-523 .meta-group,
-#post-38 .meta-group {
-    display: none !important;
-}
-
-#post-281 .meta-group,
-#post-324 .meta-group,
-#post-472 .meta-group {
-    display: none !important;
-}
-
-#post-490 .meta-group {
-    display: none !important;
-}
-
-#post-283 .meta-group {
-    display: none !important;
-}
-
-#post-179 .meta-group {
-    display: none !important;
-}
-
-#post-180 .postTop,
-#post-180 .meta-group {
-    display: none !important;
-}
-
-#post-221 .meta-group {
-    display: none !important;
-}
-
-#post-174 .meta-group {
-    display: none !important;
-}
-
-.meta-group {
-    font-family: 'museo', sans-serif;
-    font-size: 19px !important;
-    text-align: center;
-    margin-top: 26px;
-}
-
-#post-74 .meta-group,
-#post-38 .meta-group,
-{
-    display: none !important;
-}
-
-article .post-meta a {
-    color: #888888;
-    text-decoration: none;
-}
-
-article .post-meta a:hover {
-    color: rgba(136, 136, 136, 0.5);
-}
-
-article .the-content p {
-    color: #191919;
-    text-align: left;
-}
-
-article .the-content img {
-    height: auto;
-    width: auto;
-}
-
-/* --------------------------------
-
-xnugget info
-
--------------------------------- */
 .cd-nugget-info {
   text-align: center;
   position: absolute;
@@ -2763,6 +2710,10 @@ Entry Footer
 
 .pagination {
   margin: 50px 0;
+}
+
+div.pagination {
+  text-align: center;
 }
 
 .pageMenuHeader {
@@ -3568,6 +3519,10 @@ th {
 }
 .articles-homepage .read-more a {
   font-family: "alternate-gothic-no-3-d", sans-serif;
+  color: #ACABAB;
+  font-size: 1.2rem;
+}
+.articles-homepage .read-more a:hover {
   color: #FFC726;
 }
 .articles-homepage .featured-content {
@@ -3608,9 +3563,12 @@ th {
 }
 .articles-homepage .catAll {
   width: 300px;
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: .8rem;
+  font-size: 1.6rem;
   margin-bottom: 3rem;
+}
+.articles-homepage .meta-sep, .articles-homepage .meta-sep + a {
+  font-size: 1.1rem;
 }
 
 h2.gray {
@@ -3620,6 +3578,15 @@ h2.gray {
   letter-spacing: 1px;
 }
 
+.intro-homepage h2.gray {
+  margin-top: 5rem;
+}
+.intro-homepage .tweet-container {
+  height: 300px;
+  overflow: scroll;
+  display: block;
+  margin-left: -10px;
+}
 .intro-homepage .col-sm-4 {
   padding-right: 2rem;
 }

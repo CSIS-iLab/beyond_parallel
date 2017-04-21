@@ -247,56 +247,6 @@ add_shortcode('footer', 'articleFooter');
 
 
 
-
-function excerpt($limit) {
-
- $excerpt = explode(' ', get_the_excerpt(), $limit);
-
- if (count($excerpt)>=$limit) {
-
- array_pop($excerpt);
-
- $excerpt = implode(" ",$excerpt).'...';
-
- } else {
-
- $excerpt = implode(" ",$excerpt).'...';
-
- }
-
- $excerpt = preg_replace('`[[^]]*]`','', $excerpt);
-$excerpt .= ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
- return $excerpt;
-
-}
-
-function content($limit) {
-
- $content = explode(' ', get_the_content(), $limit);
-
- if (count($content)>=$limit) {
-
- array_pop($content);
-
- $content = implode(" ",$content).'...';
-
- } else {
-
- $content = implode(" ",$content).'...';
-
- }
-
- $content = preg_replace('/[.+]/','', $content);
-
- $content = apply_filters('the_content', $content);
-
- $content = str_replace(']]>', ']]&gt;', $content);
- return $content;
-
-}
-
-
-
 //search only posts
 function SearchFilter($query) {
 if ($query->is_search) {

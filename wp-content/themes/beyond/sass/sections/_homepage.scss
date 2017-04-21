@@ -98,7 +98,12 @@
         }
         .read-more a {
             font-family: $font__headings;
-            color: $color__yellow;
+            color: $color__medgray;
+             font-size: 1.2rem;
+
+            &:hover {
+color:$color__yellow;
+            }  
         }
         .featured-content {
             display: block;
@@ -140,9 +145,12 @@
         }
         .catAll {
             width: 300px;
-            padding: 1rem;
-            font-size: 1.5rem;
+            padding: .8rem;
+            font-size: 1.6rem;
             margin-bottom: 3rem;
+        }
+        .meta-sep, .meta-sep + a {
+            font-size: 1.1rem;
         }
     }
     
@@ -154,6 +162,18 @@
     }
     
     .intro-homepage {
+
+         h2.gray {
+            margin-top: 5rem;
+         }
+
+         .tweet-container {
+            height: 300px;
+            overflow: scroll;
+            display: block;
+            margin-left: -10px;
+         }
+
         .col-sm-4 {
             padding-right: 2rem;
         }
