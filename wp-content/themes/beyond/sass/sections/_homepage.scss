@@ -86,7 +86,13 @@
         }
         .home-postTitle a {
             font-size: 2rem;
+
+            &:hover {
+                color: $color__yellow;
+            }
         }
+
+
         p {
             font-size: 1.1rem;
         }
@@ -142,7 +148,7 @@
     
     .intro-homepage {
         .col-sm-4 {
-            margin-right: 2rem;
+            padding-right: 2rem;
         }
         @media screen and (max-width: #{$breakpoint_mobile}) {
             margin-right: 0;

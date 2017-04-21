@@ -3560,6 +3560,9 @@ th {
 .articles-homepage .home-postTitle a {
   font-size: 2rem;
 }
+.articles-homepage .home-postTitle a:hover {
+  color: #FFC726;
+}
 .articles-homepage p {
   font-size: 1.1rem;
 }
@@ -3613,7 +3616,7 @@ h2.gray {
 }
 
 .intro-homepage .col-sm-4 {
-  margin-right: 2rem;
+  padding-right: 2rem;
 }
 @media screen and (max-width: 768px) {
   .intro-homepage {
