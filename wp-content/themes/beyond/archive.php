@@ -63,8 +63,8 @@ get_header(); ?>
 				'total' => $wp_query->max_num_pages
 				) );
 				?>
-			</div> <!--/pagination-->
-		</main>
-	</section>
+		</div> <!--/pagination-->
+	</main>
+</section>
 <?php
 get_footer();

@@ -46,15 +46,14 @@ h3 a {
     background-size: 2px 2px;
     border-bottom: 0;
     text-decoration: none;
-      -webkit-transition: color .2s ease-in-out;
+    -webkit-transition: color .2s ease-in-out;
     -moz-transition: color .2s ease-in-out;
     -o-transition: color .2s ease-in-out;
-    transition: color .2s ease-in-out; 
-
+    transition: color .2s ease-in-out;
 }
 
 .entry-header h2 a,
-h3 a, 
+h3 a,
 h3 a {
     height: 100%;
     position: relative;
@@ -73,10 +72,10 @@ h2 a:hover,
 h3 a:hover {
     background-size: 0px !important;
     color: $color__darkYellow !important;
-        -webkit-transition:  1s ease-in-out;
-    -moz-transition:  1s ease-in-out;
-    -o-transition:  1s ease-in-out;
-    transition:  1s ease-in-out; 
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 .entry-header .post-cats a {
@@ -144,6 +143,23 @@ span.arrow:after {
     display: block;
 }
 
+.cat-list ul a:hover {
+    display: inline;
+    height: 100%;
+    position: relative;
+    background-image: -webkit-linear-gradient(top, $color__yellow 0, $color__yellow 100%);
+    background-image: linear-gradient(to bottom, $color__yellow 0, $color__yellow 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    border-bottom: 0;
+    text-decoration: none;
+    -webkit-transition: 0s ease-in-out;
+    -moz-transition: 0s ease-in-out;
+    -o-transition: 0s ease-in-out;
+    transition: 0s ease-in-out;
+}
+
 .catMore {
     font-size: 1rem;
     margin-top: 10px;
@@ -208,12 +224,9 @@ h3.relatedHeading {
 }
 
 
-
-
 /*--------------------------------------------------------------
 ## Categories
 --------------------------------------------------------------*/
-
 
 .post-cats {
     margin-top: 0px;
@@ -257,7 +270,7 @@ div.pagination {
     }
     .current {
         background-color: transparent;
-        color:  $color__blue;
+        color: $color__blue;
         text-align: center;
         font-weight: bold;
     }
@@ -297,7 +310,6 @@ div.pagination {
         background-color: transparent;
     }
 }
-
 
 
 /*--------------------------------------------------------------
