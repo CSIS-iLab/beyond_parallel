@@ -1725,7 +1725,7 @@ h3.relatedHeading {
 }
 .relatedtags a .postTag {
   display: inline-block;
-  background-color: #F2F2F2;
+  background-color: #FFC726;
   padding: 0px .7rem;
   margin-right: 1rem;
   opacity: 1;
@@ -1735,7 +1735,7 @@ h3.relatedHeading {
   transition: background-color .25s ease-in-out;
 }
 .relatedtags a:hover .postTag {
-  background-color: #FFC726;
+  background-color: #EFB715;
   -webkit-transition: background-color .25s ease-in-out;
   -moz-transition: background-color .25s ease-in-out;
   -o-transition: background-color .25s ease-in-out;
