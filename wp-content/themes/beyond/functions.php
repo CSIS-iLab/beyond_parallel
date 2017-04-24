@@ -191,7 +191,9 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-// Pull Masonry
+/**
+ * Masonry for homepage
+ */
 function beyond_masonry() {
 	//if (!is_admin()) {
 		wp_register_script('jquery_masonry', get_template_directory_uri(). '/js/jquery.masonry.min.js', array('jquery'), '2.0.110526' );
@@ -216,8 +218,10 @@ function beyond_masonry() {
 
 add_action('init', 'beyond_masonry');
 
-//Add Walker class for menu drop-down descriptions
 
+/**
+ * Add Walker class for menu drop-down descriptions
+ */
 function prefix_nav_description( $item_output, $item, $depth, $args ) {
     if ( !empty( $item->description ) ) {
         $item_output = str_replace( $args->link_after . '</a>', '</a><span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
@@ -227,7 +231,10 @@ function prefix_nav_description( $item_output, $item, $depth, $args ) {
 }
 add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
 
-//wp_list_categories() 
+
+/**
+ * wp_list_categories() 
+ */
   function set_js_var() {
        $translation_array = array( 'template_directory_uri' => get_template_directory_uri());
        wp_localize_script( 'jquery', 'my_data', $translation_array );
@@ -235,8 +242,9 @@ add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
   add_action('wp_enqueue_scripts','set_js_var');  
 
 
-
-//Article footer shortcode
+/**
+ * Article footer shortcode
+ */
 function articleFooter( $atts, $content = null ) {
 
    return  '<div class="articleFooter">' . do_shortcode($content) . '</div>';
@@ -246,8 +254,9 @@ function articleFooter( $atts, $content = null ) {
 add_shortcode('footer', 'articleFooter');
 
 
-
-//search only posts
+/**
+ * Search only posts
+ */
 function SearchFilter($query) {
 if ($query->is_search) {
 $query->set('post_type', 'post');

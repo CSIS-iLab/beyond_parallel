@@ -1691,6 +1691,67 @@ span.arrow:after {
   transition: .4s ease-in-out;
 }
 
+/*--------------------------------------------------------------
+## Related Archives
+--------------------------------------------------------------*/
+h3.relatedHeading {
+  color: #ACABAB !important;
+  font-weight: normal;
+  letter-spacing: .5px;
+  margin-bottom: 0px;
+}
+
+.relatedtags a {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.relatedtags a .postTag {
+  display: inline-block;
+  background-color: #F2F2F2;
+  padding: 0px .7rem;
+  margin-right: 1rem;
+  opacity: 1;
+  -webkit-transition: background-color .25s ease-in-out;
+  -moz-transition: background-color .25s ease-in-out;
+  -o-transition: background-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+}
+.relatedtags a:hover .postTag {
+  background-color: #FFC726;
+  -webkit-transition: background-color .25s ease-in-out;
+  -moz-transition: background-color .25s ease-in-out;
+  -o-transition: background-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+}
+
+/*--------------------------------------------------------------
+## Categories
+--------------------------------------------------------------*/
+.post-cats {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.post-cats a {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1rem;
+  height: 100%;
+  position: relative;
+  background-image: -webkit-linear-gradient(top, #FFC726 0, #FFC726 100%);
+  background-image: linear-gradient(to bottom, #FFC726 0, #FFC726 100%);
+  background-position: 0 94%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  border-bottom: 0;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+## Pagination
+--------------------------------------------------------------*/
 div.pagination {
   display: block;
 }
@@ -1748,11 +1809,9 @@ div.pagination .nav-next {
   background-color: transparent;
 }
 
-/*
-*
-* Share Buttons
-* 
- */
+/*--------------------------------------------------------------
+## Share Buttons
+--------------------------------------------------------------*/
 .share-print-wrapper {
   height: 25px;
   display: block;
@@ -1948,6 +2007,8 @@ object {
 .postTop {
   height: 30rem;
   overflow-y: hidden;
+  color: inherit;
+  text-align: center;
 }
 .postTop img {
   min-height: auto;
@@ -1970,64 +2031,12 @@ object {
     min-height: auto;
   }
 }
-.relatedtags a {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-.relatedtags a .postTag {
-  display: inline-block;
-  background-color: #F2F2F2;
-  padding: 0px .7rem;
-  margin-right: 1rem;
-  opacity: 1;
-  -webkit-transition: background-color .25s ease-in-out;
-  -moz-transition: background-color .25s ease-in-out;
-  -o-transition: background-color .25s ease-in-out;
-  transition: background-color .25s ease-in-out;
-}
-.relatedtags a:hover .postTag {
-  background-color: #FFC726;
-  -webkit-transition: background-color .25s ease-in-out;
-  -moz-transition: background-color .25s ease-in-out;
-  -o-transition: background-color .25s ease-in-out;
-  transition: background-color .25s ease-in-out;
-}
-
 .entry-footer {
   margin-top: 40px;
 }
 
-h3.relatedHeading {
-  color: #ACABAB !important;
-  font-weight: normal;
-  letter-spacing: .5px;
-  margin-bottom: 0px;
-}
-
 .entry-footer h3 {
   margin-bottom: 0px;
-}
-
-.post-cats {
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-
-.post-cats a {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 1rem;
-  height: 100%;
-  position: relative;
-  background-image: -webkit-linear-gradient(top, #FFC726 0, #FFC726 100%);
-  background-image: linear-gradient(to bottom, #FFC726 0, #FFC726 100%);
-  background-position: 0 94%;
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border-bottom: 0;
-  text-decoration: none;
-  margin-right: 5px;
 }
 
 .post-meta,
@@ -2073,35 +2082,9 @@ h3.relatedHeading {
   margin: 1.5em 0 0;
 }
 
-.postTop {
-  color: inherit;
-  text-align: center;
-}
-
 .endnote {
   font-size: 15px !important;
   font-weight: 600px !important;
-}
-
-.demographics p {
-  font-size: 24px !important;
-  font-weight: 100 !important;
-}
-
-.demographics {
-  font-size: 24px;
-  padding-bottom: 37.5px;
-  margin-bottom: 50px;
-}
-
-.signals {
-  margin-left: 250px;
-  margin-right: 250px;
-}
-
-.prediction {
-  margin-bottom: 36px;
-  margin-top: 21px;
 }
 
 .authorByline {
@@ -2188,11 +2171,9 @@ sup {
   fill: #718ca1;
 }
 
-/* --------------------------------
-
-Main components
-
--------------------------------- */
+/*--------------------------------------------------------------
+## Timeline Styles
+--------------------------------------------------------------*/
 #cd-timeline {
   position: relative;
   padding: 2em 0;
@@ -2490,32 +2471,6 @@ Main components
     padding-bottom: 0px;
   }
 }
-@media only screen and (max-width: 959px) {
-  .heroTitle {
-    color: #ffc726 !important;
-    background-color: #0f2a48;
-    line-height: 28px !important;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-left: 4px;
-    padding-left: 20px;
-    display: block !important;
-  }
-
-  header nav ul li a {
-    color: #ffffff;
-    font-size: 15px;
-    margin-top: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-}
-@media only screen and (max-width: 995px) {
-  .hide {
-    display: none;
-  }
-}
 @media only screen and (max-width: 1235px) {
   .keyCaps {
     font-size: 18px;
@@ -2528,36 +2483,6 @@ Main components
     text-transform: uppercase;
   }
 
-  .satellitetext {
-    font-family: 'museo sans', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 26px;
-    margin-top: 0;
-  }
-
-  .satelliteCaptiontext {
-    font-family: 'museo-sans', sans-serif;
-    font-size: 16px;
-    display: inline-block;
-    color: #173862;
-    font-weight: 700;
-    margin-left: 44px;
-    margin-right: 44px;
-    line-height: 26px;
-    padding-top: 13px;
-  }
-
-  .mosaic {
-    visibility: hidden !important;
-    display: none;
-  }
-
-  .mosaicMobile {
-    visibility: visible;
-    display: inline;
-  }
-
   .analysistext {
     width: auto;
     margin-right: 30px;
@@ -2568,21 +2493,6 @@ Main components
     font-size: 18px;
     font-weight: 300;
     line-height: 36px;
-  }
-
-  blockquote {
-    width: auto;
-    margin-bottom: 29px;
-    margin-left: 40px;
-  }
-
-  .blockquote2,
-  .blockquote3,
-  .blockquote4 {
-    width: auto;
-    position: relative;
-    margin-left: 0;
-    margin-top: 0;
   }
 
   .analysisTitleM {
@@ -2691,11 +2601,30 @@ Main components
   display: none;
 }
 
-/* --------------------------------
+/*--------------------------------------------------------------
+## Signals Posts
+--------------------------------------------------------------*/
+.demographics p {
+  font-size: 24px !important;
+  font-weight: 100 !important;
+}
 
-Entry Footer
+.demographics {
+  font-size: 24px;
+  padding-bottom: 37.5px;
+  margin-bottom: 50px;
+}
 
--------------------------------- */
+.signals {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.prediction {
+  margin-bottom: 36px;
+  margin-top: 21px;
+}
+
 /*--------------------------------------------------------------
 ## Pages
 --------------------------------------------------------------*/
@@ -2733,6 +2662,9 @@ div.pagination {
   padding-left: 1em;
 }
 
+/*--------------------------------------------------------------
+## Analysis Landing
+--------------------------------------------------------------*/
 .analysis-landing footer.entry-footer {
   display: none;
 }
@@ -2762,17 +2694,17 @@ div.pagination {
   margin-top: 5rem;
 }
 
-/* 
-* Databases
-*/
+/*--------------------------------------------------------------
+## Databases
+--------------------------------------------------------------*/
 hr.databasehr {
   background-color: #10355F;
   margin: 2em 0em 5em;
 }
 
-/* 
-* LIVING HISTORY
-*/
+/*--------------------------------------------------------------
+## Living History
+--------------------------------------------------------------*/
 .living-first {
   background-color: #F2F2F2;
   padding: 2em;
@@ -2813,20 +2745,16 @@ hr.databasehr {
   width: 100%;
 }
 
-/* 
-*
-* Imagery Landing Pager
-* 
-*/
+/*--------------------------------------------------------------
+## Imagery Landing
+--------------------------------------------------------------*/
 .imagery-title {
   padding-bottom: 10px;
 }
 
-/* 
-*
-* SIGNALS
-* 
-*/
+/*--------------------------------------------------------------
+## Signals Page
+--------------------------------------------------------------*/
 .signalsTitle {
   margin-bottom: 10px;
   background-color: transparent !important;
@@ -3173,7 +3101,6 @@ hr.databasehr {
   max-width: 1170px;
   margin: 0 auto;
 }
-
 .cd-container::after {
   /* clearfix */
   content: '';
@@ -3567,7 +3494,8 @@ th {
   font-size: 1.6rem;
   margin-bottom: 3rem;
 }
-.articles-homepage .meta-sep, .articles-homepage .meta-sep + a {
+.articles-homepage .meta-sep,
+.articles-homepage .meta-sep + a {
   font-size: 1.1rem;
 }
 

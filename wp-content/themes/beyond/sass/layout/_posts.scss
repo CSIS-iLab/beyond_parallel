@@ -9,6 +9,8 @@
 .postTop {
     height: 30rem;
     overflow-y: hidden;
+    color: inherit;
+    text-align: center;
     img {
         min-height: auto;
         min-width: 100%;
@@ -33,69 +35,17 @@
     }
 }
 
-.relatedtags {
-    a {
-        display: inline-block;
-        text-transform: uppercase;
-        font-size: 1rem;
-        .postTag {
-            display: inline-block;
-            background-color: $color__lightgray;
-            padding: 0px .7rem;
-            margin-right: 1rem;
-            opacity: 1;
-            -webkit-transition: background-color .25s ease-in-out;
-            -moz-transition: background-color .25s ease-in-out;
-            -o-transition: background-color .25s ease-in-out;
-            transition: background-color .25s ease-in-out;
-        }
-    }
-    a:hover {
-        .postTag {
-            background-color: $color__yellow;
-            -webkit-transition: background-color .25s ease-in-out;
-            -moz-transition: background-color .25s ease-in-out;
-            -o-transition: background-color .25s ease-in-out;
-            transition: background-color .25s ease-in-out;
-        }
-    }
-}
 
 .entry-footer {
     margin-top: 40px;
 }
 
-h3.relatedHeading {
-    color: $color__medgray !important;
-    font-weight: normal;
-    letter-spacing: .5px;
-    margin-bottom: 0px;
-}
+
 
 .entry-footer h3 {
     margin-bottom: 0px;
 }
 
-.post-cats {
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-
-.post-cats a {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 1rem;
-    height: 100%;
-    position: relative;
-    background-image: -webkit-linear-gradient(top, $color__yellow 0, $color__yellow 100%);
-    background-image: linear-gradient(to bottom, $color__yellow 0, $color__yellow 100%);
-    background-position: 0 94%;
-    background-repeat: repeat-x;
-    background-size: 2px 2px;
-    border-bottom: 0;
-    text-decoration: none;
-    margin-right: 5px;
-}
 
 .post-meta,
 .post-meta p {
@@ -140,10 +90,6 @@ h3.relatedHeading {
     margin: 1.5em 0 0;
 }
 
-.postTop {
-    color: inherit;
-    text-align: center;
-}
 
 .endnote {
     font-size: 15px !important;
@@ -152,26 +98,6 @@ h3.relatedHeading {
 
 
 
-.demographics p {
-    font-size: 24px !important;
-    font-weight: 100 !important;
-}
-
-.demographics {
-    font-size: 24px;
-    padding-bottom: 37.5px;
-    margin-bottom: 50px;
-}
-
-.signals {
-    margin-left: 250px;
-    margin-right: 250px;
-}
-
-.prediction {
-    margin-bottom: 36px;
-    margin-top: 21px;
-}
 
 .authorByline {
     padding-top: 36px;
@@ -224,8 +150,6 @@ sup {
     top: 400px !important;
 }
 
-
-
 .cd-nugget-info {
     text-align: center;
     position: absolute;
@@ -260,11 +184,10 @@ sup {
 }
 
 
-/* --------------------------------
 
-Main components
-
--------------------------------- */
+/*--------------------------------------------------------------
+## Timeline Styles
+--------------------------------------------------------------*/
 
 #cd-timeline {
     position: relative;
@@ -548,34 +471,6 @@ Main components
     }
 }
 
-@media only screen and (max-width: 959px) {
-    .heroTitle {
-        color: #ffc726 !important;
-        background-color: #0f2a48;
-        line-height: 28px !important;
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        margin-left: 4px;
-        padding-left: 20px;
-        display: block !important;
-    }
-    header nav ul li a {
-        color: #ffffff;
-        font-size: 15px;
-        margin-top: 15px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-}
-
-@media only screen and (max-width: 995px) {
-    .satellitetext {}
-    .hide {
-        display: none;
-    }
-}
-
 @media only screen and (max-width: 1235px) {
     .keyCaps {
         font-size: 18px;
@@ -586,32 +481,7 @@ Main components
         font-weight: bold;
         text-transform: uppercase;
     }
-    .satellitetext {
-        font-family: 'museo sans', sans-serif;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 0;
-    }
-    .satelliteCaptiontext {
-        font-family: 'museo-sans', sans-serif;
-        font-size: 16px;
-        display: inline-block;
-        color: #173862;
-        font-weight: 700;
-        margin-left: 44px;
-        margin-right: 44px;
-        line-height: 26px;
-        padding-top: 13px;
-    }
-    .mosaic {
-        visibility: hidden !important;
-        display: none;
-    }
-    .mosaicMobile {
-        visibility: visible;
-        display: inline;
-    }
+
     .analysistext {
         width: auto;
         margin-right: 30px;
@@ -622,19 +492,6 @@ Main components
         font-size: 18px;
         font-weight: 300;
         line-height: 36px;
-    }
-    blockquote {
-        width: auto;
-        margin-bottom: 29px;
-        margin-left: 40px;
-    }
-    .blockquote2,
-    .blockquote3,
-    .blockquote4 {
-        width: auto;
-        position: relative;
-        margin-left: 0;
-        margin-top: 0;
     }
     .analysisTitleM {
         float: none;
@@ -739,8 +596,29 @@ Main components
 }
 
 
-/* --------------------------------
 
-Entry Footer
+/*--------------------------------------------------------------
+## Signals Posts
+--------------------------------------------------------------*/
 
--------------------------------- */
+
+.demographics p {
+    font-size: 24px !important;
+    font-weight: 100 !important;
+}
+
+.demographics {
+    font-size: 24px;
+    padding-bottom: 37.5px;
+    margin-bottom: 50px;
+}
+
+.signals {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.prediction {
+    margin-bottom: 36px;
+    margin-top: 21px;
+}

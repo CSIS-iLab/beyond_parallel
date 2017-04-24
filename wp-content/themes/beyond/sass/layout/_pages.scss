@@ -14,6 +14,7 @@
 div.pagination {
     text-align: center;
 }
+
 .pageMenuHeader {
     margin-bottom: .9em;
     font-size: 1em;
@@ -22,27 +23,28 @@ div.pagination {
 
 .list-title {
     margin-bottom: 0px;
-
 }
 
 .cat-list {
-        margin-bottom: 8rem;
-        display: block;
-        border-left: 8px solid $color__lightgray;
-        padding-left: 1em;
-    }
+    margin-bottom: 8rem;
+    display: block;
+    border-left: 8px solid $color__lightgray;
+    padding-left: 1em;
+}
 
+
+/*--------------------------------------------------------------
+## Analysis Landing
+--------------------------------------------------------------*/
 
 .analysis-landing {
     footer.entry-footer {
         display: none;
     }
-
     .cat-header {
         color: $color__gray;
         margin: 0px;
     }
-
     .catNums {
         color: $color__gray;
     }
@@ -68,9 +70,9 @@ div.pagination {
 }
 
 
-/* 
-* Databases
-*/
+/*--------------------------------------------------------------
+## Databases
+--------------------------------------------------------------*/
 
 hr.databasehr {
     background-color: $color__blue;
@@ -78,9 +80,9 @@ hr.databasehr {
 }
 
 
-/* 
-* LIVING HISTORY
-*/
+/*--------------------------------------------------------------
+## Living History
+--------------------------------------------------------------*/
 
 .living-first {
     background-color: $color__lightgray;
@@ -123,23 +125,18 @@ hr.databasehr {
 }
 
 
-/* 
-*
-* Imagery Landing Pager
-* 
-*/
+/*--------------------------------------------------------------
+## Imagery Landing
+--------------------------------------------------------------*/
 
 .imagery-title {
     padding-bottom: 10px;
 }
 
 
-/* 
-*
-* SIGNALS
-* 
-*/
-
+/*--------------------------------------------------------------
+## Signals Page
+--------------------------------------------------------------*/
 
 .signalsTitle {
     margin-bottom: 10px;
@@ -487,13 +484,10 @@ hr.databasehr {
     width: 90%;
     max-width: 1170px;
     margin: 0 auto;
+    &::after {
+        /* clearfix */
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
-
-.cd-container::after {
-    /* clearfix */
-    content: '';
-    display: table;
-    clear: both;
-}
-
-

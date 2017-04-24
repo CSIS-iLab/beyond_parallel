@@ -65,7 +65,6 @@ h3 a {
     background-size: 2px 2px;
     border-bottom: 0;
     text-decoration: none;
-
 }
 
 .home .rev_slider a:hover,
@@ -116,7 +115,7 @@ span.arrow:after {
     -moz-transition: .4s ease-in-out;
     -o-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
-        margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .catAll:hover,
@@ -167,6 +166,80 @@ span.arrow:after {
     -o-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
 }
+
+
+/*--------------------------------------------------------------
+## Related Archives
+--------------------------------------------------------------*/
+
+h3.relatedHeading {
+    color: $color__medgray !important;
+    font-weight: normal;
+    letter-spacing: .5px;
+    margin-bottom: 0px;
+}
+
+.relatedtags {
+    a {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 1rem;
+        .postTag {
+            display: inline-block;
+            background-color: $color__lightgray;
+            padding: 0px .7rem;
+            margin-right: 1rem;
+            opacity: 1;
+            -webkit-transition: background-color .25s ease-in-out;
+            -moz-transition: background-color .25s ease-in-out;
+            -o-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+        }
+    }
+    a:hover {
+        .postTag {
+            background-color: $color__yellow;
+            -webkit-transition: background-color .25s ease-in-out;
+            -moz-transition: background-color .25s ease-in-out;
+            -o-transition: background-color .25s ease-in-out;
+            transition: background-color .25s ease-in-out;
+        }
+    }
+}
+
+
+
+
+/*--------------------------------------------------------------
+## Categories
+--------------------------------------------------------------*/
+
+
+.post-cats {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.post-cats a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    height: 100%;
+    position: relative;
+    background-image: -webkit-linear-gradient(top, $color__yellow 0, $color__yellow 100%);
+    background-image: linear-gradient(to bottom, $color__yellow 0, $color__yellow 100%);
+    background-position: 0 94%;
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    border-bottom: 0;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+
+/*--------------------------------------------------------------
+## Pagination
+--------------------------------------------------------------*/
 
 div.pagination {
     display: block;
@@ -226,11 +299,10 @@ div.pagination {
 }
 
 
-/*
-*
-* Share Buttons
-* 
- */
+
+/*--------------------------------------------------------------
+## Share Buttons
+--------------------------------------------------------------*/
 
 .share-print-wrapper {
     height: 25px;

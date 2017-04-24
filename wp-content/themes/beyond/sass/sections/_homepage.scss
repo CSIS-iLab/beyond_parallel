@@ -26,7 +26,6 @@
         }
         h2 {
             margin-top: 0px;
-
             a {
                 background-image: none;
                 font-size: 2.9rem;
@@ -86,24 +85,20 @@
         }
         .home-postTitle a {
             font-size: 2rem;
-
             &:hover {
                 color: $color__yellow;
             }
         }
-
-
         p {
             font-size: 1.1rem;
         }
         .read-more a {
             font-family: $font__headings;
             color: $color__medgray;
-             font-size: 1.2rem;
-
+            font-size: 1.2rem;
             &:hover {
-color:$color__yellow;
-            }  
+                color: $color__yellow;
+            }
         }
         .featured-content {
             display: block;
@@ -112,13 +107,11 @@ color:$color__yellow;
         .post-cats {
             margin-top: -7px;
             margin-bottom: 5px;
-
             a:hover {
                 background-image: none;
                 color: $color__yellow;
             }
         }
-
         .recentPosts-title {
             width: 100%;
             padding: .9rem 0 .8rem;
@@ -149,7 +142,8 @@ color:$color__yellow;
             font-size: 1.6rem;
             margin-bottom: 3rem;
         }
-        .meta-sep, .meta-sep + a {
+        .meta-sep,
+        .meta-sep + a {
             font-size: 1.1rem;
         }
     }
@@ -162,18 +156,15 @@ color:$color__yellow;
     }
     
     .intro-homepage {
-
-         h2.gray {
+        h2.gray {
             margin-top: 5rem;
-         }
-
-         .tweet-container {
+        }
+        .tweet-container {
             height: 300px;
             overflow: scroll;
             display: block;
             margin-left: -10px;
-         }
-
+        }
         .col-sm-4 {
             padding-right: 2rem;
         }

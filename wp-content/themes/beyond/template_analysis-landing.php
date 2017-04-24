@@ -62,17 +62,16 @@ get_header(); ?>
 					$catRight = $catRight.''.$catList[$i];
 				}  
 			};
-
-
 			?>
-
 
 			<ul class="col-sm-4">
 				<?php echo $catLeft; ?>
 			</ul>
+			
 			<ul class="col-sm-4 col-sm-4-offset">
 				<?php echo $catRight; ?>
 			</ul>
+			
 			<div class="clearfix"></div>
 			<a href="/all-posts" class="catTop" alt="See all articles"><span class="arrow">SEE ALL ARTICLES</span></a>
 
@@ -81,7 +80,6 @@ get_header(); ?>
 
 
 		<?php
-
 		//get list of categories and top 5 posts
 		$do_not_duplicate = array();
 		$categories = get_categories(); 
@@ -91,8 +89,7 @@ get_header(); ?>
 			$args = array(
 				'cat' => $category->term_id,
 				'post_type' => 'post',
-				'posts_per_page' => '5',
-				'exclude' => 'analysis'
+				'posts_per_page' => '5'		
 			);
 
 			$query = new WP_Query( $args );
@@ -107,18 +104,24 @@ get_header(); ?>
 					$do_not_duplicate[] = $post->ID;
 					?>
 
-					<li><article id="post-<?php the_ID(); ?>" <?php post_class( 'category-listing' ); ?>>
-						<a class="related-link" alt="<?php the_title(); ?>" rel="external" href="<? the_permalink()?>">
-							<?php the_title(); ?></a><span class="related-date"> &#8212;<?php beyond_posted_on(); ?></span>
+					<li>
+						<article id="post-<?php the_ID(); ?>" <?php post_class( 'category-listing' ); ?>>
+							<a class="related-link" alt="<?php the_title(); ?>" rel="external" href="<? the_permalink()?>">
+								<?php the_title(); ?>
+							</a>
+							<span class="related-date"> &#8212;<?php beyond_posted_on(); ?></span>
 
 
-					</article></li>
+						</article>
+					</li>
 
-						<?php } // end while ?>
-						</ul>
-						<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>" alt="<?php echo $category->name; ?>"><span class="arrow">All <?php echo $category->name; ?> Articles</span></a> </p>
+					<?php } // end while ?>
+				</ul>
+				<a class="catMore" href="<?php echo get_category_link( $category->term_id ) ?>" alt="<?php echo $category->name; ?>"><span class="arrow">All <?php echo $category->name; ?> Articles</span>
+				</a>
+				
 
-					</section>
+			</section>
 
 			<?php } // end if
 

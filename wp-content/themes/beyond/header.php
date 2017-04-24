@@ -1,9 +1,5 @@
 <?php
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Beyond_Parallel
@@ -50,6 +46,7 @@
 				</div>
 			</label>
 			<div class="overlay"></div>
+
 			<div id="popout">
 				<nav class="site-navigation mobile-navigation">
 			
@@ -60,7 +57,7 @@
 							<div class="search-icon">
 								
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-icon.svg" height="30px"><span>Search</span>
-							</div>
+							</div><!--/search-icon -->
 							<div class="search-input">
 								
 								<input type="search" 
@@ -69,81 +66,97 @@
 								value="" name="s" 
 								title="Search:">
 								
-								<input type="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/gray-arrow.svg" height="30px" class="search-submit" height="30px" alt="">
-							</form>
-						</div>
+								<input type="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/gray-arrow.svg" height="30px" class="search-submit" alt="">
+							</div><!--/search-input -->
+						</form>
+						
 						<div class="social-media">
 							<div class="social">
-								<a href="https://www.facebook.com/csiskoreachair/" alt="CSIS Korea Chair Facebook"><div class="facebook-icon"></div><div class="social-info">CSIS Korea Chair</div></a>
+								<a href="https://www.facebook.com/csiskoreachair/" alt="CSIS Korea Chair Facebook">
+									<div class="facebook-icon"></div>
+									<div class="social-info">CSIS Korea Chair</div>
+								</a>
+								
 								<div class="clearfix"></div>
-								<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter"><div class="twitter-icon"></div><div class="social-info">@BeyondCSISKorea</div></a>
+								
+								<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter">
+									<div class="twitter-icon"></div>
+									<div class="social-info">@BeyondCSISKorea</div>
+								</a>
+								
 								<div class="clearfix"></div>
-								<a href="mailto:KoreaChair@csis.org?Subject=" alt="Email Beyond Parallel"><div class="email-icon"></div><div class="social-info">KoreaChair@csis.org</div></a>
-							</div>
-						</div>
-					</div>
-				</div> 
-			</div>
+								
+								<a href="mailto:KoreaChair@csis.org?Subject=" alt="Email Beyond Parallel">	<div class="email-icon"></div>
+									<div class="social-info">KoreaChair@csis.org</div>
+								</a>
+							</div><!--/social -->
+						</div><!--/spcial-media -->
+				</nav> 
+
+			</div> <!--/popout -->
+		</div> <!--/toggle -->
 
 			
-			<header id="masthead" class="site-header" role="banner">
-				<div class="mainNav">	
+		<header id="masthead" class="site-header" role="banner">
+			<div class="mainNav">	
+				<div class="container">
+					<div style="text-align: center;">
+						<div class="header-info">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<img src="<?php echo get_bloginfo('template_url') ?>/assets/images/beyond-parallel-logo.svg" class="header-logo">
+							</a>
+
+							<p class="mission">Bringing <span style="color:#ffc624;">TRANSPARENCY</span> and <span style="color:#ffc624;">UNDERSTANDING</span> to Korean Unification</p>
+						</div><!--/header-info-->
+					</div>
+				</div><!--/container -->
+
+				<div id="nav-bar">
 					<div class="container">
+						<nav role="navigation" class="site-navigation main-navigation">
+							<div id="main-menu-container">
+								<?php wp_nav_menu( array( 'theme_location' => 'primary',  'menu_class' => 'nav-menu') ); // Display the user-defined menu in Appearance > Menus 
 
-						<center>
+								?>
+							</div><!--/main-menu-container -->
 
-							<div class="header-info">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_bloginfo('template_url') ?>/assets/images/beyond-parallel-logo.svg" class="header-logo"></a>
+							<div class="secondary-nav">
+								<form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+									<div class="search-icon">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-icon.svg" height="30px"><span>SEARCH</span>
+									</div><!--/search-icon -->
 
-								<p class="mission">Bringing <span style="color:#ffc624;">TRANSPARENCY</span> and <span style="color:#ffc624;">UNDERSTANDING</span> to Korean Unification</p>
-							</div>
-						</div>
+									<div class="search-input">
+										<input type="search" class="search-field" placeholder="" value="" name="s" title="Search:">
+										<input type="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/gray-arrow.svg" height="30px" class="search-submit" height="30px" alt="">
+									</div><!--/search-input -->
+								</form>
+							
+								<div class="social-media">
+									<div class="social">
+										<a href="https://www.facebook.com/csiskoreachair/" alt="CSIS Korea Chair Facebook">
+											<div class="facebook-icon"></div>
+										</a>
+										
+										<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter">
+											<div class="twitter-icon"></div>
+										</a>
+										
+										<a href="mailto:KoreaChair@csis.org?Subject=" alt="Email Beyond Parallel">
+											<div class="email-icon"></div>
+										</a>
+									</div><!--/social -->
+								</div><!--/social-media -->
+							</div><!--/secondary-nav -->
+						</nav>
+					</div><!--/container -->
 
-						<div id="nav-bar">
-							<div class="container">
-								<nav role="navigation" class="site-navigation main-navigation">
-									<div id="main-menu-container">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary',  'menu_class' => 'nav-menu') ); // Display the user-defined menu in Appearance > Menus 
+				</div> <!--/nav-bar -->
 
-			?>
-		</div>
+			</div><!-- /mainNav -->
 
-		<div class="secondary-nav">
-			<form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
-				<div class="search-icon">
-					
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-icon.svg" height="30px"><span>SEARCH</span>
-				</div>
-				<div class="search-input">
-					
-					<input type="search" 
-					class="search-field" 
-					placeholder=""  
-					value="" name="s" 
-					title="Search:">
-					
-					<input type="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/gray-arrow.svg" height="30px" class="search-submit" height="30px" alt="">
-				</form>
-			</div>
-			<div class="social-media">
-				<div class="social">
-					<a href="https://www.facebook.com/csiskoreachair/" alt="CSIS Korea Chair Facebook"><div class="facebook-icon"></div></a>
-					<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter"><div class="twitter-icon"></div></a>
-					<a href="mailto:KoreaChair@csis.org?Subject=" alt="Email Beyond Parallel"><div class="email-icon"></div></a>
-				</div>
-			</div>
-		</div>
-	</nav>
-</div><!--/container -->
-
-</div> <!--/nav-bar -->
-
-</nav><!-- .site-navigation .main-navigation -->
-
-</div>
-</div>
-<div class="clear"></div>
-</div><!--/container -->
+	<div class="clear"></div>
+	</div><!--/container -->
 
 </header><!-- #masthead .site-header -->
 
