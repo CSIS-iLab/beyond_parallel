@@ -33,3 +33,9 @@ wp_enqueue_script('jquery_masonry', plugin_dir_url( __FILE__ ) . 'js/jquery.maso
 }
 add_action( 'admin_init','your_css_and_js');
 
+// UPLOAD ENGINE
+function load_wp_media_files() {
+    wp_enqueue_media();
+}
+add_action( 'admin_init', 'load_wp_media_files' );
+

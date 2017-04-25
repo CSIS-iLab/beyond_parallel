@@ -67,7 +67,8 @@
             var value = $(element).val();
 
             $("label").each(function() {
-                if ($(this).text().indexOf(value) > -1) {
+                var myExp = new RegExp(value, "i");
+                if ($(this).text().search(myExp) > -1) {
                     $(this).parent().parent().show();
                 } else {
                     $(this).parent().parent().hide();
@@ -86,17 +87,35 @@
             var postID = $(this).attr('id');
             var start_positions = $('input#position_array').val();
             var featured_post = $('input#featured_post').val();
+            var position = $('input#media_select').val();
+
+            var new_position = position.split(',');
 
             var new_array = start_positions.split(',');
             new_array.splice(0, 0, featured_post);
 
+            var new_positions = position.split(',');
             //console.log(new_array);
             $.each(new_array, function(index, val) {
+
                 $("input[data-id='" + val + "']").attr('data-sort-position', index);
                 var title = $("input[data-id='" + val + "']").attr('data-name');
                 //console.log(val);
-                $('.right_container').append("<div class='page_item " + val + " ' data-page-id=" + val + "  id='" + val + "-sortable'><div class='page_title'>" + title + "</div><div class='remove_item active'> Remove </div><input type='hidden' name='related_pages[]' value=" + val + " data-place=''/>")
+                $('.right_container').append("<div class='page_item " + val + " ' data-page-id=" + val + "  id='" + val + "-sortable'><div class='page_title'>" + title + "</div><div class='remove_item active'> Remove </div><div class='upload_item active'><select class='image-placement'><option value='c' selected>Center</option><option value='r'>Right</option><option value='l'>Left</option></select></div><input type='hidden' name='related_pages[]' value=" + val + " data-place=''/>")
+
             });
+
+            $(".page_item").each(function(index, value) {
+                var thisPosition = new_position[index];
+                var news = $('.image-placement option:selected', this).val();
+                console.log(thisPosition + ": " + news);
+                if (thisPosition != news) {
+                    $('.image-placement option[value="' + thisPosition + '"]', this).prop('selected', true);
+                }
+
+
+            });
+
         };
 
         $(':checkbox').on('click', function() {
@@ -110,9 +129,8 @@
                     var postName = $(this).attr('data-name');
 
                     if ($(".right_container ." + postID).length == 0) {
-                        $('.right_container').append("<div class='page_item " + postID + " ' data-page-id=" + postID + "  id='" + postID + "-sortable'><div class='page_title'>" + postName + "</div><div class='remove_item active'> Remove </div><input type='hidden' name='related_pages[]' value=" + postID + " data-place=''/>")
+                        $('.right_container').append("<div class='page_item " + postID + " ' data-page-id=" + postID + "  id='" + postID + "-sortable'><div class='page_title'>" + postName + "</div><div class='remove_item active'> Remove </div><div class='upload_item active'><select class='image-placement'><option value='c'>Center</option><option value='r'>Right</option><option value='l'>Left</option></select></div><input type='hidden' name='related_pages[]' value=" + postID + " data-place=''/>")
                     }
-
 
                 });
 
@@ -126,6 +144,9 @@
             sortEventHandler_update();
 
         });
+
+
+
 
         //After moving item
         var sortEventHandler = function(event, ui) {
@@ -166,6 +187,15 @@
 
             $('input#featured_post').val(featured);
 
+            var imageArray = [];
+
+            $(".page_item select").each(function(index) {
+                var thisValue = this.value;
+                // $("input[id='" + checkID + "']:checked").attr('data-page-id', '0');
+                imageArray.push(thisValue);
+            });
+
+            $('input#media_select').val(imageArray);
 
         };
 
@@ -177,11 +207,13 @@
             $(array).each(function(index, value) {
                 var thisID = $(this).attr('data-page-id');
                 //var thisIndex = $(this).index('.right_container');
-                console.log(index + ": " + thisID);
+
                 updatePosition(thisID, index)
             });
             //$("input[id='"+checkID+"']").attr('data-sort-position', false);
             updateArray();
+
+
         };
 
         var updatePosition = function(thisID, index) {
@@ -189,6 +221,8 @@
 
             $('.left_container input').each(function() {
                 var listID = $(this).attr('id');
+                var imageUrl = $(this).attr('data-image-url');
+                // console.log(imageUrl);
                 var newID = thisID;
                 var listIndex = index + 1;
                 if (listID == newID) {
@@ -208,6 +242,24 @@
             sortEventHandler_update();
             updateArray();
         });
+
+
+
+        // Select button functionality
+        $('.right_container').on('change', '.image-placement', function() {
+            var checkID = $(this).parent('div').attr('data-page-id');
+            var imageArray = [];
+
+            $(".page_item select").each(function(index) {
+                var thisValue = this.value;
+                // $("input[id='" + checkID + "']:checked").attr('data-page-id', '0');
+                imageArray.push(thisValue);
+            });
+
+            $('input#media_select').val(imageArray);
+        });
+
+
 
 
         /*Sortable Area*/

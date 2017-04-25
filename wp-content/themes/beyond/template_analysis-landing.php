@@ -37,6 +37,7 @@ get_header(); ?>
 			$catList = array();
 			
 			foreach ( $categories as $category ) {
+				//if( $cat->cat_name != 'Uncategorized' ) {
 				$catName = $category->name;
 				$catCount = sprintf( esc_html__( '%s', 'textdomain' ), $category->count );
 				$catNum = sprintf( '<a href="#'.$catName.'">%2$s</a> <span class="catNums">('.$catCount .')</span><br />',
@@ -48,6 +49,7 @@ get_header(); ?>
 
 				array_push($catList, $catNum);
 			}
+			//}
 
 
 
@@ -82,14 +84,18 @@ get_header(); ?>
 		<?php
 		//get list of categories and top 5 posts
 		$do_not_duplicate = array();
-		$categories = get_categories(); 
+		$categories = get_categories( array(
+				'hide_empty' => 1,
+				'exclude' => 1
+				) );
 
 		foreach ( $categories as $category ) {
 
 			$args = array(
 				'cat' => $category->term_id,
 				'post_type' => 'post',
-				'posts_per_page' => '5'		
+				'posts_per_page' => '5',	
+				'tag__not_in' => array('57')
 			);
 
 			$query = new WP_Query( $args );
@@ -98,6 +104,7 @@ get_header(); ?>
 
 			<section id="<?php echo $category->name; ?>" class="<?php echo $category->name; ?> listing cat-listing">
 				<h2><?php echo $category->name; ?>:</h2> 
+				
 				<ul class="analysis-posts">
 				<?php while ( $query->have_posts() ) {
 					$query->the_post();
@@ -109,7 +116,7 @@ get_header(); ?>
 							<a class="related-link" alt="<?php the_title(); ?>" rel="external" href="<? the_permalink()?>">
 								<?php the_title(); ?>
 							</a>
-							<span class="related-date"> &#8212;<?php beyond_posted_on(); ?></span>
+							<span class="related-date"> &#8212; <?php beyond_posted_on(); ?></span>
 
 
 						</article>

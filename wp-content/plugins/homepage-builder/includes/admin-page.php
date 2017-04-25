@@ -89,6 +89,10 @@ function display_theme_panel_fields()
 			add_settings_field("featured_post", "", "display_featured_element", "theme-options", "section");
 			register_setting("section", "featured_post");
 
+			add_settings_field("media_select", "", "display_media_element", "theme-options", "section");
+			register_setting("section", "media_select");
+
+
 
 		/*add_settings_field("about_text", "About description ", "display_about_element", "theme-options", "section2");
 			register_setting("section2", "about_text");*/
@@ -136,11 +140,18 @@ function display_posts_element(array $args)
 
 $id = $args['post_id'];
 $title = $args['post_title'];
-$post_output .= '<input id="'. $id .'" name="'. $id .'" class="'. $id .'" name="post" data-type="addThis" data-sort-position="0" data-name="'. $title .'" data-ID="' . $id .'" data-post-type="post" type="checkbox" value="1" '. checked(1, get_option($id), false) .'>';
+$post_output .= '<input id="'. $id .'" name="'. $id .'" class="'. $id .'" name="post" data-type="addThis" data-sort-position="0" data-image-position="0" data-name="'. $title .'" data-ID="' . $id .'" data-post-type="post" type="checkbox" value="1" '. checked(1, get_option($id), false) .'>';
     		$post_output .= '<label class="description">'. $title .'</label><br>';
     		print $post_output;
 
 }	
+
+
+function display_media_element(){
+?>
+    	<input type="text" name="media_select" id="media_select" value="<?php echo get_option('media_select'); ?>" />
+    <?php
+};
 
 
 function hb_register_settings() {
@@ -149,6 +160,7 @@ function hb_register_settings() {
 
 }
 add_action('admin_init', 'hb_register_settings');
+
 
 
 function my_excerpt_length($length) {
