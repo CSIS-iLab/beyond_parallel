@@ -153,7 +153,17 @@ function get_thisPost($key, $value, $imageL){
 		        	</a>
 		        </div>
 	        	<p>
-			<?php echo wp_trim_words( get_the_content(), 20, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' ) ?>
+
+	        	<?php 
+	        	
+	        		$excerpt = get_the_excerpt(); 
+
+					if ( has_excerpt( $post->ID ) ){
+	        			echo $excerpt . '  <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' ; 
+	        		} else {
+	        			echo wp_trim_words( get_the_content(), 20, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' );
+	        		} 
+	        	?>
 			</p>
 	        	
 		
