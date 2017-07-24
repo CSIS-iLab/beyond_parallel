@@ -3196,10 +3196,7 @@ h2.entry-title {
   }
 
   p a[href^="http://"]:after {
-    display: inline;
-    content: " (" attr(href) ")";
-    font-size: 90%;
-    font-weight: normal;
+    display: none;
   }
 
   .post-meta {
