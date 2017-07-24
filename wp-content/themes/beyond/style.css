@@ -3191,12 +3191,8 @@ h2.entry-title {
     height: 0px;
   }
 
-  a[href^="http://"]:after {
-    display: none;
-  }
-
-  p a[href^="http://"]:after {
-    display: none;
+  a[href]:after {
+    content: none !important;
   }
 
   .post-meta {
