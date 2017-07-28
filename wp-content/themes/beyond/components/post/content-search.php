@@ -35,9 +35,7 @@
     //$first_para = substr( $str, 0, strpos( $str, '</p>' ));
 $first_para = preg_replace('/<h[^>]*>([\s\S]*?)<\/h[^>]*>/', '', $str);
 
-    
-  ?>
-  <?
+
 if ( has_excerpt( get_the_id() ) ){
 	$excerpt = get_the_excerpt();
 

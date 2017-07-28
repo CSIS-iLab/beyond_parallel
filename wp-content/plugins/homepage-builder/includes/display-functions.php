@@ -156,10 +156,9 @@ function get_thisPost($key, $value, $imageL){
 
 	        	<?php 
 	        	
-	        		$excerpt = get_the_excerpt(); 
-
 					if ( has_excerpt( $post->ID ) ){
-	        			echo $excerpt . '  <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' ; 
+						$excerpt = get_the_excerpt(); 
+	        			echo wp_trim_words($excerpt, 35, '...  <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>') ; 
 	        		} else {
 	        			echo wp_trim_words( get_the_content(), 20, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' );
 	        		} 
@@ -195,7 +194,7 @@ function get_recentPosts(){
 	?>
 	<div class="ms-item featuredCard col-lg-4 col-md-4 col-sm-6 col-xs-12">
 		<div class="card-top"></div>
-		<div class="recentPosts-title home-postTitle">Recent Articles</div>
+		<a href="/all-posts/" alt="See all Recent Articles"><div class="recentPosts-title home-postTitle">Recent Articles</div></a>
 		<div class="card-bottom">
 			<?php
 			foreach( $recent_posts as $recent ){
