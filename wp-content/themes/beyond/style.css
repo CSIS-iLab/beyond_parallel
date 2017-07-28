@@ -3184,13 +3184,16 @@ h2.entry-title {
     display: none;
   }
 
-  .postTop img.wp-post-image, .postTop {
+  .postTop img.wp-post-image,
+  .postTop {
     display: none;
     overflow: hidden;
     width: 0;
     height: 0px;
   }
 
+  a:link:after,
+  a:visited:after,
   a[href]:after {
     content: none !important;
   }
