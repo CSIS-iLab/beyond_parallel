@@ -200,7 +200,7 @@ function get_recentPosts(){
 			foreach( $recent_posts as $recent ){
 			?>
 				<time class="entry-date" datetime="<?php echo get_the_date( 'c' ); ?>" pubdate>
-				<?php echo get_the_date('F j, Y'); ?>
+				<?php echo get_the_date('F j, Y', $recent["ID"]); ?>
 				</time><br>
 			
 				<?php echo '<a href="' . get_permalink($recent["ID"]) . '" class="home-postTitle" alt="' .   $recent["post_title"].'">' . $recent["post_title"].'</a> ';?>
