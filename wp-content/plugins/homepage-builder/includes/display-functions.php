@@ -171,7 +171,7 @@ function get_thisPost($key, $value, $imageL){
 		<?php
 	
 	 endwhile; endif; 
-wp_reset_query(); 
+	wp_reset_query(); 
 }
 
 
