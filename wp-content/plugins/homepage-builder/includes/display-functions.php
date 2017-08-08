@@ -158,7 +158,7 @@ function get_thisPost($key, $value, $imageL){
 	        	
 					if ( has_excerpt( $post->ID ) ){
 						$excerpt = get_the_excerpt(); 
-	        			echo wp_trim_words($excerpt, 35, '...  <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>') ; 
+	        			echo wp_trim_words($excerpt, 35, '... ') . ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>'; 
 	        		} else {
 	        			echo wp_trim_words( get_the_content(), 20, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' );
 	        		} 
