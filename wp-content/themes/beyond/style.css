@@ -1301,16 +1301,13 @@ input[type="search"] {
 }
 .main-navigation .sub-menu .sub-menu-col2 {
   margin-right: 25px;
-  width: calc(50% - 70px);
+  width: calc(50% - 50px);
 }
 .main-navigation .sub-menu .sub-menu-col1 ul,
 .main-navigation .sub-menu .sub-menu-col2 ul {
   display: block;
   position: relative;
-}
-.main-navigation .sub-menu .sub-menu-col1 ul span,
-.main-navigation .sub-menu .sub-menu-col2 ul span {
-  max-width: 320px;
+  width: 100%;
 }
 .main-navigation .sub-menu .submenu {
   position: relative;
@@ -1332,6 +1329,11 @@ input[type="search"] {
 }
 .main-navigation .sub2 ul li {
   width: 100%;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.main-navigation .sub2 ul li .menu-item-description {
+  margin-top: .2rem;
 }
 .main-navigation ul ul li:hover > ul,
 .main-navigation .main-navigation ul ul li.focus > ul {

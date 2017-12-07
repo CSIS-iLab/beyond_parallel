@@ -71,8 +71,16 @@ function get_featured($featuredPost) {
         </div>
         
         <div class="featured-content col-sm-6">
-			<?php echo wp_trim_words( get_the_content(), 50, '... <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>' ) ?>
+			<?php if ( has_excerpt( $post->ID ) ){
+						$excerpt = get_the_excerpt(); 
+	        			echo $excerpt . ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>'; 
+	        		} else {
+	        			echo wp_trim_words( get_the_content(), 40, '... ') . ' <span class="read-more"><a href="'. get_permalink($post->ID) . '">READ MORE</span></a>';
+	        		} ?>
 		</div>
+
+
+		
 		
 		<div class="clearfix"></div>
 
