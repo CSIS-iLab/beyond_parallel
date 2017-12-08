@@ -87,8 +87,13 @@ get_header(); ?>
 						</a></h3>
 
 					</header>
+
 					<div class="entry-summary">
-	
+						<div class="entry-thumb">
+
+							<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
+
+						</div>
 						
 				
 								<?php
