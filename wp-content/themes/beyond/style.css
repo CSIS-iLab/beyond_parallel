@@ -1297,17 +1297,21 @@ input[type="search"] {
 .main-navigation .sub-menu .sub-menu-col1 {
   border-right: 1px solid #CECECE;
   padding-right: 25px;
-  width: calc(50% - 50px);
+  width: calc(50% - 70px);
 }
 .main-navigation .sub-menu .sub-menu-col2 {
   margin-right: 25px;
-  width: calc(50% - 50px);
+  width: calc(50% - 70px);
 }
 .main-navigation .sub-menu .sub-menu-col1 ul,
 .main-navigation .sub-menu .sub-menu-col2 ul {
   display: block;
   position: relative;
   width: 100%;
+}
+.main-navigation .sub-menu .sub-menu-col1 ul span,
+.main-navigation .sub-menu .sub-menu-col2 ul span {
+  max-width: 320px;
 }
 .main-navigation .sub-menu .submenu {
   position: relative;
