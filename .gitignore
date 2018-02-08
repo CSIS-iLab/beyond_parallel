@@ -98,6 +98,6 @@ wp-content/mysql.sql
 *.avi
 
 # ignore sass cache
-/wp-content/themes/amti/.sass-cache
+/wp-content/themes/beyond_parallel/.sass-cache
 *.scssc
 .htaccess
