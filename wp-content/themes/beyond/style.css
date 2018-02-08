@@ -3509,7 +3509,7 @@ th {
   margin-bottom: 3rem;
 }
 .articles-homepage .meta-sep,
-.articles-homepage .meta-sep + a {
+.articles-homepage .meta-sep ~ a {
   font-size: 1.1rem;
 }
 
