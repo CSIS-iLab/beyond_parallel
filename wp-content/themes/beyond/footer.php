@@ -29,7 +29,7 @@ Tel: 202.775.3242 </p>
 					<a href="mailto:KoreaChair@csis.org?Subject=" target="_top"" alt="Beyond Parallel Email"><div class="email-icon"></div></a>
 				</div>
 				<div class="clearfix"></div>
-				<p class="copywrite">© 2017 by the Center for Strategic <br />
+				<p class="copywrite">©<?php echo esc_html( date( 'Y' ) ); ?> by the Center for Strategic <br />
 				and  International Studies. All rights reserved.</p>
 			</div>
 		</div>
