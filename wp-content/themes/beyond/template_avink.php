@@ -21,8 +21,8 @@ get_header(); ?>
 		endwhile; // End of the loop.
 							// This call the main content of the post, the stuff in the main text box while composing.
 							// This will wrap everything in p tags
-		?> <div class="cat-list row"> <?php
-
+		?> <div class="cat-list row">
+			<div style="font-style: italic; margin-left: 1rem; font-size: 1.1rem">Click on a link to jump to the related content.</div> <?php
 		$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);  
 		if ( $repeatable_fields ) : 
 		foreach ( $repeatable_fields as $field ) { 
