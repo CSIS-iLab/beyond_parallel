@@ -124,3 +124,52 @@ function beyond_category_transient_flusher() {
 }
 add_action( 'edit_category', 'beyond_category_transient_flusher' );
 add_action( 'save_post',     'beyond_category_transient_flusher' );
+
+
+// Create Shortcode featured-article
+// Use the shortcode: [featured-article title="" url=""]Content[/featured-article]
+function create_featuredarticle_shortcode($atts, $content = null) {
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'title' => '',
+			'url' => '',
+		),
+		$atts,
+		'featured-article'
+	);
+	// Attributes in var
+	$title = $atts['title'];
+	$url = $atts['url'];
+global $post;
+$current_id = $post->ID;
+	$output;
+if (has_post_thumbnail( $post->ID ) ): 
+  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $current_id ), 'single-post-thumbnail' );
+
+endif; 
+	$output = '<article>
+					<div class="living-header-img" style="height:100%">
+					'.get_the_post_thumbnail( $current_id ).'	</div>
+					
+					<div class="living-first">
+						<h3>FEATURED</h3>
+						<h2 class="entry-title imagery-title"><a href="'. esc_html__($url) . '" rel="bookmark">'. esc_html__($title) . '</a></h2>
+
+						<p>'. esc_textarea($content) . '</p>
+						<div class="followButton"><a href="'. esc_html__($url) . '" rel="bookmark" title="Permanent Link to North Korean Special Operations Forces: Hovercraft Bases (Part IV)"><span class="arrow">KEEP READING</span></a>
+						</div>
+					</div>
+				</article>';
+
+
+
+	return $output;
+	
+}
+add_shortcode( 'featured-article', 'create_featuredarticle_shortcode' );
+
+
+
+
+

@@ -265,3 +265,192 @@ return $query;
 }
 
 add_filter('pre_get_posts','SearchFilter');
+
+
+
+
+
+
+
+
+add_action('admin_init','my_meta_init');
+function my_meta_init()
+{
+$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+// checks for post/page ID
+if ($post_id == '1646')
+{
+
+
+
+function prfx_custom_meta2016() {
+    add_meta_box( 'prfx_meta', __( 'AVINK 2016', 'prfx-textdomain' ), 'prfx_meta_callback', 'page' );
+}
+add_action( 'add_meta_boxes', 'prfx_custom_meta2016' );
+
+function prfx_meta_callback( $post ) {
+    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+    $prfx_stored_meta = get_post_meta( $post->ID );
+    ?>
+ 
+  
+
+
+
+    <p>
+    <label for="meta-select_2016" class="prfx-row-title"><?php _e( 'Example Select Input', 'prfx-textdomain' )?></label>
+    <select name="meta-select_2016" id="meta-select_2016">
+        <?php
+				global $post;
+				$args = array( 'tag' => 'Surveys' );
+				$posts = get_posts($args);
+					foreach( $posts as $post ) : setup_postdata($post); 
+						$name = $post->ID;
+												$test = "test";
+										if ( isset ( $prfx_stored_meta['meta-select_2016'] ) ) {
+											$selected = selected( $prfx_stored_meta['meta-select_2016'][0], $name );
+										}
+						
+						echo '<option value="' . $name . '" ' . $selected . ' >' .  get_the_title( $post->ID, 'prfx-textdomain' )  . '</option>';
+					   endforeach;            
+					
+        ?>
+    </select>
+</p>
+ 
+    <?php
+    echo '<h3>Findings</h3>';
+      wp_editor( $prfx_stored_meta['_wp_editor_2016_1'][0], '_wp_editor_2016_1' );
+      echo '<h3>Related Expert Commentaries</h3>';
+      wp_editor( $prfx_stored_meta['_wp_editor_2016_2'][0], '_wp_editor_2016_2' );
+
+}
+
+
+/**
+ * Saves the custom meta input
+ */
+function prfx_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+ 
+    // Checks for input and saves if needed
+	if( isset( $_POST[ 'meta-select_2016' ] ) ) {
+	    update_post_meta( $post_id, 'meta-select_2016', $_POST[ 'meta-select_2016' ] );
+	}
+
+	if ( isset ( $_POST['_wp_editor_2016_1'] ) ) {
+    update_post_meta( $post_id, '_wp_editor_2016_1', $_POST['_wp_editor_2016_1'] );
+  }
+  if ( isset ( $_POST['_wp_editor_2016_2'] ) ) {
+    update_post_meta( $post_id, '_wp_editor_2016_2', $_POST['_wp_editor_2016_2'] );
+  }
+ 
+}
+add_action( 'save_post', 'prfx_meta_save' );
+
+
+
+
+function prfx_custom_meta2017() {
+    add_meta_box( 'prfx_meta7', __( 'AVINK 2017', 'prfx-textdomain7' ), 'prfx_meta_callback7', 'page' );
+}
+add_action( 'add_meta_boxes', 'prfx_custom_meta2017' );
+
+function prfx_meta_callback7( $post ) {
+    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce7' );
+    $prfx_stored_meta = get_post_meta( $post->ID );
+    ?>
+ 
+    <p>
+        <label for="meta-text" class="prfx-row-title"><?php _e( 'Example Text Input', 'prfx-textdomain7' )?></label>
+        <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $prfx_stored_meta['meta-text'][0]; ?>" />
+    </p>
+
+
+
+    <p>
+    <label for="meta-select_2017" class="prfx-row-title"><?php _e( 'Example Select Input', 'prfx-textdomain7' )?></label>
+    <select name="meta-select_2017" id="meta-select_2017">
+        <?php
+				global $post;
+				$args = array( 'tag' => 'Surveys' );
+				$posts = get_posts($args);
+					foreach( $posts as $post ) : setup_postdata($post); 
+						$name = $post->ID;
+												$test = "test";
+										if ( isset ( $prfx_stored_meta['meta-select_2017'] ) ) {
+											$selected = selected( $prfx_stored_meta['meta-select'][0], $name );
+										}
+						
+						echo '<option value="' . $name . '" ' . $selected . ' >' .  get_the_title( $post->ID, 'prfx-textdomain7' )  . '</option>';
+					   endforeach;            
+					
+        ?>
+    </select>
+</p>
+ 
+    <?php
+    echo '<h3>Findings</h3>';
+      wp_editor( $prfx_stored_meta['_wp_editor_2017_1'][0], '_wp_editor_2017_1' );
+      echo '<h3>Related Expert Commentaries</h3>';
+      wp_editor( $prfx_stored_meta['_wp_editor_2017_2'][0], '_wp_editor_2017_2' );
+
+}
+
+
+/**
+ * Saves the custom meta input
+ */
+function prfx_meta_save7( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce7' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce7' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+ 
+
+    // Checks for input and saves if needed
+	if( isset( $_POST[ 'meta-select_2017' ] ) ) {
+	    update_post_meta( $post_id, 'meta-select_2017', $_POST[ 'meta-select_2017' ] );
+	}
+
+	if ( isset ( $_POST['_wp_editor_2017_1'] ) ) {
+    update_post_meta( $post_id, '_wp_editor_2017_1', $_POST['_wp_editor_2017_1'] );
+  }
+  if ( isset ( $_POST['_wp_editor_2017_2'] ) ) {
+    update_post_meta( $post_id, '_wp_editor_2017_2', $_POST['_wp_editor_2017_2'] );
+  }
+ 
+}
+add_action( 'save_post', 'prfx_meta_save7' );
+
+
+}
+
+
+
+
+
+$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
+// check for a template type
+if ($template_file == 'template_avink.php')
+{
+add_meta_box('my_meta_2', 'My Custom Meta Box 2', 'my_meta_setup_2', 'page', 'normal', 'high');
+}
+
+add_action('save_post','my_meta_save');
+}
