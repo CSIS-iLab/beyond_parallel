@@ -1,6 +1,6 @@
 <?php
 /**
- * 	Template Name: AVINK
+ * 	Template Name: AVINK3
  *
 */
 
@@ -9,12 +9,9 @@ get_header(); ?>
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 			
-				<div id="avink" class="container">
+			<div id="avink" class="container">
 			
-		
-
-					<?php
-
+			<?php
 					 		while ( have_posts() ) : the_post();
 			the_title( '<h1 class="entry-title">', '</h1>' ); 
 
@@ -24,135 +21,91 @@ get_header(); ?>
 		endwhile; // End of the loop.
 							// This call the main content of the post, the stuff in the main text box while composing.
 							// This will wrap everything in p tags
-						$featured_2016 = get_post_meta($post->ID, 'meta-select_2016', true);
-						$findings_2016 = get_post_meta($post->ID, '_wp_editor_2016_1', true);
-						$related_2016 = get_post_meta($post->ID, '_wp_editor_2016_2', true);
+		?> <div class="cat-list row"> <?php
 
-						$featured_2017 = get_post_meta($post->ID, 'meta-select_2017', true);
-						$findings_2017 = get_post_meta($post->ID, '_wp_editor_2017_1', true);
-						$related_2017 = get_post_meta($post->ID, '_wp_editor_2017_2', true);
+		$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);  
+		if ( $repeatable_fields ) : 
+		foreach ( $repeatable_fields as $field ) { 
+			$year = esc_attr( $field['name']);
+			$featured = esc_attr( $field['select']);
+			$findings = esc_attr( $field['findings']);
+			$related = esc_attr( $field['related']);
 
-
-
-?>
-<div class="cat-list row">
-	<?php if(!empty($featured_2016)) { ?>
-	<div class="col-md-4">
-	<h3><a href="#2016-survey">2016 Survey</a></h3>
-		<?php
-		echo '<ul class="avink-links">';
-			if(!empty($featured_2016)) {
-				echo '<li><a href="#2016-survey">Featured Article</a></li>';
-			}
-			if(!empty($findings_2016)) {
-				echo '<li><a href="#2016-findings">Findings</a></li>';
-			}
-			if(!empty($related_2016)) {
-				echo '<li><a href="#2016-related">Related Expert Commentaries</a></li>';
-			}
-		echo '</ul>';
-		?>
-	</div>
-	<?php } 
-	?>
-
-	<?php if(!empty($featured_2017)) { ?>
-	<div class="col-md-4">
-	<h3><a href="#2017-survey">2017 Survey</a></h3>
-		<?php
-		echo '<ul class="avink-links">';
-			if(!empty($featured_2017)) {
-				echo '<li><a href="#2017-survey">Featured Article</a></li>';
-			}
-			if(!empty($findings_2017)) {
-				echo '<li><a href="#2017-findings">Findings</a></li>';
-			}
-			if(!empty($related_2017)) {
-				echo '<li><a href="#2017-related">Related Expert Commentaries</a></li>';
-			}
-		echo '</ul>';
-		?>
-	</div>
-	<?php } ?>
-
-</div>
-
-<?php
-echo '<section>';
-echo '<h2 style="text-align: center;" id="2017-survey">2017 Micro-Survey</h2>';
-				if(!empty($featured_2017)) {
-				    	?>
-<article id="post-<?php $featured_2017; ?>" class=<?php post_class(); ?>>
-					<div class="living-header-img">
-					<?php echo get_the_post_thumbnail( $featured_2017 ); ?>
-					</div>
+			if(!empty($year)) { ?>
+				<div class="col-md-4">
 					
-					<div class="living-first">
+						<?php
+						echo '<h3><a href="#survey_'.$year.'">'. $year .' Survey</a></h3>';
+						echo '<ul class="avink-links">';
+							if($featured != '') {
+								echo '<li><a href="#survey_'.$year.'">Featured Article</a></li>';
+							}
+							if($findings != '') {
+								echo '<li><a href="#findings_'.$year.'">Findings</a></li>';
+							}
+							if($related != '') {
+								echo '<li><a href="#related_'.$year.'">Related Expert Commentaries</a></li>';
+							}
+						echo '</ul>';
+						?>
+				</div>  
+	     	<?php  } } ?>
+	     	</div>
+	     	<?php
+
+	     	foreach ( array_reverse($repeatable_fields) as $field ) { 
+			$year = esc_attr( $field['name']);
+			$yearname = $year . ' Survey';
+			$featured = esc_attr( $field['select']);
+			$findings = esc_attr( $field['findings']);
+			$related = esc_attr( $field['related']);
+
+			if(!empty($year)) { 
+				
+				echo '<section>';
+				echo '<h2 style="text-align: center;" id="survey_'.$year.'">'.$year.' Micro-Survey</h2>';
+				if(!empty($featured)) {
+				    	?>
+					<article id="post-<?php $featured_2017; ?>" class=<?php post_class(); ?>>
+						<div class="living-header-img">
+						<?php echo get_the_post_thumbnail( $featured ); ?>
+						</div>
+					
+						<div class="living-first">
 						<h3>FEATURED</h3>
 					
 						<?php
-						echo '<h2 class="entry-title"><a href="' . get_the_permalink($featured_2017) . '">' . get_the_title($featured_2017) . '</a></h2>';
+						echo '<h2 class="entry-title"><a href="' . get_the_permalink($featured) . ' title="' . get_the_title($featured) . '">' . get_the_title($featured) . '</a></h2>';
 
-						echo '<p>' . get_the_excerpt($featured_2017). '</p>';
-						?>
-
-						<div class="followButton"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><span class="arrow">KEEP READING</span></a></h2>
+						echo '<p>' . get_the_excerpt($featured). '</p>';
+						
+						echo '<div class="followButton">';
+						echo '<a href="'. get_the_permalink($featured) .'" rel="bookmark" title="Permanent Link to ' . get_the_title($featured) . '">';
+						?> <span class="arrow">KEEP READING</span></a></h2>
 						</div>
-					</div>
+						</div>
 					</article>
 				    	<?php
 				}
-						if(!empty($findings_2017)) {
-				    echo '<h2 id="2017-findings">Findings</h2>';
-				    echo wpautop($findings_2017);
+						if(!empty($findings)) {
+				    echo '<h2 id="findings_'.$year.'">Findings</h2>';
+				    echo wpautop($findings);
 				}
 						
-						if(!empty($related_2017)) {
-				    echo '<h2 id="2017-related">Related Expert Commentaries</h2>';
-				    echo wpautop($related_2017);
+						if(!empty($related)) {
+				    echo '<h2 id="related_'.$year.'">Related Expert Commentaries</h2>';
+				    echo wpautop($related);
 				}
 
-echo '</section>';
-echo '<section>';
-echo '<h2 style="text-align: center;" id="2016-survey">2016 Micro-Survey</h2>';
-										if(!empty($featured_2016)) {
-				    	?>
+				echo '</section>';
 
-					<article id="post-<?php $featured_2016; ?>" class=<?php post_class(); ?>>
-					<div class="living-header-img">
-					<?php echo get_the_post_thumbnail( $featured_2016 ); ?>
-					</div>
-					
-					<div class="living-first">
-						<h3>FEATURED</h3>
-					
-						<?php
-						echo '<h2 class="entry-title"><a href="' . get_the_permalink($featured_2016) . '">' . get_the_title($featured_2016) . '</a></h2>';
+			 } }
 
-						echo '<p>' . get_the_excerpt($featured_2016). '</p>';
+		     	endif;
+		     	?>
+
+				<?php
 						?>
-
-						<div class="followButton"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><span class="arrow">KEEP READING</span></a></h2>
-						</div>
-					</div>
-					</article>
-
-
-				    	<?php
-						}
-						if(!empty($findings_2016)) {
-				    echo '<h2 id="2016-findings">Findings</h2>';
-				    echo wpautop($findings_2016);
-				}
-						
-						if(!empty($related_2016)) {
-				    echo '<h2 id="2016-related">Related Expert Commentaries</h2>';
-				    echo wpautop($related_2016);
-				}
-echo '</section>';
-
-					?>
-
 
 					</div><!--/entry-content-->
 				</div><!--/container-->

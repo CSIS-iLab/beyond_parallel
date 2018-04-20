@@ -254,8 +254,11 @@ function articleFooter( $atts, $content = null ) {
 add_shortcode('footer', 'articleFooter');
 
 
+
+
+
 /**
- * Search only posts
+ * Metaboxes for AVINK page template
  */
 function SearchFilter($query) {
 if ($query->is_search) {
@@ -266,190 +269,253 @@ return $query;
 
 add_filter('pre_get_posts','SearchFilter');
 
-
-
-
-
-
-
-
 add_action('admin_init','my_meta_init');
 function my_meta_init()
 {
 $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 // checks for post/page ID
-if ($post_id == '1646')
-{
-
-
-
-function prfx_custom_meta2016() {
-    add_meta_box( 'prfx_meta', __( 'AVINK 2016', 'prfx-textdomain' ), 'prfx_meta_callback', 'page' );
-}
-add_action( 'add_meta_boxes', 'prfx_custom_meta2016' );
-
-function prfx_meta_callback( $post ) {
-    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
-    $prfx_stored_meta = get_post_meta( $post->ID );
-    ?>
- 
-  
-
-
-
-    <p>
-    <label for="meta-select_2016" class="prfx-row-title"><?php _e( 'Example Select Input', 'prfx-textdomain' )?></label>
-    <select name="meta-select_2016" id="meta-select_2016">
-        <?php
-				global $post;
-				$args = array( 'tag' => 'Surveys' );
-				$posts = get_posts($args);
-					foreach( $posts as $post ) : setup_postdata($post); 
-						$name = $post->ID;
-												$test = "test";
-										if ( isset ( $prfx_stored_meta['meta-select_2016'] ) ) {
-											$selected = selected( $prfx_stored_meta['meta-select_2016'][0], $name );
-										}
-						
-						echo '<option value="' . $name . '" ' . $selected . ' >' .  get_the_title( $post->ID, 'prfx-textdomain' )  . '</option>';
-					   endforeach;            
-					
-        ?>
-    </select>
-</p>
- 
-    <?php
-    echo '<h3>Findings</h3>';
-      wp_editor( $prfx_stored_meta['_wp_editor_2016_1'][0], '_wp_editor_2016_1' );
-      echo '<h3>Related Expert Commentaries</h3>';
-      wp_editor( $prfx_stored_meta['_wp_editor_2016_2'][0], '_wp_editor_2016_2' );
-
-}
-
-
-/**
- * Saves the custom meta input
- */
-function prfx_meta_save( $post_id ) {
- 
-    // Checks save status
-    $is_autosave = wp_is_post_autosave( $post_id );
-    $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
- 
-    // Exits script depending on save status
-    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
-        return;
-    }
- 
-    // Checks for input and saves if needed
-	if( isset( $_POST[ 'meta-select_2016' ] ) ) {
-	    update_post_meta( $post_id, 'meta-select_2016', $_POST[ 'meta-select_2016' ] );
-	}
-
-	if ( isset ( $_POST['_wp_editor_2016_1'] ) ) {
-    update_post_meta( $post_id, '_wp_editor_2016_1', $_POST['_wp_editor_2016_1'] );
-  }
-  if ( isset ( $_POST['_wp_editor_2016_2'] ) ) {
-    update_post_meta( $post_id, '_wp_editor_2016_2', $_POST['_wp_editor_2016_2'] );
-  }
- 
-}
-add_action( 'save_post', 'prfx_meta_save' );
-
-
-
-
-function prfx_custom_meta2017() {
-    add_meta_box( 'prfx_meta7', __( 'AVINK 2017', 'prfx-textdomain7' ), 'prfx_meta_callback7', 'page' );
-}
-add_action( 'add_meta_boxes', 'prfx_custom_meta2017' );
-
-function prfx_meta_callback7( $post ) {
-    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce7' );
-    $prfx_stored_meta = get_post_meta( $post->ID );
-    ?>
- 
-    <p>
-        <label for="meta-text" class="prfx-row-title"><?php _e( 'Example Text Input', 'prfx-textdomain7' )?></label>
-        <input type="text" name="meta-text" id="meta-text" value="<?php if ( isset ( $prfx_stored_meta['meta-text'] ) ) echo $prfx_stored_meta['meta-text'][0]; ?>" />
-    </p>
-
-
-
-    <p>
-    <label for="meta-select_2017" class="prfx-row-title"><?php _e( 'Example Select Input', 'prfx-textdomain7' )?></label>
-    <select name="meta-select_2017" id="meta-select_2017">
-        <?php
-				global $post;
-				$args = array( 'tag' => 'Surveys' );
-				$posts = get_posts($args);
-					foreach( $posts as $post ) : setup_postdata($post); 
-						$name = $post->ID;
-												$test = "test";
-										if ( isset ( $prfx_stored_meta['meta-select_2017'] ) ) {
-											$selected = selected( $prfx_stored_meta['meta-select'][0], $name );
-										}
-						
-						echo '<option value="' . $name . '" ' . $selected . ' >' .  get_the_title( $post->ID, 'prfx-textdomain7' )  . '</option>';
-					   endforeach;            
-					
-        ?>
-    </select>
-</p>
- 
-    <?php
-    echo '<h3>Findings</h3>';
-      wp_editor( $prfx_stored_meta['_wp_editor_2017_1'][0], '_wp_editor_2017_1' );
-      echo '<h3>Related Expert Commentaries</h3>';
-      wp_editor( $prfx_stored_meta['_wp_editor_2017_2'][0], '_wp_editor_2017_2' );
-
-}
-
-
-/**
- * Saves the custom meta input
- */
-function prfx_meta_save7( $post_id ) {
- 
-    // Checks save status
-    $is_autosave = wp_is_post_autosave( $post_id );
-    $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce7' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce7' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
- 
-    // Exits script depending on save status
-    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
-        return;
-    }
- 
-
-    // Checks for input and saves if needed
-	if( isset( $_POST[ 'meta-select_2017' ] ) ) {
-	    update_post_meta( $post_id, 'meta-select_2017', $_POST[ 'meta-select_2017' ] );
-	}
-
-	if ( isset ( $_POST['_wp_editor_2017_1'] ) ) {
-    update_post_meta( $post_id, '_wp_editor_2017_1', $_POST['_wp_editor_2017_1'] );
-  }
-  if ( isset ( $_POST['_wp_editor_2017_2'] ) ) {
-    update_post_meta( $post_id, '_wp_editor_2017_2', $_POST['_wp_editor_2017_2'] );
-  }
- 
-}
-add_action( 'save_post', 'prfx_meta_save7' );
-
-
-}
-
-
-
-
 
 $template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
 // check for a template type
 if ($template_file == 'template_avink.php')
 {
-add_meta_box('my_meta_2', 'My Custom Meta Box 2', 'my_meta_setup_2', 'page', 'normal', 'high');
+
+
+function hhs_get_sample_options() {
+$options = array ();
+
+		global $post;
+				$args = array();
+				$posts = get_posts($args);
+		foreach( $posts as $post ) : setup_postdata($post); 
+			$id = $post->ID;
+			$name = get_the_title($id );
+			$options[$name] = $id;
+		endforeach; 
+	
+	return $options;
+}
+add_action('add_meta_boxes', 'hhs_add_meta_boxes', 1);
+function hhs_add_meta_boxes() {
+	add_meta_box( 'repeatable-fields', 'Repeatable Fields', 'hhs_repeatable_meta_box_display', 'page', 'normal', 'default');
+}
+function hhs_repeatable_meta_box_display() {
+	global $post;
+	$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+	$options = hhs_get_sample_options();
+	wp_nonce_field( 'hhs_repeatable_meta_box_nonce', 'hhs_repeatable_meta_box_nonce' );
+	?>
+	<script type="text/javascript">
+	jQuery(document).ready(function( $ ){
+		$( '#add-row' ).on('click', function() {
+			var row = $( '.empty-row.screen-reader-text' ).clone(true);
+			row.removeClass( 'empty-row screen-reader-text' );
+			row.insertBefore( '#repeatable-fieldset-one tbody>tr:last' );
+			return false;
+		});
+  	
+		$( '.remove-row' ).on('click', function() {
+			$(this).parents('tr').remove();
+			return false;
+		});
+	});
+	</script>
+  
+	<table id="repeatable-fieldset-one" width="100%">
+	<tbody>
+	<?php
+	
+	if ( $repeatable_fields ) :
+	
+	foreach ( $repeatable_fields as $key => $field ) {
+
+	?>
+	<tr>
+		<td style="padding-bottom:40px; ">
+		<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
+			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
+			<input style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" />
+			<br>
+			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
+
+			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
+			<?php foreach ( $options as $label => $value ) : ?>
+			<option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
+			<?php endforeach; ?>
+			</select>
+	
+			<br>
+			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
+			
+			<?php 
+			$settings = array(
+			    'tinymce' => true,
+			    'textarea_rows' => 10,
+			    'wpautop' => true, // use wpautop?
+    			'media_buttons' => true, // show insert/upload button(s)
+			);
+			wp_editor( $field['findings'], 'findings[]', $settings ); ?>
+
+			<br>
+
+			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
+			
+			<?php 
+			$settings = array(
+			    'tinymce' => true,
+			    'textarea_rows' => 10,
+			    'wpautop' => true, // use wpautop?
+    			'media_buttons' => true, // show insert/upload button(s)
+			);
+			wp_editor( $field['related'], 'related[]', $settings ); ?>
+
+			</div>
+			<a class="button remove-row" href="#">Remove</a>
+		</td>
+	</tr>
+	<?php
+	}
+	else :
+	// show a blank one
+	?>
+	<tr>
+		<td style="padding-bottom:40px; ">
+			<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
+			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
+			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" />
+			<br>
+			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
+			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
+			<?php foreach ( $options as $label => $value ) : ?>
+			<option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+			<?php endforeach; ?>
+			</select>
+
+			<br>
+			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
+			<?php 
+			$settings = array(
+			    'tinymce' => true,
+			    'textarea_rows' => 10,
+			    'wpautop' => true, // use wpautop?
+    			'media_buttons' => true, // show insert/upload button(s)
+			);
+			wp_editor( '', 'findings[]', $settings ); ?>
+
+			<br>
+			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
+			<?php 
+			$settings = array(
+			    'tinymce' => true,
+			    'textarea_rows' => 10,
+			    'wpautop' => true, // use wpautop?
+    			'media_buttons' => true, // show insert/upload button(s)
+			);
+			wp_editor( '', 'related[]', $settings ); ?>
+
+			</div>
+			<a class="button remove-row" href="#">Remove</a>
+		</td>
+	</tr>
+	<?php endif; ?>
+	
+	<!-- empty hidden one for jQuery -->
+	<tr class="empty-row screen-reader-text">
+		<td  style="padding-bottom:40px">
+			<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
+
+			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
+			<input  style="ddisplay: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" />
+			<br>
+			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
+			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
+			<?php foreach ( $options as $label => $value ) : ?>
+			<option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+			<?php endforeach; ?>
+			</select>
+			<br>
+			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
+			<?php 
+			$settings = array(
+			    'tinymce' => true,
+			    'textarea_rows' => 10,
+			    'wpautop' => true, // use wpautop?
+    			'media_buttons' => true, // show insert/upload button(s)
+			);
+			wp_editor( '', 'findings[]', $settings ); ?>
+
+		  	
+			<br>
+			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
+			<?php 
+			$settings = array(
+			    'tinymce' => true,
+			    'textarea_rows' => 10,
+			    'wpautop' => true, // use wpautop?
+    			'media_buttons' => true, // show insert/upload button(s)
+			);
+			wp_editor( '', 'related[]', $settings ); ?>
+
+		  	</div>
+			<a class="button remove-row" href="#">Remove</a>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	
+	<p><a id="add-row" class="button" href="#">Add another</a></p>
+	<?php
+}
+add_action('save_post', 'hhs_repeatable_meta_box_save');
+function hhs_repeatable_meta_box_save($post_id) {
+	if ( ! isset( $_POST['hhs_repeatable_meta_box_nonce'] ) ||
+	! wp_verify_nonce( $_POST['hhs_repeatable_meta_box_nonce'], 'hhs_repeatable_meta_box_nonce' ) )
+		return;
+	
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+		return;
+	
+	if (!current_user_can('edit_post', $post_id))
+		return;
+	
+	$old = get_post_meta($post_id, 'repeatable_fields', true);
+	$new = array();
+	$options = hhs_get_sample_options();
+	
+	$names = $_POST['name'];
+	$selects = $_POST['select'];
+	$findings = $_POST['findings'];
+	$related = $_POST['related'];
+
+	$count = count( $names );
+	
+	for ( $i = 0; $i < $count; $i++ ) {
+		if ( $names[$i] != '' ) :
+			$new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
+			
+			if ( in_array( $selects[$i], $options ) )
+				$new[$i]['select'] = $selects[$i];
+			else
+				$new[$i]['select'] = '';
+		
+			if ( $findings[$i] == '' )
+				$new[$i]['findings'] = '';
+			else
+				$new[$i]['findings'] = stripslashes( $findings[$i] ); // and however you want to sanitize
+			if ( $related[$i] == '' )
+				$new[$i]['related'] = '';
+			else
+				$new[$i]['related'] = stripslashes( $related[$i] ); // and however you want to sanitize
+		endif;
+	}
+	if ( !empty( $new ) && $new != $old )
+		update_post_meta( $post_id, 'repeatable_fields', $new );
+	elseif ( empty($new) && $old )
+		delete_post_meta( $post_id, 'repeatable_fields', $old );
+}
+
+
+
 }
 
 add_action('save_post','my_meta_save');
