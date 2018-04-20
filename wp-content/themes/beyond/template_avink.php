@@ -89,12 +89,12 @@ get_header(); ?>
 				}
 						if(!empty($findings)) {
 				    echo '<h2 id="findings_'.$year.'">Findings</h2>';
-				    echo wpautop($findings);
+				    echo html_entity_decode($findings);
 				}
 						
 						if(!empty($related)) {
 				    echo '<h2 id="related_'.$year.'">Related Expert Commentaries</h2>';
-				    echo wpautop($related);
+				    echo html_entity_decode($related);
 				}
 
 				echo '</section>';

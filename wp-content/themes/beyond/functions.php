@@ -495,7 +495,7 @@ function hhs_repeatable_meta_box_save($post_id) {
 	$count = count( $names );
 	
 	for ( $i = 0; $i < $count; $i++ ) {
-		if ( $names[$i] != '' ) :
+			if ( $names[$i] != '' ) :
 			$new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
 			
 			if ( in_array( $selects[$i], $options ) )
@@ -503,14 +503,12 @@ function hhs_repeatable_meta_box_save($post_id) {
 			else
 				$new[$i]['select'] = '';
 		
-			if ( $findings[$i] == '' )
-				$new[$i]['findings'] = '';
-			else
-				$new[$i]['findings'] = stripslashes( $findings[$i] ); // and however you want to sanitize
-			if ( $related[$i] == '' )
-				$new[$i]['related'] = '';
-			else
-				$new[$i]['related'] = stripslashes( $related[$i] ); // and however you want to sanitize
+			if ( $findings[$i] != '' )
+				$new[$i]['findings'] =  $findings[$i] ;
+			
+			if ( $related[$i] != '' )
+				$new[$i]['related'] =  $related[$i] ;
+			
 		endif;
 	}
 	if ( !empty( $new ) && $new != $old )
