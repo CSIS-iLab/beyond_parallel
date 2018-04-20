@@ -1,7 +1,6 @@
 <?php
 /**
- * 	Template Name: AVINK3
- *
+ * 	Template Name: AVINK
  *
 */
 
