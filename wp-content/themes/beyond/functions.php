@@ -341,6 +341,9 @@ function hhs_repeatable_meta_box_display() {
 			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
 			<input style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" />
 			<br>
+			<label for="urlimg[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Image URL: </label>
+			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="urlimg[]" value="<?php if ($field['urlimg'] != '') echo esc_attr( $field['urlimg'] ); else echo 'http://'; ?>" />
+			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
@@ -386,8 +389,13 @@ function hhs_repeatable_meta_box_display() {
 	<tr>
 		<td style="padding-bottom:40px; ">
 			<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
+
 			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
 			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" />
+			<br>
+			<label for="urlimg[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Image URL: </label>
+			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="urlimg[]" value="http://" />
+			
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
@@ -431,6 +439,9 @@ function hhs_repeatable_meta_box_display() {
 
 			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
 			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" />
+			<br>
+			<label for="urlimg[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Image URL: </label>
+			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="urlimg[]" value="http://" />
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
@@ -489,6 +500,7 @@ function hhs_repeatable_meta_box_save($post_id) {
 	
 	$names = $_POST['name'];
 	$selects = $_POST['select'];
+	$urls = $_POST['urlimg'];
 	$findings = $_POST['findings'];
 	$related = $_POST['related'];
 
@@ -503,6 +515,11 @@ function hhs_repeatable_meta_box_save($post_id) {
 			else
 				$new[$i]['select'] = '';
 		
+			if ( $urls[$i] == 'http://' )
+				$new[$i]['urlimg'] = '';
+			else
+				$new[$i]['urlimg'] = stripslashes( $urls[$i] ); // and however you want to sanitize
+
 			if ( $findings[$i] != '' )
 				$new[$i]['findings'] =  $findings[$i] ;
 			

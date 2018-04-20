@@ -57,6 +57,7 @@ get_header(); ?>
 			$year = esc_attr( $field['name']);
 			$yearname = $year . ' Survey';
 			$featured = esc_attr( $field['select']);
+			$url = esc_url( $field['urlimg']);
 			$findings = esc_attr( $field['findings']);
 			$related = esc_attr( $field['related']);
 
@@ -66,10 +67,11 @@ get_header(); ?>
 				echo '<h2 style="text-align: center;" id="survey_'.$year.'">'.$year.' Micro-Survey</h2>';
 				if(!empty($featured)) {
 				    	?>
-					<article id="post-<?php $featured_2017; ?>" class=<?php post_class(); ?>>
+					<article id="post-<?php $featured; ?>" class=<?php post_class(); ?>>
 						<div class="living-header-img">
-						<?php echo get_the_post_thumbnail( $featured ); ?>
-						</div>
+						<?php 
+						echo  '<img src="'.$url.'" alt="'.$year.' Featured Article">';
+						?></div>
 					
 						<div class="living-first">
 						<h3>FEATURED</h3>
