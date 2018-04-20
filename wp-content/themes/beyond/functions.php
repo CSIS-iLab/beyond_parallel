@@ -285,8 +285,13 @@ function hhs_get_sample_options() {
 $options = array ();
 
 		global $post;
-				$args = array();
-				$posts = get_posts($args);
+		$args = array(
+			'orderby' => 'title',
+        	'order' => 'ASC', 
+        	'post_type' => 'post',
+        	'posts_per_page'  => -1,
+		);
+		$posts = get_posts($args);
 		foreach( $posts as $post ) : setup_postdata($post); 
 			$id = $post->ID;
 			$name = get_the_title($id );
@@ -425,7 +430,7 @@ function hhs_repeatable_meta_box_display() {
 			<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
 
 			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
-			<input  style="ddisplay: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" />
+			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" />
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
