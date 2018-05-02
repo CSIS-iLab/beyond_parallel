@@ -77,7 +77,7 @@ get_header(); ?>
 						<h3>FEATURED</h3>
 					
 						<?php
-						echo '<h2 class="entry-title"><a href="' . get_the_permalink($featured) . ' title="' . get_the_title($featured) . '">' . get_the_title($featured) . '</a></h2>';
+						echo '<h2 class="entry-title"><a href="' . get_the_permalink($featured) . '" title="' . get_the_title($featured) . '">' . get_the_title($featured) . '</a></h2>';
 
 						echo '<p>' . get_the_excerpt($featured). '</p>';
 						
