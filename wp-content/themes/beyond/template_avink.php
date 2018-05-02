@@ -83,7 +83,8 @@ get_header(); ?>
 						
 						echo '<div class="followButton">';
 						echo '<a href="'. get_the_permalink($featured) .'" rel="bookmark" title="Permanent Link to ' . get_the_title($featured) . '">';
-						?> <span class="arrow">KEEP READING</span></a></h2>
+						?> 
+						<span class="arrow">KEEP READING</span></a></h2>
 						</div>
 						</div>
 					</article>
