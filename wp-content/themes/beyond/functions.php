@@ -540,3 +540,41 @@ function hhs_repeatable_meta_box_save($post_id) {
 
 add_action('save_post','my_meta_save');
 }
+
+
+
+
+
+//A simple test class, loaded directly in your website
+//Loaded from the parent theme
+class testClass{
+
+    //magic constructor
+    public function __construct(){
+        add_filter('the_title', array($this, 'wrapTitle'), 10, 1);
+        add_filter('add_extra_word', array($this, 'output_word'), 10, 1);  
+    }
+
+    //wrap the title for each post 
+    public function wrapTitle($title){
+        $html = '';
+        $html .= '<div class="titleWrap">';
+        $html .= $title;
+
+        //append a word to the end of the title
+        $html = apply_filters('add_extra_word', $title);
+
+        $html .= '</div>';
+
+        return $html;
+    }
+
+    //append the word 'Hello World' to the end of the title
+    public function output_word($title){
+        $html = '';
+        $options = get_option('my_plugin_options', array() );
+        $html = $title . ' <strong>Hello World</strong>';
+        return $html;
+    }
+}
+$testclass = new testClass();

@@ -16,11 +16,17 @@ get_header(); ?>
 		while ( have_posts() ) : the_post(); ?>
 
 		<article class="post">
-			<?php if ( has_post_thumbnail() ) { ?>
-			<div class="postTop">
+			<?php if ( has_post_thumbnail() ) { 
+
+				$tagClass= '';
+					if ( has_tag("NGA") ) {
+						$tagClass = 'NGAtag';
+					}
+					?>
+			<div class="postTop <?php echo $tagClass; ?>">
 
 
-				<center><?php the_post_thumbnail(); ?>
+				<center class=""><?php the_post_thumbnail(); ?>
 				</center>
 
 			</div>

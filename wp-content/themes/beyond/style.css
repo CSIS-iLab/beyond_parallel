@@ -3351,6 +3351,23 @@ iframe.video-right {
   height: auto;
 }
 
+.postTop center {
+  position: relative;
+}
+
+.homeNGAtag:after, .postTop.NGAtag center:after {
+  display: block;
+  content: '';
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url("assets/images/NGA.jpg");
+  background-size: cover;
+}
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
