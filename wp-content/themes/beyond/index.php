@@ -51,7 +51,7 @@ function get_featured($featuredPost) {
  
     if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); 
         $tagClass= '';
-    if ( has_tag("NGA") ) {
+    if ( has_tag("NGA Partnership") ) {
         $tagClass = 'homeNGAtag';
     }
          if (has_post_thumbnail()) { 
@@ -128,7 +128,7 @@ function get_thisPost($key, $value, $imageL){
                         break;
                 }
             $tagClass= '';
-            if ( has_tag("NGA") ) {
+            if ( has_tag("NGA Partnership") ) {
                 $tagClass = 'homeNGAtag';
             }
                 ?>

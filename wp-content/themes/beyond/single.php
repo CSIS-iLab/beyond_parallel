@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php if ( has_post_thumbnail() ) { 
 
 				$tagClass= '';
-					if ( has_tag("NGA") ) {
+					if ( has_tag("NGA Partnership") ) {
 						$tagClass = 'NGAtag';
 					}
 					?>
