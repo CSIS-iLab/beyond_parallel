@@ -73,6 +73,12 @@ footer#colophon {
     .copywrite {
         text-align: right;
     }
+    .privacy-policy {
+        color: $color__yellow;
+    }
+    .privacy-policy:hover {
+        color: $color__white;
+    }
 }
 
 @media screen and (max-width: #{$breakpoint_mobile}) {

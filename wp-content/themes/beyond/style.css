@@ -3726,6 +3726,12 @@ footer#colophon .email-icon:hover {
 footer#colophon .copywrite {
   text-align: right;
 }
+footer#colophon .privacy-policy {
+  color: #FFC726;
+}
+footer#colophon .privacy-policy:hover {
+  color: #eee;
+}
 
 @media screen and (max-width: 768px) {
   footer#colophon .csis-footer-logo {
