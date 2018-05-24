@@ -20,7 +20,7 @@
 			<p>1616 Rhode Island Avenue, NW <br />
 Washington, DC 20036<br />
 Tel: 202.775.3242 </p>
-		<?php //get_template_part( 'components/footer/site', 'info' ); ?> 
+		<?php //get_template_part( 'components/footer/site', 'info' ); ?>
 			</div>
 			<div class="col-sm-6">
 				<div class="social">
@@ -30,13 +30,13 @@ Tel: 202.775.3242 </p>
 				</div>
 				<div class="clearfix"></div>
 				<p class="copywrite">©<?php echo esc_html( date( 'Y' ) ); ?> by the Center for Strategic <br />
-				and  International Studies. All rights reserved.</p>
+				and  International Studies. All rights reserved.<br/><a class="privacy-policy" href="https://www.csis.org/privacy-policy" target="_blank" rel="nofollow">Privacy Policy</a></p>
 			</div>
 		</div>
 	</div>
 	</footer>
 </div>
-<?php wp_footer(); ?> 
+<?php wp_footer(); ?>
 
 </body>
 </html>
