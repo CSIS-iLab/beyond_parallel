@@ -3271,6 +3271,8 @@ img {
   /* Adhere to container width. */
 }
 
+/* Adds Full Width functionality */
+
 .fullWidthFeatureContent {
     width: 100vw;
     position: relative;
