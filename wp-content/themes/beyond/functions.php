@@ -112,17 +112,17 @@ function beyond_the_custom_logo() {
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function beyond_register_sidebars() {
-	register_sidebar(array(				
-		'id' => 'sidebar', 					
-		'name' => 'Sidebar',				
-		'description' => 'Take it on the side...', 
-		'before_widget' => '<div>',	
-		'after_widget' => '</div>',	
+	register_sidebar(array(
+		'id' => 'sidebar',
+		'name' => 'Sidebar',
+		'description' => 'Take it on the side...',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="side-title">',
-		'after_title' => '</h3>',		
-		'empty_title'=> '',					
+		'after_title' => '</h3>',
+		'empty_title'=> '',
 	));
-} 
+}
 
 /**
  * Enqueue scripts and styles.
@@ -199,7 +199,7 @@ function beyond_masonry() {
 		wp_register_script('jquery_masonry', get_template_directory_uri(). '/js/jquery.masonry.min.js', array('jquery'), '2.0.110526' );
 		wp_enqueue_script('jquery_masonry');
 		add_action('wp_footer', 'beyond_add_masonry');
-		
+
 		function beyond_add_masonry() { ?>
 			<script>
 				jQuery(document).ready(function($){
@@ -211,7 +211,7 @@ function beyond_masonry() {
 					}
 			  	});
 			</script>
-		<?php 
+		<?php
 		}
 	//}
 }
@@ -226,20 +226,27 @@ function prefix_nav_description( $item_output, $item, $depth, $args ) {
     if ( !empty( $item->description ) ) {
         $item_output = str_replace( $args->link_after . '</a>', '</a><span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
     }
- 
+
     return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
 
+// Full Width Shortcode
+// Add Shortcode
+function shortcode_fullWidth( $atts , $content = null ) {
+	return "<div class='fullWidthFeatureContent'>".$content."</div>";
+}
+add_shortcode( 'fullWidth', 'shortcode_fullWidth' );
+
 
 /**
- * wp_list_categories() 
+ * wp_list_categories()
  */
   function set_js_var() {
        $translation_array = array( 'template_directory_uri' => get_template_directory_uri());
        wp_localize_script( 'jquery', 'my_data', $translation_array );
-  } 
-  add_action('wp_enqueue_scripts','set_js_var');  
+  }
+  add_action('wp_enqueue_scripts','set_js_var');
 
 
 /**
@@ -248,9 +255,9 @@ add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
 function articleFooter( $atts, $content = null ) {
 
    return  '<div class="articleFooter">' . do_shortcode($content) . '</div>';
- 
+
 }
- 
+
 add_shortcode('footer', 'articleFooter');
 
 
@@ -287,17 +294,17 @@ $options = array ();
 		global $post;
 		$args = array(
 			'orderby' => 'title',
-        	'order' => 'ASC', 
+        	'order' => 'ASC',
         	'post_type' => 'post',
         	'posts_per_page'  => -1,
 		);
 		$posts = get_posts($args);
-		foreach( $posts as $post ) : setup_postdata($post); 
+		foreach( $posts as $post ) : setup_postdata($post);
 			$id = $post->ID;
 			$name = get_the_title($id );
 			$options[$name] = $id;
-		endforeach; 
-	
+		endforeach;
+
 	return $options;
 }
 add_action('add_meta_boxes', 'hhs_add_meta_boxes', 1);
@@ -318,20 +325,20 @@ function hhs_repeatable_meta_box_display() {
 			row.insertBefore( '#repeatable-fieldset-one tbody>tr:last' );
 			return false;
 		});
-  	
+
 		$( '.remove-row' ).on('click', function() {
 			$(this).parents('tr').remove();
 			return false;
 		});
 	});
 	</script>
-  
+
 	<table id="repeatable-fieldset-one" width="100%">
 	<tbody>
 	<?php
-	
+
 	if ( $repeatable_fields ) :
-	
+
 	foreach ( $repeatable_fields as $key => $field ) {
 
 	?>
@@ -351,11 +358,11 @@ function hhs_repeatable_meta_box_display() {
 			<option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
 			<?php endforeach; ?>
 			</select>
-	
+
 			<br>
 			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
-			
-			<?php 
+
+			<?php
 			$settings = array(
 			    'tinymce' => true,
 			    'textarea_rows' => 10,
@@ -367,8 +374,8 @@ function hhs_repeatable_meta_box_display() {
 			<br>
 
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
-			
-			<?php 
+
+			<?php
 			$settings = array(
 			    'tinymce' => true,
 			    'textarea_rows' => 10,
@@ -395,7 +402,7 @@ function hhs_repeatable_meta_box_display() {
 			<br>
 			<label for="urlimg[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Image URL: </label>
 			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="urlimg[]" value="http://" />
-			
+
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
@@ -406,7 +413,7 @@ function hhs_repeatable_meta_box_display() {
 
 			<br>
 			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
-			<?php 
+			<?php
 			$settings = array(
 			    'tinymce' => true,
 			    'textarea_rows' => 10,
@@ -417,7 +424,7 @@ function hhs_repeatable_meta_box_display() {
 
 			<br>
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
-			<?php 
+			<?php
 			$settings = array(
 			    'tinymce' => true,
 			    'textarea_rows' => 10,
@@ -431,7 +438,7 @@ function hhs_repeatable_meta_box_display() {
 		</td>
 	</tr>
 	<?php endif; ?>
-	
+
 	<!-- empty hidden one for jQuery -->
 	<tr class="empty-row screen-reader-text">
 		<td  style="padding-bottom:40px">
@@ -451,7 +458,7 @@ function hhs_repeatable_meta_box_display() {
 			</select>
 			<br>
 			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
-			<?php 
+			<?php
 			$settings = array(
 			    'tinymce' => true,
 			    'textarea_rows' => 10,
@@ -460,10 +467,10 @@ function hhs_repeatable_meta_box_display() {
 			);
 			wp_editor( '', 'findings[]', $settings ); ?>
 
-		  	
+
 			<br>
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
-			<?php 
+			<?php
 			$settings = array(
 			    'tinymce' => true,
 			    'textarea_rows' => 10,
@@ -478,7 +485,7 @@ function hhs_repeatable_meta_box_display() {
 	</tr>
 	</tbody>
 	</table>
-	
+
 	<p><a id="add-row" class="button" href="#">Add another</a></p>
 	<?php
 }
@@ -487,17 +494,17 @@ function hhs_repeatable_meta_box_save($post_id) {
 	if ( ! isset( $_POST['hhs_repeatable_meta_box_nonce'] ) ||
 	! wp_verify_nonce( $_POST['hhs_repeatable_meta_box_nonce'], 'hhs_repeatable_meta_box_nonce' ) )
 		return;
-	
+
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
 		return;
-	
+
 	if (!current_user_can('edit_post', $post_id))
 		return;
-	
+
 	$old = get_post_meta($post_id, 'repeatable_fields', true);
 	$new = array();
 	$options = hhs_get_sample_options();
-	
+
 	$names = $_POST['name'];
 	$selects = $_POST['select'];
 	$urls = $_POST['urlimg'];
@@ -505,16 +512,16 @@ function hhs_repeatable_meta_box_save($post_id) {
 	$related = $_POST['related'];
 
 	$count = count( $names );
-	
+
 	for ( $i = 0; $i < $count; $i++ ) {
 			if ( $names[$i] != '' ) :
 			$new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
-			
+
 			if ( in_array( $selects[$i], $options ) )
 				$new[$i]['select'] = $selects[$i];
 			else
 				$new[$i]['select'] = '';
-		
+
 			if ( $urls[$i] == 'http://' )
 				$new[$i]['urlimg'] = '';
 			else
@@ -522,10 +529,10 @@ function hhs_repeatable_meta_box_save($post_id) {
 
 			if ( $findings[$i] != '' )
 				$new[$i]['findings'] =  $findings[$i] ;
-			
+
 			if ( $related[$i] != '' )
 				$new[$i]['related'] =  $related[$i] ;
-			
+
 		endif;
 	}
 	if ( !empty( $new ) && $new != $old )

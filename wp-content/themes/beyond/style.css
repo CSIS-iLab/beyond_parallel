@@ -3271,6 +3271,15 @@ img {
   /* Adhere to container width. */
 }
 
+.fullWidthFeatureContent {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
