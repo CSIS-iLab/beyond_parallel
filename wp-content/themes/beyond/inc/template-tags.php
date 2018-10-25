@@ -13,7 +13,9 @@ if ( ! function_exists( 'beyond_posted_on' ) ) :
  */
 function beyond_posted_on() {
 
-	 if ( function_exists( 'coauthors_posts_links' ) ) :
+	 if ( function_exists( 'coauthors_posts_links' ) &&  get_the_author() != "Beyond Parallel") :
+		 echo "<script>console.log( 'Debug Objects: " . get_the_author() . "' );</script>";
+
         printf( __( '%2$s<span class="meta-sep">, by</span> %3$s', 'beyond' ),
             'meta-prep meta-prep-author',
             sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
@@ -23,7 +25,20 @@ function beyond_posted_on() {
             ),
             coauthors_posts_links( null, null, null, null, false )
         );
-    else:
+
+		elseif( function_exists( 'coauthors_posts_links' ) &&  get_the_author() == "Beyond Parallel") :
+				 echo "<script>console.log( 'Debug Objects: " . get_the_author() . "' );</script>";
+
+		        printf( __( '%2$s', 'beyond' ),
+		            'meta-prep meta-prep-author',
+		            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+		                get_permalink(),
+		                esc_attr( get_the_time() ),
+		                get_the_date()
+		            )
+		        );
+
+  else:
         printf( __( '%2$s <span class="meta-sep">by</span> %3$s', 'beyond' ),
             'meta-prep meta-prep-author',
             sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
@@ -144,14 +159,14 @@ function create_featuredarticle_shortcode($atts, $content = null) {
 global $post;
 $current_id = $post->ID;
 	$output;
-if (has_post_thumbnail( $post->ID ) ): 
+if (has_post_thumbnail( $post->ID ) ):
   $image = wp_get_attachment_image_src( get_post_thumbnail_id( $current_id ), 'single-post-thumbnail' );
 
-endif; 
+endif;
 	$output = '<article>
 					<div class="living-header-img" style="height:100%">
 					'.get_the_post_thumbnail( $current_id ).'	</div>
-					
+
 					<div class="living-first">
 						<h3>FEATURED</h3>
 						<h2 class="entry-title imagery-title"><a href="'. esc_html__($url) . '" rel="bookmark">'. esc_html__($title) . '</a></h2>
@@ -165,11 +180,6 @@ endif;
 
 
 	return $output;
-	
+
 }
 add_shortcode( 'featured-article', 'create_featuredarticle_shortcode' );
-
-
-
-
-

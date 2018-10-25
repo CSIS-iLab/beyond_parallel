@@ -12,14 +12,14 @@ function hb_settings_page()
     ?>
 	    <div class="wrap">
 	    <h1>Homepage Builder</h1>
-	    
+
 	    <form method="post" action="options.php">
-	    
+
 	    <div class="left_container">
 	    <div class="scrollable">
 	        <?php
 	            settings_fields("section");
-	            do_settings_sections("theme-options"); 
+	            do_settings_sections("theme-options");
 		?>
 		</div>
 		</div><!-- /left_container -->
@@ -28,7 +28,7 @@ function hb_settings_page()
 
 			<div class="droppable-helper"></div>
 			Featured Article
-			
+
 		</div> <!-- /right_container -->
 		<div class="clearfix"></div>
 		<?php  submit_button(); ?>
@@ -49,19 +49,19 @@ function display_theme_panel_fields()
 			$tmp_post = $post;
 
 			//Only posts
-			$args_post = array( 
-				'numberposts' => 10000, 
-				'category' => $e->cat_ID, 
-				'orderby' => 'title', 
+			$args_post = array(
+				'numberposts' => 10000,
+				'category' => $e->cat_ID,
+				'orderby' => 'title',
 				'order' => 'ASC' );
 			$myposts = get_posts( $args_post );
 
-			
-			foreach( $myposts as $post ) : setup_postdata($post);
+
+			foreach( array_merge($myposts,get_pages()) as $post ) : setup_postdata($post);
 
 			$postID = $post->ID;
 			$postTitle = get_the_title();
-			
+
 			        $handle   = $postID;
 			        $args     = array (
 			            'label_for' => $handle,
@@ -79,10 +79,10 @@ function display_theme_panel_fields()
 			        );
 
 			        register_setting("section", $handle);
-			    
+
 			endforeach;
-			
-			
+
+
 			add_settings_field("position_array", "", "display_array_element", "theme-options", "section");
 			register_setting("section", "position_array");
 
@@ -144,7 +144,7 @@ $post_output .= '<input id="'. $id .'" name="'. $id .'" class="'. $id .'" name="
     		$post_output .= '<label class="description">'. $title .'</label><br>';
     		print $post_output;
 
-}	
+}
 
 
 function display_media_element(){
