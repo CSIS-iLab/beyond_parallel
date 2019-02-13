@@ -1,6 +1,6 @@
 <?php
 /**
- * 	Template Name: Database Archive
+ * 	Template Name: AVINK
  *
  *
 */
@@ -10,65 +10,56 @@ get_header(); ?>
 
 <div id="primary" class="content-area container">
 	<main id="main" class="site-main " role="main">
-
-
-		<!--Database page content -->
 		<?php
-		while ( have_posts() ) : the_post();
-			the_title( '<h1 class="entry-title">', '</h1>' ); 
-			get_template_part( 'components/page/content', 'page' );
-		endwhile; 
-		?>
+        while (have_posts()) : the_post();
+            the_title('<h1 class="entry-title">', '</h1>');
 
-		<!--Database anchor menu -->
-		<div class="cat-list">
-		<p class="pageMenuHeader">Select a database below to jump to related content</p>
-		<?php query_posts( 
-			array(
-				'post_type' => array('post', 'videos'),
-				'tag' => 'database'
-			));
-		while (have_posts()) : the_post(); 
 
-			$postID = get_the_ID();
+        endwhile; // End of the loop.
+        ?>
 
-			echo '<a href="#post-' . $postID . '">';
-				
-				the_title( '<p class="list-title">', '</p>' );
-
-				?>
-
-				</a>
 		<?php
-		endwhile;
-		wp_reset_query();
-		?>
-		</div>
+        query_posts(
+            array(
+                'post_type' => array('post'),
+                'tag' => 'database',
+                'posts_per_page' =>  -1
+            )
+        );
+        while (have_posts()) : the_post();    ?>
 
-		<!--Post loop -->
-		<?php query_posts( 
-			array(
-				'post_type' => array('post', 'videos'),
-				'tag' => 'database'
-			));
-		while (have_posts()) : the_post(); ?>
-			<div class="databse-post">
-			<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
+					<header class="entry-header living-header">
 
-						<?php the_content(); ?>
+						<?php the_title(sprintf('<h3 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>'); ?>
 
-			</article>
-			<?php get_template_part( 'components/post/content', 'social' );  ?>
-			<?php get_template_part( 'components/post/content', 'footer' ); ?>
-			<hr class="databasehr">
-			</div>
-		<?php
-		endwhile;
-		wp_reset_query();
-		?>
+					</header>
+					<div class="entry-summary">
 
-		
+						<div class="entry-thumb">
+
+							<?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+
+						</div>
+
+								<?php
+                            if (has_excerpt(get_the_id())) {
+                                echo get_the_excerpt();
+                            }
+                            ?>
+						</div>
+
+				<div class="clearfix"></div>
+				</article>
+
+
+			<?php
+            endwhile;
+            wp_reset_query();
+            ?>
+
+
+
 
 
 	</main><!-- .site-main -->
