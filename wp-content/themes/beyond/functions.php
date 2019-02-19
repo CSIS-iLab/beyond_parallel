@@ -6,8 +6,10 @@
  *
  * @package Beyond_Parallel
  */
+require get_template_directory() . '/inc/custom-shortcodes.php';
+require get_template_directory() . '/inc/custom-tinymce-buttons.php';
 
-if ( ! function_exists( 'beyond_setup' ) ) :
+if (! function_exists('beyond_setup')) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,71 +17,72 @@ if ( ! function_exists( 'beyond_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function beyond_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on components, use a find and replace
-	 * to change 'beyond' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'beyond', get_template_directory() . '/languages' );
+function beyond_setup()
+{
+    /*
+     * Make theme available for translation.
+     * Translations can be filed in the /languages/ directory.
+     * If you're building a theme based on components, use a find and replace
+     * to change 'beyond' to the name of your theme in all the template files.
+     */
+    load_theme_textdomain('beyond', get_template_directory() . '/languages');
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support('automatic-feed-links');
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+    add_theme_support('title-tag');
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     */
+    add_theme_support('post-thumbnails');
 
-	add_image_size( 'beyond-featured-image', 640, 9999 );
+    add_image_size('beyond-featured-image', 640, 9999);
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Top', 'beyond' ),
-		'social'  => __( 'Social Links Menu', 'twentyfifteen' )
-		) );
+    // This theme uses wp_nav_menu() in one location.
+    register_nav_menus(array(
+        'menu-1' => esc_html__('Top', 'beyond'),
+        'social'  => __('Social Links Menu', 'twentyfifteen')
+        ));
 
-	/**
-	 * Add support for core custom logo.
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 200,
-		'width'       => 200,
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
+    /**
+     * Add support for core custom logo.
+     */
+    add_theme_support('custom-logo', array(
+        'height'      => 200,
+        'width'       => 200,
+        'flex-width'  => true,
+        'flex-height' => true,
+    ));
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support('html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ));
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'beyond_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+    // Set up the WordPress core custom background feature.
+    add_theme_support('custom-background', apply_filters('beyond_custom_background_args', array(
+        'default-color' => 'ffffff',
+        'default-image' => '',
+    )));
 }
 endif;
-add_action( 'after_setup_theme', 'beyond_setup' );
+add_action('after_setup_theme', 'beyond_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -88,22 +91,24 @@ add_action( 'after_setup_theme', 'beyond_setup' );
  *
  * @global int $content_width
  */
-function beyond_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'beyond_content_width', 640 );
+function beyond_content_width()
+{
+    $GLOBALS['content_width'] = apply_filters('beyond_content_width', 640);
 }
-add_action( 'after_setup_theme', 'beyond_content_width', 0 );
+add_action('after_setup_theme', 'beyond_content_width', 0);
 
 /**
  * Return early if Custom Logos are not available.
  *
  * @todo Remove after WP 4.7
  */
-function beyond_the_custom_logo() {
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		return;
-	} else {
-		the_custom_logo();
-	}
+function beyond_the_custom_logo()
+{
+    if (! function_exists('the_custom_logo')) {
+        return;
+    } else {
+        the_custom_logo();
+    }
 }
 
 /**
@@ -111,63 +116,65 @@ function beyond_the_custom_logo() {
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function beyond_register_sidebars() {
-	register_sidebar(array(
-		'id' => 'sidebar',
-		'name' => 'Sidebar',
-		'description' => 'Take it on the side...',
-		'before_widget' => '<div>',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="side-title">',
-		'after_title' => '</h3>',
-		'empty_title'=> '',
-	));
+function beyond_register_sidebars()
+{
+    register_sidebar(array(
+        'id' => 'sidebar',
+        'name' => 'Sidebar',
+        'description' => 'Take it on the side...',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="side-title">',
+        'after_title' => '</h3>',
+        'empty_title'=> '',
+    ));
 }
 
 /**
  * Enqueue scripts and styles.
  */
-function beyond_scripts() {
+function beyond_scripts()
+{
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/bootstrap.min.css');
 
-	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/bootstrap.min.css');
+    wp_enqueue_style('beyond-style', get_stylesheet_uri());
 
-	wp_enqueue_style( 'beyond-style', get_stylesheet_uri() );
-
-       // typekit
-    wp_enqueue_script( 'theme_typekit', 'https://use.typekit.net/ith5zhm.js');
-
-
-	wp_enqueue_script( 'beyond-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'beyond-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'beyond-homepage', get_template_directory_uri() . '/js/homepage.js', array( 'jquery' ), '20171', true );
-
-	// add fitvid
-	wp_enqueue_script( 'beyond-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20151215', true );
-
-	// add fitvid
-	wp_enqueue_script( 'beyond-fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), '20151215', true );
-
-	// Font Awesome
-	wp_enqueue_script('transparency-font-awesome', 'https://use.fontawesome.com/08b1a76eab.js');
-
-	// jQuery
-	wp_enqueue_script('jquery');
-
-		// Bootstrap
-	wp_enqueue_script('beyond-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true );
+    // typekit
+    wp_enqueue_script('theme_typekit', 'https://use.typekit.net/ith5zhm.js');
 
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+    wp_enqueue_script('beyond-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+
+    wp_enqueue_script('beyond-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+
+    wp_enqueue_script('beyond-homepage', get_template_directory_uri() . '/js/homepage.js', array( 'jquery' ), '20171', true);
+
+    // add fitvid
+    wp_enqueue_script('beyond-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20151215', true);
+
+    // add fitvid
+    wp_enqueue_script('beyond-fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array( 'jquery' ), '20151215', true);
+
+    // Font Awesome
+    wp_enqueue_script('transparency-font-awesome', 'https://use.fontawesome.com/08b1a76eab.js');
+
+    // jQuery
+    wp_enqueue_script('jquery');
+
+    // Bootstrap
+    wp_enqueue_script('beyond-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true);
+
+
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }
-add_action( 'wp_enqueue_scripts', 'beyond_scripts' );
+add_action('wp_enqueue_scripts', 'beyond_scripts');
 
-add_action( 'after_setup_theme', 'beyond_images' );
-function beyond_images() {
-    add_image_size( 'homepage-thumb', 400, 400, true ); // (cropped)
+add_action('after_setup_theme', 'beyond_images');
+function beyond_images()
+{
+    add_image_size('homepage-thumb', 400, 400, true); // (cropped)
 }
 
 /**
@@ -194,13 +201,16 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Masonry for homepage
  */
-function beyond_masonry() {
-	//if (!is_admin()) {
-		wp_register_script('jquery_masonry', get_template_directory_uri(). '/js/jquery.masonry.min.js', array('jquery'), '2.0.110526' );
-		wp_enqueue_script('jquery_masonry');
-		add_action('wp_footer', 'beyond_add_masonry');
+function beyond_masonry()
+{
+    //if (!is_admin()) {
+    wp_register_script('jquery_masonry', get_template_directory_uri(). '/js/jquery.masonry.min.js', array('jquery'), '2.0.110526');
+    wp_enqueue_script('jquery_masonry');
+    add_action('wp_footer', 'beyond_add_masonry');
 
-		function beyond_add_masonry() { ?>
+    function beyond_add_masonry()
+    {
+        ?>
 			<script>
 				jQuery(document).ready(function($){
 					if ($('#masonry-index').length){
@@ -212,8 +222,8 @@ function beyond_masonry() {
 			  	});
 			</script>
 		<?php
-		}
-	//}
+    }
+    //}
 }
 
 add_action('init', 'beyond_masonry');
@@ -222,40 +232,42 @@ add_action('init', 'beyond_masonry');
 /**
  * Add Walker class for menu drop-down descriptions
  */
-function prefix_nav_description( $item_output, $item, $depth, $args ) {
-    if ( !empty( $item->description ) ) {
-        $item_output = str_replace( $args->link_after . '</a>', '</a><span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
+function prefix_nav_description($item_output, $item, $depth, $args)
+{
+    if (!empty($item->description)) {
+        $item_output = str_replace($args->link_after . '</a>', '</a><span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output);
     }
 
     return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
+add_filter('walker_nav_menu_start_el', 'prefix_nav_description', 10, 4);
 
 // Full Width Shortcode
 // Add Shortcode
-function shortcode_fullWidth( $atts , $content = null ) {
-	return "<div class='fullWidthFeatureContent'>".$content."</div>";
+function shortcode_fullWidth($atts, $content = null)
+{
+    return "<div class='fullWidthFeatureContent'>".$content."</div>";
 }
-add_shortcode( 'fullWidth', 'shortcode_fullWidth' );
+add_shortcode('fullWidth', 'shortcode_fullWidth');
 
 
 /**
  * wp_list_categories()
  */
-  function set_js_var() {
-       $translation_array = array( 'template_directory_uri' => get_template_directory_uri());
-       wp_localize_script( 'jquery', 'my_data', $translation_array );
+  function set_js_var()
+  {
+      $translation_array = array( 'template_directory_uri' => get_template_directory_uri());
+      wp_localize_script('jquery', 'my_data', $translation_array);
   }
-  add_action('wp_enqueue_scripts','set_js_var');
+  add_action('wp_enqueue_scripts', 'set_js_var');
 
 
 /**
  * Article footer shortcode
  */
-function articleFooter( $atts, $content = null ) {
-
-   return  '<div class="articleFooter">' . do_shortcode($content) . '</div>';
-
+function articleFooter($atts, $content = null)
+{
+    return  '<div class="articleFooter">' . do_shortcode($content) . '</div>';
 }
 
 add_shortcode('footer', 'articleFooter');
@@ -267,56 +279,63 @@ add_shortcode('footer', 'articleFooter');
 /**
  * Metaboxes for AVINK page template
  */
-function SearchFilter($query) {
-if ($query->is_search) {
-$query->set('post_type', 'post');
-}
-return $query;
+function SearchFilter($query)
+{
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
 }
 
-add_filter('pre_get_posts','SearchFilter');
+add_filter('pre_get_posts', 'SearchFilter');
 
-add_action('admin_init','my_meta_init');
+add_action('admin_init', 'my_meta_init');
 function my_meta_init()
 {
-$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-// checks for post/page ID
+    // checks for post/page ID
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 
-$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
-// check for a template type
-if ($template_file == 'template_avink.php')
-{
+    // check for a database
+    $tags = wp_get_post_tags( $post_id);
+    function func($tag){return(strtolower($tag->name));}
+    $isDatabase = in_array('database',array_map('func',$tags));
 
+    // check for a template type
+    $template_file = get_post_meta($post_id, '_wp_page_template', true);
 
-function hhs_get_sample_options() {
-$options = array ();
+    if ($template_file == 'template_avink.php' || $isDatabase) {
+        function hhs_get_sample_options()
+        {
+            $options = array();
 
-		global $post;
-		$args = array(
-			'orderby' => 'title',
-        	'order' => 'ASC',
-        	'post_type' => 'post',
-        	'posts_per_page'  => -1,
-		);
-		$posts = get_posts($args);
-		foreach( $posts as $post ) : setup_postdata($post);
-			$id = $post->ID;
-			$name = get_the_title($id );
-			$options[$name] = $id;
-		endforeach;
+            global $post;
+            $args = array(
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'post_type' => 'post',
+            'posts_per_page'  => -1,
+        );
+            $posts = get_posts($args);
+            foreach ($posts as $post) : setup_postdata($post);
+            $id = $post->ID;
+            $name = get_the_title($id);
+            $options[$name] = $id;
+            endforeach;
 
-	return $options;
-}
-add_action('add_meta_boxes', 'hhs_add_meta_boxes', 1);
-function hhs_add_meta_boxes() {
-	add_meta_box( 'repeatable-fields', 'Repeatable Fields', 'hhs_repeatable_meta_box_display', 'page', 'normal', 'default');
-}
-function hhs_repeatable_meta_box_display() {
-	global $post;
-	$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
-	$options = hhs_get_sample_options();
-	wp_nonce_field( 'hhs_repeatable_meta_box_nonce', 'hhs_repeatable_meta_box_nonce' );
-	?>
+            return $options;
+        }
+        add_action('add_meta_boxes', 'hhs_add_meta_boxes', 1);
+        function hhs_add_meta_boxes()
+        {
+            add_meta_box('repeatable-fields', 'Repeatable Fields', 'hhs_repeatable_meta_box_display', 'page', 'normal', 'default');
+            add_meta_box('repeatable-fields', 'Repeatable Fields', 'hhs_repeatable_meta_box_display', 'post', 'normal', 'default');
+        }
+        function hhs_repeatable_meta_box_display()
+        {
+            global $post;
+            $repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+            $options = hhs_get_sample_options();
+            wp_nonce_field('hhs_repeatable_meta_box_nonce', 'hhs_repeatable_meta_box_nonce'); ?>
 	<script type="text/javascript">
 	jQuery(document).ready(function( $ ){
 		$( '#add-row' ).on('click', function() {
@@ -337,25 +356,33 @@ function hhs_repeatable_meta_box_display() {
 	<tbody>
 	<?php
 
-	if ( $repeatable_fields ) :
+    if ($repeatable_fields) :
 
-	foreach ( $repeatable_fields as $key => $field ) {
-
-	?>
+    foreach ($repeatable_fields as $key => $field) {
+        ?>
 	<tr>
 		<td style="padding-bottom:40px; ">
 		<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
 			<label for="name[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Year: </label>
-			<input style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" />
+			<input style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="name[]" value="<?php if ($field['name'] != '') {
+            echo esc_attr($field['name']);
+        } ?>" />
 			<br>
 			<label for="urlimg[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Image URL: </label>
-			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="urlimg[]" value="<?php if ($field['urlimg'] != '') echo esc_attr( $field['urlimg'] ); else echo 'http://'; ?>" />
+			<input  style="display: inline; margin-bottom: 10px; width: 50%;" type="text" class="widefat" name="urlimg[]" value="<?php if ($field['urlimg'] != '') {
+            echo esc_attr($field['urlimg']);
+        } else {
+            echo 'http://';
+        } ?>" />
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
-			<?php foreach ( $options as $label => $value ) : ?>
-			<option value="<?php echo $value; ?>"<?php selected( $field['select'], $value ); ?>><?php echo $label; ?></option>
+
+<option value="25-years-negotiations-provocations" <?php selected($field['select'], "25-years-negotiations-provocations"); ?>>25 Years of Negotiations and Provocations</option>
+
+			<?php foreach ($options as $label => $value) : ?>
+			<option value="<?php echo $value; ?>"<?php selected($field['select'], $value); ?>><?php echo $label; ?></option>
 			<?php endforeach; ?>
 			</select>
 
@@ -363,36 +390,38 @@ function hhs_repeatable_meta_box_display() {
 			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
 
 			<?php
-			$settings = array(
-			    'tinymce' => true,
-			    'textarea_rows' => 10,
-			    'wpautop' => true, // use wpautop?
-    			'media_buttons' => true, // show insert/upload button(s)
-			);
-			wp_editor( $field['findings'], 'findings[]', $settings ); ?>
+            $settings = array(
+                'tinymce' => true,
+                'textarea_rows' => 10,
+                'wpautop' => true, // use wpautop?
+                'media_buttons' => true, // show insert/upload button(s)
+            );
+        wp_editor($field['findings'], 'findings[]', $settings); ?>
 
 			<br>
 
+    <!-- <?php if ($field['related']): ?> -->
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
 
 			<?php
-			$settings = array(
-			    'tinymce' => true,
-			    'textarea_rows' => 10,
-			    'wpautop' => true, // use wpautop?
-    			'media_buttons' => true, // show insert/upload button(s)
-			);
-			wp_editor( $field['related'], 'related[]', $settings ); ?>
+            $settings = array(
+                'tinymce' => true,
+                'textarea_rows' => 10,
+                'wpautop' => true, // use wpautop?
+                'media_buttons' => true, // show insert/upload button(s)
+            );
+        wp_editor($field['related'], 'related[]', $settings); ?>
 
 			</div>
 			<a class="button remove-row" href="#">Remove</a>
+    <!-- <?php endif; ?> -->
+
 		</td>
 	</tr>
 	<?php
-	}
-	else :
-	// show a blank one
-	?>
+    } else :
+    // show a blank one
+    ?>
 	<tr>
 		<td style="padding-bottom:40px; ">
 			<div style="padding: 20px 20px 40px 20px; border: 1px solid #ddd; margin-bottom:5px;">
@@ -406,7 +435,10 @@ function hhs_repeatable_meta_box_display() {
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
-			<?php foreach ( $options as $label => $value ) : ?>
+
+        <option value="25-years-negotiations-provocations">25 Years of Negotiations and Provocations</option>
+
+			<?php foreach ($options as $label => $value) : ?>
 			<option value="<?php echo $value; ?>"><?php echo $label; ?></option>
 			<?php endforeach; ?>
 			</select>
@@ -414,24 +446,24 @@ function hhs_repeatable_meta_box_display() {
 			<br>
 			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
 			<?php
-			$settings = array(
-			    'tinymce' => true,
-			    'textarea_rows' => 10,
-			    'wpautop' => true, // use wpautop?
-    			'media_buttons' => true, // show insert/upload button(s)
-			);
-			wp_editor( '', 'findings[]', $settings ); ?>
+            $settings = array(
+                'tinymce' => true,
+                'textarea_rows' => 10,
+                'wpautop' => true, // use wpautop?
+                'media_buttons' => true, // show insert/upload button(s)
+            );
+            wp_editor('', 'findings[]', $settings); ?>
 
 			<br>
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
 			<?php
-			$settings = array(
-			    'tinymce' => true,
-			    'textarea_rows' => 10,
-			    'wpautop' => true, // use wpautop?
-    			'media_buttons' => true, // show insert/upload button(s)
-			);
-			wp_editor( '', 'related[]', $settings ); ?>
+            $settings = array(
+                'tinymce' => true,
+                'textarea_rows' => 10,
+                'wpautop' => true, // use wpautop?
+                'media_buttons' => true, // show insert/upload button(s)
+            );
+            wp_editor('', 'related[]', $settings); ?>
 
 			</div>
 			<a class="button remove-row" href="#">Remove</a>
@@ -452,32 +484,35 @@ function hhs_repeatable_meta_box_display() {
 			<br>
 			<label for="select[]" style="display:inline-block; font-size: 1rem; font-weight:bold; width: 15%">Featured Article: </label>
 			<select  style="display: inline; margin-bottom: 10px; width: 50%;" name="select[]">
-			<?php foreach ( $options as $label => $value ) : ?>
+
+        <option value="25-years-negotiations-provocations" <?php selected($field['select'], "25-years-negotiations-provocations"); ?>>25 Years of Negotiations and Provocations</option>
+
+			<?php foreach ($options as $label => $value) : ?>
 			<option value="<?php echo $value; ?>"><?php echo $label; ?></option>
 			<?php endforeach; ?>
 			</select>
 			<br>
 			<label for="findings[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Findings: </label>
 			<?php
-			$settings = array(
-			    'tinymce' => true,
-			    'textarea_rows' => 10,
-			    'wpautop' => true, // use wpautop?
-    			'media_buttons' => true, // show insert/upload button(s)
-			);
-			wp_editor( '', 'findings[]', $settings ); ?>
+            $settings = array(
+                'tinymce' => true,
+                'textarea_rows' => 10,
+                'wpautop' => true, // use wpautop?
+                'media_buttons' => true, // show insert/upload button(s)
+            );
+            wp_editor('', 'findings[]', $settings); ?>
 
 
 			<br>
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
 			<?php
-			$settings = array(
-			    'tinymce' => true,
-			    'textarea_rows' => 10,
-			    'wpautop' => true, // use wpautop?
-    			'media_buttons' => true, // show insert/upload button(s)
-			);
-			wp_editor( '', 'related[]', $settings ); ?>
+            $settings = array(
+                'tinymce' => true,
+                'textarea_rows' => 10,
+                'wpautop' => true, // use wpautop?
+                'media_buttons' => true, // show insert/upload button(s)
+            );
+            wp_editor('', 'related[]', $settings); ?>
 
 		  	</div>
 			<a class="button remove-row" href="#">Remove</a>
@@ -488,62 +523,79 @@ function hhs_repeatable_meta_box_display() {
 
 	<p><a id="add-row" class="button" href="#">Add another</a></p>
 	<?php
-}
-add_action('save_post', 'hhs_repeatable_meta_box_save');
-function hhs_repeatable_meta_box_save($post_id) {
-	if ( ! isset( $_POST['hhs_repeatable_meta_box_nonce'] ) ||
-	! wp_verify_nonce( $_POST['hhs_repeatable_meta_box_nonce'], 'hhs_repeatable_meta_box_nonce' ) )
-		return;
+        }
+        add_action('save_post', 'hhs_repeatable_meta_box_save');
+        function hhs_repeatable_meta_box_save($post_id)
+        {
+            if (! isset($_POST['hhs_repeatable_meta_box_nonce']) ||
+    ! wp_verify_nonce($_POST['hhs_repeatable_meta_box_nonce'], 'hhs_repeatable_meta_box_nonce')) {
+                return;
+            }
 
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-		return;
+            if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+                return;
+            }
 
-	if (!current_user_can('edit_post', $post_id))
-		return;
+            if (!current_user_can('edit_post', $post_id)) {
+                return;
+            }
 
-	$old = get_post_meta($post_id, 'repeatable_fields', true);
-	$new = array();
-	$options = hhs_get_sample_options();
+            $old = get_post_meta($post_id, 'repeatable_fields', true);
+            $new = array();
+            $options = hhs_get_sample_options();
 
-	$names = $_POST['name'];
-	$selects = $_POST['select'];
-	$urls = $_POST['urlimg'];
-	$findings = $_POST['findings'];
-	$related = $_POST['related'];
+            $names = $_POST['name'];
+            $selects = $_POST['select'];
+            $urls = $_POST['urlimg'];
+            $findings = $_POST['findings'];
+            $related = $_POST['related'];
 
-	$count = count( $names );
+            $count = count($selects);
+            $objects = $selects;
 
-	for ( $i = 0; $i < $count; $i++ ) {
-			if ( $names[$i] != '' ) :
-			$new[$i]['name'] = stripslashes( strip_tags( $names[$i] ) );
+            $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 
-			if ( in_array( $selects[$i], $options ) )
-				$new[$i]['select'] = $selects[$i];
-			else
-				$new[$i]['select'] = '';
+            $template_file = get_post_meta($post_id, '_wp_page_template', true);
 
-			if ( $urls[$i] == 'http://' )
-				$new[$i]['urlimg'] = '';
-			else
-				$new[$i]['urlimg'] = stripslashes( $urls[$i] ); // and however you want to sanitize
+            if ($template_file == 'template_avink.php' || $isDatabase) {
+                $count = count($names);
+                $objects = $names;
 
-			if ( $findings[$i] != '' )
-				$new[$i]['findings'] =  $findings[$i] ;
+              }
 
-			if ( $related[$i] != '' )
-				$new[$i]['related'] =  $related[$i] ;
+            for ($i = 0; $i < $count; $i++) {
+                if ($objects[$i] != '') :
+            $new[$i]['name'] = stripslashes(strip_tags($names[$i]));
 
-		endif;
-	}
-	if ( !empty( $new ) && $new != $old )
-		update_post_meta( $post_id, 'repeatable_fields', $new );
-	elseif ( empty($new) && $old )
-		delete_post_meta( $post_id, 'repeatable_fields', $old );
-}
+                if (in_array($selects[$i], $options)) {
+                    $new[$i]['select'] = $selects[$i];
+                } else {
+                    $new[$i]['select'] = '';
+                }
 
+                if ($urls[$i] == 'http://') {
+                    $new[$i]['urlimg'] = '';
+                } else {
+                    $new[$i]['urlimg'] = stripslashes($urls[$i]);
+                } // and however you want to sanitize
 
+                if ($findings[$i] != '') {
+                    $new[$i]['findings'] =  $findings[$i] ;
+                }
 
-}
+                if ($related[$i] != '') {
+                    $new[$i]['related'] =  $related[$i] ;
+                }
 
-add_action('save_post','my_meta_save');
+                endif;
+            }
+            if (!empty($new) && $new != $old) {
+                update_post_meta($post_id, 'repeatable_fields', $new);
+            } elseif (empty($new) && $old) {
+                delete_post_meta($post_id, 'repeatable_fields', $old);
+            }
+        }
+    }
+
+    add_action('save_post', 'my_meta_save');
 }

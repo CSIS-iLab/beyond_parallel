@@ -11,14 +11,14 @@ get_header(); ?>
 
 		<?php
 		while ( have_posts() ) : the_post();
-			the_title( '<h1 class="entry-title">', '</h1>' ); 
+			the_title( '<h1 class="entry-title">', '</h1>' );
 
 
 		endwhile; // End of the loop.
 		?>
 
 		<?php
-		query_posts( 
+		query_posts(
 			array(
 				'post_type' => array('post', 'videos'),
 				'tag' => 'living-history'
@@ -28,9 +28,9 @@ get_header(); ?>
 			if( $wp_query->current_post == 0 && !is_paged() ) : ?>
 				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
 					<div class="living-header-img">
-					<?php echo get_the_post_thumbnail( $page->ID ); ?>
+					<?php echo get_the_post_thumbnail( $post->ID ); ?>
 					</div>
-					
+
 					<div class="living-first">
 						<h3>FEATURED</h3>
 						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -52,16 +52,20 @@ get_header(); ?>
 						echo $first_para;
 						?>
 
-						<div class="followButton"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><span class="arrow">KEEP READING</span></a></h2>
+						<div class="followButton">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+								<span class="arrow">KEEP READING</span>
+							</a>
+
 						</div>
 					</div>
 				</article>
-				
+
 			<?php else : ?>
 				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
 					<header class="entry-header living-header">
 
-						<?php 
+						<?php
 						$title = get_the_title();
 						$title_array = explode('with', $title);
 						$first_word = $title_array[1];
@@ -69,7 +73,7 @@ get_header(); ?>
 						?>
 
 						<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
-						
+
 						<?php
 						echo mb_substr( $first_word, 0, $total_length_limit ) . '';
 						?>
@@ -95,7 +99,7 @@ get_header(); ?>
 						echo $first_para;
 						?>
 
-						
+
 
 					</div>
 					<div class="clearfix"></div>

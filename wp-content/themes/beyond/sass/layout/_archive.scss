@@ -1,45 +1,46 @@
-.entry-summary, .entry-thumb{
-	display: block;
-	float: left;
-	position: relative;
+.entry-summary,
+.entry-thumb {
+  display: block;
+  float: left;
+  position: relative;
 }
- 
+
 .entry-thumb img {
-	padding: 10px 20px 20px 0px;
+  padding: 10px 20px 10px 0px;
 }
 
 .entry-cats {
-	margin-bottom: 3rem;
-	display: block;
-	width: 100%;
-	float: none;
+  margin-bottom: 3rem;
+  display: block;
+  width: 100%;
+  float: none;
 }
 
 .entry-summary {
-	margin-top: 0px;
+  margin-top: 0px;
 }
 
 .archive-header span {
-	color: $color__medgray;
+  color: $color__medgray;
 }
 
 .search-title {
-		color: $color__medgray;
+  color: $color__medgray;
 }
 
 .search-title span {
-
-			color: $color__blue;
+  color: $color__blue;
 }
 
 h2.entry-title {
-	margin: 0px 0px 15px;
+  margin: 0px 0px 15px;
 }
 
 .entry-header h2.entry-title {
-	margin: 0px 0px 0px;
+  margin: 0px 0px 0px;
 }
 
-.excerpt-date, .excerpt-date a {
-	color: $color__gray;
+.excerpt-date,
+.excerpt-date a {
+  color: $color__gray;
 }

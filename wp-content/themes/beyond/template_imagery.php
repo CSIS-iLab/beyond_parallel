@@ -36,14 +36,16 @@ get_header(); ?>
 						<h3>FEATURED</h3>
 						<?php the_title( sprintf( '<h2 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-
 						<?php
 							if ( has_excerpt( get_the_id() ) ){
 								echo get_the_excerpt();
 							}
 							?>
 
-						<div class="followButton"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><span class="arrow">KEEP READING</span></a></h2>
+						<div class="followButton">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+								<span class="arrow">KEEP READING</span>
+							</a>
 						</div>
 					</div>
 				</article>

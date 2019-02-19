@@ -3,14 +3,14 @@ button,
 input,
 select,
 textarea {
-    color: $color__text-main;
-    font-family: $font__main;
-    font-weight: 300;
-    @include font-size(.9);
-    line-height: $font__line-height-body;
-    @media screen and (min-width: 700px) {
-        @include font-size(1);
-    }
+  color: $color__text-main;
+  font-family: $font__main;
+  font-weight: 300;
+  @include font-size(0.9);
+  line-height: $font__line-height-body;
+  @media screen and (min-width: 700px) {
+    @include font-size(1);
+  }
 }
 
 h1,
@@ -19,181 +19,179 @@ h3,
 h4,
 h5,
 h6 {
-    clear: both;
-    font-family: $font__headings;
-    font-weight: normal;
+  clear: both;
+  font-family: $font__headings;
+  font-weight: normal;
 }
 
 h1 {
-    font-size: 3.5rem;
-    color: $color__blue;
-    margin-top: 3rem;
-    margin-bottom: 5px;
+  font-size: 3.5rem;
+  color: $color__blue;
+  margin-top: 3rem;
+  margin-bottom: 5px;
 }
 
 .post-title h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 @media screen and (max-width: #{$breakpoint_mobile}) {
-    h1 {
-        font-size: 3rem;
-        color: $color__blue;
-    }
+  h1 {
+    font-size: 3rem;
+    color: $color__blue;
+  }
 }
 
 h2 {
-    font-size: 1.8em;
-    margin-top: 50px;
+  font-size: 1.8em;
+  margin-top: 50px;
 }
 
 h3 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h3 > img {
-    margin-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 h4 {
-    font-family: $font__main;
-    font-size: 1em;
-    font-weight: 300;
+  font-family: $font__main;
+  font-size: 1em;
+  font-weight: 300;
 }
 
 h5 {
-    font-size: .8em;
+  font-size: 0.8em;
 }
 
 p {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
 }
 
 dfn,
 cite,
 em,
 i {
-    font-style: italic;
+  font-style: italic;
 }
 
 blockquote {
-    margin: 0 1.5em;
+  margin: 0 1.5em;
 }
 
 address {
-    margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 pre {
-    background: $color__background-pre;
-    font-family: $font__pre;
-    @include font-size(0.9375);
-    line-height: $font__line-height-pre;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1.6em;
+  background: $color__background-pre;
+  font-family: $font__pre;
+  @include font-size(0.9375);
+  line-height: $font__line-height-pre;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
 }
 
 code,
 kbd,
 tt,
 var {
-    font-family: $font__code;
-    @include font-size(0.9375);
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
+  font-family: $font__code;
+  @include font-size(0.9375);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
 }
 
 abbr,
 acronym {
-    border-bottom: 1px dotted $color__border-abbr;
-    cursor: help;
+  border-bottom: 1px dotted $color__border-abbr;
+  cursor: help;
 }
 
 mark,
 ins {
-    background: $color__background-ins;
-    text-decoration: none;
+  background: $color__background-ins;
+  text-decoration: none;
 }
 
 big {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 blockquote,
 q {
-    quotes: "" "";
-    &:before,
-    &:after {
-        content: "";
-    }
+  quotes: "" "";
+  &:before,
+  &:after {
+    content: "";
+  }
 }
 
 blockquote {
-    font-size: 18px;
-    padding-left: 23px;
-    border-top: #ffc726 2px solid;
-    border-bottom: #ffc726 2px solid;
-    border-left: 0px;
-    display: block;
-    font-family: 'museo', sans-serif;
-    line-height: 32px;
-    margin: 40px auto 50px;
-    max-width: 700px;
-
+  font-size: 18px;
+  padding-left: 23px;
+  border-top: #ffc726 2px solid;
+  border-bottom: #ffc726 2px solid;
+  border-left: 0px;
+  display: block;
+  font-family: "museo", sans-serif;
+  line-height: 32px;
+  margin: 40px auto 50px;
+  max-width: 700px;
 }
 
 blockquote::before {
-    content: url(/wp-content/uploads/2016/10/Screen-Shot-2016-10-26-at-1.56.04-PM.png) !important;
-    margin: 0 auto;
-    display: block;
-    float: left;
-    padding-right: 10px;
-
+  content: url(/wp-content/uploads/2016/10/Screen-Shot-2016-10-26-at-1.56.04-PM.png) !important;
+  margin: 0 auto;
+  display: block;
+  float: left;
+  padding-right: 10px;
 }
 
 blockquote p {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .caption {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.1;
-    color: #bdbdbd;
-    text-transform: inherit;
-    letter-spacing: inherit;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #bdbdbd;
+  text-transform: inherit;
+  letter-spacing: inherit;
 }
 
 .prov {
-    color: #ffffff !important;
-    display: inline;
-    float: left;
-    text-transform: uppercase;
-    border: 2px solid #000000;
-    padding: 15px;
-    font-size: 22px;
-    margin-top: 30px;
-    font-family: 'museo-sans', sans-serif;
-    background-color: #000000;
-    letter-spacing: 1px;
+  color: #ffffff !important;
+  display: inline;
+  float: left;
+  text-transform: uppercase;
+  border: 2px solid #000000;
+  padding: 15px;
+  font-size: 22px;
+  margin-top: 30px;
+  font-family: "museo-sans", sans-serif;
+  background-color: #000000;
+  letter-spacing: 1px;
 }
 
 .exer {
-    color: #ffffff;
-    display: inline;
-    float: right;
-    text-transform: uppercase;
-    padding: 15px;
-    padding-left: 52px;
-    font-size: 22px;
-    margin-top: 30px;
-    border: 2px solid #000000;
-    background-color: #000000;
-    color: #fff!important;
-    font-family: 'museo-sans', sans-serif;
-    letter-spacing: 1px;
+  color: #ffffff;
+  display: inline;
+  float: right;
+  text-transform: uppercase;
+  padding: 15px;
+  padding-left: 52px;
+  font-size: 22px;
+  margin-top: 30px;
+  border: 2px solid #000000;
+  background-color: #000000;
+  color: #fff !important;
+  font-family: "museo-sans", sans-serif;
+  letter-spacing: 1px;
 }
