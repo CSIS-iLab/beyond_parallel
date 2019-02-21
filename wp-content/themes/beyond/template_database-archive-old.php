@@ -15,25 +15,25 @@ get_header(); ?>
 		<!--Database page content -->
 		<?php
 		while ( have_posts() ) : the_post();
-			the_title( '<h1 class="entry-title">', '</h1>' ); 
+			the_title( '<h1 class="entry-title">', '</h1>' );
 			get_template_part( 'components/page/content', 'page' );
-		endwhile; 
+		endwhile;
 		?>
 
 		<!--Database anchor menu -->
 		<div class="cat-list">
 		<p class="pageMenuHeader">Select a database below to jump to related content</p>
-		<?php query_posts( 
+		<?php query_posts(
 			array(
 				'post_type' => array('post', 'videos'),
 				'tag' => 'database'
 			));
-		while (have_posts()) : the_post(); 
+		while (have_posts()) : the_post();
 
 			$postID = get_the_ID();
 
 			echo '<a href="#post-' . $postID . '">';
-				
+
 				the_title( '<p class="list-title">', '</p>' );
 
 				?>
@@ -46,13 +46,13 @@ get_header(); ?>
 		</div>
 
 		<!--Post loop -->
-		<?php query_posts( 
+		<?php query_posts(
 			array(
 				'post_type' => array('post', 'videos'),
 				'tag' => 'database'
 			));
 		while (have_posts()) : the_post(); ?>
-			<div class="databse-post">
+			<div class="database-post">
 			<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
 						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -68,7 +68,7 @@ get_header(); ?>
 		wp_reset_query();
 		?>
 
-		
+
 
 
 	</main><!-- .site-main -->

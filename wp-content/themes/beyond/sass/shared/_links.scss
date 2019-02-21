@@ -31,19 +31,9 @@ a.related-link {
   color: $color__blue !important;
 }
 
-.entry-header a:hover,
-.entry-cats a:hover,
-.the-content a:hover,
-a.related-link:hover,
-h2 a,
-h3 a {
-  height: 100%;
-  position: relative;
-  background-image: -webkit-linear-gradient(
-    top,
-    $color__yellow 0,
-    $color__yellow 100%
-  );
+.entry-cats a,
+.the-content a,
+a.related-link {
   background-image: linear-gradient(
     to bottom,
     $color__yellow 0,
@@ -51,52 +41,54 @@ h3 a {
   );
   background-position: 0 94%;
   background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border-bottom: 0;
+  background-size: 1px 0px;
   text-decoration: none;
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-size: 1px 2px;
+  }
 }
 
-.entry-header h2 a,
-h3 a,
+h2 a,
 h3 a {
-  height: 100%;
-  position: relative;
-  background-image: -webkit-linear-gradient(
-    top,
-    $color__yellow 0,
-    $color__yellow 100%
-  );
   background-image: linear-gradient(
     to bottom,
     $color__yellow 0,
     $color__yellow 100%
   );
-  background-position: 0 83%;
+  background-position: 0 94%;
   background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border-bottom: 0;
+  background-size: 1px 2px;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.home .rev_slider a,
+.last-home a,
+a.home-postTitle,
+.home-postTitle a {
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .home .rev_slider a:hover,
 .last-home a:hover,
 h2 a:hover,
-h3 a:hover {
-  background-size: 0px !important;
+h3 a:hover,
+a.home-postTitle:hover,
+.home-postTitle a:hover {
+  background-size: 1px 0px;
   color: $color__darkYellow !important;
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-.entry-header .post-cats a {
-  background-image: none;
-  background-image: none;
 }
 
 .entry-header {
@@ -160,29 +152,23 @@ span.arrow:after {
 }
 
 .single-post .post-article p a {
-  font-weight: bold;
   background-image: linear-gradient(
     to bottom,
-    $color__darkYellow 0,
-    $color__darkYellow 100%
+    $color__yellow 0,
+    $color__yellow 100%
   );
   background-position: 0 94%;
   background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border-bottom: 0;
+  background-size: 1px 2px;
   text-decoration: none;
-  -webkit-transition: background 0.2s ease-in-out;
-  -moz-transition: background 0.2s ease-in-out;
-  -o-transition: background 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-image: linear-gradient(
-      to bottom,
-      $color__yellow 0,
-      $color__yellow 100%
-    );
-    background-size: 2px 100%;
+    background-size: 1px 0px;
+    color: $color__yellow;
   }
 }
 
@@ -194,14 +180,6 @@ span.arrow:after {
 }
 
 .cat-list ul a:hover {
-  display: inline;
-  height: 100%;
-  position: relative;
-  background-image: -webkit-linear-gradient(
-    top,
-    $color__yellow 0,
-    $color__yellow 100%
-  );
   background-image: linear-gradient(
     to bottom,
     $color__yellow 0,
@@ -209,8 +187,7 @@ span.arrow:after {
   );
   background-position: 0 100%;
   background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border-bottom: 0;
+  background-size: 1px 2px;
   text-decoration: none;
   -webkit-transition: 0s ease-in-out;
   -moz-transition: 0s ease-in-out;
@@ -232,8 +209,6 @@ span.arrow:after {
 
 .catMore:hover {
   background-color: $color__medgray;
-  font-weight: 500;
-  color: white;
 }
 
 .avink-links {
@@ -301,13 +276,9 @@ h3.relatedHeading {
   display: inline-block;
   text-transform: uppercase;
   font-size: 1rem;
-  height: 100%;
-  position: relative;
-  background-image: -webkit-linear-gradient(
-    top,
-    $color__yellow 0,
-    $color__yellow 100%
-  );
+
+  text-decoration: none;
+  margin-right: 5px;
   background-image: linear-gradient(
     to bottom,
     $color__yellow 0,
@@ -315,10 +286,16 @@ h3.relatedHeading {
   );
   background-position: 0 94%;
   background-repeat: repeat-x;
-  background-size: 2px 2px;
-  border-bottom: 0;
+  background-size: 1px 0px;
   text-decoration: none;
-  margin-right: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-size: 1px 2px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -397,7 +374,7 @@ div.pagination {
   margin-bottom: 10px;
 }
 
-.databse-post .share-print-wrapper {
+.database-post .share-print-wrapper {
   margin-bottom: 25px;
 }
 
