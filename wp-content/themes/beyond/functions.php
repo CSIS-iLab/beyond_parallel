@@ -296,9 +296,12 @@ function my_meta_init()
     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
 
     // check for a database
-    $tags = wp_get_post_tags( $post_id);
-    function func($tag){return(strtolower($tag->name));}
-    $isDatabase = in_array('database',array_map('func',$tags));
+    $tags = wp_get_post_tags($post_id);
+    function func($tag)
+    {
+        return(strtolower($tag->name));
+    }
+    $isDatabase = in_array('database', array_map('func', $tags));
 
     // check for a template type
     $template_file = get_post_meta($post_id, '_wp_page_template', true);
@@ -400,7 +403,6 @@ function my_meta_init()
 
 			<br>
 
-    <!-- <?php if ($field['related']): ?> -->
 			<label for="related[]" style="display:inline-block; font-size: 1rem; font-weight:bold;">Related: </label>
 
 			<?php
@@ -414,7 +416,6 @@ function my_meta_init()
 
 			</div>
 			<a class="button remove-row" href="#">Remove</a>
-    <!-- <?php endif; ?> -->
 
 		</td>
 	</tr>
@@ -560,8 +561,7 @@ function my_meta_init()
             if ($template_file == 'template_avink.php' || $isDatabase) {
                 $count = count($names);
                 $objects = $names;
-
-              }
+            }
 
             for ($i = 0; $i < $count; $i++) {
                 if ($objects[$i] != '') :
