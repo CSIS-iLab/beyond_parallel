@@ -101,3 +101,7 @@ wp-content/mysql.sql
 /wp-content/themes/beyond_parallel/.sass-cache
 *.scssc
 .htaccess
+
+wp-content/mu-plugins/*
+wp-content/plugins/*
+!wp-content/plugins/homepage-builder
