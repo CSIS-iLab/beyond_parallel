@@ -79,17 +79,51 @@ hr.databasehr {
 
 .tag-database {
   .entry-summary {
+    display: grid;
+
+    @media screen and (min-width: #{$breakpoint_mobile}) {
+      grid-template-columns: auto auto;
+    }
+
     h4 {
-      display: inline-block;
-      font-family: "alternate-gothic-no-3-d", sans-serif;
-      color: $color__gray;
-      font-size: 1.3em;
-      margin-bottom: 5px;
+      margin: 0;
+      font-family: $font__headings;
+      font-size: 1.4em;
+    }
+
+    h5 {
+      margin: 0 0 5px;
+      font-family: $font__main;
+      font-size: 1.1em;
+
+      a {
+        background-image: linear-gradient(to bottom, #ffc726 0, #ffc726 100%);
+        background-position: 0 94%;
+        background-repeat: repeat-x;
+        background-size: 1px 0px;
+        text-decoration: none;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-size: 1px 2px;
+        }
+      }
     }
 
     p {
-      .catMore {
-        margin-top: 0;
+      .read-more {
+        font-family: $font__headings;
+        white-space: nowrap;
+        color: #c5c5c5;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+
+      .read-more:hover {
+        color: #ffc726;
       }
 
       &:first-of-type {
@@ -105,8 +139,8 @@ hr.databasehr {
     }
 
     img.wp-post-image {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      height: auto;
       object-fit: cover;
       object-position: 50% 50%;
 

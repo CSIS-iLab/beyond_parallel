@@ -42,16 +42,15 @@ get_header(); ?>
 					</header>
 					<div class="entry-summary">
 
-						<div class="entry-thumb">
+
 
 						<?php
                             $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size = 'large')[0];
                             if ($image) {
-                                echo '<div class="entry-thumb"><img class="wp-post-image" src="'.$image.'"></div>';
+                                echo '<div class="entry-thumb"><a href="' . esc_url(get_permalink()) . '"><img class="wp-post-image" src="'.$image.'"></a></div>';
                             }
                             ?>
 
-						</div>
 
 								<?php
 
@@ -63,13 +62,11 @@ get_header(); ?>
                           echo '<div class="database_block">';
 
                           if (has_excerpt($post->ID)) {
-                              echo '<p>'.get_the_excerpt($post->ID).' <a href="'.esc_url(get_permalink()).'" class="catMore">Read More</a></p>';
-                          } else {
-                              echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus mollis aliquam gravida. Curabitur ultricies, leo nec eleifend convallis, tellus nisl egestas risus, vel scelerisque est lectus sit amet est. Nulla facilisi. Donec sed leo blandit, fringilla purus vel, aliquet lorem. Sed condimentum egestas arcu aliquam scelerisque</p>';
+                              echo '<p>'.get_the_excerpt($post->ID).' </p>';
                           }
 
                           if (count($repeatable_fields)>0) {
-                              echo '<h4>READ THE ANALYSIS</h4>';
+                              echo '<h4>Related Analysis:</h4>';
                           }
 
                           foreach ($repeatable_fields as $field) {
@@ -84,11 +81,14 @@ get_header(); ?>
 
 
                               $link = get_the_permalink($field['select']);
+                              $title = get_the_title($field['select']);
                               if (strlen($field['select'])<1) {
                                   $link = 'https://beyondparallel.csis.org/25-years-of-negotiations-provocations/';
+		                              $title = '25 Years of Negotiations and Provocations: North Korea and the United States';
                               }
 
-                              echo '<p>'.html_entity_decode(esc_attr($findings)).' <a href="'.$link.'" class="catMore">Read More</a></p>';
+															echo '<h5><a href="'.$link.'">'.$title.'</a></h5>';
+                              echo '<p>'.html_entity_decode(esc_attr($findings)).' <a href="'.$link.'" class="read-more">Read More</a></p>';
 
                               $related = $field['related'];
                               $related = preg_replace('/<p>/', '', $related);
@@ -99,9 +99,7 @@ get_header(); ?>
                           echo '</div>';
                       } else {
                           if (has_excerpt($post->ID)) {
-                              echo '<p>'.get_the_excerpt($post->ID).' <a href="'.esc_url(get_permalink()).'" class="catMore">Read More</a></p>';
-                          } else {
-                              echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus mollis aliquam gravida. Curabitur ultricies, leo nec eleifend convallis, tellus nisl egestas risus, vel scelerisque est lectus sit amet est. Nulla facilisi. Donec sed leo blandit, fringilla purus vel, aliquet lorem. Sed condimentum egestas arcu aliquam scelerisque</p>';
+                              echo '<p>'.get_the_excerpt($post->ID).' </p>';
                           }
                       }
                 ?>

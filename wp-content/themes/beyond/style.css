@@ -2844,15 +2844,47 @@ hr.databasehr {
   margin: 2em 0em 5em;
 }
 
-.tag-database .entry-summary h4 {
-  display: inline-block;
-  font-family: "alternate-gothic-no-3-d", sans-serif;
-  color: #989797;
-  font-size: 1.3em;
-  margin-bottom: 5px;
+.tag-database .entry-summary {
+  display: grid;
 }
-.tag-database .entry-summary p .catMore {
-  margin-top: 0;
+@media screen and (min-width: 768px) {
+  .tag-database .entry-summary {
+    grid-template-columns: auto auto;
+  }
+}
+.tag-database .entry-summary h4 {
+  margin: 0;
+  font-family: "alternate-gothic-no-3-d", sans-serif;
+  font-size: 1.4em;
+}
+.tag-database .entry-summary h5 {
+  margin: 0 0 5px;
+  font-family: museo-sans, sans-serif;
+  font-size: 1.1em;
+}
+.tag-database .entry-summary h5 a {
+  background-image: linear-gradient(to bottom, #ffc726 0, #ffc726 100%);
+  background-position: 0 94%;
+  background-repeat: repeat-x;
+  background-size: 1px 0px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tag-database .entry-summary h5 a:hover {
+  background-size: 1px 2px;
+}
+.tag-database .entry-summary p .read-more {
+  font-family: "alternate-gothic-no-3-d", sans-serif;
+  white-space: nowrap;
+  color: #c5c5c5;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.tag-database .entry-summary p .read-more:hover {
+  color: #ffc726;
 }
 .tag-database .entry-summary p:first-of-type .catMore {
   margin-top: 0;
@@ -2862,8 +2894,8 @@ hr.databasehr {
   background-color: #efb715;
 }
 .tag-database .entry-summary img.wp-post-image {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: 50% 50%;
 }
