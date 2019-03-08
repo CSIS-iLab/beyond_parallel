@@ -154,7 +154,10 @@
 .sub1 {
   > ul.sub-menu {
     padding: 25px 0px 25px 25px;
-    width: 350px;
+
+    @media screen and (min-width: #{$breakpoint_tablet}) {
+      width: 350px;
+    }
   }
 
   &.menu-item-has-children > a:after {
