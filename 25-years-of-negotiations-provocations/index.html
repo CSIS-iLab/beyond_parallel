@@ -1,0 +1,432 @@
+<html>
+<head>
+	<!--GOOGLE ANALYTICS-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-80051375-1"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments)};
+  		gtag('js', new Date());
+		gtag('config', 'UA-80051375-1');
+	</script>
+	<!--END GOOGLE ANALYTICS-->
+
+	<!--META STUFF FOR UNFURLS-->
+	<title>25 years of Provocations and Negotiations: North Korea and the United States</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='description' content='Periods of negotiation between the United States and North Korea appear to lead to a decrease in North Korean provocations.' />
+	<meta name='news_keywords' content='north korea, visualization, trump, obama, kim il-sung, kim jong-il, nuclear crisis, missile test, csis, beyond parallel' />
+	<meta property='og:title' content='25 Years of Negotiations and Provocations: North Korea and the United States' />
+	<meta property='og:site_name' content='CSIS Beyond Parallel'/>
+	<meta property='og:url' content='https://beyondparallel.csis.org/25-years-of-negotiations-provocations/' />
+	<meta property='og:description' content='Periods of negotiation between the United States and North Korea appear to lead to a decrease in North Korean provocations.' />
+	<meta property='og:type' content='article' />
+	<meta property='og:locale' content='en_US' />
+	<meta property='og:image' content='https://beyondparallel.csis.org/wp-content/uploads/2016/09/Banner_BP_interactive_2.jpg' />
+	<meta property='og:image:type' content='image/jpeg' />
+	<meta property='og:image:width' content='1200' />
+	<meta property='og:image:height' content='600' />
+	
+	<meta name='twitter:card' content='summary_large_image'>
+	<meta name='twitter:site' content='https://beyondparallel.csis.org/25-years-of-negotiations-provocations/?utm_source=Twitter%20timeline'>
+	<meta name='twitter:creator' content='https://twitter.com/CSISKoreaChair'>
+	<meta name='twitter:title' content='25 Years of Negotiations and Provocations'>
+	<meta name='twitter:description' content='Periods of negotiation between the United States and North Korea appear to lead to a decrease in North Korean provocations.'>
+	<meta name='twitter:image:src' content='https://beyondparallel.csis.org/wp-content/uploads/2016/09/Banner_BP_interactive_2.jpg'>
+	<!--END META STUFF FOR UNFURLS-->
+
+	<!--TYPE-->
+	<link href="https://fonts.googleapis.com/css?family=Biryani:700,800,900|Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
+	<!--END TYPE-->
+
+	<!--STYLESHEET-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--STYLESHEET-->
+
+	<link rel="icon" href="BP_bookend.png" type="image/x-icon" />
+
+	<!--LIBRARIES-->
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="noframework.waypoints.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script type="text/javascript" src="d3-queue.min.js"></script>
+	<script src="https://d3js.org/d3-axis.v1.min.js"></script>
+	<script type="text/javascript" src="d3-annotation.min.js"></script>
+	<script type="text/javascript" src="lodash.js"></script>	
+	<!--END LIBRARIES-->
+	
+</head>
+<body>
+	<div id="calendarContainer">
+			<svg id="calendar" viewBox="0 0 420 460"></svg>
+			<div id="legend">
+				<div class="legendComponent">
+					<div class="legendIcon">
+						<span class="legendBox" style="background: rgb(239, 243, 255);"></span><span class="legendBox" style="background: rgb(189, 215, 231);"></span><span class="legendBox" style="background: rgb(107, 174, 214);"></span><span class="legendBox" style="background: rgb(33, 113, 181);"></span>
+					</div>
+					<div class="legendText">A darker shade of blue represents a greater number of negotiations between North Korea and the United States</div>
+				</div>
+				<div class="legendComponent">
+					<div class="legendIcon">
+						<span class="legendBox" style="background: rgb(254, 229, 217);"></span><span class="legendBox" style="background: rgb(252, 174, 145);"></span><span class="legendBox" style="background: rgb(251, 106, 74);"></span><span class="legendBox" style="background: rgb(203, 24, 29);"></span>
+					</div>
+					<div class="legendText">A darker shade of red represents a greater number of provocations by North Korea</div>
+				</div>
+				
+				<div class="legendComponent">
+					<svg class="legendIcon" viewBox="-1 -1 32 32" height="25px" width="40px" id="annSVG"><g class="annotation-subject"><path class="subject" transform="translate(15 15)" d="M8.572527594031472e-16,-14A14,14,0,1,1,-8.572527594031472e-16,14A14,14,0,1,1,8.572527594031472e-16,-14Z" fill-opacity="0" stroke="#E8336D" stroke-width="3px" stroke-dasharray="9"></path></g></svg>
+					<div class="legendText">Key events are marked with a dashed circle</div>
+				</div>
+
+				<div class="legendComponent" id="hoverEvents">
+					<div class="legendIcon"></div>
+					<div class="legendText">Hover over squares for more information</div>
+				</div>
+			</div>
+		</div>
+	<div id="contentWrapper">
+		<div id="textWrapper">
+			<div id="landingSpot">
+				<a href="https://beyondparallel.csis.org/" target="_blank">
+					<img id="bplogo" src="BP_logo.svg" alt="Beyond Parallel">
+				</a>
+				<h1>25 Years of <span class="negotiationColor">Negotiations</span> and <span class="provocationColor">Provocations</span>: North Korea and the United States</h1>
+				
+				<h3>By <a id="author" href="https://www.csis.org/people/lisa-collins" target="_blank">Lisa Collins</a></h3>
+
+				<div id="chevWrapper"><span id="chevron">&raquo;</span>Scroll down</div>
+			</div>
+
+			<p class="textpara instruc" id="para1">
+				<a href="https://beyondparallel.csis.org/" target="_blank">CSIS Beyond Parallel</a> has compiled <a href="https://beyondparallel.csis.org/databases/" target="_blank">a record of bilateral and multilateral negotiations between the United States and North Korea from 1990 to 2017</a>. The interactive calendar on your screen displays Provocations by North Korea and Negotiations between the United States and North Korea. Each <span class="monthColor">month</span> in a year may have two squares, one for the number of negotiations and one for the number of provocations. 
+			</p>
+			<p class="textpara instruc" id="para2">
+				<span class="negotiationColor">Negotiations</span> between North Korea and the United States are shown as squares in shades of blue. A darker shade of blue represents more Negotiations. 
+			</p>
+			<p class="textpara instruc" id="para3">
+				<span class="provocationColor">Provocations</span> by North Korea are shown as squares in shades of red. A darker shade of red represents more Provocations. <a href="https://beyondparallel.csis.org/dprk-provocations-and-us-negotiations" target="_blank">For more on types of provocations and methodology of the study read this.</a>
+			</p>
+
+			<p class="textpara instruc" id="para4">
+				Key events in the relationship between the United States and North Korea are marked with a dashed circle. You will find annotations for these events further along in the interactive as you scroll.
+			</p>
+			<div class="headingWrapper">
+				<h2>Introduction</h2>
+			</div>
+			<div id="intropara" class="textpara">
+			Negotiations over North Korea’s nuclear program have occurred for nearly 25 years. There are few open-source studies that have explored the entire record of nuclear diplomacy between North Korea and the United States.  Additionally, very few studies have tested the relationship between negotiations and other variables to explain historical outcomes.  This analysis examines the history of talks between the U.S. and North Korea and seeks to determine if there are trends that could shed light on how effective diplomacy is in altering North Korea’s behavior.
+			</div>
+			<div class="headingWrapper">
+				<h2>Key Findings</h2>
+			</div>
+			
+
+			<div class="textpara keyfindings">
+				<ul>
+					<li>There appears to be an inverse correlation between U.S.-DPRK diplomacy and the frequency of North Korean provocations in this 25-year period. That is, there is a correlation between periods when the U.S. is at the negotiating table with North Korea, in a bilateral or multilateral setting, and a decrease in DPRK provocations.</li>
+					<li>The absence of missile tests or other kinetic provocations does not necessarily suggest a halt in North Korean weapons development or a reduction of the overall nuclear threat. But, diplomacy does seem to have some restraining effect on the number of provocations carried out.</li>
+					<li>The ratio of negotiations to provocations is highest under North Korean leader Kim Il-sung from 1990 to 1994. The ratio of negotiations to provocations is lowest under North Korean leader Kim Jong-un from 2012 to the present.</li>
+					<li>Whether the U.S. president is a Democrat or Republican, party control of the White House appears to have no effect on the pace of North Korean provocations.</li>
+					<li>Negotiations under Kim Jong-un hit historic lows in comparison to his predecessors, even when accounting for tenure in office.</li>
+				</ul>
+			</div>
+
+			
+			<div class="headingWrapper">
+				<h2 class="upperHeading">First North Korean Nuclear Crisis & 1994 Geneva Agreed Framework</h2>
+				<h2 class="lowerHeading">January 1990–January 1993</h2>
+			</div>
+			
+
+			<div id="dum1" class="image leftImage">
+				<img class="leaderImages" src="dum1.png"></img>
+				<span class="leaderSpan">Kim Il-sung</span>
+			</div>
+			<div id="dun1" class="image rightImage">
+				<img class="leaderImages" src="dun1.png"></img>
+				<div class="leaderSpan">George HW Bush</div>
+			</div>
+
+			<p class="textpara" id="para5">
+				There were <span class="negotiationColor">7 negotiation events</span> that occurred in this period. Prior to 1990s, the U.S. had little to no diplomatic contacts with North Korea. The George H.W. Bush administration&#8217;s &#8220;limited engagement&#8221; policies were directed at obtaining Pyongyang&#8217;s compliance with an International Atomic Energy Agency (IAEA) nuclear safeguards agreement to allow for inspections of their nuclear facility and plutonium reprocessing plant. 
+			</p>
+			
+			<p class="textpara">
+				North Korea carried out <span class="provocationColor">7 different provocations</span> during this period. A couple of short-range Scud missiles and medium-range Nodong missiles were tested. North Korean soldiers and spies were also found to have infiltrated South Korea at least once. 
+			<p class="textpara" id="hwend">
+				There appeared to be little to no relationship between the events even though the ratio of negotiations to provocations was [<span class="negotiationColor">1</span> : <span class="provocationColor">1</span>]. 
+			</p>
+			
+			<div class="headingWrapper">
+				<h2 class="upperHeading">First North Korean Nuclear Crisis</h2>
+				<h2 class="lowerHeading">January 1993–July 1994</h2> 
+			</div>
+
+			
+			<div id="dun2" class="image rightImage">
+				<img class="leaderImages" src="dun2.png"></img>
+				<span class="leaderSpan">Bill Clinton</span>
+			</div>
+			<p class="textpara" id="para6">
+				There were <span class="negotiationColor">19 negotiation events</span> that took place between the U.S. and North Korea during this period.  The negotiations centered around international inspections of North Korea&#8217;s nuclear facilities, nuclear waste sites, and its announced withdrawal from the Nuclear Non-Proliferation Treaty (NPT) in early 1993.
+			</p>
+			<p class="textpara">
+				Negotiations broke down in May 1994 over North Korea&#8217;s defueling of the nuclear reactor at Yongbyon and the removal of the spent nuclear fuel rods for the purpose of separating out weapons-grade plutonium.
+			</p>
+
+			<img src="graphic3.png" class="headlineBox"></img>
+			<h2 class="temph2">Former U.S. President Jimmy Carter visits Pyongyang in June 1994.</h2>
+
+			<p class="textpara">
+				After a visit to North Korea by former president Jimmy Carter in June 1994, however, the U.S. and North Korea returned to dialogue.  All six negotiations that took place in the summer and fall of 1994 were focused on achieving the <a href="https://beyondparallel.csis.org/living-history-with-robert-gallucci/" target="_blank">October 1994 Agreed Framework.</a>
+			</p>
+			<p class="textpara">
+				In the process, North Korea agreed to freeze and eventually dismantle its nuclear reactors and allow IAEA inspectors to monitor the implementation process. In exchange, the U.S. agreed to provide two light-water reactor power plants, energy assistance, and security assurances while working toward normalization of bilateral relations.
+			</p>
+			<p class="textpara" id="regime1end">
+				There were a total of <span class="provocationColor">3 provocations</span> during this period. North Korea tested several short- to medium-range missiles in late May of 1993 and late May of 1994.  The ratio of negotiations to provocations was highest at [<span class="negotiationColor">6.3</span> : <span class="provocationColor">1</span>] in this short time period. This period concluded with Kim Il-sung&rsquo;s death in July 1994.
+
+			</p>
+
+			<img src="graphic7.png" class="headlineBox"></img>
+			<h2 class="temph2">Death of Kim Il-sung in July 1994.</h2>
+
+
+			<div class="headingWrapper">
+				<h2 class="upperHeading">Kim Jong-il Comes to Power</h2>
+				<h2 class="lowerHeading">July 1994–January 2001</h2> 
+			</div>
+
+			 
+
+			<div id="dum2" class="image leftImage">
+				<img class="leaderImages" src="dum2.png"></img>
+				<span class="leaderSpan">Kim Jong-il</span>
+			</div>
+
+
+			<p class="textpara" id="para7">
+				The U.S. and North Korea engaged in <span class="negotiationColor">109 negotiation events</span> during this time which largely revolved around implementation and enforcement of the provisions of the 1994 Agreed Framework. 
+			</p>
+			
+			<p class="textpara">
+				The Korean Peninsula Energy Development Organization (KEDO) was formed to implement the provision of light-water reactors under the agreement. There were also attempts to hold Three-Party Talks (U.S.-DPRK-ROK) and Four-Party Talks (U.S.-DPRK-ROK-CHN) in the period between 1997 and 1999. Bilateral U.S. and North Korean missile talks also took place from 1996 to 2000.
+			</p>
+			<img src="graphic5.png" class="headlineBox"></img>
+			<h2 class="temph2">Former U.S. Secretary of State Madeleine Albright visits Pyongyang in October 2000.</h2>
+			<p class="textpara">
+				This period of engagement was punctuated by <span class="provocationColor">24 North Korean provocation events</span>. The provocations included North Korean <a href="https://beyondparallel.csis.org/north-korean-provocations-us-rok-military-exercises/" target="_blank">ground troop infiltrations</a> into South Korea in 1996,  the launch of a <a href="https://beyondparallel.csis.org/north-korean-provocations-us-rok-military-exercises/" target="_blank">long-range Taepo-dong missile</a> in August 1998, and the shooting down of a U.S helicopter in December 1994.
+			</p>
+
+			<p class="textpara" id="clintonend">
+				The ratio of negotiations to provocations was the second highest at [<span class="negotiationColor">4.5</span> : <span class="provocationColor">1</span>] in this nearly seven-year period.  In comparison to other periods, the number of negotiations outweighed the number of provocations. This era concluded with the end of the Clinton administration in January 2001, when suspicions mounted about North Korea&rsquo;s clandestine pursuit of a highly enriched uranium (HEU) nuclear weapons program.
+			</p>
+			
+
+			<div class="headingWrapper">
+				<h2 class="upperHeading">Second North Korean Nuclear Crisis</h2>
+				<h2 class="lowerHeading">January 2001–January 2009</h2>
+			</div>
+
+			  
+
+			<div id="dun3" class="image rightImage">
+				<img class="leaderImages" src="dun3.png"></img>
+				<span class="leaderSpan">George W Bush</span>
+			</div>
+			<p class="textpara" id="para8">
+				The ratio of negotiations to provocations was the third-highest at [<span class="negotiationColor">2.37</span> : <span class="provocationColor">1</span>] during this eight-year period. There were a total of <span class="negotiationColor">64 bilateral and multilateral negotiations</span> that took place. The majority of these were conducted as a part of the Six-Party Talks process, involving the United States, Japan, China, Russia, and the two Koreas. These negotiations began after revelations of a clandestine North Korean highly enriched uranium (HEU) program in October 2002, which eventually brought an end to KEDO and the Agreed Framework.
+
+			</p>
+			<p class="textpara">
+				Six-Party Talks diplomacy started in August 2003 and achieved a denuclearization agreement, embodied in the <a href="https://beyondparallel.csis.org/living-history-ambassador-christopher-hill/" target="_blank">September 2005 Six-Party Joint Statement</a>. In this agreement, North Korea agreed to abandon development of all its nuclear weapons and existing nuclear programs and to abide by a verification process.
+			</p>
+
+			<img src="graphic2.png" class="headlineBox"></img>
+			<h2 class="temph2">North Korea&#8217;s Ambassador to the UN, Pak Gil Yon, announces DPRK withdrawal from the Nuclear Nonproliferation Treaty on January 10, 2003.</h2>
+
+			<p class="textpara">
+				There was a nine-month hiatus in negotiations between January 2006 and October 2006 during which North Korea conducted several provocations, but negotiations resumed from December 2006. This led to an agreement in February 2007 on implementation of the 2005 Joint Statement. Negotiations related to compliance with the Six-Party agreements continued through December 2008.
+			</p>
+
+			<p class="textpara">
+				There were a total of <span class="provocationColor">27 North Korean provocations</span> during this eight-year period. Between the collapse of the Agreed Framework and the start of the Six-Party Talks in early 2003, there was a slight uptick in conventional and missile provocations.
+			</p>
+			<p class="textpara">
+				As negotiations restarted in 2004 and 2005, the provocation numbers started to recede, suggesting that talks may have restrained North Korea in part from carrying out further provocations. By contrast during the period of non-dialogue that spanned nine months in 2006, North Korea carried out a series of provocations, including ballistic missile tests in July 2006 and a nuclear test in October 2006. 
+			</p>
+
+			<img src="graphic1.png" id="weird" class="headlineBox"></img>
+			<h2 class="temph2">Representatives for the Six-Party Talks meet in Beijing for negotiations on July 26, 2005.</h2>
+
+			<p class="textpara">
+				The Six-Party Talks collapsed in December 2008 over North Korea&rsquo;s refusal to comply with verification protocols. CSIS Beyond Parallel data subsequently shows an increase in missile testing, including a second test of the Taepodong-2 (Unha-3) in April 2009 after the talks end.   
+			</p>
+			<p class="textpara" id="bushend">
+				An incidental finding of this period, when compared with the previous one, is that Pyongyang does not seem to discriminate in terms of which party holds power in the U.S. White House. They carry out provocations in both Democratic and Republican administrations.
+			</p>
+
+			<div class="headingWrapper">
+				<h2 class="upperHeading">Strategic Patience and Leap Day Deal</h2>
+				<h2 class="lowerHeading">January 2009–December 2011</h2>  
+			</div>
+			
+
+			<img src="graphic6.png" class="headlineBox"></img>
+			<h2 class="temph2">Stephen Bosworth named North Korea Envoy in February 2009.</h2>
+			<div id="dun4" class="image rightImage">
+				<img class="leaderImages" src="dun4.png"></img>
+				<span class="leaderSpan">Barack Obama</span>
+			</div>
+			<p class="textpara" id="para9">
+				The ratio of negotiations to provocations changes to [<span class="negotiationColor">1</span> : <span class="provocationColor">5.67</span>] during this period. There are only <span class="negotiationColor">3 official bilateral DPRK-U.S. negotiations</span> conducted over a three-year period. This dataset includes only official meetings in the public domain. It does not include track 1.5/2.0 dialogues between private citizens and North Korean officials or private visits to Pyongyang.
+			</p>
+			
+			<p class="textpara">
+				The data shows not only a noticeable absence of negotiations but also a corresponding <a href="https://missilethreat.csis.org/north-korea-missile-launches-1984-present/" target="_blank">increase in North Korean provocations</a> particularly of ballistic missile launches over a shorter period of time.
+			</p>
+			
+			<p class="textpara">
+				North Korea carried out <span class="provocationColor">17 provocations</span>, a majority of which were missile launches and a nuclear test in 2009. Deadly military exchanges in the West Sea around the Northern Limit Line (NLL) also occurred in 2010. More information on <a href="https://missilethreat.csis.org/country/dprk/" target="_blank">North Korean missiles</a> is available on <a href="https://beyondparallel.csis.org/north-korean-provocations-us-rok-military-exercises/" target="_blank">the Beyond Parallel website</a>. 
+			</p>
+
+			<p class="textpara" id="regime2end">
+				This shows that North Korea did not appear to discriminate between Democratic and Republican U.S. presidents in carrying out provocations. Indeed, the regime seems more responsive to the frequency of negotiations as a variable than to the party in power in Washington. This period ends in December 2011 with the death of Kim Jong-il and the ascension of Kim Jong-un to power.
+			</p>
+
+			<div class="headingWrapper">
+				<h2 class="upperHeading">Kim Jong-un comes to Power</h2>
+				<h2 class="lowerHeading">December 2011–January 2017</h2> 
+			</div>
+
+			<div id="dum3" class="image leftImage">
+				<img class="leaderImages" src="dum3.png"></img>
+				<span class="leaderSpan">Kim Jong-un</span>
+			</div>
+			<p class="textpara" id="para10">
+				This period has the second lowest ratio of negotiations to provocations at [<span class="negotiationColor">1</span> : <span class="provocationColor">31.5</span>]. There were <span class="negotiationColor">2 official negotiations</span> during this period and a total of <span class="provocationColor">63 provocation events</span>. The two negotiations that occurred were associated with the &#8220;Leap Day Agreement,&#8221; an attempt to get North Korea to freeze its nuclear weapons program in exchange for U.S. food aid. (Secret visits to Pyongyang, such as the one made by Director of National Intelligence James Clapper in November 2014, were not counted in this dataset).  
+			</p>
+			<p class="textpara">
+				The deal fell apart when North Korea launched a Taepodong 2 (Unha-3) rocket in April 2012. The United States enunciated a policy of &#8220;strategic patience,&#8221; vowing not to return to negotiations until North Korea demonstrated that it would commit to denuclearization. The United States and North Korea did not conduct any formal negotiations in the public domain between March 2012 and January 2017. Secret meetings and other track 1.5/2.0 dialogues were not included in this dataset. 
+			</p>
+
+			<p class="textpara">
+				An incidental finding is the drop-off in the number of formal negotiations under Kim Jong-un relative to his predecessors, even accounting for tenure in office. From 1990 to the present, significantly more negotiations happened under Kim Il-sung (26) and Kim Jong-il (175) than Kim Jong-un (2).
+			</p>
+			<p class="textpara">
+				The data in this period shows a significant increase in the number and intensity of North Korean provocations. On 63 different occasions between January 2012 and December 2016, North Korea carried out over 70 missile tests and 3 nuclear tests. The nuclear tests occurred in February 2013, January 2016, and September 2016. 
+			</p>
+			<p class="textpara" id="obamaend">
+				During this period, North Korea moved from testing operational Nodong and Scud missiles to new developmental models such as the Musudan and the KN-11, a submarine-launched ballistic missile.
+			</p>
+
+			<div class="headingWrapper">
+				<h2 class="upperHeading">Maximum Pressure and Engagement</h2>
+				<h2 class="lowerHeading">January 2017–Present</h2>  
+			</div>
+
+			<img src="graphic4.png" class="headlineBox"></img>
+			<h2 class="temph2">Kim Jong-un inspecting missile parts in a chemical factory in August 2017.</h2>
+
+			<div id="dun5" class="image rightImage">
+				<img class="leaderImages" src="dun5.png"></img>
+				<span class="leaderSpan">Donald Trump</span>
+			</div>
+			<p class="textpara" id="para11">
+				There have been <span class="negotiationColor">no official government nuclear negotiations</span> between the Kim Jong-un regime and the Trump administration.  There were informal meetings between State Department officials and North Koreans that took place in Oslo, New York, and Pyongyang from May to June 2017 to facilitate the release of a detained American student. However, informal meetings and other track 1.5/2.0 dialogues were not included in this dataset. 
+			</p>
+			<p class="textpara">
+				North Korea conducted at least <span class="provocationColor">24 missile tests and one nuclear test</span> on 17 different occasions between February and September 2017. This includes two successful tests of an intercontinental ballistic missile in July and a sixth nuclear test in September.
+			</p>
+
+			<p class="textpara" id="bothend">
+				At the current pace, North Korea may do well over 100 missile tests during the four-year term of the U.S. president, which would represent a historic high. <!--The current ratio of negotiations to provocations is [<span class="negotiationColor">0</span> : <span class="provocationColor">1</span>].-->
+			</p>
+			
+			<div class="headingWrapper">
+				<h2>Conclusion</h2>
+			</div>
+			
+			<p class="textpara" id="para12">
+				Periods of negotiation between the United States and North Korea in a bilateral or multilateral format appear to have some correlation with a decrease in the number of North Korean provocations. Those in favor of dialogue with North Korea might see this as evidence of the efficacy of diplomacy. Skeptics will argue that the absence of North Korean provocations does not necessarily mean that nuclear proliferation, both horizontal and vertical, is not still occurring during these periods. However, there is no denying that a decrease in nuclear provocations by North Korea would be a welcome development.  
+			</p>
+
+			<div class="headingWrapper">
+				<h2 id="socialh2">Liked this? Share it</h2>
+				<div class="socialmedia">
+					<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Explore%20the%20last%2025%20years%20of%20North%20Korea-U.S.%20relations%20in%20this%20interactive%20data%20visualization&via=CSISKoreaChair&url=https://beyondparallel.csis.org/25-years-of-negotiations-provocations/?utm_source=Twitter%20user" data-size="small">
+						Tweet
+					</a>
+					<div class="fb-share-button" data-href="https://beyondparallel.csis.org/25-years-of-negotiations-provocations/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://beyondparallel.csis.org/25-years-of-negotiations-provocations/?utm_source=facebook%20user&utm_medium=user_share&utm_campaign=Korea%20Interactive
+">
+						Share
+					</a></div>
+					<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+	<script type="IN/Share" data-url="https://beyondparallel.csis.org/25-years-of-negotiations-provocations/?utm_source=LinkedIn%20User"></script>
+				</div>
+			</div>
+
+			
+		</div>
+		<div id="tooltip">
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footerWrapper">
+			<div id="logoWrapper" class="footerBox">
+				<img id="csislogo" src="csis_logo.svg" alt="Center for Strategic and International Studies"></img>
+				<span class="footerText">1616 Rhode Island Avenue, NW</span> 
+				<span class="footerText">Washington, DC 20036</span>
+				<span class="footerText">Tel: 202.775.3242</span>
+			</div>
+			<div id="sources" class="footerBox">
+				<a href="https://beyondparallel.csis.org"><span class="footerText">Analysis by Beyond Parallel</span></a>
+				<a href="https://beyondparallel.csis.org/databases/"><span class="footerText">Data Sources: Beyond Parallel, U.S. Department of State Archives, and Nuclear Threat Initiative</span></a>
+				<a href="https://www.csis.org/programs/dracopoulos-ideas-lab"><span class="footerText">Developed by the CSIS iDeas Lab</span></a>
+				<span class="footerText">Images by Getty</span>
+			</div>
+			<div id="credits" class="footerBox">
+				<span class="footerText footerHeading">Created by</span>
+				<span class="footerText">Aditya Jain<a href="https://twitter.com/whaleandpetunia"><div class="logoContainer"><img class="twitlogo" src="twitter.png"></img></div></a></span>
+				<span class="footerText">Nirja Desai<a href="https://twitter.com/nirja_desai"><div class="logoContainer"><img class="twitlogo" src="twitter.png"></img></div></a></span>
+			</div>
+			<div id="thanks" class="footerBox">
+				<span class="footerText footerHeading">Thanks to</span>
+				<span class="footerText">William Tedrick</span>
+				<span class="footerText">Sara Soueidan<a href="https://twitter.com/SaraSoueidan"><div class="logoContainer"><img class="twitlogo" src="twitter.png"></img></div></a></span>
+				<span class="footerText">Susie Lu<a href="https://twitter.com/DataToViz"><div class="logoContainer"><img class="twitlogo" src="twitter.png"></img></div></a></span>
+				<span class="footerText">Sarah Drasner<a href="https://twitter.com/sarah_edo"><div class="logoContainer"><img class="twitlogo" src="twitter.png"></img></div></a></span>
+				<span class="footerText">Achal Varma<a href="https://twitter.com/_achalv"><div class="logoContainer"><img class="twitlogo" src="twitter.png"></img></div></a></span>
+			</div>
+		</div>
+	</div>					
+</body>
+<script type="text/javascript" src="waypointHelperFunctions.js"></script>
+<script type="text/javascript" src="wayPointFunctions.js"></script>
+<script type="text/javascript" src="interactive.js"></script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</html>
