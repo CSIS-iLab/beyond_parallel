@@ -1,7 +1,7 @@
 
-	
-	
- 
+
+
+
 	<?php
 
 
@@ -16,7 +16,7 @@
 		<?php
 		$tag_ids = array();
 		foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-		
+
 		$args=array(
 			'tag__in' => $tag_ids,
 			'post__not_in' => array($post->ID),
@@ -31,7 +31,7 @@
 			?>
 
 			<div class="related-links">
-				<a class="related-link" rel="external" href="<? the_permalink()?>">
+				<a class="related-link" rel="external" href="<?php the_permalink()?>">
 					<?php the_title(); ?>
 				</a>
 				<span class="related-date"> <?php beyond_posted_on(); ?></span>
@@ -39,7 +39,7 @@
 
 		<?php } //end while
 
-		
+
 	} //end if
 
 
@@ -47,7 +47,7 @@
 
 	</div> <!--/relatedposts-->
 
-	
+
 
 	<?php
 	$posttags = get_the_tags();
@@ -56,7 +56,7 @@
 			<h3 class="relatedHeading">Keywords</h3>
 				<?php
 				foreach($tags as $tag) {
-				echo '<a href="' . get_tag_link($tag->term_id) . '"> <div class="postTag">' . $tag->name . '</div></a>'; 
+				echo '<a href="' . get_tag_link($tag->term_id) . '"> <div class="postTag">' . $tag->name . '</div></a>';
 				}
 				?>
 		</div> <!--/relatedtags-->

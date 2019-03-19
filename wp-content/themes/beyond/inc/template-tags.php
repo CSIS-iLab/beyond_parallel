@@ -14,8 +14,6 @@ if ( ! function_exists( 'beyond_posted_on' ) ) :
 function beyond_posted_on() {
 
 	 if ( function_exists( 'coauthors_posts_links' ) &&  get_the_author() != "Beyond Parallel") :
-		 echo "<script>console.log( 'Debug Objects: " . get_the_author() . "' );</script>";
-
         printf( __( '%2$s<span class="meta-sep">, by</span> %3$s', 'beyond' ),
             'meta-prep meta-prep-author',
             sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
@@ -27,8 +25,6 @@ function beyond_posted_on() {
         );
 
 		elseif( function_exists( 'coauthors_posts_links' ) &&  get_the_author() == "Beyond Parallel") :
-				 echo "<script>console.log( 'Debug Objects: " . get_the_author() . "' );</script>";
-
 		        printf( __( '%2$s', 'beyond' ),
 		            'meta-prep meta-prep-author',
 		            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',

@@ -13,7 +13,11 @@ get_header(); ?>
 		<?php
         function remove_empty($field)
         {
-            return strlen($field['select'])>0 || strlen($field['findings'])>0 || strlen($field['related'])>0;
+            if (array_key_exists("findings", $field)) {
+                return strlen($field['findings'])>0;
+            } else {
+                return strlen($field['select'])>0;
+            }
         }
 
             the_title('<h1 class="entry-title">', '</h1>');
@@ -70,27 +74,24 @@ get_header(); ?>
                           }
 
                           foreach ($repeatable_fields as $field) {
-                              $findings =  $field['findings'];
+                              $findings = isset($field->findings) ? $field['findings'] : null;
                               $findings = preg_replace('/<p>/', '', $findings);
                               $findings = preg_replace('/<\/p>/', '', $findings);
 
-                              if (strlen($field['select'])>0 && strlen($field['findings'])<1 && strlen($field['related'])<1) {
-                                  $findings = get_the_excerpt($field['select']);
-                              }
-
-
+                              $findings = get_the_excerpt($field['select']);
 
                               $link = get_the_permalink($field['select']);
                               $title = get_the_title($field['select']);
+
                               if (strlen($field['select'])<1) {
                                   $link = 'https://beyondparallel.csis.org/25-years-of-negotiations-provocations/';
-		                              $title = '25 Years of Negotiations and Provocations: North Korea and the United States';
+                                  $title = '25 Years of Negotiations and Provocations: North Korea and the United States';
                               }
 
-															echo '<h5><a href="'.$link.'">'.$title.'</a></h5>';
+                              echo '<h5><a href="'.$link.'">'.$title.'</a></h5>';
                               echo '<p>'.html_entity_decode(esc_attr($findings)).' <a href="'.$link.'" class="read-more">Read More</a></p>';
 
-                              $related = $field['related'];
+                              $related = isset($field->related) ? $field['related'] : null;
                               $related = preg_replace('/<p>/', '', $related);
                               $related = preg_replace('/<\/p>/', '', $related);
 
