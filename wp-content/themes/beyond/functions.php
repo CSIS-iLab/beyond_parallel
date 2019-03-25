@@ -9,6 +9,19 @@
 require get_template_directory() . '/inc/custom-shortcodes.php';
 require get_template_directory() . '/inc/custom-tinymce-buttons.php';
 
+add_filter( 'get_the_archive_title' , 'my_posts_where' );
+
+function my_posts_where(  ) {
+	global $wp_query;
+	$query_vars = $wp_query->query_vars;
+
+	if ( isset($query_vars['author']) ) {
+		$title = sprintf( __( 'Author: %s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+
+    return $title;
+	}
+}
+
 if (! function_exists('beyond_setup')) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
