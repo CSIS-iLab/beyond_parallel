@@ -6,6 +6,8 @@
 *.swp
 Thumbs.db
 
+25-years-of-negotiations-provocations
+
 # wordpress specific
 wp-config.php
 wp-content/uploads/
