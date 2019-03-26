@@ -155,7 +155,6 @@ function get_thisPost($key, $value, $imageL){
 
                     echo "<a href='" . $catLink . "'>" . $catName . "</a>";
                     ?>
-                <a href="<?php esc_html($catLink) ?>" alt="<?php $catName ?>"><?php esc_html($catName) ?></a>
                 </div>
                 <div class="home-postTitle" class="post-title">
                     <a href="<?php the_permalink() ?>" alt="<?php the_title();?>" class="post-title-link"><?php the_title() ?>
