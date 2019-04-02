@@ -6,6 +6,20 @@
   margin: 0;
 }
 
+.post-article > p:not(:empty):last-of-type::after {
+  content: "";
+  background: #fff url(/wp-content/uploads/2016/04/BP_bookend.png) no-repeat
+    center / contain;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin: 0 0 -1px 6px;
+}
+
+.post-article > p img[src*="BP_bookend.png"] {
+  display: none;
+}
+
 .postTop {
   height: 30rem;
   overflow-y: hidden;

@@ -1682,7 +1682,8 @@ span.arrow:after {
   display: block;
 }
 
-.single-post .post-article p a {
+.single-post .post-article p a,
+.single-post .post-article li a {
   background-image: linear-gradient(to bottom, #ffc726 0, #ffc726 100%);
   background-position: 0 94%;
   background-repeat: repeat-x;
@@ -1693,7 +1694,8 @@ span.arrow:after {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.single-post .post-article p a:hover {
+.single-post .post-article p a:hover,
+.single-post .post-article li a:hover {
   background-size: 1px 0px;
   color: #ffc726;
 }
@@ -2062,6 +2064,19 @@ object {
 
 .post-article h1 {
   margin: 0;
+}
+
+.post-article > p:not(:empty):last-of-type::after {
+  content: "";
+  background: #fff url(/wp-content/uploads/2016/04/BP_bookend.png) no-repeat center/contain;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin: 0 0 -1px 6px;
+}
+
+.post-article > p img[src*="BP_bookend.png"] {
+  display: none;
 }
 
 .postTop {
@@ -3510,6 +3525,10 @@ iframe.video-right {
   margin: 0.8075em 0;
 }
 
+.wp-block-image figcaption {
+  font-size: 20px;
+}
+
 /* Ensure center-aligned captions center-align properly. */
 .wp-caption.aligncenter {
   margin-left: auto;
@@ -3541,9 +3560,10 @@ iframe.video-right {
   position: relative;
 }
 
-.homeNGAtag:after, .postTop.NGAtag center:after {
+.homeNGAtag:after,
+.postTop.NGAtag center:after {
   display: block;
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   max-width: 350px;

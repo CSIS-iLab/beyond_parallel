@@ -151,7 +151,8 @@ span.arrow:after {
   display: block;
 }
 
-.single-post .post-article p a {
+.single-post .post-article p a,
+.single-post .post-article li a {
   background-image: linear-gradient(
     to bottom,
     $color__yellow 0,
