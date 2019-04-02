@@ -200,13 +200,22 @@ a.single-image-gallery {
   font-size: 19px !important;
 }
 
+section.bios {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 24px 1fr 24px 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 24px;
+}
+
 .bioPhoto {
-  display: inline;
-  float: left;
+  text-align: center;
 }
 
 .bioPhoto img {
   margin-bottom: 10px;
+  width: 100% !important;
+  height: auto;
 }
 
 .backHome {

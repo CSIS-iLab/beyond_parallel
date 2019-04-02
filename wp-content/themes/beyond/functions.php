@@ -15,7 +15,7 @@ function my_posts_where(  ) {
 	global $wp_query;
 	$query_vars = $wp_query->query_vars;
 
-	if ( isset($query_vars['author']) ) {
+	if ( isset($query_vars['author']) && strlen($query_vars['author'])>0) {
 		$title = sprintf( __( 'Author: %s' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
     return $title;
