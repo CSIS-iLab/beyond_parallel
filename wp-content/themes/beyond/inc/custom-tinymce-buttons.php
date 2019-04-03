@@ -43,14 +43,14 @@ if ( ! function_exists( 'beyond_register_buttons' ) ) {
 	 * @return Array          Updated buttons array.
 	 */
 	function beyond_register_buttons( $buttons ) {
-        array_push( $buttons, 'button',  'aside');
+        array_push( $buttons, 'button',  'aside', 'note');
         return $buttons;
 	}
 }
 
-add_action ( 'after_wp_tiny_mce', 'beyond_tinymce_extra_vars' );
 if ( !function_exists( 'beyond_tinymce_extra_vars' ) ) {
 	function beyond_tinymce_extra_vars() {
+
 		// Get list of Posts
 		$args = array(
 			'posts_per_page' => -1,
@@ -68,8 +68,13 @@ if ( !function_exists( 'beyond_tinymce_extra_vars' ) ) {
 		}
 		$postList = "[".$postList."]";
 		?>
+
 		<script type="text/javascript">
 			var tinyMCE_posts = <?php echo $postList; ?>;
 		</script><?php
 	}
 }
+
+
+
+add_action ( 'enqueue_block_assets', 'beyond_tinymce_extra_vars' );
