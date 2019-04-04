@@ -10,6 +10,7 @@ th {
 .articles-homepage {
   background-color: $color__lightgray;
   padding: 2rem 0px;
+
   .article-preview-image {
     width: 100%;
     min-height: 350px;
@@ -24,6 +25,7 @@ th {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
   h2 {
     margin-top: 0px;
     a {
@@ -31,9 +33,15 @@ th {
       font-size: 2.9rem;
     }
   }
+
   h2.top {
     margin-top: 3rem;
   }
+
+  .container > #ms-container {
+    margin-top: 2em;
+  }
+
   .article-card-preview-image {
     margin: 0px;
     padding: 0px;
@@ -47,6 +55,7 @@ th {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
   .figure_1 {
     height: 18rem;
   }

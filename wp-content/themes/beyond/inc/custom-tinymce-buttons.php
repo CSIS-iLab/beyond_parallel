@@ -75,6 +75,18 @@ if ( !function_exists( 'beyond_tinymce_extra_vars' ) ) {
 	}
 }
 
-
-
 add_action ( 'enqueue_block_assets', 'beyond_tinymce_extra_vars' );
+
+// add more buttons to the html editor
+function appthemes_add_quicktags() {
+    if (wp_script_is('quicktags')){
+?>
+    <script type="text/javascript">
+    QTags.addButton( 'eg_paragraph', 'p', '<p>', '</p>', 'p', 'Paragraph tag', 1 );
+    QTags.addButton( 'eg_hr', 'hr', '<hr />', '', 'h', 'Horizontal rule line', 201 );
+    QTags.addButton( 'eg_pre', 'pre', '<pre lang="php">', '</pre>', 'q', 'Preformatted text tag', 111 );
+    </script>
+<?php
+    }
+}
+add_action( 'enqueue_block_assets', 'appthemes_add_quicktags' );
