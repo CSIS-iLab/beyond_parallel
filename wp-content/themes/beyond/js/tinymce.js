@@ -274,7 +274,10 @@
     var selection = window.getSelection();
     if (!selection.toString().trim().length) return;
 
-    var textarea = selection.anchorNode.querySelector("textarea");
+    var textareas = Array.from(
+      selection.anchorNode.querySelectorAll("textarea")
+    );
+    var textarea = textareas[textareas.length - 1];
 
     if (!textarea) return;
 
