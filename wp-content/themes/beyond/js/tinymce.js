@@ -244,9 +244,7 @@
       }
 
       var selection = window.getSelection();
-      console.log(selection);
       var textarea = selection.anchorNode.querySelector("textarea");
-      console.log(textarea);
 
       if (!textarea) return;
 
@@ -264,8 +262,6 @@
       var newText = start + formattedSelection + end;
 
       textarea.value = newText;
-
-      console.log(json.id, json.url);
     });
 
     window.mb.frame.open();
