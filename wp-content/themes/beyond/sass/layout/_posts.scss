@@ -59,7 +59,7 @@ a.single-image-gallery {
     height: 100%;
     width: 100%;
     background: url(/wp-content/themes/beyond/assets/images/expand.png)
-      no-repeat 5px 5px/25px 25px;
+      no-repeat 2px 2px/12px 12px;
     display: block;
     position: absolute;
     top: 0;
@@ -68,7 +68,7 @@ a.single-image-gallery {
   &:hover {
     &::after {
       background: url(/wp-content/themes/beyond/assets/images/expand-highlighted.png)
-        no-repeat 5px 5px/25px 25px;
+        no-repeat 2px 2px/12px 12px;
     }
 
     img {

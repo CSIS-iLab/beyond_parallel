@@ -2115,13 +2115,13 @@ a.single-image-gallery::after {
   content: "";
   height: 100%;
   width: 100%;
-  background: url(/wp-content/themes/beyond/assets/images/expand.png) no-repeat 5px 5px/25px 25px;
+  background: url(/wp-content/themes/beyond/assets/images/expand.png) no-repeat 2px 2px/12px 12px;
   display: block;
   position: absolute;
   top: 0;
 }
 a.single-image-gallery:hover::after {
-  background: url(/wp-content/themes/beyond/assets/images/expand-highlighted.png) no-repeat 5px 5px/25px 25px;
+  background: url(/wp-content/themes/beyond/assets/images/expand-highlighted.png) no-repeat 2px 2px/12px 12px;
 }
 a.single-image-gallery:hover img {
   transform: scale(1.025, 1.025);
