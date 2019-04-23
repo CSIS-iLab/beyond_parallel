@@ -232,6 +232,32 @@
       multiple: false
     });
 
+    var selection = window.getSelection();
+
+    var selectText = selection.toString().trim();
+
+    var textareas = selectText.length
+      ? Array.from(selection.anchorNode.querySelectorAll("textarea"))
+      : Array.from(document.querySelectorAll("textarea"));
+    var textarea = textareas[textareas.length - 1];
+
+    if (!textarea) return;
+
+    if (!selectText.length) {
+      selectText = textarea.value.substring(
+        textarea.selectionStart,
+        textarea.selectionEnd
+      );
+    }
+
+    var oldText = textarea.value;
+
+    var selectionText = selectText;
+
+    var end = oldText.slice(textarea.selectionEnd, oldText.length);
+
+    var start = oldText.slice(0, textarea.selectionStart);
+
     window.mb.frame.on("insert", function() {
       var json = window.mb.frame
         .state()
@@ -243,21 +269,8 @@
         return;
       }
 
-      var selection = window.getSelection();
-      var textarea = selection.anchorNode.querySelector("textarea");
-
-      if (!textarea) return;
-
-      var oldText = textarea.value;
-
-      var selectionText = selection.toString();
-
       var formattedSelection =
         '<img src="' + json.url + '" height="100" width="100"/>';
-
-      var end = oldText.slice(textarea.selectionEnd, oldText.length);
-
-      var start = oldText.slice(0, textarea.selectionStart);
 
       var newText = start + formattedSelection + end;
 
@@ -266,31 +279,36 @@
 
     window.mb.frame.open();
   }
+
   function formatText(e, format) {
     var selection = window.getSelection();
-    if (!selection.toString().trim().length) return;
 
-    var textareas = Array.from(
-      selection.anchorNode.querySelectorAll("textarea")
-    );
+    var selectText = selection.toString().trim();
+
+    var textareas = selectText.length
+      ? Array.from(selection.anchorNode.querySelectorAll("textarea"))
+      : Array.from(document.querySelectorAll("textarea"));
     var textarea = textareas[textareas.length - 1];
 
     if (!textarea) return;
 
+    if (!selectText.length) {
+      selectText = textarea.value.substring(
+        textarea.selectionStart,
+        textarea.selectionEnd
+      );
+    }
+
+    if (!selectText.length) return;
+
     var oldText = textarea.value;
 
-    var selectionText = selection.toString();
+    var selectionText = selectText;
 
     var formattedSelection =
       format === "a"
-        ? "<" +
-          format +
-          ' href="">' +
-          selection.toString() +
-          "</" +
-          format +
-          ">"
-        : "<" + format + ">" + selection.toString() + "</" + format + ">";
+        ? "<" + format + ' href="">' + selectText + "</" + format + ">"
+        : "<" + format + ">" + selectText + "</" + format + ">";
 
     var end = oldText.slice(textarea.selectionEnd, oldText.length);
 
