@@ -30,7 +30,7 @@ Tel: 202.775.3242 </p>
 				</div>
 				<div class="clearfix"></div>
 				<p class="copywrite">©<?php echo esc_html( date( 'Y' ) ); ?> by the Center for Strategic <br />
-				and  International Studies. All rights reserved.<br/><a class="privacy-policy" href="https://www.csis.org/privacy-policy" target="_blank" rel="nofollow">Privacy Policy</a></p>
+				and  International Studies. All rights reserved.<br/><a class="privacy-policy" href="https://www.csis.org/privacy-policy" target="_blank" rel="nofollow">Privacy Policy</a> | <a class="privacy-policy" href="https://www.csis.org/reprint-permissions" target="_blank" rel="nofollow">Reprint Permissions</a></p>
 			</div>
 		</div>
 	</div>
