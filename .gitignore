@@ -93,6 +93,10 @@ Thumbs.db
 !.travis.yml
 !deploy.sh
 !beyond_travis.enc
+!config.json
+!gulpfile.js
+!package.json
+!package-lock.json
 
 # track favicon files, if they exist
 !android-chrome-*.png
