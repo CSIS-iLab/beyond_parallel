@@ -1,4 +1,8 @@
 {
-  "theme_dir": "beyond",
-  "sass_dir": "sass"
+  "theme_dir": "./wp-content/themes/beyond",
+  "sass": {
+    "src": "sass",
+    "outputStyle": "compressed",
+    "autoprefixer": {}
+  }
 }

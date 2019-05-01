@@ -11,17 +11,22 @@ const browserSync = require("browser-sync").create();
 const yargs = require("yargs");
 const PRODUCTION = yargs.argv.prod;
 
-const theme_dir = "./wp-content/themes/" + config.theme_dir + "/";
+const sass_dir = config.theme_dir + "/" + config.sass.src;
+
+let output = config.sass.outputStyle;
+if (!PRODUCTION) {
+  output = "expanded";
+}
 
 function styles() {
   return gulp
-    .src(theme_dir + config.sass_dir + "/*.scss")
+    .src(sass_dir + "/*.scss")
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-    .pipe(sass().on("error", sass.logError))
-    .pipe(postcss([autoprefixer]))
+    .pipe(sass({ outputStyle: output }).on("error", sass.logError))
+    .pipe(postcss([autoprefixer(config.sass.autoprefixer)]))
     .pipe(gulpif(PRODUCTION, postcss([cssnano])))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-    .pipe(gulp.dest(theme_dir + ""))
+    .pipe(gulp.dest(config.theme_dir))
     .pipe(browserSync.stream());
 }
 
@@ -34,8 +39,10 @@ function watchForChanges() {
     proxy: process.env.LOCAL_URL
   });
 
-  gulp.watch(theme_dir + config.sass_dir + "/**/*.scss", styles);
-  gulp.watch(theme_dir + "**/*.php").on("change", reload);
+  gulp.watch(sass_dir + "/**/*.scss", styles);
+  gulp
+    .watch([config.theme_dir + "/**/*.php", config.theme_dir + "/**/*.js"])
+    .on("change", reload);
 }
 
 const build = gulp.task("build", styles);
