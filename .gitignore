@@ -97,6 +97,7 @@ Thumbs.db
 !gulpfile.js
 !package.json
 !package-lock.json
+!.env.example
 
 # track favicon files, if they exist
 !android-chrome-*.png
