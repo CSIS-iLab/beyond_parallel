@@ -1,6 +1,6 @@
-chmod 600 /tmp/beyond_travis
+chmod 600 /tmp/beyond_parallel_rsa
 eval "$(ssh-agent -s)" # Start the ssh agent
-ssh-add /tmp/beyond_travis
+ssh-add /tmp/beyond_parallel_rsa
 git remote add beyond_parallel git@git.wpengine.com:staging/korea.git # add remote for staging site
 git fetch --unshallow # fetch all repo history or wpengine complain
 git status # check git status
