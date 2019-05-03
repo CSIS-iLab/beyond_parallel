@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: Beyond Parallel
 Theme URI: http://components.underscores.me/
 Author: Tucker Harris
@@ -125,13 +125,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-@import "shared/infinitescroll"; 
+@import "shared/infinitescroll";
 
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 @import "shared/media";
-
 
 /*--------------------------------------------------------------
 # Homepage
@@ -147,6 +146,3 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Homepage
 --------------------------------------------------------------*/
 @import "sections/footer";
-
-
-
