@@ -13,7 +13,7 @@ WordPress site for [Beyond Parallel](https://beyondparallel.csis.org). Developed
 
 ## Development
 
-This project uses [Gulp](https://gulpjs.com/) to compile the SASS files & run Browsersync.
+This project uses [Gulp](https://gulpjs.com/) to compile the SASS files & run [Browsersync](https://www.browsersync.io/). PostCSS is also used to run Autoprefixer & CSS Nano.
 
 Before running, you must set up a `.env` file with your local development URL. See the [example file](https://github.com/CSIS-iLab/beyond_parallel/blob/master/.env.example) for additional information.
 
@@ -21,6 +21,7 @@ To run:
 
 1. Run `$ npm install` in the root directory
 2. Run `$ npm start` to run the development task, which watches the WP theme directory for changes & compiles the SCSS files.
+3. Changes to the Gulp tasks can be made by modifying the `config.json`.
 
 To build for production:
 
