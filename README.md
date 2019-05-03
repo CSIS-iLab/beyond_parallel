@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/CSIS-iLab/beyond_parallel.svg?branch=master)](https://travis-ci.org/CSIS-iLab/beyond_parallel)
+[![Build Status](https://travis-ci.com/CSIS-iLab/beyond_parallel.svg?branch=master)](https://travis-ci.com/CSIS-iLab/beyond_parallel)
 
 # beyond_parallel
 
