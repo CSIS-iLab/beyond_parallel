@@ -92,7 +92,7 @@ Thumbs.db
 !composer.json
 !.travis.yml
 !deploy.sh
-!beyond_parallel_travis.enc
+!beyond_parallel_rsa.enc
 !config.json
 !gulpfile.js
 !package.json
