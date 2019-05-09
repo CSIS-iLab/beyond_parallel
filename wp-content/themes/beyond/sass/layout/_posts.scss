@@ -89,6 +89,10 @@ li.blocks-gallery-item {
   }
 }
 
+.wp-block-gallery .blocks-gallery-item figcaption {
+  overflow-y: hidden;
+}
+
 .post-aside {
   border: 8px solid #f2f2f2;
   font-size: 18px;
