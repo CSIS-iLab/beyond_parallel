@@ -7,7 +7,7 @@
 }
 
 .post-article > p:not(:empty):last-of-type::after {
-  content: "";
+  content: '';
   background: #fff url(/wp-content/uploads/2016/04/BP_bookend.png) no-repeat
     center / contain;
   height: 15px;
@@ -16,7 +16,7 @@
   margin: 0 0 -1px 6px;
 }
 
-.post-article > p img[src*="BP_bookend.png"] {
+.post-article > p img[src*='BP_bookend.png'] {
   display: none;
 }
 
@@ -47,50 +47,6 @@
       min-height: auto;
     }
   }
-}
-.wp-block-gallery.aligncenter {
-  max-width: 750px;
-}
-
-a.single-image-gallery,
-li.blocks-gallery-item {
-  position: relative;
-  display: inline-block;
-  cursor: zoom-in;
-
-  &::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: url(/wp-content/themes/beyond/assets/images/expand.png)
-      no-repeat 2px 2px/12px 12px;
-    display: block;
-    position: absolute;
-    top: 0;
-  }
-
-  &:hover {
-    &::after {
-      background: url(/wp-content/themes/beyond/assets/images/expand-highlighted.png)
-        no-repeat 2px 2px/12px 12px;
-    }
-
-    img {
-      transform: scale(1.025, 1.025);
-    }
-  }
-
-  img {
-    transition: transform 0.3s ease-in-out;
-    -moz-transition: transform 0.3s ease-in-out;
-    -ms-transition: transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
-    -webkit-transition: transform 0.3s ease-in-out;
-  }
-}
-
-.wp-block-gallery .blocks-gallery-item figcaption {
-  overflow-y: hidden;
 }
 
 .post-aside {
@@ -245,7 +201,7 @@ section.bios {
   margin: 14px;
   color: white !important;
   font-size: 24px;
-  font-family: "museo-sans", sans-serif;
+  font-family: 'museo-sans', sans-serif;
   font-weight: 100;
   padding-bottom: 17px;
 }
@@ -263,7 +219,7 @@ sup {
 
 .satellitetext {
   width: auto;
-  font-family: "museo sans", sans-serif;
+  font-family: 'museo sans', sans-serif;
   font-size: 18px;
 }
 
@@ -317,7 +273,7 @@ sup {
 
 #cd-timeline::before {
   /* this is the vertical line */
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 18px;
@@ -343,7 +299,7 @@ sup {
 }
 
 .cd-timeline-block:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -421,7 +377,7 @@ sup {
 }
 
 .cd-timeline-content:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -461,7 +417,7 @@ sup {
 }
 
 .cd-timeline-content::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 16px;
   right: 100%;
@@ -608,7 +564,7 @@ sup {
     margin-left: 30px;
     float: right;
     display: inline;
-    font-family: "museo-sans", sans-serif;
+    font-family: 'museo-sans', sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 36px;
@@ -689,7 +645,7 @@ sup {
     margin-right: 157px;
     float: right;
     display: inline;
-    font-family: "museo-sans", sans-serif;
+    font-family: 'museo-sans', sans-serif;
     font-size: 18px;
     margin-left: 157px;
   }
