@@ -150,7 +150,7 @@ li.blocks-gallery-item {
 }
 
 .wp-block-gallery {
-  &.is-cropped.blocks-gallery-item {
+  &.is-cropped.blocks-gallery-item figure {
     > a,
     > img {
       height: unset;
