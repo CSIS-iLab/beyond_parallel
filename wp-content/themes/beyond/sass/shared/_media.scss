@@ -150,10 +150,22 @@ li.blocks-gallery-item {
 }
 
 .wp-block-gallery {
-  &.is-cropped .blocks-gallery-item figure {
-    > a,
-    > img {
-      height: unset;
+  &.is-cropped .blocks-gallery-item {
+    &:last-child {
+      img {
+        flex-basis: unset;
+      }
+      figcaption {
+        position: absolute;
+        top: 100%;
+        height: 100%;
+      }
+    }
+    figure {
+      > a,
+      > img {
+        height: unset;
+      }
     }
   }
 
