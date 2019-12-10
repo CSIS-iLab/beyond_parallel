@@ -12,8 +12,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 			the_title( '<h1 class="entry-title">', '</h1>' );
-
-
+            get_template_part( 'components/page/content', 'page' );
 		endwhile; // End of the loop.
 		?>
 
@@ -21,7 +20,7 @@ get_header(); ?>
 		query_posts(
 			array(
 				'post_type' => array('post', 'videos'),
-				'tag' => 'Future of the U.S.-Korea Alliance',
+				'tag' => 'future-of-the-u-s-korea-alliance',
 				'posts_per_page' =>  -1
 			));
 		while (have_posts()) : the_post();
@@ -80,15 +79,7 @@ get_header(); ?>
 		endwhile;
 		wp_reset_query();
 		?>
-
-		<?php
-		while ( have_posts() ) : the_post();
-
-		get_template_part( 'components/page/content', 'page' );
-
-		endwhile; // End of the loop.
-		?>
-
+        
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
