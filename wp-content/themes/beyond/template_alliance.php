@@ -21,7 +21,7 @@ get_header(); ?>
 			array(
 				'post_type' => array('post', 'videos'),
 				'tag' => 'future-of-the-u-s-korea-alliance',
-				'posts_per_page' =>  -1
+				'posts_per_page' =>  5
 			));
 		while (have_posts()) : the_post();
 
@@ -79,7 +79,10 @@ get_header(); ?>
 		endwhile;
 		wp_reset_query();
 		?>
-        
+
+    </div>
+        <a href="/tag/future-of-the-u-s-korea-alliance/" alt="More articles" class="catAll"><span class="arrow">Explore More Articles</span></a>
+    </div>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
