@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" class="group index-post-container">
 	
-/*<?php 
+<?php 
 		$the_format = get_post_format();
 		// If the post format is Video, show video
 		if ( $the_format == 'video' ) { 
@@ -19,8 +19,9 @@
 	} 
 	$the_dump = get_post_custom_keys();
 	echo '$the_dump: ';
-	print_r($the_dump);
-*/
+	print_r($the_dump); 
+
+
 	echo $embedhtml;
 			
 			//anaximander_output_oembed();	
