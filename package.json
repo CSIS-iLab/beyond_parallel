@@ -22,16 +22,16 @@
   },
   "homepage": "https://github.com/CSIS-iLab/beyond_parallel#readme",
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "browser-sync": "^2.26.5",
+    "autoprefixer": "^9.7.6",
+    "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-if": "^2.0.2",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^4.12.0",
-    "yargs": "^13.2.2"
+    "node-sass": "^4.14.0",
+    "yargs": "^13.3.2"
   },
   "dependencies": {
     "dotenv": "^7.0.0"
