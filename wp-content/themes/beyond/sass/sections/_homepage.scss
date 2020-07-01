@@ -178,3 +178,12 @@ h2.gray {
     margin-right: 0;
   }
 }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  p {
+    margin-bottom: 0;
+  }
+}
