@@ -245,7 +245,7 @@ function get_recentPosts(){
                      
                      <a href="/about" alt="Read about Beyond Parallel" class="followButton"><span class="arrow ">Learn More</span>
                     </a>
-                    <h2 class="gray">Featured In</h2>
+                    <h2 class="featured">Featured In</h2>
                     <div class="features">
                         <p>The Washington Post</p>
                         <p>The New York Times</p>
