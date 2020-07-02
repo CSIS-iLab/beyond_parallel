@@ -102,7 +102,7 @@
 				<div class="container">
 					<div style="text-align: center;">
 						<div class="header-info">
-							<p class="attribution">A product of the <span style="color:#ffc624;">CSIS</span> Korea Chair</p>
+							<p class="attribution">A product of the CSIS Korea Chair</p>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<img src="<?php echo get_bloginfo('template_url') ?>/assets/images/beyond-parallel-logo.svg" class="header-logo">
 							</a>
