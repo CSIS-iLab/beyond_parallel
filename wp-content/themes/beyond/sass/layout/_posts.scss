@@ -7,7 +7,7 @@
 }
 
 .post-article > p:not(:empty):last-of-type::after {
-  content: '';
+  content: "";
   background: #fff url(/wp-content/uploads/2016/04/BP_bookend.png) no-repeat
     center / contain;
   height: 15px;
@@ -16,7 +16,7 @@
   margin: 0 0 -1px 6px;
 }
 
-.post-article > p img[src*='BP_bookend.png'] {
+.post-article > p img[src*="BP_bookend.png"] {
   display: none;
 }
 
@@ -201,7 +201,7 @@ section.bios {
   margin: 14px;
   color: white !important;
   font-size: 24px;
-  font-family: 'museo-sans', sans-serif;
+  font-family: "museo-sans", sans-serif;
   font-weight: 100;
   padding-bottom: 17px;
 }
@@ -219,7 +219,7 @@ sup {
 
 .satellitetext {
   width: auto;
-  font-family: 'museo sans', sans-serif;
+  font-family: "museo sans", sans-serif;
   font-size: 18px;
 }
 
@@ -273,7 +273,7 @@ sup {
 
 #cd-timeline::before {
   /* this is the vertical line */
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 18px;
@@ -299,7 +299,7 @@ sup {
 }
 
 .cd-timeline-block:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -377,7 +377,7 @@ sup {
 }
 
 .cd-timeline-content:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -417,7 +417,7 @@ sup {
 }
 
 .cd-timeline-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 16px;
   right: 100%;
@@ -564,7 +564,7 @@ sup {
     margin-left: 30px;
     float: right;
     display: inline;
-    font-family: 'museo-sans', sans-serif;
+    font-family: "museo-sans", sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 36px;
@@ -606,7 +606,8 @@ sup {
     display: block;
     width: 103%;
   }
-  .mission {
+  .mission,
+  .attribution {
     display: none;
   }
   .heroBorder {
@@ -645,7 +646,7 @@ sup {
     margin-right: 157px;
     float: right;
     display: inline;
-    font-family: 'museo-sans', sans-serif;
+    font-family: "museo-sans", sans-serif;
     font-size: 18px;
     margin-left: 157px;
   }
