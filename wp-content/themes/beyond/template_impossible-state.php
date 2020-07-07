@@ -6,11 +6,20 @@
 */
 get_header(); ?>
 
-<div id="primary" class="content-area container">
+<div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+
+	<?php if ( has_post_thumbnail() ) { 
+	?>
+<div class="impossibleState">
+<?php the_post_thumbnail(); ?>
+</div>
+<div class="container">
+<?php } ?>
 
 		<?php
 		while ( have_posts() ) : the_post();
+		
 			the_title( '<h1 class="entry-title">', '</h1>' );
             get_template_part( 'components/page/content', 'page' );
 		endwhile; // End of the loop.
@@ -84,6 +93,7 @@ get_header(); ?>
         <a href="/tag/impossible-state/" alt="More articles" class="catAll"><span class="arrow">Explore More Articles</span></a>
     </div>
 	</main><!-- .site-main -->
+	</div><!-- .content -->
 </div><!-- .content-area -->
 
 
