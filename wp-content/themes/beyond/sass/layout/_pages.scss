@@ -220,6 +220,44 @@ hr.databasehr {
   padding-left: 0 !important;
 }
 
+/*--------------------------------------------------------------
+## Impossible State Podcast Page
+--------------------------------------------------------------*/
+
+.impossibleState {
+  height: 30rem;
+  overflow-y: hidden;
+  color: inherit;
+  // text-align: center;
+  position: relative;
+  img {
+    position: absolute;
+    top: -95px;
+    min-height: auto;
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint_tablet}) {
+  .impossibleState {
+    height: 20rem;
+    img {
+      top: -70px;
+      min-height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: #{$breakpoint_mobile}) {
+  .impossibleState {
+    height: 10rem;
+    img {
+      top: -20px;
+      min-height: auto;
+    }
+  }
+}
+
 /*===== Vertical Timeline =====*/
 
 #conference-timeline {
