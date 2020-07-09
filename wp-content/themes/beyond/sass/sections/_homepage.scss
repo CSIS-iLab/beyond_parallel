@@ -190,12 +190,6 @@ h2.gray,
 
   p {
     margin-bottom: 3px;
-    // font-size: 22px;
     font-style: italic;
-    // text-align: center;
-
-    &:last-child {
-      grid-column: 1 / span 2;
-    }
   }
 }

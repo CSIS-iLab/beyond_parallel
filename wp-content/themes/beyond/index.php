@@ -251,9 +251,12 @@ function get_recentPosts(){
                         <p>The New York Times</p>
                         <p>MSNBC</p>
                         <p>CNN</p>
-                        <p>JoongAng</p>
-                        <p>Chosun</p>
+                        <p>JoongAng Ilbo</p>
+                        <p>Chosun Ilbo</p>
                         <p>The Wall Street Journal</p>
+                        <p>NBC News</p>
+                        <p>Bloomberg</p>
+                        <p>NPR</p>
                     </div>
                 </div><!--/col-sm-8-->
             </div><!--/row-->
