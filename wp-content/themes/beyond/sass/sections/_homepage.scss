@@ -154,7 +154,8 @@ th {
   }
 }
 
-h2.gray {
+h2.gray,
+.featured {
   text-transform: uppercase;
   color: $color__medgray;
   font-size: 2rem;
@@ -166,7 +167,7 @@ h2.gray {
     margin-top: 5rem;
   }
   .tweet-container {
-    height: 300px;
+    height: 490px;
     overflow: scroll;
     display: block;
     margin-left: -10px;
@@ -176,5 +177,19 @@ h2.gray {
   }
   @media screen and (max-width: #{$breakpoint_mobile}) {
     margin-right: 0;
+  }
+}
+
+.featured {
+  margin-top: 3.5rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  p {
+    margin-bottom: 3px;
+    font-style: italic;
   }
 }
