@@ -235,7 +235,7 @@ function get_recentPosts(){
                 <div class="col-sm-4">
                     <h2 class="gray">Latest Tweets</h2>
                     <div class="tweet-container">
-                        <a class="twitter-timeline" data-theme="light" data-link-color="#98B0BC" data-height="350" data-chrome="noheader nofooter noborders transparent"  data-tweet-limit="4" href="https://twitter.com/beyondcsiskorea">Tweets by Beyond Parallel</a>
+                        <a class="twitter-timeline" data-theme="light" data-link-color="#98B0BC" data-height="350" data-chrome="noheader nofooter noborders transparent"  data-tweet-limit="4" href="https://twitter.com/CSISKoreaChair">Tweets by Korea Chair</a>
                         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div><!--/tweet container-->
                 </div><!--/col-sm-4-->

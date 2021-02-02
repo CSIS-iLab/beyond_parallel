@@ -79,9 +79,9 @@
 								
 								<div class="clearfix"></div>
 								
-								<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter">
+								<a href="https://twitter.com/CSISKoreaChair?lang=en" alt="CSIS Korea Chair Twitter">
 									<div class="twitter-icon"></div>
-									<div class="social-info">@BeyondCSISKorea</div>
+									<div class="social-info">@CSISKoreaChair</div>
 								</a>
 								
 								<div class="clearfix"></div>
@@ -139,7 +139,7 @@
 											<div class="facebook-icon"></div>
 										</a>
 										
-										<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter">
+										<a href="https://twitter.com/CSISKoreaChair?lang=en" alt="Korea Chair Twitter">
 											<div class="twitter-icon"></div>
 										</a>
 										
