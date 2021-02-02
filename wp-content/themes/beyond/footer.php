@@ -25,7 +25,7 @@ Tel: 202.775.3242 </p>
 			<div class="col-sm-6">
 				<div class="social">
 					<a href="https://www.facebook.com/csiskoreachair/" alt="Beyond Parallel Facebook"><div class="facebook-icon"></div></a>
-					<a href="https://twitter.com/beyondcsiskorea?lang=en" alt="Beyond Parallel Twitter"><div class="twitter-icon"></div></a>
+					<a href="https://twitter.com/CSISKoreaChair?lang=en" alt="CSIS Korea Chair Twitter"><div class="twitter-icon"></div></a>
 					<a href="mailto:KoreaChair@csis.org?Subject=" target="_top"" alt="Beyond Parallel Email"><div class="email-icon"></div></a>
 				</div>
 				<div class="clearfix"></div>
