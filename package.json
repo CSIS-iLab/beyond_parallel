@@ -30,7 +30,6 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^4.14.0",
     "yargs": "^13.3.2"
   },
   "dependencies": {
