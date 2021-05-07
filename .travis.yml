@@ -8,7 +8,7 @@ branches:
 addons:
   ssh_known_hosts: git.wpengine.com
 before_script:
-  - npm ci
+  - npm install
 script:
   - npm run build
 before_install:
