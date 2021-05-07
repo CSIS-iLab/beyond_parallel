@@ -4,7 +4,7 @@ node_js:
 cache: npm
 branches:
   only:
-  -  master
+    - master
 addons:
   ssh_known_hosts: git.wpengine.com
 before_script:
@@ -14,10 +14,10 @@ script:
 before_install:
   - openssl aes-256-cbc -K $encrypted_0c3eeb54f1f2_key -iv $encrypted_0c3eeb54f1f2_iv -in beyond_parallel_rsa.enc -out /tmp/beyond_parallel_rsa -d
 before_deploy:
-- cd $TRAVIS_BUILD_DIR
+  - cd $TRAVIS_BUILD_DIR
 deploy:
-- provider: script
-  skip_cleanup: true
-  script: chmod +x deploy.sh && sh deploy.sh
-  on:
-    branch: master
+  - provider: script
+    skip_cleanup: true
+    script: chmod +x deploy.sh && sh deploy.sh
+    on:
+      branch: master
