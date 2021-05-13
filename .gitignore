@@ -94,6 +94,7 @@ Thumbs.db
 !deploy.sh
 !beyond_parallel_rsa.enc
 !config.json
+!gulp.config.js
 !gulpfile.js
 !package.json
 !package-lock.json
