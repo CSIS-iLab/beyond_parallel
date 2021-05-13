@@ -119,3 +119,6 @@ Thumbs.db
 wp-content/themes/beyond/.sass-cache
 **/.DS_Store
 wp-content/themes/beyond/*.css
+
+# track github actions directory
+!.github/
