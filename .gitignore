@@ -94,6 +94,7 @@ Thumbs.db
 !deploy.sh
 !beyond_parallel_rsa.enc
 !config.json
+!gulp.config.js
 !gulpfile.js
 !package.json
 !package-lock.json
@@ -118,3 +119,6 @@ Thumbs.db
 wp-content/themes/beyond/.sass-cache
 **/.DS_Store
 wp-content/themes/beyond/*.css
+
+# track github actions directory
+!.github/
