@@ -36,10 +36,12 @@ jobs:
       - name: Set environment to production
         if: endsWith(github.ref, '/main') ## Production Branch name
         run: echo "WPE_ENVIRONMENT_NAME=${{ secrets.WPE_PROD_ENV_NAME }}" >> $GITHUB_ENV
+        run: echo "WPE_LOCAL_BRANCH=main" >> $GITHUB_ENV
 
       - name: Set environment to development
         if: endsWith(github.ref, '/development') ## Development Branch Name
         run: echo "WPE_ENVIRONMENT_NAME=${{ secrets.WPE_DEV_ENV_NAME }}" >> $GITHUB_ENV
+        run: echo "WPE_LOCAL_BRANCH=development" >> $GITHUB_ENV
 
       - name: Push to WP Engine
         uses: epogeedesign/github-action-wpengine-git-deploy@master
