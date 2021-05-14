@@ -1,9 +1,8 @@
 name: WP Engine Git Deploy
 on:
   push:
-    branches:
-      - main
-      - development
+    branches: development
+    
 jobs:
   build:
     runs-on: ubuntu-latest
