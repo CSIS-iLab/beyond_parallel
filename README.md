@@ -21,7 +21,7 @@ To run:
 
 1. Run `$ npm install` in the root directory
 2. Run `$ npm start` to run the development task, which watches the WP theme directory for changes & compiles the SCSS files.
-3. Changes to the Gulp tasks can be made by modifying the `config.json`.
+3. Changes to the Gulp tasks can be made by modifying the `gulp.config.js`.
 
 To build for production:
 
