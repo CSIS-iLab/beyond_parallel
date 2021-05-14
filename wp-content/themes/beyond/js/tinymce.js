@@ -265,7 +265,7 @@
         .first()
         .toJSON();
 
-      if (0 > $.trim(json.url.length)) {
+      if (0 > json.url.length) {
         return;
       }
 

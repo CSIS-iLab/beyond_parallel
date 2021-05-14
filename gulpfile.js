@@ -1,5 +1,5 @@
 require("dotenv").config();
-const config = require("./config.json");
+const config = require("./gulp.config.js");
 const gulp = require("gulp");
 const gulpif = require("gulp-if");
 const autoprefixer = require("autoprefixer");
