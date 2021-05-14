@@ -46,7 +46,7 @@ module.exports = {
   theme_dir: "./wp-content/themes/beyond",
 
   sass: {
-    src: '_scss',
+    src: 'sass',
     dest: 'css',
     outputStyle: 'compressed',
     autoprefixer: {},
