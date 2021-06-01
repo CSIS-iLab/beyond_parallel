@@ -144,6 +144,20 @@ function beyond_register_sidebars()
 }
 
 /**
+ * Enqueue supplemental block editor styles.
+ */
+function beyond_block_editor_styles() {
+
+	$css_dependencies = array();
+
+	// Enqueue the editor styles.
+	wp_enqueue_style( 'beyond-block-editor-styles', get_theme_file_uri( '/editor-style-block.css' ), $css_dependencies, wp_get_theme()->get( 'Version' ), 'all' );
+
+}
+
+add_action( 'enqueue_block_editor_assets', 'beyond_block_editor_styles', 1, 1 );
+
+/**
  * Enqueue scripts and styles.
  */
 function beyond_scripts()
