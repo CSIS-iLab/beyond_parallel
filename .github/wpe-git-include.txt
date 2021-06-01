@@ -1,2 +1,3 @@
 wp-content/themes/beyond/*.css
 wp-content/themes/beyond/assets
+.github
