@@ -18,6 +18,8 @@ get_header(); ?>
 		<?php
 		$credits = get_field( "credits" );
 		$featured = get_field("featured");
+		$featured_img_id = get_post_thumbnail_id($featured->ID);
+		$related_analysis = get_field("related_analysis");
 		// var_dump( $credits );
 		query_posts(
 			array(
@@ -36,6 +38,11 @@ get_header(); ?>
 							<p class="credits">Specials thanks to <?php echo( $credits );?></p>
 						<?php endif; ?>
 					</div>
+					<?php var_dump($featured);
+						// var_dump(get_post_thumbnail_id($featured->ID) );
+						var_dump($related_analysis);
+						// var_dump( get_posts_by_attachment($featured_img_id));
+					?>
 					<div class="image-maps-featured">
 						<?php if ( $featured ) : ?>
 							<img src="<?php echo get_the_post_thumbnail_url( $featured->ID );?>" class="featured-img">
@@ -49,6 +56,17 @@ get_header(); ?>
 								</div>
 								<div class="related-analysis">
 									<h3 class="related-heading">Related Analysis:</h3>
+									<?php foreach ($related_analysis as $post): ?>
+										<header class="entry-header living-header">
+											<?php //var_dump($post); ?>
+											<?php the_title( sprintf( '<h3 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink($analysis) ) ), '</a></h3>' ); ?>
+
+										</header>
+										<div class="entry-summary">
+											<span class="excerpt-date"><?php echo(get_the_date()); ?> </span>
+											<?php //var_dump(get_the_date()); ?>
+										</div>
+									<?php endforeach; ?>
 								</div>
 							</div>
 						<?php endif; ?>
