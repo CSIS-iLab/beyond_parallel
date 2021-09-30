@@ -48,7 +48,7 @@ get_header(); ?>
 									</a>
 								</div>
 								<div class="related-analysis">
-									<h3 class="related-heading">Related Analysis</h3>
+									<h3 class="related-heading">Related Analysis:</h3>
 								</div>
 							</div>
 						<?php endif; ?>

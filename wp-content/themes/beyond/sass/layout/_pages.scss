@@ -260,8 +260,19 @@ hr.databasehr {
       margin-bottom: 11px;
     }
 
-    .related-analysis {
-      padding-top: 16px;
+    .related{
+      
+      &-analysis {
+        padding-top: 16px;
+      }
+
+      &-heading {
+        color: $color__blue;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        font-size: 1.18rem;
+        line-height: 1.43rem;
+      }
     }
   }
 
