@@ -214,6 +214,7 @@ hr.databasehr {
 ## Image Maps
 --------------------------------------------------------------*/
 .image-maps {
+  
   &-header {
     display: flex;
     align-items: flex-start;
@@ -229,6 +230,48 @@ hr.databasehr {
     max-width: 360px;
     font-weight: 350;
   }
+
+  &-featured {
+    display: flex;
+    align-items: flex-start;
+    background-color: $color__background-hr;
+  }
+
+  .featured-title a {
+      background-image: none;
+  }
+  
+  .featured-img {
+    width: 30%;
+    max-width: 280px;
+  }
+  
+  .featured-content {
+    margin: 40px;
+    margin-bottom: 0;
+    width: 70%;
+    max-width: 792px;
+
+    h2.entry-title {
+      margin-bottom: 0;
+    }
+
+    .followButton {
+      margin-bottom: 11px;
+    }
+
+    .related-analysis {
+      padding-top: 16px;
+    }
+  }
+
+  h3 {
+    margin: 0px 0px 10px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: $color__medgray;
+  }
+
 }
 
 

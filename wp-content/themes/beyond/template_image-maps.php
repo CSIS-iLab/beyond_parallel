@@ -32,11 +32,25 @@ get_header(); ?>
 					<div class="image-maps-header">
 						<p class="description">Add a description of the satellite image collection. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 
-						<?php 
-							// wp_reset_query(); //reset the query to fix the getField() 
-							if( $credits !== '' ):
-						?>
+						<?php if( $credits !== '' ): ?>
 							<p class="credits">Specials thanks to <?php echo( $credits );?></p>
+						<?php endif; ?>
+					</div>
+					<div class="image-maps-featured">
+						<?php if ( $featured ) : ?>
+							<img src="<?php echo get_the_post_thumbnail_url( $featured->ID );?>" class="featured-img">
+							<div class='featured-content'>
+								<h3>FEATURED</h3>
+								<?php the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+								<div class="followButton">
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+										<span class="download">Download</span>
+									</a>
+								</div>
+								<div class="related-analysis">
+									<h3 class="related-heading">Related Analysis</h3>
+								</div>
+							</div>
 						<?php endif; ?>
 					</div>
 

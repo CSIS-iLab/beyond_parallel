@@ -108,6 +108,11 @@ span.arrow:after {
   font-family: FontAwesome;
 }
 
+span.download:after {
+  content: " \f019";
+  font-family: FontAwesome;
+}
+
 .catAll,
 .catTop,
 .followButton {
@@ -223,6 +228,16 @@ span.arrow:after {
 
 #avink a {
   color: #10355f;
+}
+
+/*--------------------------------------------------------------
+## Related Analysis
+--------------------------------------------------------------*/
+h3.related-heading {
+  color: $color__medgray !important;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  margin-bottom: 0px;
 }
 
 /*--------------------------------------------------------------
