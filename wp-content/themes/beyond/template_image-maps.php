@@ -1,6 +1,6 @@
 <?php
 /**
- * 	Template Name: Imagery
+ * 	Template Name: Image Maps
  *
  *
 */
@@ -12,12 +12,13 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 			the_title( '<h1 class="entry-title">', '</h1>' );
-
-
 		endwhile; // End of the loop.
 		?>
 
 		<?php
+		$credits = get_field( "credits" );
+		$featured = get_field("featured");
+		// var_dump( $credits );
 		query_posts(
 			array(
 				'post_type' => array('post', 'videos'),
@@ -27,13 +28,18 @@ get_header(); ?>
 		while (have_posts()) : the_post();
 
 			if( $wp_query->current_post == 0 && !is_paged() ) : ?>
-				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?> >
-					<div>
-						<p>
-							Add a description of the satellite image collection. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-						</p>
+				<article id="post-<?php the_ID(); ?>" class="image-maps" >
+					<div class="image-maps-header">
+						<p class="description">Add a description of the satellite image collection. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 
+						<?php 
+							// wp_reset_query(); //reset the query to fix the getField() 
+							if( $credits !== '' ):
+						?>
+							<p class="credits">Specials thanks to <?php echo( $credits );?></p>
+						<?php endif; ?>
 					</div>
+
 					<div class="living-header-img">
 					<?php echo get_the_post_thumbnail( $post->ID ); ?>
 					</div>
