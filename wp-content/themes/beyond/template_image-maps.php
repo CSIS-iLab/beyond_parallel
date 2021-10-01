@@ -38,9 +38,9 @@ get_header(); ?>
 							<p class="credits">Specials thanks to <?php echo( $credits );?></p>
 						<?php endif; ?>
 					</div>
-					<?php var_dump($featured);
+					<?php // var_dump($featured);
 						// var_dump(get_post_thumbnail_id($featured->ID) );
-						var_dump($related_analysis);
+						// var_dump($related_analysis);
 						// var_dump( get_posts_by_attachment($featured_img_id));
 					?>
 					<div class="image-maps-featured">
@@ -68,55 +68,12 @@ get_header(); ?>
 										</div>
 									<?php endforeach; ?>
 								</div>
-							</div>
+							</div> <!-- end featured-content -->
 						<?php endif; ?>
 					</div>
+					<div class="table-container">
 
-					<div class="living-header-img">
-					<?php echo get_the_post_thumbnail( $post->ID ); ?>
 					</div>
-
-					<div class="living-first">
-						<h3>FEATURED</h3>
-						<?php the_title( sprintf( '<h2 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-						<?php
-							if ( has_excerpt( get_the_id() ) ){
-								echo get_the_excerpt();
-							}
-							?>
-
-						<div class="followButton">
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-								<span class="arrow">KEEP READING</span>
-							</a>
-						</div>
-					</div>
-				</article>
-
-			<?php else : ?>
-				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
-					<header class="entry-header living-header">
-
-						<?php the_title( sprintf( '<h3 class="entry-title imagery-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-
-					</header>
-					<div class="entry-summary">
-
-						<div class="entry-thumb">
-
-							<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
-
-						</div>
-
-								<?php
-							if ( has_excerpt( get_the_id() ) ){
-								echo get_the_excerpt();
-							}
-							?>
-						</div>
-
-				<div class="clearfix"></div>
 				</article>
 			<?php endif; ?>
 

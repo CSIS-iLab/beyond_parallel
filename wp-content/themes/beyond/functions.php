@@ -612,3 +612,9 @@ function my_meta_init()
 
     add_action('save_post', 'my_meta_save');
 }
+
+// apply tags to attachments
+function wptp_add_tags_to_attachments() {
+	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+}
+add_action( 'init' , 'wptp_add_tags_to_attachments' );
