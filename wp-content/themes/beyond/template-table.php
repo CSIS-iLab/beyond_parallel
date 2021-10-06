@@ -2,10 +2,6 @@
 /**
  * Template part for displaying maps on the table
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Missile_Defense
- * 
  * 
  */
 ?>
@@ -14,24 +10,24 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="single__content">
-
 <?php
-    $image_maps_posts = get_posts(array(
-        'post_type' => 'attachment',
-        'tag' => 'image-maps',
-        // 'post_mime_type' => 'image/png',
-        'post_mime_type' => 'application/pdf',
-        'posts_per_page' =>  -1
-    ));
-    foreach ($image_maps_posts as $post) {
+    // $image_maps_posts = get_posts(array(
+    //     'post_type' => 'attachment',
+    //     'tag' => 'image-maps',
+    //     // 'post_mime_type' => 'image/png',
+    //     'post_mime_type' => 'application/pdf',
+    //     'posts_per_page' =>  -1
+    // ));
+    foreach ($args as $post) {
       setup_postdata($post);
       // var_dump ($post);
-      esc_html_e(get_permalink());
-      the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+      // esc_html_e(get_permalink());
+      // the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
     }
     
     ?>
 	  <div class="maps-table banded alignwide">
+      
       <table id="imageMaps">
         <thead>
           <th><?php esc_html_e( 'Description' ); ?></th>
@@ -39,7 +35,7 @@
           <th><?php esc_html_e( 'Last Updated'); ?></th>
         </thead>
         <tbody>
-          <?php foreach ($image_maps_posts as $post) { ?>
+          <?php foreach ($args as $post) { ?>
           <tr>
             <td><?php the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?></td>
             <td>Hamgyongnam-do</td>

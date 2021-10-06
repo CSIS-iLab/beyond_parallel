@@ -16,6 +16,9 @@ get_header(); ?>
 		?>
 
 		<?php
+		
+		// $test = beyondparallel_get_posts_using_attachment();
+		// gets pdf files
 		$image_maps_posts = get_posts(array(
 			'post_type' => 'attachment',
 			'tag' => 'image-maps',
@@ -27,26 +30,58 @@ get_header(); ?>
 		$featured = get_field("featured");
 		$featured_img_id = get_post_thumbnail_id($featured);
 		$related_analysis = get_field("related_analysis");
+		$array_test = [];
+		$post_use = [];
+		foreach ($image_maps_posts as $pdf) {
+			// echo $pdf->ID;
+			array_push($array_test, beyondparallel_get_posts_using_attachment($pdf->ID));
+			// echo print_r(get_post($pdf->ID));
+		}
+		foreach ($array_test as $key => $value) {
+			// echo print_r($value);
+			// echo print_r(get_post($value));
+		}
+		// echo print_r($array_test);
+		// $attachment_use_in = 
+		
+		// $img_URL = wp_get_attachment_url($image_maps_posts[0]->ID);
 
+		// echo print_r ($attachment_use_in);
+		// echo print_r ($img_URL);
 		// var_dump($image_maps_posts[0]->ID);
 		// var_dump(get_site_url());
-		$image = get_field('thumbnail', $image_maps_posts[0]->ID);
+		// Get image field from Media attachment
+		$image = get_field('thumbnail', $image_maps_posts[1]->ID);
+		var_dump($image);
 		$bad_url = $image['url'];
 		$remove_from_url = 'i1.wp.com/';
 		$good_url = str_replace($remove_from_url, "", $bad_url);
-		var_dump($good_url);
-		var_dump($image);
+		// var_dump($good_url);
+		// var_dump($image);
 		// var_dump($custom_image_url);
 		
 		?>
-		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" data-attr="<?php echo $custom_image_url;?>" />
-		<?php 
+		<?php
+		// query_posts(
+			// array(
+				// 'post_type' => array('post', 'videos'),	
+				// 'tag' => 'satellite-imagery',
+				// 'posts_per_page' =>  -1
+				// 'post_type' => 'attachment',
+				// 'tag' => 'image-maps',
+				// 'post_mime_type' => 'image/png',
+				// 'post_mime_type' => 'application/pdf',
+				// 'posts_per_page' =>  -1
+			// )); 
 		// var_dump( $featured[0]);
 		// echo print_r( $file );
 		// foreach ($image_maps_posts as $post) {
 		// 	setup_postdata($post);
 			// var_dump(the_post());
-			// if( $image_maps_posts->current_post == 0 && !is_paged() ) : ?>
+			// if( $image_maps_posts->current_post == 0 && !is_paged() ) : 
+		while (have_posts()) : the_post();
+		// var_dump(the_post());
+			?>
 
 				<article class="image-maps" >
 					<div class="image-maps-header">
@@ -56,19 +91,45 @@ get_header(); ?>
 							<p class="credits">Specials thanks to <?php echo( $credits );?></p>
 						<?php endif; ?>
 					</div>
+					<?php 
+						var_dump($image_maps_posts[0]);
+						var_dump($image_maps_posts[0]->ID);
+						var_dump(beyondparallel_get_posts_using_attachment($image_maps_posts[0]->ID));
+						var_dump($featured[0]->ID);
+						var_dump($featured[0]);
+						$img_test = beyondparallel_get_posts_using_attachment(5418);
+						var_dump($img_test);
+						foreach ($img_test as $i) {
+							var_dump($i);
+							if ($i == $image_maps_posts[0]->ID) {
+								echo 'son iguales', $i;
+							} else {
+								echo 'no hay';
+							}
+						}
+					?>
 					<div class="image-maps-featured">
 						<?php if ( $featured ) :
+							// $img_test = beyondparallel_get_posts_using_attachment($featured->ID);
+							// var_dump($img_test);
 							foreach ($featured as $post) {
+								
 								setup_postdata($post);
+								$img = get_field('thumbnail', $post->id);
+								// var_dump($img);
 								?>
 								<img src="<?php echo $good_url;?>" class="featured-img">
 								<div class='featured-content'>
 									<h3>FEATURED</h3>
-									<h2 class="entry-title featured-title"><a href="%s" rel="bookmark"></a></h2>
 									<?php the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 									<div class="followButton">
 										<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-											<span class="download">Download</span>
+											<span>Download
+												<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M1.66659 10.3334L1.66659 12.3334H12.3333V10.3334H13.6666V13.6667H0.333252L0.333252 10.3334H1.66659Z" fill="#10355F"/>
+													<path d="M6.99991 11.6095L6.39044 11L6.33324 11V10.9429L1.39044 6.00004L2.33325 5.05723L6.33325 9.05724L6.33329 0.333374L7.66663 0.33338L7.66659 9.05723L11.6666 5.05724L12.6094 6.00004L7.66658 10.9429V11H7.60939L6.99991 11.6095Z" fill="#10355F"/>
+												</svg>
+											</span>
 										</a>
 									</div>
 									<div class="related-analysis">
@@ -91,16 +152,21 @@ get_header(); ?>
 							<?php } ?>
 						<?php endif; ?>
 					</div>
+					<div class="wptable-container">
+						<?php get_template_part('template-table-wptable'); ?>
+					</div>
+
+												
 					<div class="table-container">
-						<?php get_template_part( 'template-table' );?>
+						<?php get_template_part( 'template-table', 'table', $image_maps_posts );?>
 					</div>
 				</article>
 			<?php // endif; ?>
 
 		<?php
-		// }
-		// endwhile;
-		// wp_reset_query();
+			// }
+		endwhile;
+		wp_reset_query();
 		?>
 
 		<?php

@@ -30,7 +30,6 @@ a.related-link {
   letter-spacing: 0px;
   color: $color__blue !important;
 }
-
 .entry-cats a,
 .the-content a,
 a.related-link {
@@ -111,6 +110,26 @@ span.arrow:after {
 span.download:after {
   content: " \f019";
   font-family: FontAwesome;
+}
+
+button.download:after {
+  content: " \f019";
+  font-family: FontAwesome;
+}
+
+.downloadPDFButton {
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background-color: transparent;
+  padding: 5px 5px;
+  text-transform: uppercase;
+  font-family: $font__headings !important;
+  color: $color__blue;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  // margin-top: 1rem;  
 }
 
 .catAll,
