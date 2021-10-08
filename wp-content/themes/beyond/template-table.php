@@ -21,7 +21,7 @@
   <?php
     // foreach ($args as $post) {
       
-      // var_dump ($post);
+      // var_dump ($args);
       // esc_html_e(get_permalink());
       // the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
     // }
@@ -36,9 +36,15 @@
           <th><?php esc_html_e( 'Last Updated' ); ?></th>
         </thead>
         <tbody>
-          <?php foreach ( $args as $post ) { ?>
+          <?php foreach ( $args['pdfs'] as $post ) { ?>
             <?php setup_postdata( $post ); ?>
             <?php $related_analysis = beyondparallel_get_posts_using_attachment( $post->ID ); ?>
+            <?php // var_dump($post);
+              $scale = get_field('scale', $post);
+              // var_dump($scale);
+              $selected_filter = 'selected-scale_select';
+              var_dump($selected_filter);
+            ?>
           <tr>  
             <?php if ( $related_analysis ) { ?>
               <td>

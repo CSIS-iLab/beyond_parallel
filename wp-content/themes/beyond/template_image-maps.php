@@ -25,9 +25,9 @@ get_header(); ?>
 		// var_dump($image_maps_pdfs);
 		
 		// Gets the scales from the scale field
-		function get_scales_values( $array ) {
+		function get_scales_values( $attachments ) {
 			$scales = [];
-			foreach ( $array as $item ) {
+			foreach ( $attachments as $item ) {
 				$scale = get_field( 'scale', $item );
 				if ($scale != '') {
 					array_push( $scales, $scale );
@@ -42,16 +42,16 @@ get_header(); ?>
 		$featured_img = wp_get_attachment_thumb_url($featured->ID, 'medium');
 		
 		// Gets the image thumbnail from the PDF file with ACF
-		$feat_img = get_field('thumbnail', $featured->ID);
-		$feat_img_url = str_replace('i1.wp.com/', '', $feat_img['url']);
+		// $feat_img = get_field('thumbnail', $featured->ID);
+		// $feat_img_url = str_replace('i1.wp.com/', '', $feat_img['url']);
 		// var_dump($feat_img_url);
 
 		// Gets all the posts where the attachment PDF is used
-		$related_maps = beyondparallel_get_posts_using_attachment($featured->ID);
+		$related_analysis = beyondparallel_get_posts_using_attachment($featured->ID);
 		// echo get_the_title($related_maps);
 		// echo $related_maps;
 		// var_dump($related_maps);
-		$related_analysis = get_field("related_analysis");
+		// $related_analysis = get_field("related_analysis");
 		
 		?>
 		<article class="image-maps">
@@ -97,8 +97,7 @@ get_header(); ?>
 
 								<?php wp_reset_postdata(); ?>
 
-								
-								<?php foreach ($related_maps as $post):
+								<?php foreach ($related_analysis as $post):
 									setup_postdata($post); ?>
 
 									<header class="entry-header living-header">
@@ -120,20 +119,20 @@ get_header(); ?>
 			</div>
 			<div class="select-filter">
 				<label for="scale_select">Filter by scale: </label>
-				<select id="scale_select" name="scales">
-				<option value="all"> All </option>
-					<?php
-					$scales = get_scales_values($image_maps_pdfs);
-					foreach ( $scales as $value) { ?>
-						<option value="<?php echo $value ?>"> <?php echo $value ?> </option>
-					<?php } ?>
+				<select id="scale_select" name="scale_select">
+				<option value="all" selected> All </option>
+				<?php
+				$scales = get_scales_values($image_maps_pdfs);
+				foreach ( $scales as $value) { ?>
+					<option value="<?php echo $value ?>"> <?php echo $value ?> </option>
+				<?php } ?>
 				</select>
 			</div>
 			<div class="table-container">
-				<?php get_template_part( 'template-table', 'table', $image_maps_pdfs ); ?>
+				<?php ( empty( $scales ) ? get_template_part('template-table-wptable') : get_template_part( 'template-table', 'table', array( 'pdfs' => $image_maps_pdfs, 'scales'=> $scales ) ) ) ; ?>
 			</div>
 			<div class="wptable-container">
-				<?php get_template_part('template-table-wptable'); ?>
+				<?php // get_template_part('template-table-wptable'); ?>
 			</div>
 		</article>
 		<?php wp_reset_query(); ?>
