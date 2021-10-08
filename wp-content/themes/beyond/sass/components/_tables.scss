@@ -1,0 +1,73 @@
+.image-maps {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    text-align: left;
+    border-bottom: 2px solid blue;
+  }
+  
+  th {
+    font-weight: 600;
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid blue;
+      border-bottom: 1px solid blue;
+    }
+  }
+
+  td,
+  th {
+    padding: 8px !important; //Important to override data tables styling
+    padding-left: 12px !important; //Important to override data tables styling
+  }
+
+
+  .wp-block-table > figcaption {
+    width: max-width;
+    margin: 16px auto 32px auto;
+    color: black;
+  }
+
+  .aligncenter.wp-block-table,
+  .alignleft.wp-block-table,
+  .alignright.wp-block-table {
+    display: block;
+  }
+
+  .alignfull.wp-block-table,
+  .alignwide.wp-block-table {
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+
+    figcaption {
+      padding-left: -6vw;
+    }
+  }
+
+  .wp-block-table {
+    border-bottom: 0 !important;
+  }
+
+  .is-style-highlighted-header {
+    thead {
+      background: peachpuff;
+    }
+
+    /* stylelint-disable */
+    tbody {
+      tr:first-child {
+        border-top: 1px solid gray;
+      }
+
+      td:first-child {
+        font-weight: 600;
+      }
+    }
+    /* stylelint-enable */
+  }
+}

@@ -22,6 +22,19 @@ get_header(); ?>
 			'post_mime_type' => 'application/pdf',
 			'posts_per_page' =>  -1
 		));
+		// var_dump($image_maps_pdfs);
+		
+		// Gets the scales from the scale field
+		function get_scales_values( $array ) {
+			$scales = [];
+			foreach ( $array as $item ) {
+				$scale = get_field( 'scale', $item );
+				if ($scale != '') {
+					array_push( $scales, $scale );
+				}
+			}
+			return $scales;
+		}
 
 		// Gets the ACF 
 		$credits = get_field( "credits" );
@@ -70,7 +83,8 @@ get_header(); ?>
 							<?php the_title( sprintf( '<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 							<div class="followButton">
 								<a href="<?php the_permalink(); ?>" rel="bookmark" title="Download file <?php the_title_attribute(); ?>" target="_blank" download>
-									<span>Download
+									<span>
+										Download
 										<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M1.66659 10.3334L1.66659 12.3334H12.3333V10.3334H13.6666V13.6667H0.333252L0.333252 10.3334H1.66659Z" fill="#10355F"/>
 											<path d="M6.99991 11.6095L6.39044 11L6.33324 11V10.9429L1.39044 6.00004L2.33325 5.05723L6.33325 9.05724L6.33329 0.333374L7.66663 0.33338L7.66659 9.05723L11.6666 5.05724L12.6094 6.00004L7.66658 10.9429V11H7.60939L6.99991 11.6095Z" fill="#10355F"/>
@@ -104,13 +118,22 @@ get_header(); ?>
 				<?php // }else {} ?>
 				<?php endif; ?>
 			</div>
-			<div class="wptable-container">
-				<?php get_template_part('template-table-wptable'); ?>
+			<div class="select-filter">
+				<label for="scale_select">Filter by scale: </label>
+				<select id="scale_select" name="scales">
+				<option value="all"> All </option>
+					<?php
+					$scales = get_scales_values($image_maps_pdfs);
+					foreach ( $scales as $value) { ?>
+						<option value="<?php echo $value ?>"> <?php echo $value ?> </option>
+					<?php } ?>
+				</select>
 			</div>
-
-										
 			<div class="table-container">
 				<?php get_template_part( 'template-table', 'table', $image_maps_pdfs ); ?>
+			</div>
+			<div class="wptable-container">
+				<?php get_template_part('template-table-wptable'); ?>
 			</div>
 		</article>
 		<?php wp_reset_query(); ?>
