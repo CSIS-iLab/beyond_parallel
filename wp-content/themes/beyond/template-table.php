@@ -42,8 +42,12 @@
             <?php // var_dump($post);
               $scale = get_field('scale', $post);
               // var_dump($scale);
-              $selected_filter = 'selected-scale_select';
               var_dump($selected_filter);
+              if (isset($_POST['selectData'])) {
+                var_dump($_POST['selectData']); // $_POST['selectData'] is the selected value
+                // query here
+                // and you can return the result if you want to do some things cool ;)
+            }
             ?>
           <tr>  
             <?php if ( $related_analysis ) { ?>
