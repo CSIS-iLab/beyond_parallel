@@ -27,16 +27,16 @@ get_header();
         // Gets the scales from the scale field
         function get_scales_values($attachments)
         {
-            $scales = [];
-            foreach ($attachments as $item) {
-                $scale = get_field('scale', $item);
+            $scales = ['all'];
+            foreach ($attachments as $pdf) {
+                $scale = get_field('scale', $pdf);
                 if ($scale != '') {
                     array_push($scales, $scale);
                 }
             }
             return $scales;
         }
-
+		
         // Gets the ACF
         $credits = get_field("credits");
         $featured = get_field("featured")[0];
@@ -120,17 +120,17 @@ get_header();
 			</div>
 			<div class="select-filter">
 				<label for="scale_select">Filter by scale: </label>
-<select id="scale_select" name="scale_select" >
-				<option value="all" selected> All </option>
-				<?php
-                $scales = get_scales_values($image_maps_pdfs);
-                foreach ($scales as $value) { ?>
-					<option value="<?php echo $value ?>"> <?php echo $value ?> </option>
-				<?php } ?>
+				<select id="scale_select" name="scale_select" >
+					<option value="" selected disabled hidden>Select</option>
+					<?php
+					$scales = get_scales_values($image_maps_pdfs);
+					foreach ($scales as $value) { ?>
+						<option value="<?php echo $value ?>"> <?php echo $value ?> </option>
+					<?php } ?>
 				</select>
 			</div>
 			<div class="table-container">
-				<?php (empty($scales) ? get_template_part('template-table-wptable') : get_template_part('template-table', 'table', array( 'pdfs' => $image_maps_pdfs, 'scales'=> $_GET['scales'] ))) ; ?>
+				<?php (empty($scales) ? get_template_part('template-table-wptable') : get_template_part('template-table', 'table', array( 'pdfs' => $image_maps_pdfs, 'scales'=> $scales ))) ; ?>
 			</div>
 			<div class="wptable-container">
 				<?php // get_template_part('template-table-wptable');?>

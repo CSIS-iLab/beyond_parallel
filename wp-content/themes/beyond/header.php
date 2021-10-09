@@ -30,25 +30,20 @@
 	</script>
 
     <script type="text/javascript">
-	window.addEventListener('load', function () {
-	let scaleValue = document.getElementById('scale_select');
-		console.log('hola', scaleValue);
-scaleValue.onchange= function(e){ 
-      const scaleValue = document.getElementById('scale_select').value
-
-      const urlParams = new URLSearchParams(window.location.search);
-
-urlParams.set('scales', encodeURIComponent(scaleValue));
-
-window.location.search = urlParams;
-
-      console.log(window.location.search)
-}
-	})
-
-</script>
-<script>
-
+		window.addEventListener('load', function () {
+			let scaleValue = document.getElementById('scale_select');			
+			scaleValue.onchange= function(e){ 
+				const scaleValue = document.getElementById('scale_select').value
+				console.log('hola', scaleValue);
+				const urlParams = new URLSearchParams(window.location.search);
+				urlParams.set('scale', encodeURIComponent(scaleValue));
+				window.location.search = urlParams;
+				console.log(window.location.search)
+				// e.preventdefault()
+			}
+		})
+	</script>
+	<script>
 	<?php wp_head(); ?>
 </head>
 
