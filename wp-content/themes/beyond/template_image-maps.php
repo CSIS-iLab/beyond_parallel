@@ -130,7 +130,7 @@ get_header();
 				</select>
 			</div>
 			<div class="table-container">
-				<?php (empty($scales) ? get_template_part('template-table-wptable') : get_template_part('template-table', 'table', array( 'pdfs' => $image_maps_pdfs, 'scales'=> $scales ))) ; ?>
+				<?php (empty($scales) ? get_template_part('template-table-wptable') : get_template_part('template-table', 'table', array( 'pdfs' => $image_maps_pdfs ))) ; ?>
 			</div>
 			<div class="wptable-container">
 				<?php // get_template_part('template-table-wptable');?>
