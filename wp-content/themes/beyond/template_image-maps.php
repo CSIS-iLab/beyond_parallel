@@ -67,58 +67,51 @@ get_header();
 			<?php // var_dump($featured);?>
 			<div class="image-maps-featured">
 				<?php if ($featured) :
-                    // $img_test = beyondparallel_get_posts_using_attachment($featured->ID);
-                    // var_dump($img_test);
-                    
-                    // foreach ($featured as $post) {
-                        $post = $featured;
-                        setup_postdata($post);
-                        // var_dump(the_title());
-                        // wp_reset_postdata();
-                        // var_dump(the_title());
-                        ?>
-						<img src="<?php echo $featured_img;?>" class="featured-img">
-						<!-- <img src="<?php // echo $feat_img_url;?>" class="featured-img"> -->
-						<div class='featured-content'>
-							<h3>FEATURED</h3>
-							<?php the_title(sprintf('<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
-							<div class="followButton">
-								<a href="<?php the_permalink(); ?>" rel="bookmark" title="Download file <?php the_title_attribute(); ?>" target="_blank" download>
-									<span>
-										Download
-										<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1.66659 10.3334L1.66659 12.3334H12.3333V10.3334H13.6666V13.6667H0.333252L0.333252 10.3334H1.66659Z" fill="#10355F"/>
-											<path d="M6.99991 11.6095L6.39044 11L6.33324 11V10.9429L1.39044 6.00004L2.33325 5.05723L6.33325 9.05724L6.33329 0.333374L7.66663 0.33338L7.66659 9.05723L11.6666 5.05724L12.6094 6.00004L7.66658 10.9429V11H7.60939L6.99991 11.6095Z" fill="#10355F"/>
-										</svg>
-									</span>
-								</a>
-							</div>
-							<div class="related-analysis">
-								<h3 class="related-heading">Related Analysis:</h3>
+					$post = $featured;
+					setup_postdata($post);
+					?>
 
-								<?php wp_reset_postdata(); ?>
+					<img src="<?php echo $featured_img;?>" class="featured-img">
+					<!-- <img src="<?php // echo $feat_img_url;?>" class="featured-img"> -->
+					<div class='featured-content'>
+						<h3>FEATURED</h3>
+						<?php the_title(sprintf('<h2 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
+						<div class="followButton">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="Download file <?php the_title_attribute(); ?>" target="_blank" download>
+								<span>
+									Download
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M1.66659 10.3334L1.66659 12.3334H12.3333V10.3334H13.6666V13.6667H0.333252L0.333252 10.3334H1.66659Z" fill="#10355F"/>
+										<path d="M6.99991 11.6095L6.39044 11L6.33324 11V10.9429L1.39044 6.00004L2.33325 5.05723L6.33325 9.05724L6.33329 0.333374L7.66663 0.33338L7.66659 9.05723L11.6666 5.05724L12.6094 6.00004L7.66658 10.9429V11H7.60939L6.99991 11.6095Z" fill="#10355F"/>
+									</svg>
+								</span>
+							</a>
+						</div>
+						<div class="related-analysis">
+							<h3 class="related-heading">Related Analysis:</h3>
 
-								<?php foreach ($related_analysis as $post):
-                                    setup_postdata($post); ?>
+							<?php wp_reset_postdata(); ?>
 
-									<header class="entry-header living-header">
-										<?php //var_dump($post);?>
-										<?php the_title(sprintf('<h3 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url(get_permalink($analysis))), '</a></h3>'); ?>
+							<?php foreach ($related_analysis as $post):
+								setup_postdata($post); ?>
 
-									</header>
-									<div class="entry-summary">
-										<span class="excerpt-date"><?php echo(get_the_date()); ?> </span>
-									</div>
-									
-								<?php endforeach;
-                                    wp_reset_postdata();
-                                ?>
-							</div> <!-- .related-analysis -->
-						</div> <!-- .featured-content -->
-				<?php // }else {}?>
+								<header class="entry-header living-header">
+									<?php //var_dump($post);?>
+									<?php the_title(sprintf('<h3 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url(get_permalink($analysis))), '</a></h3>'); ?>
+
+								</header>
+								<div class="entry-summary">
+									<span class="excerpt-date"><?php echo(get_the_date()); ?> </span>
+								</div>
+								
+							<?php endforeach;
+								wp_reset_postdata();
+							?>
+						</div> <!-- .related-analysis -->
+					</div> <!-- .featured-content -->
 				<?php endif; ?>
 			</div>
-			<div class="select-filter">
+			<div class="select-filter alignright">
 				<label for="scale_select">Filter by scale: </label>
 				<select id="scale_select" name="scale_select" >
 					<option value="" selected disabled hidden>Select</option>

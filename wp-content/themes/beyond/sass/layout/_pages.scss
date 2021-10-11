@@ -235,6 +235,7 @@ hr.databasehr {
     display: flex;
     align-items: flex-start;
     background-color: $color__background-hr;
+    margin-bottom: 50px;
   }
 
   .featured-title a {
@@ -311,6 +312,37 @@ hr.databasehr {
     // background-color: $color__medgray;
     height: 825px;
   }
+
+  .select-filter {
+    margin-bottom: 1.125rem;
+
+    label,
+    select {
+      color: $color__dark-bg;
+      font-family: $font__main;
+      font-size: 1.125rem;
+      line-height: 1;
+      font-style: normal;
+      font-weight: normal;
+    }
+    
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position-x: 100%;
+      background-position-y: 5px;
+      border: none;
+      border-bottom: 1px solid #00000025;
+      border-radius: 2px;
+      margin-right: 2rem;
+      padding: .625rem;
+      padding-right: 1.2rem;
+    }
+  }
+
 }
 
 
