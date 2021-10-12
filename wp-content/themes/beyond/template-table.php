@@ -53,7 +53,10 @@
 
 <table id="imageMaps" class="sortable">
   <thead>
-    <th class="sorttable_nosort" style="width: 5%;"><?php esc_html_e(' '); ?></th>
+    <th class="sorttable_nosort" style="width: 5%;"><svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.809814" width="29" height="18" rx="9" stroke="#10355F" stroke-opacity="0.9"/>
+</svg>
+</th>
     <th class="sorttable_nosort" style="width: 55%;"><?php esc_html_e('Description'); ?></th>
     <th style="width: 20%;"><?php esc_html_e('Province'); ?></th>
     <th style="width: 20%;"><?php esc_html_e('Last Updated'); ?></th>
@@ -62,7 +65,7 @@
   <?php foreach ($args['pdfs'] as $post) { ?>
     <?php setup_postdata($post); ?>
     <?php $related_analysis_table = beyondparallel_get_posts_using_attachment($post->ID); ?>
-    <?php // var_dump($post);
+    <?php 
       $scale = get_field('scale', $post);
       if ('all' == $filter_by_scale) { ?>                    
         <tr>  <!-- tr -->

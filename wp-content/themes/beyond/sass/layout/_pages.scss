@@ -214,7 +214,6 @@ hr.databasehr {
 ## Image Maps
 --------------------------------------------------------------*/
 .image-maps {
-  // margin-bottom: 1.5rem;
   
   &-header {
     display: flex;
@@ -235,7 +234,6 @@ hr.databasehr {
   &-featured {
     display: flex;
     align-items: flex-start;
-    background-color: $color__background-hr;
     margin-bottom: 50px;
   }
 
@@ -252,7 +250,6 @@ hr.databasehr {
     overflow-wrap: anywhere;
     padding: 40px;
     width: 70%;
-    // max-width: 792px;
 
     h2.entry-title {
       margin-bottom: 0;
@@ -373,6 +370,16 @@ hr.databasehr {
       border-radius: 2px;
       padding: .625rem;
       padding-right: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: #{$breakpoint_mobile}) {
+    &-featured {
+      flex-direction: column;
+    }
+
+    .featured-content {
+      width: 100%;
     }
   }
 }

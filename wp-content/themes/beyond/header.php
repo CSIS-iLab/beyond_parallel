@@ -33,12 +33,9 @@
 			let scaleValue = document.getElementById('scale_select');			
 			scaleValue.onchange= function(e){ 
 				const scaleValue = document.getElementById('scale_select').value
-				console.log('hola', scaleValue);
 				const urlParams = new URLSearchParams(window.location.search);
 				urlParams.set('scale', encodeURIComponent(scaleValue));
 				window.location.search = urlParams;
-				console.log(window.location.search)
-				// e.preventdefault()
 			}
 		})
 	</script>
