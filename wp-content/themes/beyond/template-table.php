@@ -50,14 +50,13 @@
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
   <div class="single__content">
-	  <div class="maps-table banded alignwide">
-      
+	  <div class="maps-table banded alignwide">      
       <table id="imageMaps">
         <thead>
-          <th><?php esc_html_e(' '); ?></th>
-          <th><?php esc_html_e('Description'); ?></th>
-          <th><?php esc_html_e('Province'); ?></th>
-          <th><?php esc_html_e('Last Updated'); ?></th>
+          <th style="width: 5%;"><?php esc_html_e(' '); ?></th>
+          <th style="width: 55%;"><?php esc_html_e('Description'); ?></th>
+          <th style="width: 20%;"><?php esc_html_e('Province'); ?></th>
+          <th style="width: 20%;"><?php esc_html_e('Last Updated'); ?></th>
         </thead>
         <tbody>
         <?php foreach ($args['pdfs'] as $post) { ?>

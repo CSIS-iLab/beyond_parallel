@@ -2,28 +2,46 @@
   table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 64px;
   }
 
   thead {
     text-align: left;
-    border-bottom: 2px solid blue;
+    background-color: $color__blueblack-090;
+
+    th {
+      padding-top: 22px;
+      padding-bottom: 22px;
+      padding-left: 1rem;
+    }
+
+    tr > th:not(:first-child) {
+      border-right: 1px solid $color__white-030;
+    }
+    
   }
   
   th {
-    font-weight: 600;
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 1.15;
+    color: $color__background-body;
   }
 
   tbody {
     tr {
-      border-top: 1px solid blue;
-      border-bottom: 1px solid blue;
+      border: 1px solid $color__black-030;
+    }
+
+    tr > td:not(:first-child) {
+      border-right: 1px solid $color__black-030;
     }
   }
 
   td,
   th {
-    padding: 8px !important; //Important to override data tables styling
-    padding-left: 12px !important; //Important to override data tables styling
+    padding: 8px; //Important to override data tables styling
+    padding-left: 12px; //Important to override data tables styling
   }
 
 

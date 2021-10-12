@@ -13,7 +13,7 @@ get_header();
         while (have_posts()) : the_post();
             the_title('<h1 class="entry-title">', '</h1>');
         endwhile; // End of the loop.
-
+		
         // gets pdf files
         $image_maps_pdfs = get_posts(array(
             'post_type' => 'attachment',
@@ -125,17 +125,9 @@ get_header();
 			<div class="table-container">
 				<?php (empty($scales) ? get_template_part('template-table-wptable') : get_template_part('template-table', 'table', array( 'pdfs' => $image_maps_pdfs ))) ; ?>
 			</div>
-			<div class="wptable-container">
-				<?php // get_template_part('template-table-wptable');?>
-			</div>
+			<div class="clearfix"></div>
 		</article>
 		<?php wp_reset_query(); ?>
-
-		<?php
-        while (have_posts()) : the_post();
-            get_template_part('components/page/content', 'page');
-        endwhile; // End of the loop.
-        ?>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
