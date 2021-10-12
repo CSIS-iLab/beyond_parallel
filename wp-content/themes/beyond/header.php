@@ -28,7 +28,6 @@
 		ga('send', 'pageview');
 
 	</script>
-
     <script type="text/javascript">
 		window.addEventListener('load', function () {
 			let scaleValue = document.getElementById('scale_select');			

@@ -123,13 +123,20 @@ get_header();
 				</select>
 			</div>
 			<div class="table-container">
-				<?php (empty($scales) ? get_template_part('template-table-wptable') : get_template_part('template-table', 'table', array( 'pdfs' => $image_maps_pdfs ))) ; ?>
+				<?php ( empty( $scales ) ? get_template_part( 'template-table-wptable' ) : get_template_part( 'template-table', 'table', array( 'pdfs' => $image_maps_pdfs ) ) ) ; ?>
 			</div>
 			<div class="clearfix"></div>
 		</article>
-		<?php wp_reset_query(); ?>
+		<div class="container social">
+				<footer class="entry-footer">				
+					<?php
+					get_template_part( 'components/post/content', 'social' );
+					wp_reset_query(); 				
+					?>
+				</footer>
+			</div>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
 
-<?php get_footer(); ?>
+<?php get_footer();

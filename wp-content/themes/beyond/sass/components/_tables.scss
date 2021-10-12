@@ -2,7 +2,20 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 64px;
+  }
+
+  /* Sortable tables */
+  table.sortable thead {
+    cursor: default;
+
+    span {
+      color: $color__yellow;
+    }
+  }
+  
+  table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25BE";
+    color: $color__yellow;
   }
 
   thead {

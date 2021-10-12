@@ -185,6 +185,10 @@ function beyond_scripts()
     // wp datatables
     wp_enqueue_script( 'beyond-datatables-js', 'https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js', array(), $theme_version, true );
     wp_enqueue_style( 'beyond-style-datatables', 'https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css', array(), $theme_version );
+
+    // sorttable
+    wp_enqueue_script( 'sorttable', get_template_directory_uri() . '/js/sorttable.js');
+    
 }
 add_action('wp_enqueue_scripts', 'beyond_scripts');
 
