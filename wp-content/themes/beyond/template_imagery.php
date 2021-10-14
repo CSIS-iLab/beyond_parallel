@@ -27,7 +27,7 @@ get_header(); ?>
 		while (have_posts()) : the_post();
 
 			if( $wp_query->current_post == 0 && !is_paged() ) : ?>
-				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?> >
 					<div class="living-header-img">
 					<?php echo get_the_post_thumbnail( $post->ID ); ?>
 					</div>

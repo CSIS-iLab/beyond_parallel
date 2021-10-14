@@ -9,11 +9,11 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 	<script src="https://use.typekit.net/ith5zhm.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -28,8 +28,18 @@
 		ga('send', 'pageview');
 
 	</script>
-
-
+    <script type="text/javascript">
+		window.addEventListener('load', function () {
+			let scaleValue = document.getElementById('scale_select');			
+			scaleValue.onchange= function(e){ 
+				const scaleValue = document.getElementById('scale_select').value
+				const urlParams = new URLSearchParams(window.location.search);
+				urlParams.set('scale', encodeURIComponent(scaleValue));
+				window.location.search = urlParams;
+			}
+		})
+	</script>
+	<script>
 	<?php wp_head(); ?>
 </head>
 
@@ -50,7 +60,7 @@
 			<div id="popout">
 				<nav class="site-navigation mobile-navigation">
 			
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+					<?php wp_nav_menu(array( 'theme_location' => 'primary' )); // Display the user-defined menu in Appearance > Menus?>
 
 					<div class="secondary-nav">
 						<form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
@@ -103,7 +113,7 @@
 					<div style="text-align: center;">
 						<div class="header-info">
 							<p class="attribution">A product of the CSIS Korea Chair</p>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<a href="<?php echo esc_url(home_url('/')); ?>">
 								<img src="<?php echo get_bloginfo('template_url') ?>/assets/images/beyond-parallel-logo.svg" class="header-logo">
 							</a>
 
@@ -116,9 +126,9 @@
 					<div class="container">
 						<nav role="navigation" class="site-navigation main-navigation">
 							<div id="main-menu-container">
-								<?php wp_nav_menu( array( 'theme_location' => 'primary',  'menu_class' => 'nav-menu') ); // Display the user-defined menu in Appearance > Menus 
+								<?php wp_nav_menu(array( 'theme_location' => 'primary',  'menu_class' => 'nav-menu')); // Display the user-defined menu in Appearance > Menus
 
-								?>
+                                ?>
 							</div><!--/main-menu-container -->
 
 							<div class="secondary-nav">

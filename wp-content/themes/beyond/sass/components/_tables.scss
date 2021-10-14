@@ -1,0 +1,136 @@
+.image-maps {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Sortable tables */
+  table.sortable thead {
+    cursor: default;
+
+    span {
+      color: $color__yellow;
+    }
+  }
+  
+  table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25BE";
+    color: $color__yellow;
+  }
+
+  thead {
+    text-align: left;
+    background-color: $color__blueblack-090;
+
+    th {
+      padding-top: 22px;
+      padding-bottom: 22px;
+      padding-left: 1rem;
+    }
+
+    th:nth-of-type(1) {
+      width: 5%;
+    }
+
+    th:nth-of-type(2) {
+      width: 55%;
+    }
+
+    th:nth-of-type(3) {
+      width: 20%;
+    }
+
+    th:nth-of-type(4) {
+      width: 20%;
+    }
+
+    tr > th:not(:first-child) {
+      border-right: 1px solid $color__white-030;
+    }
+    
+  }
+  
+  th {
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 1.15;
+    color: $color__background-body;
+  }
+
+  tbody {
+    tr {
+      border: 1px solid $color__black-030;
+    }
+
+    tr > td:not(:first-child) {
+      border-right: 1px solid $color__black-030;
+    }
+
+    td:nth-of-type(1) {
+      width: 5%;
+    }
+
+    td:nth-of-type(2) {
+      width: 55%;
+    }
+
+    td:nth-of-type(3) {
+      width: 20%;
+    }
+
+    td:nth-of-type(4) {
+      width: 20%;
+    }
+  }
+
+  td,
+  th {
+    padding: 8px; //Important to override data tables styling
+    padding-left: 12px; //Important to override data tables styling
+  }
+
+
+  .wp-block-table > figcaption {
+    width: max-width;
+    margin: 16px auto 32px auto;
+    color: black;
+  }
+
+  .aligncenter.wp-block-table,
+  .alignleft.wp-block-table,
+  .alignright.wp-block-table {
+    display: block;
+  }
+
+  .alignfull.wp-block-table,
+  .alignwide.wp-block-table {
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+
+    figcaption {
+      padding-left: -6vw;
+    }
+  }
+
+  .wp-block-table {
+    border-bottom: 0 !important;
+  }
+
+  .is-style-highlighted-header {
+    thead {
+      background: peachpuff;
+    }
+
+    /* stylelint-disable */
+    tbody {
+      tr:first-child {
+        border-top: 1px solid gray;
+      }
+
+      td:first-child {
+        font-weight: 600;
+      }
+    }
+    /* stylelint-enable */
+  }
+}
