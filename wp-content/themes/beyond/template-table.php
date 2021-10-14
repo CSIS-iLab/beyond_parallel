@@ -22,7 +22,7 @@
             <h3 class="entry-title featured-title"><a href="<?php echo esc_url(get_permalink($analysis)); ?>" rel="bookmark"><?php echo get_the_title($analysis); ?></a></h3>
             </header>
             <div class="entry-summary">
-              <span class="excerpt-date"><?php echo get_the_date('l, F j, Y', $analysis); ?> </span>
+              <span class="excerpt-date"><?php echo get_the_date('', $analysis); ?> </span>
             </div>
           <?php } //close if?>
         <?php } //close foreach ?>
