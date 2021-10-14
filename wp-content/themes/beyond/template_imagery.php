@@ -28,12 +28,6 @@ get_header(); ?>
 
 			if( $wp_query->current_post == 0 && !is_paged() ) : ?>
 				<article id="post-<?php the_ID(); ?>" class=<?php post_class(); ?> >
-					<div>
-						<p>
-							Add a description of the satellite image collection. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-						</p>
-
-					</div>
 					<div class="living-header-img">
 					<?php echo get_the_post_thumbnail( $post->ID ); ?>
 					</div>

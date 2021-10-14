@@ -304,6 +304,9 @@ hr.databasehr {
     width: 100%;
     @media screen and (max-width: #{$breakpoint_mobile}) {
       overflow-x:auto;
+      img {
+        max-width: unset;
+      }
     }
 
     h2 {
