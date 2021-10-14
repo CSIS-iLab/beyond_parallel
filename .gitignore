@@ -80,6 +80,9 @@ Thumbs.db
 *.tar
 *.zip
 
+# ignore .env file
+.env
+
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------

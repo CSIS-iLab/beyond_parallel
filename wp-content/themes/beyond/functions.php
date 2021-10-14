@@ -181,6 +181,14 @@ function beyond_scripts()
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+
+    // wp datatables
+    wp_enqueue_script( 'beyond-datatables-js', 'https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js', array(), $theme_version, true );
+    wp_enqueue_style( 'beyond-style-datatables', 'https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css', array(), $theme_version );
+
+    // sorttable
+    wp_enqueue_script( 'sorttable', get_template_directory_uri() . '/js/sorttable.js');
+    
 }
 add_action('wp_enqueue_scripts', 'beyond_scripts');
 
@@ -612,3 +620,32 @@ function my_meta_init()
 
     add_action('save_post', 'my_meta_save');
 }
+
+// apply tags to attachments
+function wptp_add_tags_to_attachments() {
+	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+}
+add_action( 'init' , 'wptp_add_tags_to_attachments' );
+
+/**
+ * Find all posts that uses the given image
+ *
+ * @param  $image_id  Integer    ID of the image to work on
+ * @return  Array  An array of all the post ID's that use the image
+ * @credit  https://wordpress.org/plugins/find-posts-using-attachment/
+ * @refer  https://millionclues.com/wordpress-tips/find-posts-containing-given-attachment/
+ */
+function beyondparallel_get_posts_using_attachment ( $image_id ) {
+  
+    $attachment_url = wp_get_attachment_url($image_id);
+    
+    $search_content_query = new WP_Query( array(
+      's'              => $attachment_url,
+      'post_type'      => 'any',
+      'fields'         => 'ids',
+      'no_found_rows'  => true,
+      'posts_per_page' => -1,
+    ));
+    
+    return $search_content_query->posts;
+  }

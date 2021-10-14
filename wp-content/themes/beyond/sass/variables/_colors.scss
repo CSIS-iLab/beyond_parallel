@@ -5,10 +5,12 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 $color__white: #eee;
+$color__white-030: rgba(255, 255, 255, .3);
 
 $color__blue: #10355f;
 $color__darkBlue: #0f2a48;
 $color__blueblack: #020b1f;
+$color__blueblack-090: rgba(2, 11, 31, 0.9);
 $color__yellow: #ffc726;
 $color__darkYellow: #efb715;
 $color__gray: #989797;
@@ -28,3 +30,12 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+
+$color__dark-bg: #252A31;
+
+$color__black-100: rgba(0, 0, 0, 1);
+$color__black-065: rgba(0, 0, 0, 0.65);
+$color__black-030: rgba(0, 0, 0, 0.3);
+
+$color__yellow: rgba(255, 198, 36, 0.6);

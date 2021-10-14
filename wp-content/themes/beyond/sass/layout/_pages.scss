@@ -211,6 +211,185 @@ hr.databasehr {
 }
 
 /*--------------------------------------------------------------
+## Image Maps
+--------------------------------------------------------------*/
+.image-maps {
+  
+  &-header {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  & .description {
+    width: 60%;
+    max-width: 680px;
+  }
+  & .credits {
+    margin-left: 32px;
+    width: 40%;
+    max-width: 360px;
+    font-weight: 350;
+  }
+
+  &-featured {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+
+  .featured-title a {
+      background-image: none;
+  }
+  
+  .featured-img {
+    width: 30%;
+    max-width: 280px;
+  }
+  
+  .featured-content {
+    overflow-wrap: anywhere;
+    padding: 40px;
+    width: 70%;
+
+    h2.entry-title {
+      margin-bottom: 0;
+    }
+
+    .followButton {
+      margin-bottom: 11px;
+    }
+
+    .related{
+      
+      &-analysis {
+        padding-top: 16px;
+
+        .living-header {
+          margin-top:0;
+        }
+
+        h3 {
+          font-family: $font__main;
+          font-size: 1.25rem;
+          line-height: 100%;
+          font-weight: normal;
+        }
+
+        .excerpt-date,
+        .excerpt-date a {
+          font-size: 1rem;
+          line-height: 130%;
+        }
+      }
+
+      &-heading {
+        color: $color__blue;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        font-size: 1.18rem;
+        line-height: 1.43rem;
+      }
+
+    }
+  }
+
+  h3 {
+    margin: 0px 0px 10px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: $color__medgray;
+  }
+
+  .table-container {
+    width: 100%;
+    @media screen and (max-width: #{$breakpoint_mobile}) {
+      overflow-x:auto;
+      img {
+        max-width: unset;
+      }
+    }
+
+    h2 {
+      font-size: 1.8125rem;
+      line-height: 1.15;
+    }
+
+    h2.entry-title {
+      margin-bottom: .5rem;
+    }
+
+    .related-heading {
+      margin: 0;
+      margin-top: 8;
+    }
+
+    .living-header {
+      margin: 0;
+    }
+
+    h3.related-heading {
+      font-size: 1.1875rem;
+      line-height: 1.4375rem;
+      letter-spacing: .04em;
+      color: $color__black-065;
+      text-transform: uppercase;
+    }
+
+    h3.featured-title {
+      font-size: 1.125rem;
+      line-height: 1;
+    }
+
+    span.excerpt-date {
+      font-size: 1rem;
+      line-height: 1.3;
+      font-weight: normal;
+    }
+  }
+
+  .select-filter {
+    margin-bottom: 1.125rem;
+
+    label,
+    select {
+      color: $color__dark-bg;
+      font-family: $font__main;
+      font-size: 1.125rem;
+      line-height: 1;
+      font-style: normal;
+      font-weight: normal;
+    }
+    
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position-x: 100%;
+      background-position-y: 5px;
+      border: none;
+      border-bottom: 1px solid #00000025;
+      border-radius: 2px;
+      padding: .625rem;
+      padding-right: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: #{$breakpoint_mobile}) {
+    &-featured {
+      flex-direction: column;
+    }
+
+    .featured-content {
+      width: 100%;
+    }
+  }
+}
+
+
+
+/*--------------------------------------------------------------
 ## Signals Page
 --------------------------------------------------------------*/
 
