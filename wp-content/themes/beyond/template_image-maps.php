@@ -102,7 +102,6 @@ get_header();
 			<div class="select-filter alignright">
 				<label for="scale_select">Filter by scale: </label>
 				<select id="scale_select" name="scale_select" >
-					<option value="" selected disabled hidden>Select</option>
 					<?php
 					$scales = get_scales_values($image_maps_pdfs);
 					foreach ($scales as $value) { ?>
