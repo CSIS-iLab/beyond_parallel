@@ -65,7 +65,6 @@
     <?php $related_analysis_table = beyondparallel_get_posts_using_attachment($post->ID); ?>
     <?php 
       $scale = get_field('scale', $post);
-      get_related_analysis($related_analysis_table);
       if ('all' == $filter_by_scale) { ?>                    
         <tr>  <!-- tr -->
         <!-- Gets all related analysis -->
