@@ -77,25 +77,26 @@ get_header();
 								</span>
 							</a>
 						</div>
-						<div class="related-analysis">
-							<h3 class="related-heading">Related Analysis:</h3>
+						<?php wp_reset_postdata(); ?>
+						<?php if ($related_analysis) { ?>
+							<div class="related-analysis">
+								<h3 class="related-heading">Related Analysis:</h3>
 
-							<?php wp_reset_postdata(); ?>
+									<?php foreach ( $related_analysis as $post ):
+										setup_postdata( $post ); ?>
 
-							<?php foreach ( $related_analysis as $post ):
-								setup_postdata( $post ); ?>
-
-								<header class="entry-header living-header">
-									<?php the_title(sprintf('<h3 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url(get_permalink($analysis))), '</a></h3>'); ?>
-								</header>
-								<div class="entry-summary">
-									<span class="excerpt-date"><?php echo( get_the_date() ); ?> </span>
-								</div>
-								
-							<?php endforeach;
-								wp_reset_postdata();
-							?>
-						</div> <!-- .related-analysis -->
+										<header class="entry-header living-header">
+											<?php the_title(sprintf('<h3 class="entry-title featured-title"><a href="%s" rel="bookmark">', esc_url(get_permalink($analysis))), '</a></h3>'); ?>
+										</header>
+										<div class="entry-summary">
+											<span class="excerpt-date"><?php echo( get_the_date() ); ?> </span>
+										</div>
+										
+									<?php endforeach;
+									wp_reset_postdata();
+									?>
+							</div> <!-- .related-analysis -->
+						<?php } //end if	?>
 					</div> <!-- .featured-content -->
 				<?php endif; ?>
 			</div>
