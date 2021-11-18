@@ -36,10 +36,13 @@ get_header();
         }
 		
         // Gets the ACF
-		$introduction = get_field( "introduction" );
+    		$introduction = get_field( "introduction" );
         $credits = get_field( "credits" );
         $featured = get_field( "featured" )[0];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 914787c (Fix repeated values on dropdown)
         // Gets all the posts where the attachment PDF is used
         $related_analysis = beyondparallel_get_posts_using_attachment( $featured->ID );        
         ?>
