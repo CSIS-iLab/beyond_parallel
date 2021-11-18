@@ -36,15 +36,9 @@ get_header();
         }
 		
         // Gets the ACF
-		$introduction = get_field( "introduction" );
+    		$introduction = get_field( "introduction" );
         $credits = get_field( "credits" );
         $featured = get_field( "featured" )[0];
-        // $featured_img = wp_get_attachment_thumb_url($featured->ID, 'medium');
-        // Gets the image thumbnail from the PDF file with ACF | in case we need to use ACF to add image to the pdf file
-        // $feat_img = get_field('thumbnail', $featured->ID);
-        // $feat_img_url = str_replace('i1.wp.com/', '', $feat_img['url']);
-        // var_dump($feat_img_url);
-
         // Gets all the posts where the attachment PDF is used
         $related_analysis = beyondparallel_get_posts_using_attachment( $featured->ID );        
         ?>
@@ -104,7 +98,7 @@ get_header();
 				<select id="scale_select" name="scale_select" >
 					<?php
 					$scales = get_scales_values($image_maps_pdfs);
-					foreach ($scales as $value) { ?>
+					foreach (array_unique($scales) as $value) { ?>
 						<option value="<?php echo $value; ?>" <?php echo $value == rawurldecode($_GET['scale']) ? "selected" : "" ?>>
 							<?php echo ucfirst($value) ?> 
 						</option>
