@@ -140,6 +140,7 @@ function display_posts_element(array $args)
 
 $id = $args['post_id'];
 $title = $args['post_title'];
+$post_output = '';
 $post_output .= '<input id="'. $id .'" name="'. $id .'" class="'. $id .'" name="post" data-type="addThis" data-sort-position="0" data-image-position="0" data-name="'. $title .'" data-ID="' . $id .'" data-post-type="post" type="checkbox" value="1" '. checked(1, get_option($id), false) .'>';
     		$post_output .= '<label class="description">'. $title .'</label><br>';
     		print $post_output;

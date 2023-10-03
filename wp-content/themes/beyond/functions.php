@@ -184,6 +184,9 @@ function beyond_scripts()
         wp_enqueue_script('comment-reply');
     }
 
+    $theme = wp_get_theme();
+    $theme_version = $theme->get( 'Version' );
+
     // wp datatables
     wp_enqueue_script( 'beyond-datatables-js', 'https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js', array(), $theme_version, true );
     wp_enqueue_style( 'beyond-style-datatables', 'https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css', array(), $theme_version );
@@ -316,7 +319,7 @@ add_action('admin_init', 'my_meta_init');
 function my_meta_init()
 {
     // checks for post/page ID
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    $post_id = isset($_GET['post']) ? $_GET['post'] : (isset($_POST['post_ID']) ? $_POST['post_ID'] : null);
 
     // check for a database
     $tags = wp_get_post_tags($post_id);
@@ -619,8 +622,6 @@ function my_meta_init()
             }
         }
     }
-
-    add_action('save_post', 'my_meta_save');
 }
 
 // apply tags to attachments
