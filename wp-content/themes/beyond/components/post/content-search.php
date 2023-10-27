@@ -20,7 +20,7 @@
 	
 	<div class="entry-thumb">
 
-	<?php echo get_the_post_thumbnail( $page->ID, 'thumbnail' ); ?>
+	<?php echo get_the_post_thumbnail( get_the_ID(), 'thumbnail' ); ?>
 
 		
 	</div>
