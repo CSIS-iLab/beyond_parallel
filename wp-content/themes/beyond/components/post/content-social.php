@@ -3,7 +3,7 @@
 			$url = esc_url($url);
 
 			$title = get_the_title();
-			$excerpt = sprintf(get_the_excerpt());
+			// $excerpt = sprintf(get_the_excerpt());
 
 			$image = get_the_post_thumbnail_url();
 
