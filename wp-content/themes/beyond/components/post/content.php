@@ -47,5 +47,4 @@
 			<footer class="entry-footer">
 			<?php get_template_part( 'components/post/content', 'footer' ); ?>
 			</footer>
-	<?php endif; ?>
 </article><!-- #post-## -->
