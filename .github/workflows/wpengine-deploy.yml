@@ -19,7 +19,6 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          # key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ github.run_id }} i used this to force regenerate the cache
           restore-keys: |
             ${{ runner.os }}-node-
 
