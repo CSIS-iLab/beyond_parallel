@@ -167,10 +167,11 @@ h2.gray,
     margin-top: 5rem;
   }
   .tweet-container {
-    height: 490px;
+    height: 550px;
     overflow: scroll;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
     display: block;
-    margin-left: -10px;
   }
   .col-sm-4 {
     padding-right: 2rem;
@@ -179,6 +180,19 @@ h2.gray,
     margin-right: 0;
   }
 }
+
+  @media screen and (max-width: #{$breakpoint_mobile}) {
+    .tweet-container {
+      overscroll-behavior: auto !important;
+    }
+    #eapps-instagram-feed-1 {
+      max-width: 100vw !important;
+    }
+    .eapps-instagram-feed {
+      margin-inline: auto;
+      width: 100%;
+    }
+  }
 
 .featured {
   margin-top: 3.5rem;

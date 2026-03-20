@@ -233,11 +233,11 @@ function get_recentPosts(){
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <h2 class="gray">Latest Tweets</h2>
+                    <h2 class="gray">Latest Instagram Posts</h2>
                     <div class="tweet-container">
-                        <a class="twitter-timeline" data-theme="light" data-link-color="#98B0BC" data-height="350" data-chrome="noheader nofooter noborders transparent"  data-tweet-limit="4" href="https://twitter.com/CSISKoreaChair">Tweets by Korea Chair</a>
-                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </div><!--/tweet container-->
+                      <script src="https://elfsightcdn.com/platform.js" async></script>
+                      <div class="elfsight-app-1561892a-ca7e-4cc1-9c9d-4d3f45eb9bec" data-elfsight-app-lazy></div>
+                    </div><!-- tweet container -->
                 </div><!--/col-sm-4-->
                 <div class="col-sm-8">
                      <h2 class="gray">About Beyond Parallel</h2>
